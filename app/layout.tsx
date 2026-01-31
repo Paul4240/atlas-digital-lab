@@ -1,10 +1,18 @@
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: "Atlas Digital Lab",
+  description: "Professional Websites for Small Businesses",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <head>
-        <title>Atlas Digital Lab</title>
-      </head>
-      <body>{children}</body>
+      <body style={{ margin: 0, fontFamily: "Arial, sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }

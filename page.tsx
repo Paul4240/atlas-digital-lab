@@ -1,25 +1,26 @@
 export default function Home() {
   return (
-    <main style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+    <main style={{ padding: "40px", fontFamily: "Arial" }}>
       <h1>Atlas Digital Lab</h1>
-      <p>Professional websites built for small businesses.</p>
 
-      <h3>Our Services</h3>
+      <p>Professional Websites for Small Businesses</p>
+
+      <h2>Services</h2>
       <ul>
-        <li>Custom Website Design</li>
-        <li>Mobile-Friendly Development</li>
-        <li>Business Branding</li>
-        <li>Contact Forms & Lead Capture</li>
+        <li>Website Design</li>
+        <li>Landing Pages</li>
+        <li>Business Setup</li>
+        <li>Hosting Support</li>
       </ul>
 
-      <h3>Pricing</h3>
-      <p>Starting at $500 — 50% deposit required to begin.</p>
+      <h2>Pricing</h2>
+      <p>Starting at $500 — 50% Deposit Required</p>
 
-      <h3>Contact</h3>
+      <h2>Contact</h2>
       <p>Email: Pauldecarlis4@gmail.com</p>
 
-      <p style={{ marginTop: "20px", fontWeight: "bold" }}>
-        Deposit required before work begins.
+      <p style={{ marginTop: "40px" }}>
+        © 2026 Atlas Digital Lab
       </p>
     </main>
   );

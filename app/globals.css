@@ -1,29 +1,35 @@
 /* globals.css */
 
+/* Global Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #1F2937; /* Dark charcoal for the page background */
+  font-family: 'Inter', Arial, sans-serif; /* clean modern font */
+  background-color: #1F2937; /* Dark charcoal background */
   color: white;
+  line-height: 1.6;
 }
 
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: linear-gradient(135deg, #374151, #1F2937);
   min-height: 100vh;
 }
 
+/* Logo Text */
 .hero-logo-text {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
+/* Contact Info */
 .contact-info {
   font-size: 1.2rem;
   margin-top: 20px;
@@ -39,18 +45,52 @@ body {
   text-decoration: underline;
 }
 
+/* Contact Button */
 .hero-button {
   margin-top: 30px;
-  padding: 15px 30px;
+  padding: 15px 40px;
   font-size: 1.2rem;
+  font-weight: 600;
   background-color: #3B82F6;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .hero-button:hover {
   background-color: #2563EB;
+  transform: scale(1.05);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-logo-text {
+    font-size: 2.5rem;
+  }
+
+  .contact-info {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-text {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  }

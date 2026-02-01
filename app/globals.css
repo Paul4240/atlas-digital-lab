@@ -1,10 +1,9 @@
 /* globals.css */
 
-/* Global Styles */
 body {
   margin: 0;
-  font-family: 'Inter', Arial, sans-serif; /* clean modern font */
-  background-color: #1F2937; /* Dark charcoal background */
+  font-family: Arial, sans-serif;
+  background-color: #1F2937;
   color: white;
   line-height: 1.6;
 }
@@ -36,16 +35,15 @@ body {
 }
 
 .contact-info a {
-  color: #3B82F6; /* Link blue */
+  color: #3B82F6;
   text-decoration: none;
-  margin: 0 10px;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
 }
 
-/* Contact Button */
+/* Button */
 .hero-button {
   margin-top: 30px;
   padding: 15px 40px;
@@ -64,33 +62,13 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Mobile */
 @media (max-width: 768px) {
   .hero-logo-text {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .contact-info {
-    font-size: 1.1rem;
-  }
-
-  .hero-button {
-    padding: 12px 30px;
     font-size: 1.1rem;
   }
 }
-
-@media (max-width: 480px) {
-  .hero-logo-text {
-    font-size: 2rem;
-  }
-
-  .contact-info {
-    font-size: 1rem;
-  }
-
-  .hero-button {
-    padding: 10px 25px;
-    font-size: 1rem;
-  }
-  }

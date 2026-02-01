@@ -1,4 +1,4 @@
-'use client'; // make this a client component so JSX works
+'use client';
 
 import React from 'react';
 
@@ -14,13 +14,15 @@ export default function Page() {
             atlasdigitallabgroup@gmail.com
           </a>
           <br />
-          Phone: <a href="tel:+18327050313">(832) 705-0313</a>
+          Phone:{' '}
+          <a href="tel:+18327050313">(832) 705-0313</a>
         </p>
 
         <button
           className="hero-button"
           onClick={() =>
-            (window.location.href = 'mailto:atlasdigitallabgroup@gmail.com')
+            (window.location.href =
+              'mailto:atlasdigitallabgroup@gmail.com')
           }
         >
           Contact Us

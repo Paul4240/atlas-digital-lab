@@ -1,52 +1,107 @@
+/* Reset & basic styles */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
-  color: #222;
+  background-color: #F3F4F6; /* Light gray for the main page */
+  color: #1F2937; /* Dark text for readability */
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: #2563eb;
+  padding: 100px 20px 60px 20px;
+  background: linear-gradient(135deg, #1E3A8A, #60A5FA); /* Blue gradient */
   color: white;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo {
+  max-width: 250px;
+  margin-bottom: 1rem;
 }
 
 .hero h1 {
   font-size: 3rem;
+  margin: 0.5rem 0;
 }
 
+.hero p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+/* Hero Contact Info */
+.hero-contact {
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.hero-contact a {
+  color: #FFD700; /* Gold for visibility */
+  text-decoration: none;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Button */
 .btn {
   display: inline-block;
-  margin-top: 20px;
   padding: 12px 24px;
   background: white;
-  color: #2563eb;
+  color: #1E3A8A;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  margin-top: 10px;
 }
 
+.btn:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* Sections (Services, Pricing, About, Contact) */
 section {
-  background: white;
-  padding: 40px 20px;
-  margin: 30px 0;
-  border-radius: 12px;
+  padding: 60px 0;
+  text-align: center;
 }
 
-h2 {
-  margin-bottom: 15px;
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
+section p, section li {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section ul li::before {
+  content: "✔️ ";
+}
+
+/* Footer */
 footer {
+  background: #1E3A8A;
+  color: white;
   text-align: center;
   padding: 20px;
-  color: #666;
-}
+  margin-top: 40px;
+  }

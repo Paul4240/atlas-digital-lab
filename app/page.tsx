@@ -17,6 +17,7 @@ export default function Home() {
           <li>Online Stores</li>
           <li>Mobile Friendly Sites</li>
           <li>SEO Setup</li>
+          <li>SEO Setup</li>
         </ul>
       </section>
 
@@ -49,4 +50,4 @@ export default function Home() {
       </footer>
     </main>
   );
-    }
+}

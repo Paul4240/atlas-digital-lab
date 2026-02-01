@@ -1,4 +1,4 @@
-// rebuild
+'use client';
 import "./globals.css";
 
 export default function Home() {
@@ -17,7 +17,6 @@ export default function Home() {
           <li>Website Design</li>
           <li>Online Stores</li>
           <li>Mobile Friendly Sites</li>
-          <li>SEO Setup</li>
           <li>SEO Setup</li>
         </ul>
       </section>

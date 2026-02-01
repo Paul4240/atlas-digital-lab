@@ -3,10 +3,17 @@ export default function Home() {
     <main className="container">
 
       <header className="hero">
-        <h1>Atlas Digital Lab</h1>
-        <p>Professional Websites for Small Businesses</p>
-        <a href="#contact" className="btn">Get a Free Quote</a>
-      </header>
+  <img src="/A_logo_for_\"Atlas_Digital_Lab\"_is_displayed_in_the.png" alt="Atlas Digital Lab Logo" className="hero-logo" />
+  <h1>Atlas Digital Lab</h1>
+  <p>Professional Web Solutions</p>
+
+  <div className="hero-contact">
+    <p>Email: <a href="mailto:atlasdigitallabgroup@gmail.com">atlasdigitallabgroup@gmail.com</a></p>
+    <p>Phone: <a href="tel:+18327050313">(832) 705-0313</a></p>
+  </div>
+
+  <a href="#services" className="btn">Get a Free Quote</a>
+</header>
 
       <section id="services">
         <h2>Our Services</h2>
@@ -44,4 +51,4 @@ export default function Home() {
 
     </main>
   );
-}
+      }

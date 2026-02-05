@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Atlas Digital Lab',
-  description: 'Atlas Digital Lab Website',
+  description: 'Professional Websites & Social Media Services',
 };
 
 export default function RootLayout({
@@ -15,4 +15,4 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   );
-}
+  }

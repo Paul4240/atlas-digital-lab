@@ -1,13 +1,13 @@
 'use client';
-import "./globals.css";
+import './globals.css';
 
 export default function Home() {
   return (
     <main className="container">
       {/* Hero Section */}
       <header className="hero">
-        <h1>Atlas Digital Lab</h1>
-        <p>Professional Websites & Social Media Services</p>
+        <h1 className="logo">Atlas Digital Lab</h1>
+        <p className="tagline">Professional Websites & Social Media Services</p>
       </header>
 
       {/* Services */}
@@ -24,7 +24,7 @@ export default function Home() {
       {/* Pricing */}
       <section>
         <h2>Simple Pricing</h2>
-        <p>Starts at $99 setup</p>
+        <p className="pricing">Starts at $99 setup</p>
         <p>Monthly Maintenance Available</p>
       </section>
 
@@ -54,4 +54,4 @@ export default function Home() {
       </footer>
     </main>
   );
-      }
+}

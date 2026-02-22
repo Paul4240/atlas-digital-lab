@@ -1,67 +1,48 @@
-'use client';
-import "./globals.css";
-
 export default function Home() {
   return (
-    <main className="container">
-      {/* Hero Section */}
-      <header className="hero">
-        <h1>Atlas Digital Lab</h1>
-        <p>Professional Websites & Social Media Services</p>
-      </header>
+    <main className="min-h-screen bg-white text-zinc-900 px-6 py-20">
+      <div className="max-w-4xl mx-auto text-center">
+        
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          Atlas Digital Lab
+        </h1>
 
-      {/* Why Choose Us */}
-      <section>
-        <h2>Why Choose Atlas Digital Lab?</h2>
-        <ul>
-          <li>Custom, modern websites tailored to your business</li>
-          <li>Mobile-friendly and responsive design</li>
-          <li>SEO-ready to help you get found online</li>
-          <li>Fast and professional service at affordable rates</li>
-        </ul>
-      </section>
-
-      {/* Services */}
-      <section>
-        <h2>Our Services</h2>
-        <ul>
-          <li>Website Design & Development</li>
-          <li>Online Stores / E-commerce</li>
-          <li>Social Media Setup & Branding</li>
-          <li>Monthly Website Maintenance</li>
-        </ul>
-      </section>
-
-      {/* Pricing */}
-      <section>
-        <h2>Simple Pricing</h2>
-        <p>Website setup starts at <strong>$99</strong></p>
-        <p>Monthly maintenance plans available</p>
-      </section>
-
-      {/* Testimonials Placeholder */}
-      <section>
-        <h2>What Our Clients Say</h2>
-        <p>"Atlas Digital Lab transformed our website! Highly recommend." – Client A</p>
-        <p>"Professional, fast, and affordable service!" – Client B</p>
-      </section>
-
-      {/* Contact */}
-      <section>
-        <h2>Contact Us</h2>
-        <p>
-          Email: <a href="mailto:atlasdigitallabgroup@gmail.com">atlasdigitallabgroup@gmail.com</a>
+        <p className="text-xl text-zinc-600 mb-8">
+          Professional websites for small businesses.
+          Fast setup. Simple pricing. Ongoing support.
         </p>
-        <p>
-          Phone: <a href="tel:+18327050313">(832) 705-0313</a>
-        </p>
-        <p>Ready to get started? Call or email us today!</p>
-      </section>
 
-      {/* Footer */}
-      <footer>
-        <p>© 2026 Atlas Digital Lab</p>
-      </footer>
+        <div className="space-y-4">
+          <p className="text-lg">
+            We build modern, mobile-friendly websites that help local
+            businesses stand out and grow online.
+          </p>
+
+          <p className="text-lg">
+            Starting at $299 setup + $50/month maintenance.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <a
+            href="mailto:hello@atlasdigitallab.com"
+            className="inline-block bg-black text-white px-6 py-3 rounded-lg text-lg hover:opacity-90 transition"
+          >
+            Contact Us
+          </a>
+        </div>
+
+        <p className="mt-6 text-zinc-600">
+          Or email us directly at{" "}
+          <a
+            href="mailto:hello@atlasdigitallab.com"
+            className="text-blue-600 underline"
+          >
+            hello@atlasdigitallab.com
+          </a>
+        </p>
+
+      </div>
     </main>
   );
 }

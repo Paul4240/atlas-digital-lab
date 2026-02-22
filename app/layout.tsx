@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white text-zinc-900">
+      Update contact email to hello@atlasdigitallab.com
         {children}
       </body>
     </html>

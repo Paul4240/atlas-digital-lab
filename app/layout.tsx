@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Atlas Digital Lab | Professional Websites for Small Businesses",
   description:
-    "Atlas Digital Lab builds modern, mobile-friendly websites for local businesses. Fast setup, simple pricing, and monthly support available.",
+    "Atlas Digital Lab builds modern, mobile-friendly websites for local businesses. Fast setup. Simple pricing. Ongoing support.",
   keywords: [
     "website design",
     "small business websites",
@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      Update contact email to hello@atlasdigitallab.com
+      <body className="bg-white text-zinc-900 antialiased">
         {children}
       </body>
     </html>

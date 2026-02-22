@@ -137,7 +137,7 @@ export default function Home() {
               <div className="priceMeta">Setup + $99/month maintenance</div>
 
               <p className="fine">
-                (We can adjust pricing later—this just gives you a clean professional baseline.)
+          
               </p>
             </div>
           </div>

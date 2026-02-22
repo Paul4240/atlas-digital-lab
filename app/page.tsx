@@ -18,7 +18,9 @@ export default function Home() {
               We build modern, mobile-friendly websites for local businesses—designed to look legit, load fast,
               and help you get calls, leads, and bookings.
             </p>
-
+            <p className="phone">
+              Call or Text: <a href="tel:8327050313">(832) 705-0313</a>
+            </p>
             <div className="btnRow">
               <a className="btn primary" href="mailto:hello@atlasdigitallab.com">
                 Email Us
@@ -153,7 +155,9 @@ export default function Home() {
           </p>
           <p className="fine">Response time: usually within 24 hours.</p>
         </section>
-
+        <p>
+         Phone: <a href="tel:8327050313">(832) 705-0313</a>
+       </p>
         <footer className="footer">
           <div className="container">
             <p className="fine">© {new Date().getFullYear()} Atlas Digital Lab. All rights reserved.</p>

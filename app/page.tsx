@@ -155,9 +155,7 @@ export default function Home() {
               <div className="pricingPrice">$799</div>
             </div>
 
-            <p className="microText" style={{ marginTop: 10 }}>
-              (We can adjust pricing later—this just gives you a clean professional baseline.)
-            </p>
+          
           </div>
 
           <section id="contact" className="contactCard">

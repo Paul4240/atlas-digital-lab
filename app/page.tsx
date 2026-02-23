@@ -1,101 +1,115 @@
 "use client";
+
 export default function Home() {
   return (
     <main className="page">
       <div className="container">
+        {/* Top */}
         <header className="top">
           <div className="pill">Houston • Small Business Websites</div>
+
           <h1 className="h1">Atlas Digital Lab</h1>
           <p className="sub">
-            Professional websites for small businesses. Fast setup. Simple pricing. Ongoing support.
+            Professional websites for small businesses. Fast setup. Simple pricing. Ongoing
+            support.
           </p>
         </header>
 
+        {/* Hero */}
         <section className="heroGrid">
-          <div className="heroLeft card">
-            <h2 className="h2">Get a professional website that brings you customers.</h2>
-            <p className="text">
-              We build modern, mobile-friendly websites for local businesses—designed to look legit, load fast,
-              and help you get calls, leads, and bookings.
+          <div className="card heroLeft">
+            <h2 className="heroTitle">Get a professional website that brings you customers.</h2>
+            <p className="heroText">
+              We build modern, mobile-friendly websites for local businesses—designed to look
+              legit, load fast, and help you get calls, leads, and bookings.
             </p>
-            <p className="phone">
-              Call or Text: <a href="tel:8327050313">(832) 705-0313</a>
-            </p>
+
             <div className="btnRow">
-              <a className="btn primary" href="mailto:hello@atlasdigitallab.com">
+              <a className="btnPrimary" href="mailto:hello@atlasdigitallab.com">
                 Email Us
               </a>
-              <a className="btn ghost" href="#contact">
+              <a className="btnGhost" href="#contact">
                 Contact Info
               </a>
             </div>
 
-            <div className="miniGrid">
-              <div className="miniCard">
-                <div className="miniTitle">1–7 Days</div>
-                <div className="miniText">Typical launch</div>
+            <div className="chipRow">
+              <div className="chip">
+                <div className="chipTitle">1–7 Days</div>
+                <div className="chipSub">Typical launch</div>
               </div>
-              <div className="miniCard">
-                <div className="miniTitle">Mobile</div>
-                <div className="miniText">Looks great on phones</div>
+
+              <div className="chip">
+                <div className="chipTitle">Mobile</div>
+                <div className="chipSub">Looks great on phones</div>
               </div>
-              <div className="miniCard">
-                <div className="miniTitle">SEO</div>
-                <div className="miniText">Built for local search</div>
+
+              <div className="chip">
+                <div className="chipTitle">SEO</div>
+                <div className="chipSub">Built for local search</div>
               </div>
             </div>
           </div>
 
-          <div className="heroRight card">
-            <h3 className="h3">Free Quote</h3>
-            <p className="muted">Tell us what you do and we’ll reply fast.</p>
+          <div className="card heroRight">
+            <h3 className="formTitle">Free Quote</h3>
+            <p className="formSub">Tell us what you do and we’ll reply fast.</p>
 
+            {/* Simple “mailto” form (no backend needed) */}
             <form
               className="form"
               onSubmit={(e) => {
                 e.preventDefault();
-                window.location.href =
-                  "mailto:hello@atlasdigitallab.com?subject=Free%20Quote%20Request&body=Name:%0D%0ABusiness:%0D%0APhone:%0D%0AWhat%20do%20you%20need:%0D%0A";
+                const form = e.currentTarget;
+                const fd = new FormData(form);
+
+                const name = (fd.get("name") || "").toString();
+                const business = (fd.get("business") || "").toString();
+                const phone = (fd.get("phone") || "").toString();
+                const message = (fd.get("message") || "").toString();
+
+                const subject = encodeURIComponent(`Quote Request — ${business || "New Lead"}`);
+                const body = encodeURIComponent(
+                  `Name: ${name}\nBusiness: ${business}\nPhone: ${phone}\n\nWhat they need:\n${message}`
+                );
+
+                window.location.href = `mailto:hello@atlasdigitallab.com?subject=${subject}&body=${body}`;
               }}
             >
-              <label className="label">
-                Name
-                <input className="input" placeholder="Your name" />
-              </label>
+              <label className="label">Name</label>
+              <input className="input" name="name" placeholder="Your name" />
 
-              <label className="label">
-                Business name
-                <input className="input" placeholder="Business name" />
-              </label>
+              <label className="label">Business name</label>
+              <input className="input" name="business" placeholder="Business name" />
 
-              <label className="label">
-                Phone (optional)
-                <input className="input" placeholder="(555) 555-5555" />
-              </label>
+              <label className="label">Phone (optional)</label>
+              <input className="input" name="phone" placeholder="(555) 555-5555" />
 
-              <label className="label">
-                What do you need?
-                <textarea className="textarea" placeholder="Website, updates, redesign, SEO, etc." rows={4} />
-              </label>
+              <label className="label">What do you need?</label>
+              <textarea
+                className="textarea"
+                name="message"
+                placeholder="Website, updates, redesign, SEO, etc."
+              />
 
-              <button className="btn primary full" type="submit">
+              <button className="btnWide" type="submit">
                 Email Us To Start
               </button>
 
-              <p className="fine">
-                Response time: usually within 24 hours.
-              </p>
+              <p className="microText">Response time: usually within 24 hours.</p>
             </form>
           </div>
         </section>
 
-        <section className="twoCol">
+        {/* Lower grid */}
+        <section className="lowerGrid">
           <div className="card">
-            <h3 className="h3">What we do</h3>
-            <p className="text">
-              Clean, modern websites that make small businesses look established. We handle setup, updates,
-              and ongoing support so you can focus on running your business.
+            <h3>What we do</h3>
+            <p className="muted">
+              Clean, modern websites that make small businesses look established. We handle
+              setup, updates, and ongoing support so you can focus on running your business.
             </p>
+
             <ul className="list">
               <li>Custom 5-page website (Home, About, Services, Gallery/Projects, Contact)</li>
               <li>Mobile-first design + fast load speeds</li>
@@ -105,62 +119,68 @@ export default function Home() {
           </div>
 
           <div className="card">
-            <h3 className="h3">Pricing</h3>
-            <div className="pricing">
-              <div className="priceRow">
-                <div>
-                  <div className="priceName">Starter</div>
-                  <div className="priceDesc">Perfect for new businesses</div>
-                </div>
-                <div className="priceNum">$299</div>
-              </div>
-              <div className="priceMeta">Setup + $50/month maintenance</div>
-
-              <hr className="hr" />
-
-              <div className="priceRow">
-                <div>
-                  <div className="priceName">Standard</div>
-                  <div className="priceDesc">Most popular for local services</div>
-                </div>
-                <div className="priceNum">$499</div>
-              </div>
-              <div className="priceMeta">Setup + $75/month maintenance</div>
-
-              <hr className="hr" />
-
-              <div className="priceRow">
-                <div>
-                  <div className="priceName">Pro</div>
-                  <div className="priceDesc">Best for higher competition</div>
-                </div>
-                <div className="priceNum">$799</div>
-              </div>
-              <div className="priceMeta">Setup + $99/month maintenance</div>
-
-              <p className="fine">
-          
-              </p>
+            <div className="pricingHeader">
+              <h3>Pricing</h3>
+              <div className="pricingNote">Simple packages. Clear results.</div>
             </div>
+
+            <div className="pricingItem">
+              <div>
+                <div className="pricingName">Starter</div>
+                <div className="pricingDesc">Perfect for new businesses</div>
+                <div className="pricingSub">Setup + $50/month maintenance</div>
+              </div>
+              <div className="pricingPrice">$299</div>
+            </div>
+
+            <div className="divider" />
+
+            <div className="pricingItem">
+              <div>
+                <div className="pricingName">Standard</div>
+                <div className="pricingDesc">Most popular for local services</div>
+                <div className="pricingSub">Setup + $75/month maintenance</div>
+              </div>
+              <div className="pricingPrice">$499</div>
+            </div>
+
+            <div className="divider" />
+
+            <div className="pricingItem">
+              <div>
+                <div className="pricingName">Pro</div>
+                <div className="pricingDesc">Best for higher competition</div>
+                <div className="pricingSub">Setup + $99/month maintenance</div>
+              </div>
+              <div className="pricingPrice">$799</div>
+            </div>
+
+            <p className="microText" style={{ marginTop: 10 }}>
+              (We can adjust pricing later—this just gives you a clean professional baseline.)
+            </p>
           </div>
+
+          <section id="contact" className="contactCard">
+            <h3>Contact</h3>
+
+            <p>
+              Email us anytime:
+              <a href="mailto:hello@atlasdigitallab.com">hello@atlasdigitallab.com</a>
+            </p>
+
+            <p>
+              Phone:
+              <a href="tel:8327050313">(832) 705-0313</a>
+            </p>
+
+            <p className="microText">Response time: usually within 24 hours.</p>
+          </section>
         </section>
 
-        <section id="contact" className="card contact">
-          <h3 className="h3">Contact</h3>
-          <p className="text">
-            Email us anytime:{" "}
-            <a className="link" href="mailto:hello@atlasdigitallab.com">
-              hello@atlasdigitallab.com
-            </a>
-          </p>
-          <p className="fine">Response time: usually within 24 hours.</p>
-        </section>
-        <p>
-         Phone: <a href="tel:8327050313">(832) 705-0313</a>
-       </p>
+        {/* Footer */}
         <footer className="footer">
-          <div className="container">
-            <p className="fine">© {new Date().getFullYear()} Atlas Digital Lab. All rights reserved.</p>
+          <div className="footerRow">
+            <span>© {new Date().getFullYear()} Atlas Digital Lab. All rights reserved.</span>
           </div>
         </footer>
       </div>

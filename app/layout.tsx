@@ -1,25 +1,16 @@
-import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Atlas Digital Lab | Professional Websites for Small Businesses",
+export const metadata = {
+  title: "Atlas Digital Lab | Small Business Websites",
   description:
-    "Atlas Digital Lab builds modern, mobile-friendly websites for local businesses. Fast setup, simple pricing, and monthly support.",
-  openGraph: {
-    title: "Atlas Digital Lab",
-    description:
-      "Professional websites for small businesses. Simple pricing. Fast delivery.",
-    url: "https://atlasdigitallab.com",
-    siteName: "Atlas Digital Lab",
-    type: "website",
-  },
+    "Professional websites for small businesses. Fast setup. Simple pricing. Ongoing support.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body>{children}</body>

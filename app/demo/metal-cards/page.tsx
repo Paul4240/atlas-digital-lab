@@ -1,20 +1,19 @@
-"use client";
-
-import { useState } from "react";
+"use client"
+import { useState } from "react"
 
 export default function MetalCardsDemo() {
-  const [logo, setLogo] = useState<string | null>(null);
+  const [logo, setLogo] = useState<string | null>(null)
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const file = e.target.files?.[0]
+    if (!file) return
 
-    const reader = new FileReader();
+    const reader = new FileReader()
     reader.onloadend = () => {
-      setLogo(reader.result as string);
-    };
-    reader.readAsDataURL(file);
-  };
+      setLogo(reader.result as string)
+    }
+    reader.readAsDataURL(file)
+  }
 
   return (
     <main className="page">
@@ -32,11 +31,13 @@ export default function MetalCardsDemo() {
           </label>
         </div>
 
-        <div className="preview">
+        <div className="previewCard">
           {logo ? (
-            <img src={logo} alt="Logo Preview" />
+            <img src={logo} alt="Logo Preview" className="previewLogo" />
           ) : (
-            <div className="placeholder">Your Logo Preview</div>
+            <span className="previewPlaceholder">
+              Your Logo Preview
+            </span>
           )}
         </div>
       </section>
@@ -44,24 +45,24 @@ export default function MetalCardsDemo() {
       <section className="pricing">
         <div className="card">
           <h3>Starter</h3>
-          <h2>$299</h2>
+          <div className="price">$299</div>
           <p>100 Cards · Single-sided</p>
         </div>
 
-        <div className="card featured">
+        <div className="card pro">
           <h3>Pro</h3>
-          <h2>$499</h2>
+          <div className="price">$499</div>
           <p>200 Cards · Double-sided · QR option</p>
         </div>
 
         <div className="card">
           <h3>Elite</h3>
-          <h2>$799</h2>
+          <div className="price">$799</div>
           <p>300 Cards · Custom branding</p>
         </div>
       </section>
 
-      <style>{`
+      <style jsx>{`
         .page {
           min-height: 100vh;
           background: radial-gradient(circle at top left, #111827, #050505);
@@ -76,7 +77,7 @@ export default function MetalCardsDemo() {
           gap: 60px;
           align-items: center;
           max-width: 1200px;
-          margin: 0 auto 100px auto;
+          margin: 0 auto 120px auto;
         }
 
         .left h1 {
@@ -93,67 +94,88 @@ export default function MetalCardsDemo() {
 
         .uploadBtn {
           display: inline-block;
-          padding: 12px 24px;
+          padding: 14px 28px;
+          background: linear-gradient(90deg, #06b6d4, #3b82f6);
           border-radius: 10px;
-          background: linear-gradient(90deg, #2563eb, #06b6d4);
           cursor: pointer;
           font-weight: 600;
+          transition: 0.3s;
         }
 
-        .preview {
-          display: flex;
-          justify-content: center;
+        .uploadBtn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(0, 200, 255, 0.4);
         }
 
-        .placeholder {
-          width: 300px;
-          height: 180px;
-          background: #111;
-          border: 1px solid #333;
-          border-radius: 12px;
+        .previewCard {
+          width: 360px;
+          height: 220px;
+          border-radius: 16px;
+          background: linear-gradient(145deg, #1c1c1f, #111114);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #64748b;
+          box-shadow:
+            inset 0 0 40px rgba(0, 0, 0, 0.8),
+            0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
-        .preview img {
-          max-width: 300px;
-          border-radius: 12px;
-          border: 1px solid #333;
+        .previewLogo {
+          max-width: 70%;
+          max-height: 70%;
+          object-fit: contain;
+          filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.4));
+        }
+
+        .previewPlaceholder {
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 14px;
+          letter-spacing: 1px;
         }
 
         .pricing {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 30px;
-          max-width: 1000px;
+          max-width: 1100px;
           margin: 0 auto;
         }
 
         .card {
-          background: rgba(255,255,255,0.05);
           padding: 40px;
-          border-radius: 16px;
+          border-radius: 20px;
+          background: #111827;
+          border: 1px solid rgba(255, 255, 255, 0.06);
           text-align: center;
-          border: 1px solid rgba(255,255,255,0.1);
+          transition: 0.3s;
         }
 
-        .featured {
-          background: linear-gradient(135deg, #2563eb, #06b6d4);
+        .card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .pro {
+          background: linear-gradient(145deg, #06b6d4, #3b82f6);
           color: white;
           transform: scale(1.05);
         }
 
-        .card h2 {
+        .price {
           font-size: 36px;
-          margin: 10px 0;
+          font-weight: 700;
+          margin: 15px 0;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 980px) {
           .hero {
             grid-template-columns: 1fr;
             text-align: center;
+          }
+
+          .previewCard {
+            margin: 0 auto;
           }
 
           .pricing {
@@ -162,5 +184,5 @@ export default function MetalCardsDemo() {
         }
       `}</style>
     </main>
-  );
+  )
 }

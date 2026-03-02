@@ -1,126 +1,204 @@
-"use client";
+// app/demo/roofing/page.tsx
 
-export default function RoofingDemoHome() {
-  const SALES = "(832) 593-5740";
-  const SALES_TEL = "tel:+18325935740";
-  const OFFICE = "(832) 705-0313";
-  const OFFICE_TEL = "tel:+18327050313";
-  const EMAIL = "hello@atlasdigitallab.com";
-  const EMAIL_LINK = `mailto:${EMAIL}?subject=${encodeURIComponent(
-    "Roofing Demo - Free Estimate"
-  )}&body=${encodeURIComponent(
-    "Name:\nAddress/Area:\nPhone:\nType of service (repair/replacement/inspection):\nNotes:\n"
-  )}`;
+const MAIN_PHONE = "8327050313";
+const MAIN_PRETTY = "(832) 705-0313";
 
+const SALES_PHONE = "3463657906";
+const SALES_PRETTY = "(346) 365-7906";
+
+const EMAIL = "hello@atlasdigitallab.com";
+
+export default function RoofingDemo() {
   return (
-    <main className="container">
-      <div className="topPill">Demo · Roofing · Pro ($799)</div>
+    <main className="page">
+      <header className="top">
+        <div className="brand">Houston Elite Roofing</div>
 
-      <h1 className="h1" style={{ fontSize: 50 }}>Houston Elite Roofing</h1>
-      <p className="sub">
-        Professional roofing services in Houston, TX — fast response, honest pricing, and clean workmanship.
-      </p>
+        <div className="topBtns">
+          <a href={`tel:${MAIN_PHONE}`} className="btn soft">
+            Call {MAIN_PRETTY}
+          </a>
+          <a href={`tel:${SALES_PHONE}`} className="btn primary">
+            Sales {SALES_PRETTY}
+          </a>
+        </div>
+      </header>
 
-      <div className="heroGrid">
-        <section className="card heroCard">
-          <div className="kicker">Most Popular • $799 Build</div>
+      <section className="hero">
+        <div className="left">
+          <h1>
+            Roofing that feels <span>premium</span> — and gets calls.
+          </h1>
+          <p>
+            Fast response. Honest pricing. Clean workmanship.
+            Built to convert visitors into real leads.
+          </p>
 
-          <h2 style={{ margin: "10px 0 10px", fontSize: 32, letterSpacing: "-0.02em" }}>
-            Get a free estimate today.
-          </h2>
-
-          <ul className="bullets">
-            <li>Roof repair & leak detection</li>
-            <li>Full roof replacement</li>
-            <li>Storm damage inspection</li>
-            <li>Insurance claim assistance</li>
-          </ul>
-
-          <div className="btnRow">
-            <a className="btn btnPrimary" href={EMAIL_LINK}>Get a Free Estimate</a>
-            <a className="btn" href={SALES_TEL}>Call Sales {SALES}</a>
-            <a className="btn" href={OFFICE_TEL}>Call Office {OFFICE}</a>
-          </div>
-
-          <div className="pills">
-            <div className="pill">
-              <div className="pillTop">Same-week</div>
-              <div className="pillSub">Inspections available</div>
-            </div>
-            <div className="pill">
-              <div className="pillTop">Photos</div>
-              <div className="pillSub">Before/after proof</div>
-            </div>
-            <div className="pill">
-              <div className="pillTop">SEO</div>
-              <div className="pillSub">Built to rank</div>
-            </div>
-          </div>
-        </section>
-
-        <aside className="card">
-          <div className="cardInner">
-            <h3 className="formTitle">Quick Request</h3>
-            <p className="formSub">This demo uses “Email to Start” for simple lead capture.</p>
-
-            <div className="field">
-              <div className="label">Name</div>
-              <input className="input" placeholder="Your name" />
-            </div>
-
-            <div className="field">
-              <div className="label">Address / Area</div>
-              <input className="input" placeholder="Neighborhood or zip" />
-            </div>
-
-            <div className="field">
-              <div className="label">Phone</div>
-              <input className="input" placeholder="(555) 555-5555" />
-            </div>
-
-            <div className="field">
-              <div className="label">What do you need?</div>
-              <textarea className="textarea" placeholder="Repair, replacement, inspection, storm damage..." />
-            </div>
-
-            <a className="btn btnPrimary" style={{ width: "100%" }} href={EMAIL_LINK}>
-              Email Us To Start
+          <div className="ctaRow">
+            <a href={`tel:${MAIN_PHONE}`} className="btn primary">
+              Call Main
             </a>
-
-            <div className="smallNote">
-              Want a call back? Sales:{" "}
-              <a href={SALES_TEL} style={{ textDecoration: "underline" }}>{SALES}</a>{" "}
-              · Office:{" "}
-              <a href={OFFICE_TEL} style={{ textDecoration: "underline" }}>{OFFICE}</a>
-            </div>
+            <a href={`tel:${SALES_PHONE}`} className="btn soft">
+              Talk to Sales
+            </a>
           </div>
-        </aside>
-      </div>
-
-      <div className="sectionTitleRow">
-        <h2 className="sectionTitle">Why choose us?</h2>
-        <div className="sectionHint">Trust builders that convert</div>
-      </div>
-
-      <div className="demosGrid">
-        <div className="card demoCard">
-          <div className="demoTitle">Licensed & insured</div>
-          <p className="demoText">Clear expectations, clean scope, and documentation.</p>
         </div>
-        <div className="card demoCard">
-          <div className="demoTitle">Fast response</div>
-          <p className="demoText">Same-week inspections and quick estimates.</p>
-        </div>
-      </div>
 
-      <div className="btnRow" style={{ marginTop: 18 }}>
-        <a className="btn" href="/">Back to Atlas Digital Lab</a>
-      </div>
+        <div className="formCard">
+          <h3>Get a Free Estimate</h3>
+
+          <form
+            action={`mailto:${EMAIL}`}
+            method="post"
+            encType="text/plain"
+          >
+            <input name="name" placeholder="Name" />
+            <input name="company" placeholder="Company Name" />
+            <input name="phone" placeholder="Phone" />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows={5}
+            />
+            <button type="submit" className="btn primary full">
+              Email to Start
+            </button>
+          </form>
+
+          <div className="quick">
+            <a href={`tel:${MAIN_PHONE}`}>Main: {MAIN_PRETTY}</a>
+            <a href={`tel:${SALES_PHONE}`}>Sales: {SALES_PRETTY}</a>
+          </div>
+        </div>
+      </section>
 
       <footer className="footer">
-        <div>Demo page for Atlas Digital Lab.</div>
-        <div className="hiring">Now Hiring (part-time sales) — email hello@atlasdigitallab.com</div>
+        © 2026 Houston Elite Roofing — Demo
       </footer>
+
+      <style jsx>{`
+        .page {
+          min-height: 100vh;
+          background: radial-gradient(circle at 20% 0%, #0b2a4a 0%, #0b1426 60%, #070b14 100%);
+          color: #eaf2ff;
+          font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 30px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .brand {
+          font-weight: 900;
+          font-size: 18px;
+        }
+
+        .topBtns {
+          display: flex;
+          gap: 10px;
+        }
+
+        .hero {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 60px 30px;
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          gap: 40px;
+        }
+
+        h1 {
+          font-size: 48px;
+          line-height: 1.05;
+          margin-bottom: 20px;
+        }
+
+        h1 span {
+          color: #19d3ff;
+        }
+
+        p {
+          opacity: 0.85;
+          margin-bottom: 25px;
+        }
+
+        .ctaRow {
+          display: flex;
+          gap: 12px;
+        }
+
+        .formCard {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.12);
+          padding: 25px;
+          border-radius: 16px;
+          backdrop-filter: blur(8px);
+        }
+
+        .formCard h3 {
+          margin-bottom: 15px;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(0,0,0,0.25);
+          color: white;
+        }
+
+        .quick {
+          margin-top: 15px;
+          font-size: 13px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .footer {
+          text-align: center;
+          padding: 30px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          opacity: 0.8;
+        }
+
+        .btn {
+          padding: 10px 16px;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 14px;
+          display: inline-block;
+        }
+
+        .primary {
+          background: linear-gradient(135deg, #19d3ff, #4b7bff);
+          color: #071022;
+        }
+
+        .soft {
+          background: rgba(255,255,255,0.08);
+          color: white;
+          border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .full {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        @media (max-width: 900px) {
+          .hero {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </main>
   );
 }

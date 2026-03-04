@@ -1,3 +1,4 @@
+"use client";
 export default function MetalCardsDemo() {
   const MAIN_PHONE = "8327050313";
   const MAIN_PRETTY = "(832) 705-0313";

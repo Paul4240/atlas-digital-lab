@@ -1,5 +1,4 @@
 export default function RoofingDemo() {
-
   const MAIN_PHONE = "8327050313";
   const MAIN_PRETTY = "(832) 705-0313";
 
@@ -10,168 +9,173 @@ export default function RoofingDemo() {
 
   return (
     <main className="page">
-
       <header className="top">
-
-        <div className="brand">
-          Houston Elite Roofing
-        </div>
-
+        <div className="brand">Houston Elite Roofing</div>
         <div className="topBtns">
-
-          <a href={`tel:${MAIN_PHONE}`} className="btn soft">
+          <a className="pill" href={`tel:${MAIN_PHONE}`}>
             Call {MAIN_PRETTY}
           </a>
-
-          <a href={`tel:${SALES_PHONE}`} className="btn primary">
+          <a className="pill primary" href={`tel:${SALES_PHONE}`}>
             Sales {SALES_PRETTY}
           </a>
-
         </div>
-
       </header>
 
       <section className="hero">
-
         <div className="left">
-
           <h1>
-            Roofing that feels <span>premium</span> — and gets calls.
+            Roofing that feels <span className="accent">premium</span> — and gets calls.
           </h1>
+          <p className="sub">Fast response, honest pricing, and clean workmanship.</p>
 
-          <p>
-            Fast response, honest pricing, and clean workmanship.
-          </p>
-
-          <div className="ctaRow">
-
-            <a href={`tel:${MAIN_PHONE}`} className="btn primary">
+          <div className="btnRow">
+            <a className="btn primary" href={`tel:${MAIN_PHONE}`}>
               Call Office
             </a>
-
-            <a href={`tel:${SALES_PHONE}`} className="btn soft">
+            <a className="btn" href={`tel:${SALES_PHONE}`}>
               Call Sales
             </a>
-
           </div>
-
         </div>
 
         <div className="formCard">
-
-          <h3>Get a Free Estimate</h3>
-
-          <form
-            action={`mailto:${EMAIL}`}
-            method="post"
-            encType="text/plain"
-          >
-
-            <input name="name" placeholder="Name" />
-
-            <input name="company" placeholder="Company Name" />
-
-            <input name="phone" placeholder="Phone" />
-
-            <textarea name="message" rows={5} placeholder="Message" />
-
-            <button className="btn primary full">
-              Email to Start
-            </button>
-
-          </form>
-
+          <div className="formTitle">Get a Free Estimate</div>
+          <input className="inp" placeholder="Name" />
+          <input className="inp" placeholder="Company Name" />
+          <input className="inp" placeholder="Phone" />
+          <textarea className="inp ta" placeholder="Message" />
+          <a className="btn primary wide" href={`mailto:${EMAIL}`}>
+            Email to Start
+          </a>
         </div>
-
       </section>
 
-      <style>{`
-
-      .page{
-        min-height:100vh;
-        background: radial-gradient(circle at 20% 0%, #0b2a4a 0%, #0b1426 60%, #070b14 100%);
-        color:#eaf2ff;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      }
-
-      .top{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:20px 30px;
-        border-bottom:1px solid rgba(255,255,255,0.08);
-      }
-
-      .hero{
-        max-width:1100px;
-        margin:0 auto;
-        padding:60px 30px;
-        display:grid;
-        grid-template-columns:1fr 420px;
-        gap:40px;
-      }
-
-      h1{
-        font-size:48px;
-        margin-bottom:20px;
-      }
-
-      h1 span{
-        color:#19d3ff;
-      }
-
-      .ctaRow{
-        display:flex;
-        gap:12px;
-      }
-
-      .formCard{
-        background:rgba(255,255,255,0.05);
-        border:1px solid rgba(255,255,255,0.12);
-        padding:25px;
-        border-radius:16px;
-      }
-
-      input,textarea{
-        width:100%;
-        padding:12px;
-        margin-bottom:10px;
-        border-radius:10px;
-        border:1px solid rgba(255,255,255,0.1);
-        background:rgba(0,0,0,0.25);
-        color:white;
-      }
-
-      .btn{
-        padding:10px 16px;
-        border-radius:999px;
-        text-decoration:none;
-        font-weight:700;
-      }
-
-      .primary{
-        background:linear-gradient(135deg,#19d3ff,#4b7bff);
-        color:#071022;
-      }
-
-      .soft{
-        background:rgba(255,255,255,0.08);
-        color:white;
-        border:1px solid rgba(255,255,255,0.15);
-      }
-
-      .full{
-        width:100%;
-      }
-
-      @media (max-width:900px){
-        .hero{
-          grid-template-columns:1fr;
+      <style jsx>{`
+        .page {
+          min-height: 100vh;
+          background: radial-gradient(circle at 20% 0%, #0f2b4a 0%, #0b1426 55%, #070b14 100%);
+          color: #eaf2ff;
+          font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+          padding: 18px;
         }
-      }
 
+        .top {
+          max-width: 1100px;
+          margin: 0 auto 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+        .brand {
+          font-weight: 900;
+          opacity: 0.95;
+        }
+        .topBtns {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+        .pill {
+          padding: 10px 12px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          background: rgba(255, 255, 255, 0.06);
+          color: #eaf2ff;
+          text-decoration: none;
+          font-weight: 800;
+          font-size: 13px;
+          white-space: nowrap;
+        }
+        .pill.primary {
+          background: linear-gradient(135deg, #2fd3ff, #2b6bff);
+          border: none;
+          color: #06101f;
+        }
+
+        .hero {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 18px;
+          align-items: start;
+        }
+        h1 {
+          margin: 0 0 10px;
+          font-size: 44px;
+          line-height: 1.06;
+          letter-spacing: -0.02em;
+        }
+        .accent {
+          color: #2fd3ff;
+        }
+        .sub {
+          margin: 0 0 16px;
+          opacity: 0.9;
+        }
+        .btnRow {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 12px 14px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          background: rgba(255, 255, 255, 0.06);
+          color: #eaf2ff;
+          text-decoration: none;
+          font-weight: 900;
+        }
+        .btn.primary {
+          background: linear-gradient(135deg, #2fd3ff, #2b6bff);
+          border: none;
+          color: #06101f;
+        }
+        .btn.wide {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .formCard {
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: rgba(255, 255, 255, 0.06);
+          border-radius: 16px;
+          padding: 14px;
+        }
+        .formTitle {
+          font-weight: 900;
+          margin-bottom: 10px;
+        }
+        .inp {
+          width: 100%;
+          margin: 8px 0;
+          padding: 11px 12px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          background: rgba(0, 0, 0, 0.2);
+          color: #eaf2ff;
+          outline: none;
+        }
+        .ta {
+          min-height: 90px;
+          resize: vertical;
+        }
+
+        @media (max-width: 980px) {
+          .hero {
+            grid-template-columns: 1fr;
+          }
+          h1 {
+            font-size: 36px;
+          }
+        }
       `}</style>
-
     </main>
   );
 }

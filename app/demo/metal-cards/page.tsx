@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 
 export default function MetalCardsDemo() {
+  // ===== Contact (edit if needed) =====
   const MAIN_PHONE = "8327050313";
   const MAIN_PRETTY = "(832) 705-0313";
 
@@ -11,540 +12,912 @@ export default function MetalCardsDemo() {
 
   const EMAIL = "hello@atlasdigitallab.com";
 
-  type Finish = "black" | "gold" | "rose" | "silver";
-  const [finish, setFinish] = useState<Finish>("black");
-  const [logoDataUrl, setLogoDataUrl] = useState<string | null>(null);
+  // ===== Product state =====
+  const finishes = useMemo(
+    () => [
+      {
+        key: "black",
+        name: "Black",
+        note: "Bold, high contrast, luxury vibe.",
+        accent: "rgba(46,180,255,.9)",
+        glow: "rgba(46,180,255,.25)",
+      },
+      {
+        key: "gold",
+        name: "Gold",
+        note: "Premium look for high-ticket brands.",
+        accent: "rgba(255,205,64,.95)",
+        glow: "rgba(255,205,64,.18)",
+      },
+      {
+        key: "rose",
+        name: "Rose Gold",
+        note: "Modern + classy, creative work.",
+        accent: "rgba(255,140,175,.95)",
+        glow: "rgba(255,140,175,.16)",
+      },
+      {
+        key: "silver",
+        name: "Silver",
+        note: "Clean and professional. Brushed.",
+        accent: "rgba(215,230,255,.95)",
+        glow: "rgba(215,230,255,.12)",
+      },
+    ],
+    []
+  );
 
-  const finishLabel = useMemo(() => {
-    switch (finish) {
-      case "black":
-        return { title: "Black", desc: "Bold, high contrast, luxury vibe." };
-      case "gold":
-        return { title: "Gold", desc: "Premium look for high-ticket brands." };
-      case "rose":
-        return { title: "Rose Gold", desc: "Modern + classy, creative work." };
-      case "silver":
-        return { title: "Silver", desc: "Clean and professional. Brushed." };
-    }
-  }, [finish]);
+  const [finish, setFinish] = useState(finishes[0]);
+  const [logoUrl, setLogoUrl] = useState<string | null>(null);
+  const [brandName, setBrandName] = useState("JORDAN MILLER");
+  const [title, setTitle] = useState("Owner • Custom Metal Cards");
+  const [phone, setPhone] = useState(SALES_PRETTY);
+  const [site, setSite] = useState("brand.com");
+  const [city, setCity] = useState("Houston, TX");
 
-  const cardTheme = useMemo(() => {
-    if (finish === "black") {
-      return {
-        bg: "linear-gradient(180deg, rgba(18,22,30,0.95), rgba(10,12,16,0.95))",
-        border: "rgba(255,255,255,0.14)",
-        accent: "#00d2aa",
-        text: "#eaf2ff",
-        sub: "rgba(234,242,255,0.72)",
-        chip: "rgba(255,255,255,0.10)",
-      };
-    }
-    if (finish === "gold") {
-      return {
-        bg: "linear-gradient(180deg, rgba(30,26,16,0.96), rgba(16,13,8,0.96))",
-        border: "rgba(255,220,140,0.30)",
-        accent: "#ffd27a",
-        text: "#fff6e6",
-        sub: "rgba(255,246,230,0.75)",
-        chip: "rgba(255,210,122,0.14)",
-      };
-    }
-    if (finish === "rose") {
-      return {
-        bg: "linear-gradient(180deg, rgba(34,18,24,0.96), rgba(16,10,12,0.96))",
-        border: "rgba(255,170,200,0.26)",
-        accent: "#ff8fb5",
-        text: "#fff0f6",
-        sub: "rgba(255,240,246,0.74)",
-        chip: "rgba(255,143,181,0.14)",
-      };
-    }
-    return {
-      bg: "linear-gradient(180deg, rgba(26,28,32,0.96), rgba(12,13,16,0.96))",
-      border: "rgba(220,230,255,0.22)",
-      accent: "#b9d6ff",
-      text: "#eef5ff",
-      sub: "rgba(238,245,255,0.72)",
-      chip: "rgba(185,214,255,0.14)",
-    };
-  }, [finish]);
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
-  function onLogoChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => setLogoDataUrl(String(reader.result));
-    reader.readAsDataURL(file);
+  function onPickLogo() {
+    fileRef.current?.click();
   }
 
+  function onLogoChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    const url = URL.createObjectURL(f);
+    setLogoUrl(url);
+  }
+
+  const mailtoQuote = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    "Metal Cards Quote"
+  )}&body=${encodeURIComponent(
+    `Hi Atlas Digital Lab,\n\nI’m interested in premium metal business cards.\n\nFinish: ${finish.name}\nName: ${brandName}\nTitle: ${title}\nPhone: ${phone}\nWebsite: ${site}\nCity: ${city}\n\nNotes:\n`
+  )}`;
+
+  const telMain = `tel:${MAIN_PHONE}`;
+  const telSales = `tel:${SALES_PHONE}`;
+
+  // ===== Styles (no styled-jsx) =====
+  const s: Record<string, React.CSSProperties> = {
+    page: {
+      minHeight: "100vh",
+      color: "rgba(235,245,255,.92)",
+      fontFamily:
+        'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
+      background:
+        "radial-gradient(circle at 18% 0%, rgba(15,60,110,1) 0%, rgba(10,26,54,1) 45%, rgba(7,14,26,1) 100%)",
+    },
+    wrap: {
+      maxWidth: 1180,
+      margin: "0 auto",
+      padding: "22px 18px 64px",
+    },
+
+    // Top nav / pills
+    nav: {
+      position: "sticky",
+      top: 0,
+      zIndex: 50,
+      padding: "12px 0",
+      backdropFilter: "blur(12px)",
+      background: "rgba(7,14,26,.55)",
+      borderBottom: "1px solid rgba(255,255,255,.08)",
+    },
+    navInner: {
+      maxWidth: 1180,
+      margin: "0 auto",
+      padding: "0 18px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 12,
+    },
+    brand: { display: "flex", alignItems: "center", gap: 10, minWidth: 240 },
+    dot: {
+      width: 12,
+      height: 12,
+      borderRadius: 999,
+      background: finish.accent,
+      boxShadow: `0 0 24px ${finish.glow}`,
+      flexShrink: 0,
+    },
+    brandText: { lineHeight: 1.1 },
+    brandTitle: { fontWeight: 800, letterSpacing: ".2px", fontSize: 14 },
+    brandSub: { fontSize: 12, opacity: 0.75 },
+
+    navLinks: {
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      flexWrap: "wrap",
+      justifyContent: "flex-end",
+    },
+    pill: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "10px 12px",
+      borderRadius: 999,
+      border: "1px solid rgba(255,255,255,.14)",
+      background: "rgba(255,255,255,.06)",
+      color: "rgba(235,245,255,.92)",
+      textDecoration: "none",
+      fontWeight: 700,
+      fontSize: 13,
+      whiteSpace: "nowrap",
+      boxShadow: "0 10px 30px rgba(0,0,0,.15)",
+    },
+    pillPrimary: {
+      background: `linear-gradient(135deg, ${finish.accent}, rgba(0,210,170,.88))`,
+      border: "1px solid rgba(255,255,255,.10)",
+      color: "rgba(7,17,31,.95)",
+    },
+
+    // Hero
+    gridHero: {
+      display: "grid",
+      gridTemplateColumns: "1.05fr .95fr",
+      gap: 18,
+      paddingTop: 18,
+    },
+    heroCard: {
+      borderRadius: 24,
+      border: "1px solid rgba(255,255,255,.10)",
+      background:
+        "linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03))",
+      boxShadow: "0 25px 80px rgba(0,0,0,.35)",
+      overflow: "hidden",
+      position: "relative",
+    },
+    heroLeft: {
+      padding: "28px 26px",
+    },
+    eyebrowRow: {
+      display: "flex",
+      gap: 10,
+      flexWrap: "wrap",
+      marginBottom: 14,
+    },
+    chip: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "8px 10px",
+      borderRadius: 999,
+      border: "1px solid rgba(255,255,255,.14)",
+      background: "rgba(255,255,255,.05)",
+      fontWeight: 700,
+      fontSize: 12,
+      opacity: 0.92,
+    },
+    h1: {
+      fontSize: 54,
+      lineHeight: 1.02,
+      margin: 0,
+      fontWeight: 900,
+      letterSpacing: "-.8px",
+    },
+    accent: {
+      color: finish.accent,
+      textShadow: `0 0 26px ${finish.glow}`,
+    },
+    heroP: {
+      marginTop: 14,
+      marginBottom: 18,
+      fontSize: 16,
+      lineHeight: 1.5,
+      opacity: 0.86,
+      maxWidth: 620,
+    },
+    ctaRow: {
+      display: "flex",
+      gap: 10,
+      flexWrap: "wrap",
+      marginTop: 10,
+    },
+    btn: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      padding: "14px 16px",
+      borderRadius: 14,
+      border: "1px solid rgba(255,255,255,.12)",
+      background: "rgba(255,255,255,.06)",
+      color: "rgba(235,245,255,.92)",
+      textDecoration: "none",
+      fontWeight: 800,
+      fontSize: 14,
+      boxShadow: "0 18px 45px rgba(0,0,0,.25)",
+      cursor: "pointer",
+      minWidth: 180,
+    },
+    btnPrimary: {
+      background: `linear-gradient(135deg, ${finish.accent}, rgba(0,210,170,.92))`,
+      border: "1px solid rgba(255,255,255,.10)",
+      color: "rgba(7,17,31,.95)",
+    },
+    subRow: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+      gap: 10,
+      marginTop: 18,
+    },
+    stat: {
+      borderRadius: 18,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.18)",
+      padding: "14px 14px",
+    },
+    statTop: { fontWeight: 900, fontSize: 14 },
+    statSub: { opacity: 0.78, fontSize: 12, marginTop: 6, lineHeight: 1.35 },
+
+    // Right side builder / mock
+    heroRight: {
+      padding: 18,
+      display: "grid",
+      gridTemplateRows: "auto 1fr",
+      gap: 12,
+    },
+    builder: {
+      borderRadius: 20,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.22)",
+      padding: 16,
+    },
+    builderTitle: { fontWeight: 900, fontSize: 14, marginBottom: 6 },
+    builderSub: { opacity: 0.72, fontSize: 12, lineHeight: 1.35 },
+
+    finishGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: 10,
+      marginTop: 12,
+    },
+    finishBtn: {
+      textAlign: "left",
+      borderRadius: 16,
+      border: "1px solid rgba(255,255,255,.12)",
+      background: "rgba(255,255,255,.06)",
+      padding: 12,
+      cursor: "pointer",
+      color: "rgba(235,245,255,.92)",
+    },
+    finishBtnActive: {
+      border: `1px solid ${finish.accent}`,
+      boxShadow: `0 0 0 3px ${finish.glow}`,
+      background: "rgba(255,255,255,.07)",
+    },
+    finishName: { fontWeight: 900, fontSize: 13 },
+    finishNote: { opacity: 0.72, fontSize: 12, marginTop: 6, lineHeight: 1.25 },
+
+    uploadRow: {
+      display: "flex",
+      gap: 10,
+      alignItems: "center",
+      marginTop: 12,
+      flexWrap: "wrap",
+    },
+    uploadBtn: {
+      flex: "1 1 220px",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      borderRadius: 14,
+      border: "1px solid rgba(255,255,255,.12)",
+      background: `linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05))`,
+      padding: "12px 14px",
+      fontWeight: 900,
+      cursor: "pointer",
+    },
+    uploadHint: { opacity: 0.65, fontSize: 12, flex: "1 1 140px" },
+
+    mockRow: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 12,
+      marginTop: 12,
+    },
+    mockCard: {
+      borderRadius: 20,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.22)",
+      padding: 16,
+      position: "relative",
+      overflow: "hidden",
+    },
+    mockTop: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      gap: 10,
+    },
+    mockName: { fontWeight: 1000, letterSpacing: ".2px" as any, fontSize: 13 },
+    mockTitle: { opacity: 0.75, fontSize: 12, marginTop: 4 },
+    mockMeta: { opacity: 0.85, fontSize: 12, marginTop: 10, lineHeight: 1.5 },
+    logoBox: {
+      marginTop: 14,
+      width: "100%",
+      height: 78,
+      borderRadius: 16,
+      border: "1px dashed rgba(255,255,255,.18)",
+      background: "rgba(255,255,255,.05)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      overflow: "hidden",
+    },
+    logoImg: { maxWidth: "92%", maxHeight: "92%", objectFit: "contain" },
+
+    scanBox: {
+      borderRadius: 20,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.22)",
+      padding: 16,
+    },
+    scanTitle: { fontWeight: 900, fontSize: 13 },
+    scanSub: { opacity: 0.75, fontSize: 12, marginTop: 6, lineHeight: 1.35 },
+    list: { marginTop: 10, paddingLeft: 16, opacity: 0.88, fontSize: 12 },
+
+    // Sections
+    section: { marginTop: 18 },
+    sectionCard: {
+      borderRadius: 24,
+      border: "1px solid rgba(255,255,255,.10)",
+      background:
+        "linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03))",
+      boxShadow: "0 25px 80px rgba(0,0,0,.30)",
+      overflow: "hidden",
+    },
+    sectionInner: { padding: "22px 18px" },
+    sectionTitle: { fontSize: 20, fontWeight: 1000, margin: 0 },
+    sectionSub: { marginTop: 8, opacity: 0.75, fontSize: 13, lineHeight: 1.45 },
+
+    // Pricing
+    pricingGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+      gap: 12,
+      marginTop: 14,
+    },
+    priceCard: {
+      borderRadius: 20,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.22)",
+      padding: 16,
+    },
+    priceTop: {
+      display: "flex",
+      alignItems: "baseline",
+      justifyContent: "space-between",
+      gap: 10,
+    },
+    priceName: { fontWeight: 1000, fontSize: 14 },
+    badge: {
+      fontSize: 11,
+      fontWeight: 900,
+      padding: "6px 10px",
+      borderRadius: 999,
+      border: "1px solid rgba(255,255,255,.12)",
+      background: "rgba(255,255,255,.06)",
+      opacity: 0.9,
+      whiteSpace: "nowrap",
+    },
+    price: { fontSize: 28, fontWeight: 1000, marginTop: 10 },
+    priceSmall: { opacity: 0.72, fontSize: 12, marginTop: 6 },
+    ul: { marginTop: 12, paddingLeft: 16, opacity: 0.9, fontSize: 12 },
+    priceBtn: {
+      marginTop: 12,
+      width: "100%",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "12px 14px",
+      borderRadius: 14,
+      border: "1px solid rgba(255,255,255,.12)",
+      background: "rgba(255,255,255,.06)",
+      color: "rgba(235,245,255,.92)",
+      fontWeight: 1000,
+      cursor: "pointer",
+      textDecoration: "none",
+    },
+
+    // FAQ
+    faqGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: 12,
+      marginTop: 14,
+    },
+    faq: {
+      borderRadius: 20,
+      border: "1px solid rgba(255,255,255,.10)",
+      background: "rgba(0,0,0,.22)",
+      padding: 16,
+    },
+    faqQ: { fontWeight: 1000, fontSize: 13 },
+    faqA: { marginTop: 8, opacity: 0.78, fontSize: 12, lineHeight: 1.45 },
+
+    // Footer
+    footer: {
+      marginTop: 20,
+      paddingTop: 18,
+      borderTop: "1px solid rgba(255,255,255,.08)",
+      display: "flex",
+      justifyContent: "space-between",
+      flexWrap: "wrap",
+      gap: 12,
+      opacity: 0.8,
+      fontSize: 12,
+    },
+
+    // Mobile
+    mobileOnlyNote: { display: "none" },
+  };
+
+  // Responsive tweaks (inline)
+  const responsiveCss: React.CSSProperties = {
+    // placeholder to keep TS happy
+  };
+
   return (
-    <main className="page">
-      <header className="top">
-        <div className="brandBlock">
-          <div className="titleSmall">Metal Business Cards Demo</div>
-          <div className="subtitleSmall">Premium engraved + laser-cut cards</div>
-        </div>
-
-        <div className="topBtns">
-          <a className="pill" href={`tel:${MAIN_PHONE}`}>
-            Main {MAIN_PRETTY}
-          </a>
-          <a className="pill primary" href={`tel:${SALES_PHONE}`}>
-            Sales {SALES_PRETTY}
-          </a>
-        </div>
-      </header>
-
-      <section className="hero">
-        <div className="heroLeft">
-          <div className="chips">
-            <span className="chip">Premium Look</span>
-            <span className="chip">Fast turnaround</span>
-            <span className="chip">Crisp detail</span>
-            <span className="chip">Strong first impression</span>
+    <main style={s.page}>
+      {/* Sticky Top */}
+      <div style={s.nav}>
+        <div style={s.navInner}>
+          <div style={s.brand}>
+            <div style={s.dot} />
+            <div style={s.brandText}>
+              <div style={s.brandTitle}>Metal Business Cards Demo</div>
+              <div style={s.brandSub}>Premium engraved • laser-etch • high-end</div>
+            </div>
           </div>
 
-          <h1 className="h1">
-            Make your first
-            <br />
-            impression feel <span className="accent">expensive</span>.
-          </h1>
-
-          <p className="lead">
-            Metal business cards that people keep. Deep engraving or laser etch,
-            clean typography, and premium finishes — designed to look high-end
-            and convert conversations into customers.
-          </p>
-
-          <div className="ctaRow">
-            <a className="btn primary" href={`tel:${SALES_PHONE}`}>
-              Text/Call to Order
+          <div style={s.navLinks}>
+            <a href={telMain} style={s.pill}>
+              Main {MAIN_PRETTY}
             </a>
-            <a
-              className="btn"
-              href={`mailto:${EMAIL}?subject=Metal%20Cards%20Quote`}
-            >
-              Email for a Quote
+            <a href={telSales} style={{ ...s.pill, ...s.pillPrimary }}>
+              Sales {SALES_PRETTY}
+            </a>
+            <a href={mailtoQuote} style={s.pill}>
+              Email Quote
             </a>
           </div>
+        </div>
+      </div>
 
-          <div className="miniRow">
-            <div className="miniCard">
-              <div className="miniTop">1–3 Days</div>
-              <div className="miniSub">Typical proof + production start</div>
+      <div style={s.wrap}>
+        {/* HERO */}
+        <section style={s.gridHero}>
+          <div style={{ ...s.heroCard, ...s.heroLeft }}>
+            <div style={s.eyebrowRow}>
+              <div style={s.chip}>Premium Look</div>
+              <div style={s.chip}>Fast turnaround</div>
+              <div style={s.chip}>Crisp detail</div>
+              <div style={s.chip}>Strong first impression</div>
             </div>
-            <div className="miniCard">
-              <div className="miniTop">Premium Finish</div>
-              <div className="miniSub">Matte / gloss / brushed look</div>
+
+            <h1 style={s.h1}>
+              Make your first impression feel{" "}
+              <span style={s.accent}>expensive</span>.
+            </h1>
+
+            <p style={s.heroP}>
+              Metal business cards that people keep. Deep engraving or laser etch,
+              clean typography, and premium finishes — designed to look high-end
+              and convert conversations into customers.
+            </p>
+
+            <div style={s.ctaRow}>
+              <a href={telSales} style={{ ...s.btn, ...s.btnPrimary }}>
+                Call / Text to Order
+              </a>
+              <a href={mailtoQuote} style={s.btn}>
+                Email for a Quote
+              </a>
             </div>
-            <div className="miniCard">
-              <div className="miniTop">High Detail</div>
-              <div className="miniSub">Tiny text stays sharp</div>
+
+            <div style={s.subRow}>
+              <div style={s.stat}>
+                <div style={s.statTop}>1–3 Days</div>
+                <div style={s.statSub}>Typical proof + production start</div>
+              </div>
+              <div style={s.stat}>
+                <div style={s.statTop}>Premium Finish</div>
+                <div style={s.statSub}>Matte / gloss / brushed look</div>
+              </div>
+              <div style={s.stat}>
+                <div style={s.statTop}>High Detail</div>
+                <div style={s.statSub}>Tiny text stays sharp</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="heroRight">
-          <div className="panel">
-            <div className="panelTitle">Choose a finish</div>
-            <div className="panelNote">
-              This changes the demo mockups below so it feels like a real
-              product page (not a service page).
+          {/* Right side: configurator + mock */}
+          <div style={{ ...s.heroCard, ...s.heroRight }}>
+            <div style={s.builder}>
+              <div style={s.builderTitle}>Choose a finish</div>
+              <div style={s.builderSub}>
+                This changes the demo mockups below so it feels like a real product
+                page (not a service page).
+              </div>
+
+              <div style={s.finishGrid}>
+                {finishes.map((f) => {
+                  const active = f.key === finish.key;
+                  return (
+                    <button
+                      key={f.key}
+                      onClick={() => setFinish(f)}
+                      style={{
+                        ...s.finishBtn,
+                        ...(active ? s.finishBtnActive : {}),
+                      }}
+                      type="button"
+                    >
+                      <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                        <div
+                          style={{
+                            width: 10,
+                            height: 10,
+                            borderRadius: 999,
+                            background: f.accent,
+                            boxShadow: `0 0 20px ${f.glow}`,
+                            flexShrink: 0,
+                          }}
+                        />
+                        <div>
+                          <div style={s.finishName}>{f.name}</div>
+                          <div style={s.finishNote}>{f.note}</div>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div style={s.uploadRow}>
+                <input
+                  ref={fileRef}
+                  type="file"
+                  accept="image/png,image/jpeg,image/svg+xml,image/webp"
+                  style={{ display: "none" }}
+                  onChange={onLogoChange}
+                />
+                <button type="button" onClick={onPickLogo} style={s.uploadBtn}>
+                  Upload Your Logo
+                </button>
+                <div style={s.uploadHint}>PNG/JPG/SVG</div>
+              </div>
+
+              <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <Field label="Name" value={brandName} onChange={setBrandName} />
+                  <Field label="Title" value={title} onChange={setTitle} />
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <Field label="Phone" value={phone} onChange={setPhone} />
+                  <Field label="Website" value={site} onChange={setSite} />
+                </div>
+                <Field label="Location" value={city} onChange={setCity} />
+              </div>
             </div>
 
-            <div className="finishGrid">
-              <button
-                type="button"
-                className={`finishBtn ${finish === "black" ? "on" : ""}`}
-                onClick={() => setFinish("black")}
-              >
-                <div className="finishName">Black</div>
-                <div className="finishDesc">Bold, high contrast, luxury vibe.</div>
-              </button>
-
-              <button
-                type="button"
-                className={`finishBtn ${finish === "gold" ? "on" : ""}`}
-                onClick={() => setFinish("gold")}
-              >
-                <div className="finishName">Gold</div>
-                <div className="finishDesc">Premium look for high-ticket brands.</div>
-              </button>
-
-              <button
-                type="button"
-                className={`finishBtn ${finish === "rose" ? "on" : ""}`}
-                onClick={() => setFinish("rose")}
-              >
-                <div className="finishName">Rose Gold</div>
-                <div className="finishDesc">Modern + classy, creative work.</div>
-              </button>
-
-              <button
-                type="button"
-                className={`finishBtn ${finish === "silver" ? "on" : ""}`}
-                onClick={() => setFinish("silver")}
-              >
-                <div className="finishName">Silver</div>
-                <div className="finishDesc">Clean and professional. Brushed.</div>
-              </button>
-            </div>
-
-            <label className="uploadRow">
-              <span className="uploadBtn">Upload Your Logo</span>
-              <span className="uploadHint">PNG/JPG/SVG</span>
-              <input
-                className="fileInput"
-                type="file"
-                accept="image/*"
-                onChange={onLogoChange}
-              />
-            </label>
-
-            <div className="mockRow">
-              <div className="mockCard" style={{ background: cardTheme.bg, borderColor: cardTheme.border }}>
-                <div className="mockName" style={{ color: cardTheme.text }}>
-                  JORDAN MILLER
-                </div>
-                <div className="mockRole" style={{ color: cardTheme.sub }}>
-                  Owner · Custom Metal Cards
-                </div>
-
-                <div className="mockLines">
-                  <div className="mockLine" style={{ color: cardTheme.text }}>
-                    {SALES_PRETTY}
+            <div style={s.mockRow}>
+              <div style={s.mockCard}>
+                <div style={s.mockTop}>
+                  <div>
+                    <div style={s.mockName}>{brandName.toUpperCase()}</div>
+                    <div style={s.mockTitle}>{title}</div>
                   </div>
-                  <div className="mockLine" style={{ color: cardTheme.text }}>
-                    {EMAIL}
-                  </div>
-                  <div className="mockLine" style={{ color: cardTheme.sub }}>
-                    brand.com · Houston, TX
+                  <div
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 900,
+                      padding: "6px 10px",
+                      borderRadius: 999,
+                      border: `1px solid ${finish.accent}`,
+                      color: finish.accent,
+                      background: "rgba(255,255,255,.04)",
+                      boxShadow: `0 0 0 3px ${finish.glow}`,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {finish.name} Finish
                   </div>
                 </div>
 
-                <div className="logoBox" style={{ borderColor: cardTheme.border, background: cardTheme.chip }}>
-                  {logoDataUrl ? (
+                <div style={s.mockMeta}>
+                  {phone}
+                  <br />
+                  {EMAIL}
+                  <br />
+                  {site} • {city}
+                </div>
+
+                <div style={s.logoBox}>
+                  {logoUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={logoDataUrl}
-                      alt="Uploaded logo"
-                      className="logoImg"
-                    />
+                    <img src={logoUrl} alt="Logo preview" style={s.logoImg} />
                   ) : (
-                    <div className="logoPlaceholder" style={{ color: cardTheme.sub }}>
+                    <div style={{ opacity: 0.7, fontSize: 12, fontWeight: 800 }}>
                       Your logo here
                     </div>
                   )}
                 </div>
 
-                <div className="mockFoot" style={{ color: cardTheme.sub }}>
+                <div style={{ marginTop: 10, opacity: 0.6, fontSize: 12 }}>
                   Designed to feel premium.
                 </div>
               </div>
 
-              <div className="mockInfo" style={{ borderColor: cardTheme.border }}>
-                <div className="mockInfoTitle" style={{ color: cardTheme.text }}>
-                  SCAN TO SAVE
-                </div>
-                <div className="mockInfoSub" style={{ color: cardTheme.sub }}>
+              <div style={s.scanBox}>
+                <div style={s.scanTitle}>SCAN TO SAVE</div>
+                <div style={s.scanSub}>
                   QR + vCard ready
+                  <br />✓ QR Code • NFC Option
                 </div>
-
-                <ul className="checkList" style={{ color: cardTheme.sub }}>
-                  <li>
-                    <span className="check" style={{ color: cardTheme.accent }}>✓</span> QR Code + NFC Option
-                  </li>
-                  <li>
-                    <span className="check" style={{ color: cardTheme.accent }}>✓</span> Clean typography
-                  </li>
-                  <li>
-                    <span className="check" style={{ color: cardTheme.accent }}>✓</span> Sharp edges
-                  </li>
-                  <li>
-                    <span className="check" style={{ color: cardTheme.accent }}>✓</span> Demo mockups only — your real design uses your logo + brand colors.
-                  </li>
+                <ul style={s.list}>
+                  <li>Clean typography</li>
+                  <li>Sharp edges</li>
+                  <li>Demo mockups only — your real design uses your logo + brand colors.</li>
                 </ul>
+
+                <div style={{ marginTop: 12, display: "flex", gap: 10, flexWrap: "wrap" }}>
+                  <a href={telSales} style={{ ...s.priceBtn, ...s.btnPrimary }}>
+                    Text Sales
+                  </a>
+                  <a href={mailtoQuote} style={s.priceBtn}>
+                    Email Quote
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="panelFooter" style={{ color: cardTheme.sub }}>
-              Selected: <span style={{ color: cardTheme.text, fontWeight: 700 }}>{finishLabel.title}</span>
+        {/* PRICING / PACKAGES */}
+        <section style={s.section}>
+          <div style={s.sectionCard}>
+            <div style={s.sectionInner}>
+              <h2 style={s.sectionTitle}>Packages</h2>
+              <div style={s.sectionSub}>
+                Built to look like a $2,000+ product page: finishes, mockups, trust blocks, and a clear path to checkout.
+              </div>
+
+              <div style={s.pricingGrid}>
+                <div style={s.priceCard}>
+                  <div style={s.priceTop}>
+                    <div style={s.priceName}>Starter</div>
+                    <div style={s.badge}>Best for first run</div>
+                  </div>
+                  <div style={s.price}>$299</div>
+                  <div style={s.priceSmall}>Design + proof • single finish</div>
+                  <ul style={s.ul}>
+                    <li>1 card layout + revisions</li>
+                    <li>Finish selection</li>
+                    <li>Print-ready files</li>
+                    <li>Email support</li>
+                  </ul>
+                  <a href={mailtoQuote} style={s.priceBtn}>
+                    Get Starter Quote
+                  </a>
+                </div>
+
+                <div style={s.priceCard}>
+                  <div style={s.priceTop}>
+                    <div style={s.priceName}>Pro</div>
+                    <div style={{ ...s.badge, border: `1px solid ${finish.accent}` }}>
+                      Most Popular
+                    </div>
+                  </div>
+                  <div style={s.price}>$799</div>
+                  <div style={s.priceSmall}>Design + mockups • 2 finishes</div>
+                  <ul style={s.ul}>
+                    <li>2 mockups + finish variants</li>
+                    <li>Logo placement + sizing</li>
+                    <li>QR / vCard option</li>
+                    <li>Priority turnaround</li>
+                  </ul>
+                  <a href={telSales} style={{ ...s.priceBtn, ...s.btnPrimary }}>
+                    Talk to Sales
+                  </a>
+                </div>
+
+                <div style={s.priceCard}>
+                  <div style={s.priceTop}>
+                    <div style={s.priceName}>Elite</div>
+                    <div style={{ ...s.badge, border: "1px solid rgba(255,205,64,.65)" }}>
+                      Premium Option
+                    </div>
+                  </div>
+                  <div style={s.price}>$1,200</div>
+                  <div style={s.priceSmall}>Full set • 4 finishes • best polish</div>
+                  <ul style={s.ul}>
+                    <li>4 finish variants</li>
+                    <li>Premium product page layout</li>
+                    <li>Conversion-focused CTA sections</li>
+                    <li>“High-end” typography + spacing</li>
+                  </ul>
+                  <a href={mailtoQuote} style={{ ...s.priceBtn, ...s.btnPrimary }}>
+                    Build My Elite Set
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* FAQ */}
+        <section style={s.section}>
+          <div style={s.sectionCard}>
+            <div style={s.sectionInner}>
+              <h2 style={s.sectionTitle}>FAQ</h2>
+              <div style={s.sectionSub}>
+                These blocks are here on purpose — they make the page feel like a premium product page and reduce “back and forth” questions.
+              </div>
+
+              <div style={s.faqGrid}>
+                <div style={s.faq}>
+                  <div style={s.faqQ}>Does my logo upload really work?</div>
+                  <div style={s.faqA}>
+                    Yes — it previews instantly in the mock card. This is a demo version using local preview; production can store the file and generate final mockups.
+                  </div>
+                </div>
+                <div style={s.faq}>
+                  <div style={s.faqQ}>Can I change finishes?</div>
+                  <div style={s.faqA}>
+                    Yep — tap a finish and the accents/glow update. This is exactly the “premium product” feel people expect.
+                  </div>
+                </div>
+                <div style={s.faq}>
+                  <div style={s.faqQ}>Can you add NFC / QR?</div>
+                  <div style={s.faqA}>
+                    Absolutely. We can generate a QR to your website, contact card, or booking page and offer NFC options depending on the card vendor.
+                  </div>
+                </div>
+                <div style={s.faq}>
+                  <div style={s.faqQ}>How do I order fast?</div>
+                  <div style={s.faqA}>
+                    Text Sales and we’ll reply with a quick form. If you prefer email, hit “Email Quote” and it auto-fills the details.
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ marginTop: 16, display: "flex", gap: 10, flexWrap: "wrap" }}>
+                <a href={telSales} style={{ ...s.btn, ...s.btnPrimary }}>
+                  Text Sales {SALES_PRETTY}
+                </a>
+                <a href={mailtoQuote} style={s.btn}>
+                  Email Quote
+                </a>
+                <a href={telMain} style={s.btn}>
+                  Call Main {MAIN_PRETTY}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer style={s.footer}>
+          <div>© {new Date().getFullYear()} Atlas Digital Lab — Websites • SEO • Branding</div>
+          <div>
+            Main: {MAIN_PRETTY} • Sales: {SALES_PRETTY} • {EMAIL}
+          </div>
+        </footer>
+      </div>
+
+      {/* Simple responsive CSS (no styled-jsx) */}
       <style>{`
-        .page{
-          min-height:100vh;
-          background: radial-gradient(circle at 20% 0%, #0f2b4a 0%, #0b1426 55%, #070b14 100%);
-          color:#eaf2ff;
-          font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-          padding: 18px 18px 40px;
+        @media (max-width: 980px) {
+          ._hideDesktop { display: none !important; }
         }
+      `}</style>
 
-        .top{
-          position: sticky;
-          top: 0;
-          z-index: 50;
-          backdrop-filter: blur(10px);
-          background: rgba(10, 15, 25, 0.55);
-          border: 1px solid rgba(255,255,255,0.10);
-          border-radius: 16px;
-          padding: 12px 14px;
-          display:flex;
-          align-items:center;
-          justify-content:space-between;
-          gap: 12px;
+      {/* Global responsive via style tag (still not styled-jsx) */}
+      <style>{`
+        @media (max-width: 980px) {
+          .pageWrap { padding: 18px 14px 56px !important; }
         }
+      `}</style>
 
-        .brandBlock{ display:flex; flex-direction:column; gap:2px; min-width: 220px; }
-        .titleSmall{ font-weight: 800; letter-spacing: .2px; }
-        .subtitleSmall{ font-size: 12px; color: rgba(234,242,255,0.65); }
-
-        .topBtns{
-          display:flex;
-          gap:10px;
-          flex-wrap: wrap; /* IMPORTANT: prevents overlap on phones */
-          justify-content: flex-end;
+      {/* More practical responsiveness using plain <style> */}
+      <style>{`
+        @media (max-width: 980px) {
+          main { }
         }
-
-        .pill{
-          display:inline-flex;
-          align-items:center;
-          justify-content:center;
-          padding: 10px 14px;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-          color: #eaf2ff;
-          text-decoration:none;
-          font-weight: 700;
-          white-space: nowrap;
+        @media (max-width: 980px) {
+          /* hero becomes stacked */
+          section[style*="grid-template-columns: 1.05fr .95fr"] {
+            grid-template-columns: 1fr !important;
+          }
         }
-        .pill.primary{
-          background: linear-gradient(135deg, rgba(46,180,255,0.95), rgba(0,210,170,0.95));
-          color: #07111f;
-          border: 0;
+        @media (max-width: 980px) {
+          /* pricing to one column */
+          div[style*="grid-template-columns: repeat(3"] {
+            grid-template-columns: 1fr !important;
+          }
         }
-
-        .hero{
-          display:grid;
-          grid-template-columns: 1.15fr 0.85fr;
-          gap: 18px;
-          margin-top: 16px;
-          align-items: start;
+        @media (max-width: 980px) {
+          /* faq to one column */
+          div[style*="grid-template-columns: repeat(2"] {
+            grid-template-columns: 1fr !important;
+          }
         }
-
-        .heroLeft{
-          border: 1px solid rgba(255,255,255,0.10);
-          background: rgba(255,255,255,0.06);
-          border-radius: 22px;
-          padding: 22px;
+        @media (max-width: 980px) {
+          /* mock row to one column */
+          div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 12px"] {
+            grid-template-columns: 1fr !important;
+          }
         }
-
-        .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 14px; }
-        .chip{
-          padding: 8px 12px;
-          border-radius: 999px;
-          font-weight: 700;
-          font-size: 12px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-          color: rgba(234,242,255,0.9);
-          white-space: nowrap;
-        }
-
-        .h1{
-          font-size: 56px;
-          line-height: 1.02;
-          margin: 0 0 12px;
-          letter-spacing: -0.8px;
-        }
-        .accent{
-          background: linear-gradient(135deg, #2eb4ff, #00d2aa);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-
-        .lead{
-          margin: 0 0 18px;
-          color: rgba(234,242,255,0.72);
-          font-size: 16px;
-          max-width: 56ch;
-        }
-
-        .ctaRow{
-          display:flex;
-          gap: 12px;
-          flex-wrap: wrap; /* IMPORTANT: stacks nicely on phones */
-          margin-bottom: 16px;
-        }
-
-        .btn{
-          display:inline-flex;
-          align-items:center;
-          justify-content:center;
-          padding: 14px 18px;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-          color: #eaf2ff;
-          text-decoration:none;
-          font-weight: 800;
-          letter-spacing: .2px;
-          min-width: 180px;
-          flex: 1 1 220px; /* IMPORTANT: stacks nicely on phones */
-        }
-        .btn.primary{
-          background: linear-gradient(135deg, rgba(46,180,255,0.95), rgba(0,210,170,0.95));
-          color: #07111f;
-          border: 0;
-        }
-
-        .miniRow{
-          display:flex;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-        .miniCard{
-          flex: 1 1 180px;
-          border: 1px solid rgba(255,255,255,0.10);
-          background: rgba(0,0,0,0.12);
-          border-radius: 16px;
-          padding: 12px 12px;
-        }
-        .miniTop{ font-weight: 900; }
-        .miniSub{ font-size: 12px; color: rgba(234,242,255,0.7); margin-top: 3px; }
-
-        .heroRight{
-          border: 1px solid rgba(255,255,255,0.10);
-          background: rgba(255,255,255,0.06);
-          border-radius: 22px;
-          padding: 18px;
-        }
-
-        .panelTitle{ font-weight: 900; font-size: 16px; margin-bottom: 6px; }
-        .panelNote{ font-size: 12px; color: rgba(234,242,255,0.65); margin-bottom: 12px; }
-
-        .finishGrid{
-          display:grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
-          margin-bottom: 12px;
-        }
-        .finishBtn{
-          text-align:left;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(0,0,0,0.12);
-          border-radius: 14px;
-          padding: 12px;
-          color: #eaf2ff;
-          cursor: pointer;
-        }
-        .finishBtn.on{
-          border-color: rgba(46,180,255,0.65);
-          box-shadow: 0 0 0 1px rgba(46,180,255,0.25) inset;
-        }
-        .finishName{ font-weight: 900; margin-bottom: 4px; }
-        .finishDesc{ font-size: 12px; color: rgba(234,242,255,0.65); }
-
-        .uploadRow{
-          display:flex;
-          align-items:center;
-          gap: 10px;
-          flex-wrap: wrap;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(0,0,0,0.12);
-          border-radius: 14px;
-          padding: 10px 12px;
-          cursor: pointer;
-          margin-bottom: 12px;
-        }
-        .uploadBtn{
-          font-weight: 900;
-          background: linear-gradient(135deg, rgba(46,180,255,0.95), rgba(0,210,170,0.95));
-          color: #07111f;
-          border-radius: 999px;
-          padding: 10px 14px;
-          display:inline-flex;
-          align-items:center;
-          justify-content:center;
-        }
-        .uploadHint{ font-size: 12px; color: rgba(234,242,255,0.65); }
-        .fileInput{ display:none; }
-
-        .mockRow{
-          display:grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 12px;
-        }
-
-        .mockCard{
-          border: 1px solid rgba(255,255,255,0.14);
-          border-radius: 18px;
-          padding: 14px;
-          min-height: 260px;
-        }
-        .mockName{ font-weight: 1000; letter-spacing: .8px; }
-        .mockRole{ font-size: 12px; margin-top: 2px; }
-        .mockLines{ margin-top: 10px; display:flex; flex-direction:column; gap: 4px; }
-        .mockLine{ font-size: 13px; }
-        .logoBox{
-          margin-top: 12px;
-          border: 1px solid rgba(255,255,255,0.14);
-          border-radius: 14px;
-          padding: 12px;
-          min-height: 86px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          overflow:hidden;
-        }
-        .logoImg{
-          max-width: 100%;
-          max-height: 70px;
-          object-fit: contain;
-          display:block;
-        }
-        .logoPlaceholder{ font-weight: 800; font-size: 12px; }
-
-        .mockFoot{ margin-top: 10px; font-size: 12px; }
-
-        .mockInfo{
-          border: 1px solid rgba(255,255,255,0.14);
-          background: rgba(0,0,0,0.12);
-          border-radius: 18px;
-          padding: 14px;
-          min-height: 260px;
-        }
-        .mockInfoTitle{ font-weight: 1000; letter-spacing: .6px; }
-        .mockInfoSub{ font-size: 12px; margin-top: 2px; }
-        .checkList{ margin: 10px 0 0; padding-left: 18px; font-size: 12px; }
-        .checkList li{ margin-bottom: 8px; }
-        .check{ font-weight: 1000; margin-right: 6px; }
-
-        .panelFooter{ margin-top: 12px; font-size: 12px; }
-
-        /* MOBILE */
-        @media (max-width: 980px){
-          .hero{ grid-template-columns: 1fr; }
-          .h1{ font-size: 44px; }
-          .brandBlock{ min-width: 0; }
-          .mockRow{ grid-template-columns: 1fr; }
-          .finishGrid{ grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 520px){
-          .page{ padding: 14px 14px 34px; }
-          .h1{ font-size: 40px; }
-          .top{ border-radius: 18px; }
-          .topBtns{ justify-content: flex-start; }
-          .pill{ width: 100%; justify-content: center; }
+        @media (max-width: 600px) {
+          /* nav pills wrap nicer */
+          a[style*="border-radius: 999px"] {
+            padding: 10px 12px !important;
+          }
+          /* big headline */
+          h1 {
+            font-size: 40px !important;
+          }
+          /* hero stats stack */
+          div[style*="grid-template-columns: repeat(3"] {
+            grid-template-columns: 1fr !important;
+          }
+          /* buttons full width */
+          a[style*="min-width: 180px"], button[style*="min-width: 180px"] {
+            min-width: 0 !important;
+            width: 100% !important;
+          }
         }
       `}</style>
     </main>
+  );
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const wrap: React.CSSProperties = {
+    borderRadius: 14,
+    border: "1px solid rgba(255,255,255,.10)",
+    background: "rgba(255,255,255,.05)",
+    padding: 10,
+  };
+  const lab: React.CSSProperties = {
+    fontSize: 11,
+    opacity: 0.72,
+    fontWeight: 900,
+    marginBottom: 6,
+  };
+  const input: React.CSSProperties = {
+    width: "100%",
+    borderRadius: 10,
+    border: "1px solid rgba(255,255,255,.12)",
+    background: "rgba(0,0,0,.25)",
+    color: "rgba(235,245,255,.92)",
+    padding: "10px 10px",
+    outline: "none",
+    fontWeight: 800,
+    fontSize: 13,
+  };
+
+  return (
+    <div style={wrap}>
+      <div style={lab}>{label}</div>
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={input}
+      />
+    </div>
   );
 }

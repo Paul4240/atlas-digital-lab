@@ -1,296 +1,321 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 
 export default function RoofingDemo() {
-  const MAIN_PHONE = "8327050313";
-  const MAIN_PRETTY = "(832) 705-0313";
-
-  const SALES_PHONE = "3463657906";
-  const SALES_PRETTY = "(346) 365-7906";
-
-  const EMAIL = "hello@atlasdigitallab.com";
-
-  const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  function submitForm() {
-    const subject = "Roof Estimate Request";
-
-    const body = `
-Name: ${name}
-Company: ${company}
-Phone: ${phone}
-
-Message:
-${message}
-`;
-
-    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-  }
+  const PHONE = "(346) 365-7906";
+  const PHONE_LINK = "tel:3463657906";
 
   return (
     <main className="page">
-      {/* Header */}
-      <header className="header">
-        <div className="brand">
-          <div className="brandTitle">Houston Elite Roofing</div>
-          <div className="brandSub">Fast response • Honest pricing</div>
-        </div>
 
-        <div className="headerBtns">
-          <a className="pill" href={`tel:${MAIN_PHONE}`}>
-            Call {MAIN_PRETTY}
-          </a>
-          <a className="pill primary" href={`tel:${SALES_PHONE}`}>
-            Sales {SALES_PRETTY}
-          </a>
-        </div>
-      </header>
+      {/* NAVBAR */}
 
-      {/* Hero */}
-      <section className="hero">
+      <div className="nav">
+        <div className="container navInner">
+          <div className="brand">
+            Atlas Roofing Demo
+          </div>
+
+          <div className="navCtas">
+            <a href={PHONE_LINK} className="pill primary">
+              Call {PHONE}
+            </a>
+            <a href={PHONE_LINK} className="pill">
+              Free Estimate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* HERO */}
+
+      <section className="hero container">
+
         <div className="heroLeft">
+
           <h1>
-            Roofing that feels <span className="accent">premium</span> — and
-            gets calls.
+            Houston Roof Replacement & Repair
           </h1>
 
-          <p className="sub">
-            Quality installs, honest pricing, and clean workmanship. Built to
-            make contractors look professional and get more calls.
+          <p>
+            Fast inspections, honest pricing, and quality roof installs.
+            Trusted by homeowners across Houston.
           </p>
 
           <div className="ctaRow">
-            <a className="btn primary" href={`tel:${MAIN_PHONE}`}>
-              Call Office
+            <a href={PHONE_LINK} className="btn primary">
+              Call Now
             </a>
-            <a className="btn" href={`tel:${SALES_PHONE}`}>
-              Call Sales
+
+            <a href={PHONE_LINK} className="btn">
+              Get Free Estimate
+            </a>
+          </div>
+
+          <div className="stat">
+  <strong>24hr</strong>{" "}
+  Emergency Repairs
+</div>
+
+<div className="stat">
+  <strong>10+ Years</strong>{" "}
+  Roofing Experience
+</div>
+
+<div className="stat">
+  <strong>Free</strong>{" "}
+  Roof Inspections
+</div>
+
+        </div>
+
+        <div className="heroRight">
+          <div className="heroCard">
+            <h3>Free Roof Inspection</h3>
+
+            <p>
+              Call or text us and we’ll schedule a same-day roof inspection.
+            </p>
+
+            <a href={PHONE_LINK} className="btn primary full">
+              Call {PHONE}
             </a>
           </div>
         </div>
 
-        {/* Estimate Form */}
-        <div className="formCard">
-          <h3>Get a Free Estimate</h3>
-
-          <input
-            className="input"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <input
-            className="input"
-            placeholder="Company Name"
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-          />
-
-          <input
-            className="input"
-            placeholder="Phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-
-          <textarea
-            className="textarea"
-            placeholder="Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-
-          <button className="btn primary full" onClick={submitForm}>
-            Email to Start
-          </button>
-        </div>
       </section>
 
-      {/* Services */}
-      <section className="section">
+      {/* SERVICES */}
+
+      <section className="container section">
+
         <h2>Roofing Services</h2>
 
         <div className="grid">
+
           <div className="card">
             <h3>Roof Replacement</h3>
-            <p>Full roof tear-offs and installs with premium materials.</p>
+            <p>
+              Full roof replacement using high-quality shingles built to last.
+            </p>
           </div>
 
           <div className="card">
-            <h3>Roof Repairs</h3>
-            <p>Fix leaks, flashing, and damaged shingles quickly.</p>
+            <h3>Roof Repair</h3>
+            <p>
+              Leak detection, storm damage repair, and emergency fixes.
+            </p>
           </div>
 
           <div className="card">
             <h3>Storm Damage</h3>
-            <p>Inspections and repair after hail or wind damage.</p>
+            <p>
+              Insurance claim support and fast storm damage repairs.
+            </p>
           </div>
 
-          <div className="card">
-            <h3>Insurance Claims</h3>
-            <p>Help working with adjusters and documentation.</p>
-          </div>
-
-          <div className="card">
-            <h3>Metal Roofing</h3>
-            <p>Long lasting premium metal roof installs.</p>
-          </div>
-
-          <div className="card">
-            <h3>Gutters</h3>
-            <p>Replacement and drainage solutions.</p>
-          </div>
         </div>
+
       </section>
 
-      {/* Bottom CTA */}
-      <section className="bottom">
-        <h2>Need a roofing estimate?</h2>
+      {/* CTA */}
 
-        <div className="ctaRow">
-          <a className="btn primary" href={`tel:${MAIN_PHONE}`}>
-            Call {MAIN_PRETTY}
+      <section className="container section">
+
+        <div className="ctaBlock">
+
+          <h2>Need a Roof Inspection?</h2>
+
+          <p>
+            Call now and schedule your free inspection today.
+          </p>
+
+          <a href={PHONE_LINK} className="btn primary big">
+            Call {PHONE}
           </a>
 
-          <a className="btn" href={`tel:${SALES_PHONE}`}>
-            Sales {SALES_PRETTY}
-          </a>
         </div>
+
       </section>
+
+      {/* FOOTER */}
+
+      <footer className="container footer">
+        Atlas Digital Lab Roofing Demo
+      </footer>
+
 
       <style jsx>{`
-        .page {
-          min-height: 100vh;
-          background: radial-gradient(circle at 20% 0%, #0f2b4a 0%, #0b1426 55%, #070b14 100%);
-          color: white;
-          font-family: system-ui;
+
+        .page{
+          min-height:100vh;
+          background: radial-gradient(circle at top,#0f2b4c,#07111f);
+          color:white;
+          font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
         }
 
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px;
+        .container{
+          max-width:1100px;
+          margin:auto;
+          padding:20px;
         }
 
-        .pill {
-          padding: 10px 16px;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,.2);
-          margin-left: 10px;
-          text-decoration: none;
-          color: white;
+        @media (max-width: 700px){
+
+  .navInner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navCtas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navCtas a{
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+        .nav{
+          border-bottom:1px solid rgba(255,255,255,.1);
+          backdrop-filter:blur(10px);
         }
 
-        .pill.primary {
-          background: linear-gradient(135deg,#2eb4ff,#22d3ee);
-          color: black;
-          border: none;
+        .navInner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          gap:10px;
         }
 
-        .hero {
-          display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 40px;
-          max-width: 1100px;
-          margin: auto;
-          padding: 40px 20px;
+        .brand{
+          font-weight:800;
         }
 
-        h1 {
-          font-size: 48px;
+        .navCtas{
+          display:flex;
+          gap:10px;
         }
 
-        .accent {
-          color: #22d3ee;
+        .pill{
+          padding:10px 14px;
+          border-radius:999px;
+          border:1px solid rgba(255,255,255,.2);
+          text-decoration:none;
+          color:white;
+          font-weight:700;
+          background:rgba(255,255,255,.06);
         }
 
-        .sub {
-          margin-top: 12px;
-          opacity: .8;
+        .hero{
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:30px;
+          padding-top:40px;
         }
 
-        .ctaRow {
-          margin-top: 20px;
-          display: flex;
-          gap: 10px;
+        h1{
+          font-size:48px;
+          margin:0;
         }
 
-        .btn {
-          padding: 12px 16px;
-          border-radius: 12px;
-          border: 1px solid rgba(255,255,255,.2);
-          text-decoration: none;
-          color: white;
+        p{
+          opacity:.85;
+          line-height:1.5;
         }
 
-        .btn.primary {
-          background: linear-gradient(135deg,#2eb4ff,#22d3ee);
-          border: none;
-          color: black;
+        .ctaRow{
+          display:flex;
+          gap:12px;
+          margin-top:20px;
         }
 
-        .btn.full {
-          width: 100%;
-          margin-top: 10px;
+        .btn{
+          padding:14px 18px;
+          border-radius:12px;
+          border:1px solid rgba(255,255,255,.2);
+          text-decoration:none;
+          color:white;
+          font-weight:800;
+          background:rgba(255,255,255,.06);
         }
 
-        .formCard {
-          background: rgba(255,255,255,.05);
-          border: 1px solid rgba(255,255,255,.2);
-          border-radius: 16px;
-          padding: 20px;
+        .primary{
+          background:linear-gradient(135deg,#2eb4ff,#00d2aa);
+          color:#07111f;
         }
 
-        .input, .textarea {
-          width: 100%;
-          padding: 10px;
-          margin-top: 10px;
-          border-radius: 10px;
-          border: 1px solid rgba(255,255,255,.2);
-          background: rgba(0,0,0,.2);
-          color: white;
+        .heroStats{
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          gap:10px;
+          margin-top:20px;
         }
 
-        .textarea {
-          min-height: 100px;
+        .stat{
+          background:rgba(255,255,255,.05);
+          padding:12px;
+          border-radius:10px;
+          font-size:13px;
         }
 
-        .section {
-          max-width: 1100px;
-          margin: auto;
-          padding: 40px 20px;
+        .heroCard{
+          background:rgba(0,0,0,.35);
+          padding:20px;
+          border-radius:16px;
         }
 
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(3,1fr);
-          gap: 20px;
-          margin-top: 20px;
+        .full{
+          width:100%;
         }
 
-        .card {
-          background: rgba(255,255,255,.05);
-          padding: 20px;
-          border-radius: 14px;
-          border: 1px solid rgba(255,255,255,.15);
+        .section{
+          margin-top:40px;
         }
 
-        .bottom {
-          text-align: center;
-          padding: 50px 20px;
+        .grid{
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          gap:20px;
+          margin-top:20px;
         }
 
-        @media (max-width:900px){
+        .card{
+          background:rgba(255,255,255,.06);
+          padding:20px;
+          border-radius:16px;
+        }
+
+        .ctaBlock{
+          background:rgba(255,255,255,.06);
+          padding:30px;
+          border-radius:16px;
+          text-align:center;
+        }
+
+        .big{
+          margin-top:15px;
+          display:inline-block;
+        }
+
+        .footer{
+          margin-top:40px;
+          opacity:.7;
+          font-size:12px;
+          text-align:center;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px){
+
           .hero{
             grid-template-columns:1fr;
           }
@@ -298,8 +323,43 @@ ${message}
           .grid{
             grid-template-columns:1fr;
           }
+
+          .heroStats{
+            grid-template-columns:1fr;
+          }
+
+          .navInner{
+            flex-direction:column;
+            align-items:flex-start;
+          }
+
+          .navCtas{
+            width:100%;
+            flex-direction:column;
+          }
+
+          .pill{
+            width:100%;
+            text-align:center;
+          }
+
+          .ctaRow{
+            flex-direction:column;
+          }
+
+          .btn{
+            width:100%;
+            text-align:center;
+          }
+
+          h1{
+            font-size:36px;
+          }
+
         }
+
       `}</style>
+
     </main>
   );
 }

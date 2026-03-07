@@ -43,7 +43,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* HERO (REMOVED the blank "High-conversion layout" box) */}
+      {/* HERO */}
       <section className="hero">
         <div className="heroLeft">
           <div className="kicker">Fast turnaround • Mobile-first • Clear pricing</div>
@@ -84,7 +84,7 @@ export default function HomePage() {
         <div className="heroRight" aria-hidden />
       </section>
 
-      {/* WHAT WE DO (REMOVED the sentence under the heading) */}
+      {/* WHAT WE DO */}
       <section id="services" className="section">
         <h2>What we do</h2>
 
@@ -121,11 +121,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* DEMOS (REMOVED "Real examples you can show clients.") */}
+      {/* DEMOS */}
       <section id="demos" className="section">
         <h2>Demos</h2>
 
-        <div className="demoGrid">
+        <div className="demoGrid demoGridThree">
           <div className="demoCard">
             <div className="demoTop">
               <div>
@@ -151,10 +151,26 @@ export default function HomePage() {
               Open Roofing Demo
             </Link>
           </div>
+
+          <div className="demoCard">
+            <div className="demoTop">
+              <div>
+                <div className="demoTitle">Luxury Interior Styling Demo</div>
+                <div className="demoText">
+                  Premium redesign concept with hero image, portfolio, testimonials, and consultation
+                  flow.
+                </div>
+              </div>
+              <span className="tag">Premium redesign concept</span>
+            </div>
+            <Link className="demoBtn" href="/demo/dvhomestyling">
+              Open Interior Styling Demo
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* PRICING (REMOVED the "Simple packages. Monthly support included." line) */}
+      {/* PRICING */}
       <section id="pricing" className="section">
         <h2>Pricing</h2>
 
@@ -353,7 +369,6 @@ export default function HomePage() {
           align-items: start;
         }
         .heroRight {
-          /* intentionally empty to remove the old mock card without changing layout spacing too much */
         }
         .kicker {
           display: inline-block;
@@ -469,6 +484,9 @@ export default function HomePage() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 14px;
+        }
+        .demoGridThree {
+          grid-template-columns: repeat(3, 1fr);
         }
         .demoCard {
           border: 1px solid rgba(255, 255, 255, 0.12);
@@ -624,7 +642,8 @@ export default function HomePage() {
           .cards3 {
             grid-template-columns: 1fr;
           }
-          .demoGrid {
+          .demoGrid,
+          .demoGridThree {
             grid-template-columns: 1fr;
           }
           .pricingGrid {

@@ -188,6 +188,7 @@ export default function HoustonWebDesign() {
                 <h3 style={{ fontSize: "22px", marginBottom: "10px" }}>
                   {card.title}
                 </h3>
+
                 <p
                   style={{
                     color: "rgba(255,255,255,0.78)",
@@ -197,6 +198,7 @@ export default function HoustonWebDesign() {
                 >
                   {card.text}
                 </p>
+
                 <span style={{ color: "#67e8f9", fontWeight: 700 }}>
                   Open demo →
                 </span>
@@ -205,8 +207,82 @@ export default function HoustonWebDesign() {
           </div>
         </section>
 
+        {/* PRICING SECTION */}
+
+        <section style={{ marginTop: "80px" }}>
+          <h2 style={{ fontSize: "34px", marginBottom: "24px" }}>
+            Website Pricing
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "20px",
+            }}
+          >
+            <div
+              style={{
+                padding: "26px",
+                borderRadius: "20px",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
+              <h3>Starter</h3>
+              <h2>$100/mo</h2>
+
+              <ul>
+                <li>Modern website design</li>
+                <li>Mobile optimized</li>
+                <li>Fast hosting</li>
+                <li>Basic SEO setup</li>
+              </ul>
+            </div>
+
+            <div
+              style={{
+                padding: "26px",
+                borderRadius: "20px",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.16)",
+              }}
+            >
+              <h3>Growth</h3>
+              <h2>$200/mo</h2>
+
+              <ul>
+                <li>Premium website design</li>
+                <li>Lead generation layout</li>
+                <li>SEO optimized pages</li>
+                <li>Monthly updates</li>
+              </ul>
+            </div>
+
+            <div
+              style={{
+                padding: "26px",
+                borderRadius: "20px",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
+              <h3>Pro</h3>
+              <h2>$400/mo</h2>
+
+              <ul>
+                <li>Custom website</li>
+                <li>Advanced SEO structure</li>
+                <li>Conversion focused layout</li>
+                <li>Ongoing support</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section
           style={{
+            marginTop: "60px",
             padding: "28px",
             borderRadius: "24px",
             background: "rgba(255,255,255,0.07)",
@@ -235,7 +311,7 @@ export default function HoustonWebDesign() {
             <a
               href="tel:8327050313"
               style={{
-                background: "linear-gradient(135deg, #38bdf8, #22d3ee)",
+                background: "linear-gradient(135deg,#38bdf8,#22d3ee)",
                 color: "#08111f",
                 padding: "14px 22px",
                 borderRadius: "14px",

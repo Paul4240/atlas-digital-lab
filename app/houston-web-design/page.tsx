@@ -207,9 +207,7 @@ export default function HoustonWebDesign() {
           </div>
         </section>
 
-        {/* PRICING SECTION */}
-
-        <section style={{ marginTop: "80px" }}>
+        <section style={{ marginTop: "80px", marginBottom: "60px" }}>
           <h2 style={{ fontSize: "34px", marginBottom: "24px" }}>
             Website Pricing
           </h2>
@@ -217,7 +215,7 @@ export default function HoustonWebDesign() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
               gap: "20px",
             }}
           >
@@ -229,13 +227,15 @@ export default function HoustonWebDesign() {
                 border: "1px solid rgba(255,255,255,0.1)",
               }}
             >
-              <h3>Starter</h3>
-              <h2>$100/mo</h2>
-
-              <ul>
-                <li>Modern website design</li>
+              <h3 style={{ marginBottom: "8px" }}>Starter</h3>
+              <h2 style={{ margin: "0 0 4px 0" }}>$299</h2>
+              <p style={{ margin: "0 0 18px 0", color: "#67e8f9", fontWeight: 700 }}>
+                $79/mo
+              </p>
+              <ul style={{ lineHeight: 1.8, paddingLeft: "18px" }}>
+                <li>Single-page website</li>
                 <li>Mobile optimized</li>
-                <li>Fast hosting</li>
+                <li>Contact section</li>
                 <li>Basic SEO setup</li>
               </ul>
             </div>
@@ -248,14 +248,16 @@ export default function HoustonWebDesign() {
                 border: "1px solid rgba(255,255,255,0.16)",
               }}
             >
-              <h3>Growth</h3>
-              <h2>$200/mo</h2>
-
-              <ul>
-                <li>Premium website design</li>
-                <li>Lead generation layout</li>
-                <li>SEO optimized pages</li>
-                <li>Monthly updates</li>
+              <h3 style={{ marginBottom: "8px" }}>Growth</h3>
+              <h2 style={{ margin: "0 0 4px 0" }}>$499</h2>
+              <p style={{ margin: "0 0 18px 0", color: "#67e8f9", fontWeight: 700 }}>
+                $129/mo
+              </p>
+              <ul style={{ lineHeight: 1.8, paddingLeft: "18px" }}>
+                <li>Everything in Starter</li>
+                <li>Multi-section layout</li>
+                <li>Trust + service blocks</li>
+                <li>Conversion structure</li>
               </ul>
             </div>
 
@@ -267,14 +269,37 @@ export default function HoustonWebDesign() {
                 border: "1px solid rgba(255,255,255,0.1)",
               }}
             >
-              <h3>Pro</h3>
-              <h2>$400/mo</h2>
+              <h3 style={{ marginBottom: "8px" }}>Pro</h3>
+              <h2 style={{ margin: "0 0 4px 0" }}>$799</h2>
+              <p style={{ margin: "0 0 18px 0", color: "#67e8f9", fontWeight: 700 }}>
+                $179/mo
+              </p>
+              <ul style={{ lineHeight: 1.8, paddingLeft: "18px" }}>
+                <li>Everything in Growth</li>
+                <li>Advanced SEO setup</li>
+                <li>Google Business optimization</li>
+                <li>Priority design</li>
+              </ul>
+            </div>
 
-              <ul>
-                <li>Custom website</li>
-                <li>Advanced SEO structure</li>
-                <li>Conversion focused layout</li>
-                <li>Ongoing support</li>
+            <div
+              style={{
+                padding: "26px",
+                borderRadius: "20px",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,215,100,0.35)",
+              }}
+            >
+              <h3 style={{ marginBottom: "8px" }}>Elite</h3>
+              <h2 style={{ margin: "0 0 4px 0" }}>$1,200</h2>
+              <p style={{ margin: "0 0 18px 0", color: "#67e8f9", fontWeight: 700 }}>
+                $249/mo
+              </p>
+              <ul style={{ lineHeight: 1.8, paddingLeft: "18px" }}>
+                <li>Custom premium design</li>
+                <li>Brand strategy layout</li>
+                <li>High-conversion structure</li>
+                <li>Service area + trust sections</li>
               </ul>
             </div>
           </div>

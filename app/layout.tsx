@@ -14,15 +14,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- return (
-  <html lang="en">
-    <head>
-      <meta
-        name="google-site-verification"
-        content="BPZxE2KbWUULJy7rX"
-      />
-    </head>
-    <body>{children}</body>
-  </html>
-);
+  return (
+    <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="BPZxE2KbWUULJy7rXGAcJcVu80pJnfmq5HtihJcWNdu"
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }

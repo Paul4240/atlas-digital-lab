@@ -24,10 +24,11 @@ export default function HomePage() {
           </Link>
 
           <nav className="links">
-            <a href="#services">Services</a>
-            <a href="#demos">Demos</a>
-            <a href="#pricing">Pricing</a>
-          </nav>
+  <a href="#services">Services</a>
+  <a href="#demos">Demos</a>
+  <a href="#pricing">Pricing</a>
+  <Link href="/houston-web-design">Houston SEO</Link>
+</nav>
 
           <div className="ctaRow">
             <a className="pill" href={`tel:${MAIN_PHONE}`}>

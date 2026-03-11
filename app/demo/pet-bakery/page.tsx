@@ -567,6 +567,3 @@ export default function PetBakeryDemo() {
     </main>
   );
 }
-Why this one feels better
-
-This version is much closer to the home-styling vibe:

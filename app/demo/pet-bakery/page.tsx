@@ -1,655 +1,572 @@
 "use client";
 
-import React from "react";
-
-export default function BayouBarkeryDemo() {
+export default function PetBakeryDemo() {
   const PHONE = "(936) 278-2221";
   const PHONE_LINK = "tel:9362782221";
   const EMAIL = "info@bayoubarkery.com";
   const EMAIL_LINK = "mailto:info@bayoubarkery.com";
 
   return (
-    <main className="page">
-      <div className="topbar">
-        <div className="container topbarInner">
-          <div className="brand">
-            <div className="brandBadge">Bayou Barkery</div>
-            <span className="brandSub">Organic pet bakery • Willis, Texas</span>
-          </div>
+    <main style={{ background: "#f6efe7", color: "#1c1714" }}>
+      {/* HERO */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "92vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          backgroundImage:
+            "linear-gradient(rgba(21,16,12,0.50), rgba(21,16,12,0.60)), url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%)",
+          }}
+        />
 
-          <div className="topCtas">
-            <a href={PHONE_LINK} className="pill">
-              Call {PHONE}
-            </a>
-            <a href={EMAIL_LINK} className="pill pillPrimary">
-              Custom Order
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <section className="hero container">
-        <div className="heroLeft">
-          <div className="eyebrow">Organic treats for dogs & cats</div>
-
-          <h1>
-            A premium pet bakery experience for furry family members.
-          </h1>
-
-          <p>
-            Bayou Barkery creates natural, organic, and gourmet pet treats made
-            with care in Willis, Texas. Designed for pet parents who want better
-            ingredients, beautiful presentation, and treats worth remembering.
-          </p>
-
-          <div className="ctaRow">
-            <a href="#shop" className="btn primary">
-              Shop Treats
-            </a>
-            <a href="#custom" className="btn">
-              Personalized Orders
-            </a>
-          </div>
-
-          <div className="heroStats">
-            <div className="stat">
-              <strong>Organic</strong>
-              <span>Better ingredients, better treats</span>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            width: "100%",
+            maxWidth: "1180px",
+            margin: "0 auto",
+            padding: "40px 20px",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "860px",
+              margin: "0 auto",
+              textAlign: "center",
+              background: "rgba(24,18,14,0.42)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255,255,255,0.14)",
+              borderRadius: "30px",
+              padding: "42px 28px",
+              color: "white",
+            }}
+          >
+            <div
+              style={{
+                display: "inline-block",
+                padding: "10px 16px",
+                borderRadius: "999px",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                fontSize: "14px",
+                marginBottom: "20px",
+              }}
+            >
+              Premium Pet Bakery Concept
             </div>
-            <div className="stat">
-              <strong>Texas Made</strong>
-              <span>Small-batch baked in Willis</span>
-            </div>
-            <div className="stat">
-              <strong>Custom Orders</strong>
-              <span>Perfect for birthdays & special moments</span>
-            </div>
-          </div>
-        </div>
 
-        <div className="heroRight">
-          <div className="heroCard">
-            <div className="heroCardLabel">Featured This Week</div>
-            <h3>Small-batch treats pets actually get excited about</h3>
-            <ul>
-              <li>Sweet potato crunch bites</li>
-              <li>Pumpkin twists</li>
-              <li>Personalized celebration treats</li>
-              <li>Local pickup + shipping options</li>
-            </ul>
-            <a href="#shop" className="btn primary full">
-              View Treat Menu
-            </a>
+            <h1
+              style={{
+                fontSize: "clamp(40px, 7vw, 76px)",
+                lineHeight: 1.02,
+                margin: "0 0 18px 0",
+                fontWeight: 800,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Organic treats that feel as special as they should.
+            </h1>
+
+            <p
+              style={{
+                fontSize: "clamp(18px, 2.2vw, 26px)",
+                lineHeight: 1.6,
+                color: "rgba(255,255,255,0.88)",
+                margin: "0 auto 28px auto",
+                maxWidth: "760px",
+              }}
+            >
+              A cleaner, warmer, more premium website concept for a pet bakery
+              brand built around trust, custom orders, and memorable gifting.
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "14px",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <a
+                href="#shop"
+                style={{
+                  background: "linear-gradient(135deg,#f3c27c,#e89d67)",
+                  color: "#201710",
+                  textDecoration: "none",
+                  padding: "16px 24px",
+                  borderRadius: "14px",
+                  fontWeight: 800,
+                }}
+              >
+                View Treats
+              </a>
+
+              <a
+                href={EMAIL_LINK}
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  color: "white",
+                  textDecoration: "none",
+                  padding: "16px 24px",
+                  borderRadius: "14px",
+                  fontWeight: 700,
+                  border: "1px solid rgba(255,255,255,0.18)",
+                }}
+              >
+                Custom Order
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="shop" className="container section">
-        <div className="sectionHeading">
-          <div className="sectionTag">Shop favorites</div>
-          <h2>Signature treats made to feel special</h2>
-          <p>
-            A cleaner, more premium shopping experience that highlights product
-            quality, gifting, and repeat ordering.
-          </p>
-        </div>
-
-        <div className="cardGrid three">
-          <div className="card product">
-            <div className="productBadge">Best Seller</div>
-            <h3>Sweet Puptato Crunch Bites</h3>
-            <p>
-              Wholesome, crunchy treats with a simple ingredient profile and a
-              premium feel.
-            </p>
-            <div className="productFoot">
-              <span>Organic-inspired favorite</span>
-              <a href={EMAIL_LINK}>Order Inquiry →</a>
+      {/* INTRO CARDS */}
+      <section
+        style={{
+          maxWidth: "1180px",
+          margin: "-52px auto 0 auto",
+          padding: "0 20px",
+          position: "relative",
+          zIndex: 3,
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "18px",
+          }}
+        >
+          {[
+            {
+              title: "Small-batch baked",
+              text: "A more elevated layout that makes the bakery feel handcrafted and premium.",
+            },
+            {
+              title: "Custom celebrations",
+              text: "Birthday boxes, personalized treats, and special occasion ordering made clear.",
+            },
+            {
+              title: "Built for trust",
+              text: "Stronger story, cleaner visuals, and easier conversion for first-time buyers.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              style={{
+                background: "white",
+                borderRadius: "24px",
+                padding: "24px",
+                boxShadow: "0 18px 50px rgba(34,20,8,0.10)",
+              }}
+            >
+              <h3 style={{ margin: "0 0 10px 0", fontSize: "24px" }}>
+                {item.title}
+              </h3>
+              <p
+                style={{
+                  margin: 0,
+                  color: "#5d5147",
+                  fontSize: "16px",
+                  lineHeight: 1.7,
+                }}
+              >
+                {item.text}
+              </p>
             </div>
-          </div>
-
-          <div className="card product">
-            <div className="productBadge">Seasonal</div>
-            <h3>Cinna-Pupkin Twists</h3>
-            <p>
-              Cozy, bakery-style treats for pet parents who want something
-              memorable and giftable.
-            </p>
-            <div className="productFoot">
-              <span>Small-batch baked</span>
-              <a href={EMAIL_LINK}>Order Inquiry →</a>
-            </div>
-          </div>
-
-          <div className="card product">
-            <div className="productBadge">Custom</div>
-            <h3>Personalized Celebration Treats</h3>
-            <p>
-              Birthday boxes, event orders, and custom treat sets built for
-              photo-worthy moments.
-            </p>
-            <div className="productFoot">
-              <span>Made for special occasions</span>
-              <a href={EMAIL_LINK}>Customize →</a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="container section split">
-        <div className="splitCard warm">
-          <div className="sectionTag">Brand story</div>
-          <h2>Built around care, ingredients, and joy.</h2>
-          <p>
-            Bayou Barkery was founded to give pets the same level of care people
-            expect for themselves: thoughtful ingredients, beautiful treats, and
-            an experience that feels personal.
-          </p>
-          <p>
-            This section should make the brand feel more elevated and more
-            trustworthy than a basic “about us” block.
+      {/* SHOP */}
+      <section
+        id="shop"
+        style={{
+          maxWidth: "1180px",
+          margin: "0 auto",
+          padding: "90px 20px 30px",
+        }}
+      >
+        <div style={{ maxWidth: "760px", marginBottom: "26px" }}>
+          <div
+            style={{
+              display: "inline-block",
+              padding: "8px 14px",
+              borderRadius: "999px",
+              background: "#ead9c7",
+              color: "#5b4532",
+              fontSize: "13px",
+              marginBottom: "14px",
+            }}
+          >
+            Shop Favorites
+          </div>
+
+          <h2
+            style={{
+              fontSize: "clamp(32px,5vw,52px)",
+              lineHeight: 1.06,
+              margin: "0 0 14px 0",
+            }}
+          >
+            Signature treats presented like a premium brand.
+          </h2>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#67584d",
+              fontSize: "18px",
+              lineHeight: 1.8,
+            }}
+          >
+            Instead of a plain template feel, this concept makes the bakery look
+            boutique, trustworthy, and giftable.
           </p>
         </div>
 
-        <div className="splitCard">
-          <div className="sectionTag">Why this demo converts better</div>
-          <ul className="checkList">
-            <li>Stronger premium brand feel</li>
-            <li>Clearer order flow</li>
-            <li>More trust for first-time buyers</li>
-            <li>Better presentation of custom treats</li>
-            <li>Cleaner path to call, email, and shop</li>
-          </ul>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {[
+            {
+              name: "Sweet Potato Crunch Bites",
+              tag: "Best Seller",
+              text: "A cleaner product block that highlights ingredients, trust, and repeat-order appeal.",
+            },
+            {
+              name: "Pumpkin Twist Treats",
+              tag: "Seasonal Favorite",
+              text: "Warm branding and stronger product presentation for a more premium shop feel.",
+            },
+            {
+              name: "Birthday Treat Box",
+              tag: "Custom Order",
+              text: "Built to push higher-value celebration orders instead of just basic treat browsing.",
+            },
+          ].map((item) => (
+            <div
+              key={item.name}
+              style={{
+                background: "white",
+                borderRadius: "26px",
+                overflow: "hidden",
+                boxShadow: "0 18px 40px rgba(42,24,9,0.08)",
+              }}
+            >
+              <div
+                style={{
+                  height: "220px",
+                  backgroundImage:
+                    "linear-gradient(rgba(22,14,10,0.18), rgba(22,14,10,0.18)), url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div style={{ padding: "22px" }}>
+                <div
+                  style={{
+                    display: "inline-block",
+                    fontSize: "12px",
+                    padding: "7px 10px",
+                    borderRadius: "999px",
+                    background: "#f2e4d4",
+                    color: "#6a4c34",
+                    marginBottom: "12px",
+                    fontWeight: 700,
+                  }}
+                >
+                  {item.tag}
+                </div>
+
+                <h3 style={{ margin: "0 0 10px 0", fontSize: "24px" }}>
+                  {item.name}
+                </h3>
+
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#63554a",
+                    lineHeight: 1.75,
+                    fontSize: "16px",
+                  }}
+                >
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="container section">
-        <div className="sectionHeading">
-          <div className="sectionTag">What pet parents say</div>
-          <h2>Built to earn trust fast</h2>
-        </div>
+      {/* STORY */}
+      <section
+        style={{
+          maxWidth: "1180px",
+          margin: "0 auto",
+          padding: "50px 20px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "24px",
+          alignItems: "stretch",
+        }}
+      >
+        <div
+          style={{
+            borderRadius: "28px",
+            minHeight: "440px",
+            backgroundImage:
+              "linear-gradient(rgba(25,18,12,0.26), rgba(25,18,12,0.32)), url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
 
-        <div className="cardGrid two">
-          <div className="card review">
-            <div className="stars">★★★★★</div>
-            <p>
-              My pup absolutely loved the treats. The presentation was adorable,
-              shipping was quick, and everything felt high quality.
-            </p>
-            <strong>Happy customer</strong>
+        <div
+          style={{
+            background: "#fffaf4",
+            borderRadius: "28px",
+            padding: "34px",
+            boxShadow: "0 18px 45px rgba(39,22,7,0.08)",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-block",
+              padding: "8px 14px",
+              borderRadius: "999px",
+              background: "#ead9c7",
+              color: "#5b4532",
+              fontSize: "13px",
+              marginBottom: "14px",
+            }}
+          >
+            Brand Story
           </div>
 
-          <div className="card review">
-            <div className="stars">★★★★★</div>
-            <p>
-              Exactly the kind of premium pet bakery brand I’d trust to order
-              from again. Clean, charming, and easy to shop.
-            </p>
-            <strong>Repeat buyer</strong>
-          </div>
+          <h2
+            style={{
+              fontSize: "clamp(30px,4vw,46px)",
+              lineHeight: 1.08,
+              margin: "0 0 14px 0",
+            }}
+          >
+            Built around better ingredients and a more memorable experience.
+          </h2>
+
+          <p
+            style={{
+              color: "#64564b",
+              fontSize: "17px",
+              lineHeight: 1.85,
+              marginBottom: "16px",
+            }}
+          >
+            This section should feel warm, polished, and real — not like a
+            generic template. It gives the bakery a more emotional story and
+            makes buyers trust the brand faster.
+          </p>
+
+          <p
+            style={{
+              color: "#64564b",
+              fontSize: "17px",
+              lineHeight: 1.85,
+              marginBottom: 0,
+            }}
+          >
+            For a business like Bayou Barkery, the site should sell not just the
+            treats, but the feeling: thoughtful, special, local, and worthy of
+            repeat orders.
+          </p>
         </div>
       </section>
 
-      <section id="custom" className="container section">
-        <div className="ctaPanel">
-          <div>
-            <div className="sectionTag">Personalized orders</div>
-            <h2>Need a custom pet treat order?</h2>
-            <p>
-              Perfect for birthdays, gotcha days, gifts, and boutique-style pet
-              celebrations.
+      {/* REVIEWS */}
+      <section
+        style={{
+          maxWidth: "1180px",
+          margin: "0 auto",
+          padding: "20px 20px 50px",
+        }}
+      >
+        <div style={{ maxWidth: "720px", marginBottom: "22px" }}>
+          <div
+            style={{
+              display: "inline-block",
+              padding: "8px 14px",
+              borderRadius: "999px",
+              background: "#ead9c7",
+              color: "#5b4532",
+              fontSize: "13px",
+              marginBottom: "14px",
+            }}
+          >
+            Customer Love
+          </div>
+
+          <h2
+            style={{
+              fontSize: "clamp(30px,4.5vw,48px)",
+              lineHeight: 1.08,
+              margin: 0,
+            }}
+          >
+            A cleaner trust section that feels premium.
+          </h2>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {[
+            "My dog loved the treats and the whole brand felt so thoughtful and premium.",
+            "The presentation was beautiful. It felt more like a boutique experience than a regular pet site.",
+            "This kind of layout makes the bakery feel trustworthy, warm, and worth ordering from.",
+          ].map((quote, i) => (
+            <div
+              key={i}
+              style={{
+                background: "white",
+                borderRadius: "24px",
+                padding: "24px",
+                boxShadow: "0 14px 34px rgba(34,20,8,0.07)",
+              }}
+            >
+              <div
+                style={{
+                  color: "#df9f53",
+                  fontSize: "22px",
+                  letterSpacing: "2px",
+                  marginBottom: "12px",
+                }}
+              >
+                ★★★★★
+              </div>
+              <p
+                style={{
+                  margin: 0,
+                  color: "#5c4f45",
+                  fontSize: "16px",
+                  lineHeight: 1.8,
+                }}
+              >
+                {quote}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        style={{
+          maxWidth: "1180px",
+          margin: "0 auto",
+          padding: "10px 20px 80px",
+        }}
+      >
+        <div
+          style={{
+            borderRadius: "30px",
+            padding: "36px",
+            background:
+              "linear-gradient(135deg, #2f2219 0%, #4a3326 100%)",
+            color: "white",
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "20px",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <div style={{ maxWidth: "720px" }}>
+            <h2
+              style={{
+                fontSize: "clamp(30px,4.5vw,48px)",
+                lineHeight: 1.08,
+                margin: "0 0 12px 0",
+              }}
+            >
+              Need a more premium website for your bakery brand?
+            </h2>
+            <p
+              style={{
+                margin: 0,
+                color: "rgba(255,255,255,0.84)",
+                lineHeight: 1.8,
+                fontSize: "17px",
+              }}
+            >
+              This concept is designed to feel warmer, stronger, and more custom
+              than a standard template site.
             </p>
           </div>
 
-          <div className="ctaPanelButtons">
-            <a href={EMAIL_LINK} className="btn primary">
+          <div
+            style={{
+              display: "flex",
+              gap: "14px",
+              flexWrap: "wrap",
+            }}
+          >
+            <a
+              href={EMAIL_LINK}
+              style={{
+                background: "linear-gradient(135deg,#f3c27c,#e89d67)",
+                color: "#201710",
+                textDecoration: "none",
+                padding: "16px 22px",
+                borderRadius: "14px",
+                fontWeight: 800,
+              }}
+            >
               Email Custom Order
             </a>
-            <a href={PHONE_LINK} className="btn">
+
+            <a
+              href={PHONE_LINK}
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                color: "white",
+                textDecoration: "none",
+                padding: "16px 22px",
+                borderRadius: "14px",
+                fontWeight: 700,
+                border: "1px solid rgba(255,255,255,0.16)",
+              }}
+            >
               Call {PHONE}
             </a>
           </div>
         </div>
       </section>
-
-      <section className="container section">
-        <div className="sectionHeading">
-          <div className="sectionTag">FAQ</div>
-          <h2>Questions pet parents usually ask</h2>
-        </div>
-
-        <div className="cardGrid two">
-          <div className="card faq">
-            <h3>Do you offer local pickup or delivery?</h3>
-            <p>
-              Yes — this demo can highlight local ordering for Willis and nearby
-              areas, plus shipping for broader reach.
-            </p>
-          </div>
-
-          <div className="card faq">
-            <h3>Can I request custom treats for events?</h3>
-            <p>
-              Absolutely. Personalized orders should be one of the biggest
-              conversion pushes on the site.
-            </p>
-          </div>
-
-          <div className="card faq">
-            <h3>Are the treats made with natural ingredients?</h3>
-            <p>
-              Yes — the site should lean harder into ingredient quality and
-              premium care, because that is a major buying reason.
-            </p>
-          </div>
-
-          <div className="card faq">
-            <h3>How should customers place an order?</h3>
-            <p>
-              Through a clean shop experience, a custom order inquiry, or direct
-              email/call for personalized orders.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="container section">
-        <div className="footerCta">
-          <h2>Give your pet something worth getting excited about.</h2>
-          <p>
-            Organic-inspired treats, beautiful presentation, and a more premium
-            pet bakery experience.
-          </p>
-
-          <div className="footerButtons">
-            <a href={EMAIL_LINK} className="btn primary">
-              Start an Order
-            </a>
-            <a href="/" className="btn">
-              Back to Atlas Digital Lab
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="container footer">
-        <div>Bayou Barkery Demo by Atlas Digital Lab</div>
-        <div>
-          Willis, Texas • {PHONE} • {EMAIL}
-        </div>
-      </footer>
-
-      <style jsx>{`
-        .page {
-          min-height: 100vh;
-          background:
-            radial-gradient(circle at top, #23463c 0%, #152a24 45%, #0b1412 100%);
-          color: #fff9f2;
-          font-family: Inter, Arial, sans-serif;
-        }
-
-        .container {
-          max-width: 1160px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-
-        .topbar {
-          position: sticky;
-          top: 0;
-          z-index: 30;
-          backdrop-filter: blur(12px);
-          background: rgba(11, 20, 18, 0.7);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .topbarInner {
-          min-height: 76px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-        }
-
-        .brand {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .brandBadge {
-          padding: 10px 14px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          font-weight: 800;
-        }
-
-        .brandSub {
-          color: rgba(255, 249, 242, 0.74);
-          font-size: 14px;
-        }
-
-        .topCtas {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
-
-        .hero {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 28px;
-          padding-top: 54px;
-          padding-bottom: 24px;
-        }
-
-        .eyebrow,
-        .sectionTag {
-          display: inline-block;
-          padding: 8px 12px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          color: #ffe6b8;
-          font-size: 13px;
-          margin-bottom: 16px;
-        }
-
-        h1 {
-          font-size: 58px;
-          line-height: 1.02;
-          margin: 0 0 18px 0;
-          max-width: 760px;
-        }
-
-        h2 {
-          font-size: 38px;
-          line-height: 1.1;
-          margin: 0 0 14px 0;
-        }
-
-        h3 {
-          margin: 0 0 10px 0;
-          font-size: 22px;
-        }
-
-        p {
-          color: rgba(255, 249, 242, 0.82);
-          line-height: 1.75;
-          font-size: 18px;
-          margin: 0;
-        }
-
-        .ctaRow,
-        .footerButtons,
-        .ctaPanelButtons {
-          display: flex;
-          gap: 14px;
-          flex-wrap: wrap;
-          margin-top: 28px;
-        }
-
-        .btn,
-        .pill {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          border-radius: 14px;
-          font-weight: 800;
-          transition: 0.2s ease;
-        }
-
-        .btn {
-          min-height: 52px;
-          padding: 14px 22px;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          background: rgba(255, 255, 255, 0.06);
-          color: #fff9f2;
-        }
-
-        .pill {
-          min-height: 42px;
-          padding: 10px 14px;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          background: rgba(255, 255, 255, 0.06);
-          color: #fff9f2;
-        }
-
-        .primary {
-          background: linear-gradient(135deg, #f6c86b, #ff9f68);
-          color: #1a1610;
-          border: none;
-        }
-
-        .full {
-          width: 100%;
-        }
-
-        .heroStats {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 14px;
-          margin-top: 28px;
-        }
-
-        .stat,
-        .card,
-        .heroCard,
-        .splitCard,
-        .ctaPanel,
-        .footerCta {
-          border-radius: 24px;
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat {
-          padding: 18px;
-        }
-
-        .stat strong {
-          display: block;
-          margin-bottom: 8px;
-          font-size: 18px;
-        }
-
-        .stat span {
-          color: rgba(255, 249, 242, 0.76);
-          font-size: 14px;
-          line-height: 1.5;
-        }
-
-        .heroCard {
-          padding: 26px;
-          min-height: 100%;
-        }
-
-        .heroCardLabel {
-          font-size: 13px;
-          color: #ffe6b8;
-          margin-bottom: 14px;
-          font-weight: 700;
-          letter-spacing: 0.03em;
-          text-transform: uppercase;
-        }
-
-        .heroCard ul,
-        .checkList,
-        .scanList {
-          margin: 18px 0 0 0;
-          padding-left: 20px;
-          line-height: 1.8;
-          color: rgba(255, 249, 242, 0.82);
-        }
-
-        .section {
-          padding: 34px 20px 20px;
-        }
-
-        .sectionHeading {
-          max-width: 760px;
-          margin-bottom: 24px;
-        }
-
-        .cardGrid {
-          display: grid;
-          gap: 18px;
-        }
-
-        .cardGrid.three {
-          grid-template-columns: repeat(3, 1fr);
-        }
-
-        .cardGrid.two {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .card {
-          padding: 24px;
-        }
-
-        .productBadge {
-          display: inline-block;
-          padding: 7px 10px;
-          border-radius: 999px;
-          background: rgba(255, 230, 184, 0.12);
-          color: #ffe6b8;
-          font-size: 12px;
-          font-weight: 800;
-          margin-bottom: 14px;
-        }
-
-        .productFoot {
-          margin-top: 18px;
-          display: flex;
-          justify-content: space-between;
-          gap: 12px;
-          flex-wrap: wrap;
-          align-items: center;
-        }
-
-        .productFoot span {
-          color: rgba(255, 249, 242, 0.66);
-          font-size: 14px;
-        }
-
-        .productFoot a {
-          color: #f6c86b;
-          text-decoration: none;
-          font-weight: 700;
-        }
-
-        .split {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 18px;
-        }
-
-        .splitCard {
-          padding: 26px;
-        }
-
-        .splitCard.warm {
-          background: linear-gradient(
-            180deg,
-            rgba(255, 196, 105, 0.1),
-            rgba(255, 255, 255, 0.06)
-          );
-        }
-
-        .stars {
-          color: #f6c86b;
-          font-size: 20px;
-          margin-bottom: 12px;
-        }
-
-        .ctaPanel,
-        .footerCta {
-          padding: 28px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 20px;
-          flex-wrap: wrap;
-        }
-
-        .faq p,
-        .review p {
-          font-size: 16px;
-        }
-
-        .footer {
-          padding: 32px 20px 40px;
-          display: flex;
-          justify-content: space-between;
-          gap: 12px;
-          flex-wrap: wrap;
-          color: rgba(255, 249, 242, 0.64);
-          font-size: 14px;
-        }
-
-        @media (max-width: 980px) {
-          .hero,
-          .split,
-          .cardGrid.three,
-          .cardGrid.two,
-          .heroStats {
-            grid-template-columns: 1fr;
-          }
-
-          .topbarInner,
-          .ctaPanel,
-          .footerCta {
-            align-items: stretch;
-          }
-
-          h1 {
-            font-size: 42px;
-          }
-
-          h2 {
-            font-size: 30px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .topbarInner {
-            padding: 12px 0;
-          }
-
-          .topCtas,
-          .ctaRow,
-          .footerButtons,
-          .ctaPanelButtons {
-            flex-direction: column;
-          }
-
-          .pill,
-          .btn {
-            width: 100%;
-          }
-
-          .container {
-            padding: 0 14px;
-          }
-
-          .section {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-
-          h1 {
-            font-size: 36px;
-          }
-
-          p {
-            font-size: 16px;
-          }
-        }
-      `}</style>
     </main>
   );
 }
+Why this one feels better
+
+This version is much closer to the home-styling vibe:

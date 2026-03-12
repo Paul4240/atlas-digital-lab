@@ -1,10 +1,10 @@
 "use client";
 
 export default function PetBakeryDemo() {
-  const PHONE = "(936) 278-2221";
-  const PHONE_LINK = "tel:9362782221";
-  const EMAIL = "info@bayoubarkery.com";
-  const EMAIL_LINK = "mailto:info@bayoubarkery.com";
+  const PHONE = "(832) 705-0313";
+  const PHONE_LINK = "tel:8327050313";
+  const EMAIL = "hello@atlasdigitallab.com";
+  const EMAIL_LINK = "mailto:hello@atlasdigitallab.com";
 
   return (
     <main className="page">
@@ -15,8 +15,10 @@ export default function PetBakeryDemo() {
           <div className="brandWrap">
             <div className="brandDot" />
             <div>
-              <div className="brandName">Bayou Barkery</div>
-              <div className="brandSub">Organic pet bakery • Willis, Texas</div>
+              <div className="brandName">Atlas Digital Lab</div>
+              <div className="brandSub">
+                Premium Pet Bakery Website Demo
+              </div>
             </div>
           </div>
 
@@ -25,35 +27,39 @@ export default function PetBakeryDemo() {
               Call {PHONE}
             </a>
             <a href={EMAIL_LINK} className="pill primaryPill">
-              Custom Order
+              Start Your Website
             </a>
           </div>
         </div>
 
         <div className="container heroContent">
           <div className="heroPanel">
-            <div className="eyebrow">Luxury pet bakery concept</div>
-            <h1>Organic treats made to feel as special as they should.</h1>
+            <div className="eyebrow">Atlas Digital Lab Demo</div>
+
+            <h1>
+              A premium pet bakery website experience for furry family members.
+            </h1>
+
             <p className="heroText">
-              A premium website concept built to make Bayou Barkery feel warmer,
-              more polished, and more unforgettable. Stronger visuals, better
-              custom-order flow, and a boutique brand experience that actually
-              looks expensive.
+              This demo shows how a boutique pet bakery can look online when the
+              design feels warm, professional, and premium. Built to showcase
+              products beautifully and turn visitors into customers.
             </p>
 
             <div className="heroButtons">
-              <a href="#signature" className="btn primaryBtn">
-                View Signature Treats
+              <a href="#products" className="btn primaryBtn">
+                View Demo Layout
               </a>
-              <a href="#story" className="btn ghostBtn">
-                Explore Brand Story
+
+              <a href={EMAIL_LINK} className="btn ghostBtn">
+                Talk About Your Website
               </a>
             </div>
 
             <div className="heroChips">
-              <div className="chip">Premium presentation</div>
-              <div className="chip">Custom order flow</div>
-              <div className="chip">Boutique brand feel</div>
+              <div className="chip">Premium branding</div>
+              <div className="chip">Modern layout</div>
+              <div className="chip">High-conversion structure</div>
             </div>
           </div>
         </div>
@@ -63,40 +69,43 @@ export default function PetBakeryDemo() {
         <div className="container introGrid">
           <div className="introCard">
             <span className="introNumber">01</span>
-            <h3>Designed to feel premium</h3>
+            <h3>Premium First Impression</h3>
             <p>
-              More like a boutique brand experience and less like a template
-              site.
+              The layout immediately makes the business feel trustworthy and
+              professional.
             </p>
           </div>
 
           <div className="introCard">
             <span className="introNumber">02</span>
-            <h3>Built to drive inquiries</h3>
+            <h3>Better Product Presentation</h3>
             <p>
-              Clearer flow for orders, custom requests, and first-time trust.
+              Products are displayed in a way that feels premium and encourages
+              customers to buy.
             </p>
           </div>
 
           <div className="introCard">
             <span className="introNumber">03</span>
-            <h3>Made to stand out</h3>
+            <h3>Designed to Convert</h3>
             <p>
-              Stronger visuals, better structure, and a cleaner first
-              impression.
+              Clear structure and strong call-to-actions help visitors take the
+              next step.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="signature" className="section light">
+      <section id="products" className="section light">
         <div className="container">
           <div className="sectionHead">
-            <div className="eyebrow dark">Signature collection</div>
-            <h2>A shop experience that feels boutique and gift-worthy.</h2>
+            <div className="eyebrow dark">Demo Product Section</div>
+
+            <h2>A product layout that feels boutique and gift-worthy.</h2>
+
             <p>
-              This kind of layout helps a bakery brand feel more elevated, more
-              trustworthy, and more worth buying from.
+              This section demonstrates how a bakery brand can showcase their
+              products in a way that feels elevated and visually appealing.
             </p>
           </div>
 
@@ -106,15 +115,18 @@ export default function PetBakeryDemo() {
                 className="productImage"
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(34,24,18,.16), rgba(34,24,18,.16)), url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80')",
+                    "url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80')",
                 }}
               />
+
               <div className="productBody">
-                <div className="productTag">Best seller</div>
+                <div className="productTag">Best Seller</div>
+
                 <h3>Sweet Potato Crunch Bites</h3>
+
                 <p>
-                  Clean ingredients, stronger product presentation, and a more
-                  premium way to showcase what makes the brand special.
+                  Example product card showing how treats can be presented with
+                  premium styling.
                 </p>
               </div>
             </article>
@@ -124,15 +136,18 @@ export default function PetBakeryDemo() {
                 className="productImage"
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(34,24,18,.16), rgba(34,24,18,.16)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80')",
+                    "url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80')",
                 }}
               />
+
               <div className="productBody">
-                <div className="productTag">Seasonal favorite</div>
+                <div className="productTag">Seasonal Favorite</div>
+
                 <h3>Pumpkin Twist Treats</h3>
+
                 <p>
-                  A warmer visual style that makes treats feel more giftable and
-                  memorable for pet parents.
+                  Clean layout and strong visual presentation make products feel
+                  higher value.
                 </p>
               </div>
             </article>
@@ -142,55 +157,21 @@ export default function PetBakeryDemo() {
                 className="productImage"
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(34,24,18,.16), rgba(34,24,18,.16)), url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80')",
+                    "url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80')",
                 }}
               />
+
               <div className="productBody">
-                <div className="productTag">Custom order</div>
+                <div className="productTag">Custom Orders</div>
+
                 <h3>Birthday Treat Boxes</h3>
+
                 <p>
-                  Perfect for pushing higher-value custom orders with a layout
-                  that makes special occasions feel premium.
+                  Custom order products can stand out visually and increase
+                  average order value.
                 </p>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="story" className="section storySection">
-        <div className="container storyGrid">
-          <div className="storyImageWrap">
-            <div className="storyImage" />
-          </div>
-
-          <div className="storyContent">
-            <div className="eyebrow dark">Brand story</div>
-            <h2>Crafted with care, ingredients, and a more memorable experience.</h2>
-            <p>
-              This section gives the brand emotional weight. Instead of just
-              listing products, it tells a better story and helps customers
-              trust the business faster.
-            </p>
-            <p>
-              For premium small brands, the website should sell a feeling:
-              thoughtful, polished, warm, and worth coming back to.
-            </p>
-
-            <div className="storyStats">
-              <div className="storyStat">
-                <strong>Organic-inspired</strong>
-                <span>Cleaner ingredient positioning</span>
-              </div>
-              <div className="storyStat">
-                <strong>Small-batch feel</strong>
-                <span>More boutique brand perception</span>
-              </div>
-              <div className="storyStat">
-                <strong>Built for repeat buyers</strong>
-                <span>Better first impression and trust</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -199,62 +180,25 @@ export default function PetBakeryDemo() {
         <div className="container">
           <div className="featurePanel">
             <div className="featureLeft">
-              <div className="eyebrow">Why this converts better</div>
-              <h2>It looks custom, not generic.</h2>
+              <div className="eyebrow">Why businesses choose Atlas</div>
+
+              <h2>It feels custom, not generic.</h2>
+
               <p>
-                The fastest way to lose a small business lead is to send them
-                something that feels like a starter template. This kind of page
-                feels designed, expensive, and intentional.
+                Small businesses need websites that look professional, modern,
+                and trustworthy. This style helps businesses stand out from
+                competitors using basic templates.
               </p>
             </div>
 
             <div className="featureRight">
               <ul>
-                <li>Premium visual hierarchy</li>
-                <li>Luxury-style product presentation</li>
-                <li>More trust on first click</li>
-                <li>Cleaner custom-order path</li>
-                <li>Better mobile polish</li>
+                <li>Modern premium layout</li>
+                <li>Strong brand presentation</li>
+                <li>Better first impression</li>
+                <li>Mobile optimized design</li>
+                <li>Clear call-to-action flow</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section light">
-        <div className="container">
-          <div className="sectionHead">
-            <div className="eyebrow dark">Client impression</div>
-            <h2>Something that actually gets a “whoa.”</h2>
-          </div>
-
-          <div className="testimonialGrid">
-            <div className="testimonialCard large">
-              <div className="stars">★★★★★</div>
-              <p>
-                “This looks way more premium than a normal small business site.
-                It actually feels like a boutique brand people would trust and
-                remember.”
-              </p>
-              <strong>Demo reaction</strong>
-            </div>
-
-            <div className="testimonialCard">
-              <div className="stars">★★★★★</div>
-              <p>
-                “The presentation makes the products feel more valuable and the
-                brand feel more real.”
-              </p>
-              <strong>Demo reaction</strong>
-            </div>
-
-            <div className="testimonialCard">
-              <div className="stars">★★★★★</div>
-              <p>
-                “This is the kind of layout that gets business owners interested,
-                because it doesn’t feel cheap.”
-              </p>
-              <strong>Demo reaction</strong>
             </div>
           </div>
         </div>
@@ -264,18 +208,21 @@ export default function PetBakeryDemo() {
         <div className="container">
           <div className="ctaPanel">
             <div className="ctaText">
-              <div className="eyebrow">Custom concept</div>
-              <h2>Want your business to look like this?</h2>
+              <div className="eyebrow">Atlas Digital Lab</div>
+
+              <h2>Want a website like this for your business?</h2>
+
               <p>
-                This demo is built to feel like a real custom brand site, not a
-                generic web mockup. That is exactly what gets replies.
+                Atlas Digital Lab builds premium websites for small businesses
+                that want to stand out online and attract more customers.
               </p>
             </div>
 
             <div className="ctaButtons">
               <a href={EMAIL_LINK} className="btn primaryBtn">
-                Email About This Style
+                Email Us
               </a>
+
               <a href={PHONE_LINK} className="btn darkGhost">
                 Call {PHONE}
               </a>
@@ -287,8 +234,11 @@ export default function PetBakeryDemo() {
       <footer className="footer">
         <div className="container footerInner">
           <div>
-            <div className="footerBrand">Bayou Barkery Demo</div>
-            <div className="footerSub">Built by Atlas Digital Lab</div>
+            <div className="footerBrand">Atlas Digital Lab</div>
+
+            <div className="footerSub">
+              Websites • SEO • Small Business Growth
+            </div>
           </div>
 
           <div className="footerLinks">
@@ -308,551 +258,192 @@ export default function PetBakeryDemo() {
         }
 
         .container {
-          width: 100%;
-          max-width: 1180px;
-          margin: 0 auto;
+          max-width: 1200px;
+          margin: auto;
           padding: 0 20px;
         }
 
         .hero {
           position: relative;
-          min-height: 96vh;
+          min-height: 90vh;
           background:
-            linear-gradient(rgba(15, 24, 20, 0.42), rgba(15, 24, 20, 0.58)),
+            linear-gradient(rgba(15, 24, 20, 0.55), rgba(15, 24, 20, 0.55)),
             url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=80");
           background-size: cover;
           background-position: center;
           color: white;
-          overflow: hidden;
         }
 
         .heroOverlay {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(circle at top left, rgba(239, 187, 120, 0.14), transparent 35%),
-            linear-gradient(180deg, rgba(9, 13, 12, 0.22), rgba(9, 13, 12, 0.34));
-          pointer-events: none;
+            radial-gradient(circle at top left, rgba(239,187,120,0.2), transparent 40%);
         }
 
         .topbar {
-          position: relative;
-          z-index: 2;
-          min-height: 88px;
           display: flex;
-          align-items: center;
           justify-content: space-between;
-          gap: 16px;
-          flex-wrap: wrap;
-          padding-top: 18px;
+          align-items: center;
+          padding-top: 20px;
         }
 
         .brandWrap {
           display: flex;
-          align-items: center;
           gap: 12px;
+          align-items: center;
         }
 
         .brandDot {
-          width: 16px;
-          height: 16px;
-          border-radius: 999px;
-          background: linear-gradient(135deg, #efbb78, #f5d3a2);
-          box-shadow: 0 0 24px rgba(239, 187, 120, 0.45);
-          flex-shrink: 0;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #efbb78;
         }
 
         .brandName {
-          font-size: 16px;
-          font-weight: 800;
+          font-weight: 700;
         }
 
         .brandSub {
           font-size: 14px;
-          color: rgba(255, 255, 255, 0.78);
-          margin-top: 3px;
-        }
-
-        .topActions {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
-
-        .pill,
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          border-radius: 14px;
-          transition: 0.2s ease;
-          font-weight: 800;
+          opacity: 0.8;
         }
 
         .pill {
-          min-height: 46px;
-          padding: 10px 18px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.14);
+          padding: 10px 16px;
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,.3);
           color: white;
-          backdrop-filter: blur(10px);
+          text-decoration: none;
         }
 
         .primaryPill {
-          background: linear-gradient(135deg, #efbb78, #d69c5f);
-          color: #1a120d;
+          background: #efbb78;
+          color: black;
           border: none;
         }
 
         .heroContent {
-          position: relative;
-          z-index: 2;
           display: flex;
           align-items: center;
-          min-height: calc(96vh - 88px);
-          padding-top: 40px;
-          padding-bottom: 80px;
+          min-height: 70vh;
         }
 
         .heroPanel {
-          max-width: 860px;
-          padding: 34px;
-          border-radius: 28px;
-          background: rgba(16, 22, 20, 0.36);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          backdrop-filter: blur(16px);
-          box-shadow: 0 25px 90px rgba(0, 0, 0, 0.22);
-        }
-
-        .eyebrow {
-          display: inline-block;
-          padding: 9px 14px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          font-size: 13px;
-          color: #f7dec0;
-          margin-bottom: 18px;
-        }
-
-        .eyebrow.dark {
-          background: #ead9c6;
-          border-color: #ead9c6;
-          color: #6c4e36;
+          max-width: 700px;
+          background: rgba(0,0,0,.4);
+          padding: 40px;
+          border-radius: 20px;
         }
 
         h1 {
-          font-size: clamp(46px, 8vw, 92px);
-          line-height: 0.96;
-          letter-spacing: -0.05em;
-          margin: 0 0 20px 0;
-          max-width: 760px;
-          font-weight: 800;
-        }
-
-        h2 {
-          font-size: clamp(32px, 5vw, 56px);
-          line-height: 1.04;
-          letter-spacing: -0.035em;
-          margin: 0 0 16px 0;
-          font-weight: 800;
-        }
-
-        h3 {
-          font-size: 24px;
-          line-height: 1.12;
-          margin: 0 0 10px 0;
-          font-weight: 800;
-        }
-
-        p {
-          margin: 0;
+          font-size: 56px;
+          margin: 10px 0 20px;
         }
 
         .heroText {
-          max-width: 720px;
-          font-size: 21px;
-          line-height: 1.75;
-          color: rgba(255, 255, 255, 0.9);
-        }
-
-        .heroButtons,
-        .ctaButtons,
-        .footerLinks {
-          display: flex;
-          gap: 14px;
-          flex-wrap: wrap;
+          font-size: 18px;
+          line-height: 1.6;
         }
 
         .heroButtons {
-          margin-top: 28px;
+          margin-top: 24px;
+          display: flex;
+          gap: 12px;
         }
 
         .btn {
-          min-height: 54px;
-          padding: 14px 24px;
+          padding: 12px 20px;
+          border-radius: 12px;
+          text-decoration: none;
         }
 
         .primaryBtn {
-          background: linear-gradient(135deg, #efbb78, #d69c5f);
-          color: #1a120d;
-          border: none;
-          box-shadow: 0 10px 35px rgba(214, 156, 95, 0.28);
+          background: #efbb78;
+          color: black;
         }
 
         .ghostBtn {
+          border: 1px solid white;
           color: white;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
-        }
-
-        .darkGhost {
-          color: #1d1713;
-          background: transparent;
-          border: 1px solid rgba(29, 23, 19, 0.16);
-        }
-
-        .heroChips {
-          display: flex;
-          gap: 12px;
-          flex-wrap: wrap;
-          margin-top: 26px;
         }
 
         .chip {
-          padding: 10px 14px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.13);
-          color: rgba(255, 255, 255, 0.88);
-          font-size: 14px;
+          margin-top: 20px;
+          display: inline-block;
+          margin-right: 10px;
+          padding: 6px 12px;
+          border-radius: 20px;
+          background: rgba(255,255,255,.15);
         }
 
         .introStrip {
-          margin-top: -46px;
-          position: relative;
-          z-index: 3;
-          padding: 0 0 16px;
+          margin-top: -40px;
         }
 
         .introGrid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(3,1fr);
+          gap: 20px;
         }
 
         .introCard {
-          background: rgba(255, 251, 246, 0.92);
-          border: 1px solid rgba(76, 54, 34, 0.08);
-          border-radius: 26px;
+          background: white;
           padding: 24px;
-          box-shadow: 0 20px 50px rgba(41, 26, 15, 0.08);
-        }
-
-        .introNumber {
-          display: inline-block;
-          font-size: 13px;
-          font-weight: 800;
-          color: #8c6845;
-          margin-bottom: 12px;
-          letter-spacing: 0.06em;
-        }
-
-        .introCard p,
-        .sectionHead p,
-        .productBody p,
-        .storyContent p,
-        .featureLeft p,
-        .testimonialCard p,
-        .ctaText p {
-          color: #5f5147;
-          font-size: 17px;
-          line-height: 1.8;
+          border-radius: 18px;
         }
 
         .section {
-          padding: 84px 0;
-        }
-
-        .section.light {
-          background: #f7f0e7;
-        }
-
-        .sectionHead {
-          max-width: 760px;
-          margin-bottom: 28px;
+          padding: 80px 0;
         }
 
         .productGrid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(3,1fr);
           gap: 20px;
         }
 
         .productCard {
-          background: #fffaf4;
-          border-radius: 28px;
+          background: white;
+          border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 18px 45px rgba(35, 22, 13, 0.08);
         }
 
         .productImage {
-          height: 270px;
+          height: 220px;
           background-size: cover;
-          background-position: center;
         }
 
         .productBody {
-          padding: 22px;
+          padding: 20px;
         }
 
         .productTag {
-          display: inline-block;
-          padding: 8px 12px;
-          border-radius: 999px;
-          background: #f1dfca;
-          color: #7a5636;
           font-size: 12px;
-          font-weight: 800;
-          margin-bottom: 12px;
-        }
-
-        .storySection {
-          background: linear-gradient(180deg, #f7f0e7 0%, #f2e7da 100%);
-        }
-
-        .storyGrid {
-          display: grid;
-          grid-template-columns: 0.95fr 1.05fr;
-          gap: 26px;
-          align-items: stretch;
-        }
-
-        .storyImageWrap {
-          min-height: 560px;
-        }
-
-        .storyImage {
-          height: 100%;
-          min-height: 560px;
-          border-radius: 30px;
-          background:
-            linear-gradient(rgba(30, 20, 16, 0.14), rgba(30, 20, 16, 0.24)),
-            url("https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1400&q=80");
-          background-size: cover;
-          background-position: center;
-          box-shadow: 0 20px 50px rgba(35, 22, 13, 0.08);
-        }
-
-        .storyContent {
-          background: rgba(255, 250, 244, 0.86);
-          border: 1px solid rgba(81, 53, 30, 0.08);
-          border-radius: 30px;
-          padding: 34px;
-          box-shadow: 0 20px 50px rgba(35, 22, 13, 0.06);
-        }
-
-        .storyStats {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 14px;
-          margin-top: 24px;
-        }
-
-        .storyStat {
-          padding: 18px 18px;
-          border-radius: 20px;
-          background: #f3e4d4;
-        }
-
-        .storyStat strong {
-          display: block;
-          margin-bottom: 6px;
-          font-size: 16px;
-          color: #2f2319;
-        }
-
-        .storyStat span {
-          color: #6e5a49;
-          font-size: 14px;
-          line-height: 1.6;
-        }
-
-        .darkPanelSection {
-          background:
-            radial-gradient(circle at top, #203930 0%, #142620 45%, #0d1512 100%);
-          color: white;
-        }
-
-        .featurePanel {
-          display: grid;
-          grid-template-columns: 1fr 0.85fr;
-          gap: 22px;
-          padding: 28px;
-          border-radius: 30px;
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-        }
-
-        .featureLeft p {
-          color: rgba(255, 255, 255, 0.82);
-        }
-
-        .featureRight {
-          display: flex;
-          align-items: center;
-        }
-
-        .featureRight ul {
-          margin: 0;
-          padding-left: 22px;
-          color: rgba(255, 255, 255, 0.88);
-          line-height: 2;
-          font-size: 18px;
-        }
-
-        .testimonialGrid {
-          display: grid;
-          grid-template-columns: 1.15fr 0.85fr 0.85fr;
-          gap: 18px;
-        }
-
-        .testimonialCard {
-          background: #fffaf4;
-          border-radius: 26px;
-          padding: 24px;
-          box-shadow: 0 18px 44px rgba(35, 22, 13, 0.07);
-        }
-
-        .testimonialCard.large {
-          padding: 28px;
-        }
-
-        .stars {
-          color: #d59c5f;
-          font-size: 22px;
-          letter-spacing: 2px;
+          color: #8a6c4a;
           margin-bottom: 10px;
         }
 
-        .testimonialCard strong {
-          display: block;
-          margin-top: 14px;
-          color: #2a1f17;
-          font-size: 15px;
-        }
-
-        .ctaSection {
-          background: #f7f0e7;
-          padding-top: 20px;
-        }
-
         .ctaPanel {
-          border-radius: 32px;
-          padding: 34px;
-          background:
-            linear-gradient(135deg, #1a2a24 0%, #263c34 100%);
+          background: #1b2623;
           color: white;
+          padding: 40px;
+          border-radius: 24px;
           display: flex;
-          align-items: center;
           justify-content: space-between;
-          gap: 22px;
-          flex-wrap: wrap;
-          box-shadow: 0 24px 70px rgba(16, 22, 19, 0.18);
-        }
-
-        .ctaText {
-          max-width: 700px;
-        }
-
-        .ctaText p {
-          color: rgba(255, 255, 255, 0.84);
+          align-items: center;
         }
 
         .footer {
           background: #1b1714;
           color: white;
-          padding: 28px 0 34px;
+          padding: 40px 0;
         }
 
         .footerInner {
           display: flex;
           justify-content: space-between;
-          gap: 16px;
-          flex-wrap: wrap;
-          align-items: center;
-        }
-
-        .footerBrand {
-          font-size: 16px;
-          font-weight: 800;
-        }
-
-        .footerSub {
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.68);
-          margin-top: 4px;
-        }
-
-        .footerLinks a {
-          color: rgba(255, 255, 255, 0.86);
-          text-decoration: none;
-          font-size: 14px;
-        }
-
-        @media (max-width: 980px) {
-          .introGrid,
-          .productGrid,
-          .storyGrid,
-          .featurePanel,
-          .testimonialGrid {
-            grid-template-columns: 1fr;
-          }
-
-          .storyImageWrap,
-          .storyImage {
-            min-height: 360px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .container {
-            padding: 0 14px;
-          }
-
-          .topActions,
-          .heroButtons,
-          .ctaButtons,
-          .footerLinks {
-            flex-direction: column;
-          }
-
-          .pill,
-          .btn {
-            width: 100%;
-          }
-
-          .heroPanel {
-            padding: 24px 18px;
-          }
-
-          .heroText,
-          .introCard p,
-          .sectionHead p,
-          .productBody p,
-          .storyContent p,
-          .featureLeft p,
-          .testimonialCard p,
-          .ctaText p {
-            font-size: 16px;
-          }
-
-          .section {
-            padding: 64px 0;
-          }
         }
       `}</style>
     </main>

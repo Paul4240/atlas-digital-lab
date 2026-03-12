@@ -8,13 +8,10 @@ type DemoData = {
   headline: string;
   subheadline: string;
   primary: string;
-  secondary: string;
   background: string;
   services: string[];
-  benefits: string[];
+  stats: string[];
   testimonial: string;
-  testimonialName: string;
-  cta: string;
 };
 
 const demoContent: Record<string, DemoData> = {
@@ -25,87 +22,24 @@ const demoContent: Record<string, DemoData> = {
     phoneLink: "tel:9362782221",
     email: "info@bayoubarkery.com",
     emailLink: "mailto:info@bayoubarkery.com",
-    headline: "A premium pet bakery experience for furry family members.",
+    headline: "Organic treats made to feel as special as they should.",
     subheadline:
-      "A warmer, more elevated website concept designed to make the brand feel premium, build trust fast, and turn visitors into custom orders.",
+      "A warmer, more premium website concept designed to make the brand feel elevated, memorable, and worth ordering from.",
     primary: "#efbb78",
-    secondary: "#f6e4c8",
-    background: "radial-gradient(circle at top, #234238 0%, #14241f 45%, #0b1412 100%)",
+    background:
+      "radial-gradient(circle at top, #234238 0%, #14241f 45%, #0b1412 100%)",
     services: [
-      "Organic-inspired treat presentation",
+      "Premium treat presentation",
       "Custom order conversion flow",
-      "Premium brand storytelling",
+      "Boutique brand storytelling",
     ],
-    benefits: [
-      "Cleaner premium look",
-      "Better first impression",
-      "Stronger custom-order flow",
-      "More trust for new buyers",
-    ],
-    testimonial:
-      "This concept makes the brand feel premium, thoughtful, and much more memorable than a basic template site.",
-    testimonialName: "Demo client impression",
-    cta: "Request This Style",
-  },
-
-  "houston-roofing": {
-    name: "Houston Roofing Pros",
-    niche: "Roof replacement • Repairs • Houston, Texas",
-    phone: "(346) 365-7906",
-    phoneLink: "tel:3463657906",
-    email: "hello@atlasdigitallab.com",
-    emailLink: "mailto:hello@atlasdigitallab.com",
-    headline: "A contractor website built to generate more calls.",
-    subheadline:
-      "A cleaner, higher-converting roofing website concept designed to build trust, clarify services, and turn visitors into estimate requests.",
-    primary: "#45d7ff",
-    secondary: "#c8f4ff",
-    background: "radial-gradient(circle at top, #16325f 0%, #0b1630 45%, #08111f 100%)",
-    services: [
-      "Lead-focused service layout",
-      "Mobile-first contractor design",
-      "SEO-ready local structure",
-    ],
-    benefits: [
-      "Better trust on first visit",
-      "Cleaner call-to-action flow",
-      "Stronger service presentation",
-      "Built for mobile leads",
+    stats: [
+      "Cleaner first impression",
+      "Better trust for first-time buyers",
+      "Stronger custom-order path",
     ],
     testimonial:
-      "This kind of layout immediately feels more professional and makes it easier for customers to call or request a quote.",
-    testimonialName: "Demo client impression",
-    cta: "Get This Website Style",
-  },
-
-  "luna-nail-salon": {
-    name: "Luna Nail Salon",
-    niche: "Luxury nail studio • Houston, Texas",
-    phone: "(832) 705-0313",
-    phoneLink: "tel:8327050313",
-    email: "hello@atlasdigitallab.com",
-    emailLink: "mailto:hello@atlasdigitallab.com",
-    headline: "A luxury salon website concept that feels polished.",
-    subheadline:
-      "Built to make booking easier, showcase services better, and make the brand feel high-end from the very first click.",
-    primary: "#f0b6d8",
-    secondary: "#f8deec",
-    background: "radial-gradient(circle at top, #4a2237 0%, #1e1020 45%, #120a12 100%)",
-    services: [
-      "Luxury brand presentation",
-      "Booking-focused page structure",
-      "Premium service highlights",
-    ],
-    benefits: [
-      "More polished brand feel",
-      "Cleaner booking CTA",
-      "Better mobile experience",
-      "More premium positioning",
-    ],
-    testimonial:
-      "The layout feels more elevated and would make customers trust the brand before they even book.",
-    testimonialName: "Demo client impression",
-    cta: "Book This Style",
+      "This feels more like a premium boutique brand than a normal small business template.",
   },
 
   "elite-pressure-washing": {
@@ -119,23 +53,47 @@ const demoContent: Record<string, DemoData> = {
     subheadline:
       "Built to make the company look more trustworthy, convert better on mobile, and turn visitors into booked jobs.",
     primary: "#7be0ff",
-    secondary: "#d8f7ff",
-    background: "radial-gradient(circle at top, #103344 0%, #091a24 45%, #061017 100%)",
+    background:
+      "radial-gradient(circle at top, #103344 0%, #091a24 45%, #061017 100%)",
     services: [
-      "Lead-generation layout",
-      "Service clarity for homeowners",
+      "Service-first layout",
       "High-conversion mobile design",
+      "Clear quote-request structure",
     ],
-    benefits: [
-      "Cleaner professional look",
+    stats: [
+      "More trust at first glance",
       "Built for local service leads",
-      "Easy call / quote flow",
-      "More authority online",
+      "Clear call and quote flow",
     ],
     testimonial:
-      "This instantly feels like a real company website instead of a basic service page.",
-    testimonialName: "Demo client impression",
-    cta: "Request This Demo Style",
+      "This instantly feels like a real professional company instead of a basic service page.",
+  },
+
+  "luna-nail-salon": {
+    name: "Luna Nail Salon",
+    niche: "Luxury nail studio • Houston, Texas",
+    phone: "(832) 705-0313",
+    phoneLink: "tel:8327050313",
+    email: "hello@atlasdigitallab.com",
+    emailLink: "mailto:hello@atlasdigitallab.com",
+    headline: "A luxury salon website concept that feels polished.",
+    subheadline:
+      "Designed to make booking easier, showcase services better, and give the brand a premium first impression.",
+    primary: "#f0b6d8",
+    background:
+      "radial-gradient(circle at top, #4a2237 0%, #1e1020 45%, #120a12 100%)",
+    services: [
+      "Luxury service presentation",
+      "Booking-focused layout",
+      "Premium visual structure",
+    ],
+    stats: [
+      "Better mobile polish",
+      "Cleaner booking CTA",
+      "Higher-end brand feel",
+    ],
+    testimonial:
+      "This looks much more expensive and makes the business feel more premium right away.",
   },
 };
 
@@ -154,15 +112,15 @@ export default async function DemoPage({
           minHeight: "100vh",
           display: "grid",
           placeItems: "center",
-          padding: "40px 20px",
-          fontFamily: "Arial, sans-serif",
           background: "#0b1118",
           color: "white",
+          fontFamily: "Inter, Arial, sans-serif",
+          padding: "40px 20px",
         }}
       >
         <div style={{ textAlign: "center" }}>
           <h1>Demo not found</h1>
-          <p>This demo slug does not exist yet.</p>
+          <p>This business demo slug does not exist yet.</p>
         </div>
       </main>
     );
@@ -175,7 +133,7 @@ export default async function DemoPage({
           <div className="brandWrap">
             <div
               className="brandDot"
-              style={{ background: data.primary, boxShadow: `0 0 24px ${data.primary}` }}
+              style={{ background: data.primary, boxShadow: `0 0 28px ${data.primary}` }}
             />
             <div>
               <div className="brandTitle">{data.name}</div>
@@ -183,14 +141,14 @@ export default async function DemoPage({
             </div>
           </div>
 
-          <div className="topCtas">
+          <div className="navCtas">
             <a href={data.phoneLink} className="pill">
               Call {data.phone}
             </a>
             <a
               href={data.emailLink}
               className="pill primary"
-              style={{ background: data.primary, color: "#151515" }}
+              style={{ background: data.primary, color: "#181818" }}
             >
               Contact
             </a>
@@ -200,32 +158,25 @@ export default async function DemoPage({
 
       <section className="hero container">
         <div className="heroLeft">
-          <div
-            className="eyebrow"
-            style={{ color: data.secondary, borderColor: "rgba(255,255,255,0.14)" }}
-          >
-            Designed for {data.name}
-          </div>
-
+          <div className="eyebrow">Designed for {data.name}</div>
           <h1>{data.headline}</h1>
-
           <p>{data.subheadline}</p>
 
-          <div className="ctaRow">
+          <div className="heroButtons">
             <a
               href={data.emailLink}
               className="btn primary"
               style={{ background: data.primary, color: "#181818" }}
             >
-              {data.cta}
+              Request This Style
             </a>
             <a href={data.phoneLink} className="btn">
-              Call {data.phone}
+              Call Now
             </a>
           </div>
 
-          <div className="statsGrid">
-            {data.benefits.map((item) => (
+          <div className="statGrid">
+            {data.stats.map((item) => (
               <div key={item} className="statCard">
                 <strong>{item}</strong>
               </div>
@@ -236,10 +187,10 @@ export default async function DemoPage({
         <div className="heroRight">
           <div className="heroCard">
             <div className="cardTag">Premium Demo Concept</div>
-            <h3>This layout is built to feel expensive.</h3>
+            <h3>This should feel like a custom build.</h3>
             <p>
-              Clearer visual hierarchy, stronger trust, better spacing, and a more
-              polished conversion flow than a basic template website.
+              Cleaner structure, stronger hierarchy, better spacing, and a more
+              expensive overall presentation than a normal template page.
             </p>
 
             <ul>
@@ -259,88 +210,63 @@ export default async function DemoPage({
         </div>
       </section>
 
-      <section className="container section">
-        <div className="sectionIntro">
-          <div className="sectionPill">What makes this stronger</div>
-          <h2>Professional presentation that feels like a serious brand.</h2>
-          <p>
-            The goal is not just to “have a website.” The goal is to make the business
-            feel more trustworthy, more premium, and more likely to get calls, orders,
-            or bookings.
-          </p>
-        </div>
-
-        <div className="gridThree">
-          <div className="glassCard">
-            <h3>Better trust</h3>
+      <section className="section light">
+        <div className="container">
+          <div className="sectionHead">
+            <div className="sectionPill">What makes this stronger</div>
+            <h2>Professional presentation that feels expensive.</h2>
             <p>
-              A cleaner first impression helps people feel confident about contacting
-              the business.
+              These demos should make business owners say “whoa,” not “cool template.”
+              The goal is a better first impression, better trust, and better conversion.
             </p>
           </div>
 
-          <div className="glassCard">
-            <h3>Better conversion</h3>
-            <p>
-              Stronger CTA placement makes it easier for visitors to call, email, or
-              request a quote.
-            </p>
-          </div>
+          <div className="gridThree">
+            <div className="glassCard">
+              <h3>Visual impact</h3>
+              <p>
+                Stronger spacing, typography, and card styling make the business feel more premium.
+              </p>
+            </div>
 
-          <div className="glassCard">
-            <h3>Better brand value</h3>
-            <p>
-              Premium layouts make the business look more established and worth paying.
-            </p>
-          </div>
-        </div>
-      </section>
+            <div className="glassCard">
+              <h3>Trust</h3>
+              <p>
+                A polished layout helps visitors trust the business faster and stay on the page longer.
+              </p>
+            </div>
 
-      <section className="container section">
-        <div className="splitGrid">
-          <div className="featurePanel">
-            <div className="sectionPill">Demo positioning</div>
-            <h2>This is the type of page that gets replies.</h2>
-            <p>
-              Instead of telling someone you “build websites,” you can send them a
-              polished concept that already looks like their next site.
-            </p>
-            <p>
-              That changes the conversation from <em>“Do I need a website?”</em> to{" "}
-              <em>“How much would it cost to make this mine?”</em>
-            </p>
-          </div>
-
-          <div className="testimonialCard">
-            <div className="stars">★★★★★</div>
-            <p>{data.testimonial}</p>
-            <strong>{data.testimonialName}</strong>
+            <div className="glassCard">
+              <h3>Conversion</h3>
+              <p>
+                Clearer call and contact actions make it easier for visitors to actually reach out.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container section">
-        <div className="ctaPanel">
-          <div className="ctaText">
-            <div className="sectionPill">Ready to send this?</div>
-            <h2>Use this as a live preview in your outreach.</h2>
-            <p>
-              Send the link, spark curiosity, and let the quality of the demo do the
-              selling for you.
-            </p>
-          </div>
+      <section className="section">
+        <div className="container">
+          <div className="ctaPanel">
+            <div className="ctaText">
+              <div className="sectionPill">Demo reaction</div>
+              <h2>This is the type of page that gets replies.</h2>
+              <p>{data.testimonial}</p>
+            </div>
 
-          <div className="ctaButtons">
-            <a
-              href={data.emailLink}
-              className="btn primary"
-              style={{ background: data.primary, color: "#181818" }}
-            >
-              Send This Style
-            </a>
-            <a href="/" className="btn">
-              Back to Atlas
-            </a>
+            <div className="ctaButtons">
+              <a
+                href={data.emailLink}
+                className="btn primary"
+                style={{ background: data.primary, color: "#181818" }}
+              >
+                Send This Style
+              </a>
+              <a href="/" className="btn">
+                Back to Atlas
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -353,6 +279,7 @@ export default async function DemoPage({
         }
 
         .container {
+          width: 100%;
           max-width: 1180px;
           margin: 0 auto;
           padding: 0 20px;
@@ -363,7 +290,7 @@ export default async function DemoPage({
           top: 0;
           z-index: 30;
           backdrop-filter: blur(12px);
-          background: rgba(8, 10, 18, 0.38);
+          background: rgba(10, 12, 18, 0.38);
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -400,9 +327,11 @@ export default async function DemoPage({
           margin-top: 3px;
         }
 
-        .topCtas {
+        .navCtas,
+        .heroButtons,
+        .ctaButtons {
           display: flex;
-          gap: 10px;
+          gap: 12px;
           flex-wrap: wrap;
         }
 
@@ -414,7 +343,6 @@ export default async function DemoPage({
           text-decoration: none;
           border-radius: 14px;
           font-weight: 800;
-          transition: 0.2s ease;
         }
 
         .pill {
@@ -430,7 +358,7 @@ export default async function DemoPage({
           grid-template-columns: 1.06fr 0.94fr;
           gap: 24px;
           padding-top: 56px;
-          padding-bottom: 24px;
+          padding-bottom: 32px;
         }
 
         .eyebrow,
@@ -446,14 +374,16 @@ export default async function DemoPage({
 
         .eyebrow {
           margin-bottom: 18px;
+          color: rgba(255,255,255,0.92);
         }
 
         h1 {
-          font-size: clamp(42px, 7vw, 78px);
+          font-size: clamp(44px, 7vw, 82px);
           line-height: 1.01;
           letter-spacing: -0.04em;
           margin: 0 0 18px 0;
           max-width: 820px;
+          font-weight: 800;
         }
 
         h2 {
@@ -461,27 +391,21 @@ export default async function DemoPage({
           line-height: 1.05;
           letter-spacing: -0.03em;
           margin: 0 0 14px 0;
+          font-weight: 800;
         }
 
         h3 {
           font-size: 28px;
           line-height: 1.1;
           margin: 0 0 12px 0;
+          font-weight: 800;
         }
 
         p {
+          margin: 0;
           color: rgba(255, 255, 255, 0.84);
           font-size: 18px;
           line-height: 1.8;
-          margin: 0;
-        }
-
-        .ctaRow,
-        .ctaButtons {
-          display: flex;
-          gap: 14px;
-          flex-wrap: wrap;
-          margin-top: 28px;
         }
 
         .btn {
@@ -497,9 +421,9 @@ export default async function DemoPage({
           margin-top: 20px;
         }
 
-        .statsGrid {
+        .statGrid {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 14px;
           margin-top: 30px;
         }
@@ -507,8 +431,6 @@ export default async function DemoPage({
         .statCard,
         .heroCard,
         .glassCard,
-        .featurePanel,
-        .testimonialCard,
         .ctaPanel {
           border-radius: 24px;
           background: rgba(255, 255, 255, 0.06);
@@ -522,16 +444,8 @@ export default async function DemoPage({
           line-height: 1.5;
         }
 
-        .statCard strong {
-          font-size: 16px;
-        }
-
         .heroCard {
           padding: 26px;
-        }
-
-        .heroCard p {
-          margin-bottom: 14px;
         }
 
         .heroCard ul {
@@ -548,16 +462,16 @@ export default async function DemoPage({
         }
 
         .section {
-          padding: 42px 20px 20px;
+          padding: 42px 0 26px;
         }
 
-        .sectionIntro {
+        .light {
+          background: rgba(255,255,255,0.03);
+        }
+
+        .sectionHead {
           max-width: 780px;
           margin-bottom: 24px;
-        }
-
-        .sectionPill {
-          margin-bottom: 16px;
         }
 
         .gridThree {
@@ -572,27 +486,6 @@ export default async function DemoPage({
 
         .glassCard p {
           font-size: 16px;
-        }
-
-        .splitGrid {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 18px;
-        }
-
-        .featurePanel,
-        .testimonialCard {
-          padding: 28px;
-        }
-
-        .testimonialCard p {
-          margin: 12px 0 14px 0;
-        }
-
-        .stars {
-          color: #ffd978;
-          font-size: 22px;
-          letter-spacing: 2px;
         }
 
         .ctaPanel {
@@ -610,9 +503,8 @@ export default async function DemoPage({
 
         @media (max-width: 980px) {
           .hero,
-          .splitGrid,
           .gridThree,
-          .statsGrid {
+          .statGrid {
             grid-template-columns: 1fr;
           }
 
@@ -626,8 +518,8 @@ export default async function DemoPage({
             padding: 0 14px;
           }
 
-          .topCtas,
-          .ctaRow,
+          .navCtas,
+          .heroButtons,
           .ctaButtons {
             flex-direction: column;
           }
@@ -635,10 +527,6 @@ export default async function DemoPage({
           .pill,
           .btn {
             width: 100%;
-          }
-
-          .hero {
-            padding-top: 36px;
           }
 
           p {

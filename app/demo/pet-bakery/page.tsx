@@ -1,7 +1,7 @@
 "use client";
 
 export default function PetBakeryDemo() {
-  const PHONE = "(111) 111 1111";
+  const PHONE = "(832) 705 0313";
   const PHONE_LINK = "tel:8327050313";
   const EMAIL = "hello@atlasdigitallab.com";
   const EMAIL_LINK = "mailto:hello@atlasdigitallab.com";

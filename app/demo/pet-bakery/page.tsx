@@ -1,7 +1,7 @@
 "use client";
 
 export default function PetBakeryDemo() {
-  const PHONE = "(832) 705 0313";
+  const PHONE = "(832) 705-0313";
   const PHONE_LINK = "tel:8327050313";
   const EMAIL = "hello@atlasdigitallab.com";
   const EMAIL_LINK = "mailto:hello@atlasdigitallab.com";
@@ -259,7 +259,7 @@ export default function PetBakeryDemo() {
 
         .container {
           max-width: 1200px;
-          margin: auto;
+          margin: 0 auto;
           padding: 0 20px;
         }
 
@@ -272,19 +272,28 @@ export default function PetBakeryDemo() {
           background-size: cover;
           background-position: center;
           color: white;
+          overflow: hidden;
         }
 
         .heroOverlay {
           position: absolute;
           inset: 0;
-          background:
-            radial-gradient(circle at top left, rgba(239,187,120,0.2), transparent 40%);
+          background: radial-gradient(
+            circle at top left,
+            rgba(239, 187, 120, 0.2),
+            transparent 40%
+          );
+          pointer-events: none;
         }
 
         .topbar {
+          position: relative;
+          z-index: 2;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
           padding-top: 20px;
         }
 
@@ -299,6 +308,7 @@ export default function PetBakeryDemo() {
           height: 14px;
           border-radius: 50%;
           background: #efbb78;
+          flex-shrink: 0;
         }
 
         .brandName {
@@ -310,12 +320,30 @@ export default function PetBakeryDemo() {
           opacity: 0.8;
         }
 
+        .topActions {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .pill,
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          white-space: nowrap;
+          text-decoration: none;
+          box-sizing: border-box;
+        }
+
         .pill {
           padding: 10px 16px;
+          min-height: 46px;
           border-radius: 12px;
-          border: 1px solid rgba(255,255,255,.3);
+          border: 1px solid rgba(255, 255, 255, 0.3);
           color: white;
-          text-decoration: none;
+          background: rgba(255, 255, 255, 0.08);
         }
 
         .primaryPill {
@@ -325,38 +353,78 @@ export default function PetBakeryDemo() {
         }
 
         .heroContent {
+          position: relative;
+          z-index: 2;
           display: flex;
           align-items: center;
           min-height: 70vh;
+          padding: 40px 0 80px;
         }
 
         .heroPanel {
           max-width: 700px;
-          background: rgba(0,0,0,.4);
+          background: rgba(0, 0, 0, 0.4);
           padding: 40px;
           border-radius: 20px;
         }
 
+        .eyebrow {
+          display: inline-block;
+          padding: 8px 14px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          font-size: 13px;
+          margin-bottom: 18px;
+          color: white;
+        }
+
+        .eyebrow.dark {
+          background: #ead9c6;
+          border: none;
+          color: #6c4e36;
+        }
+
         h1 {
-          font-size: 56px;
+          font-size: clamp(38px, 6vw, 56px);
           margin: 10px 0 20px;
+          line-height: 1.05;
+        }
+
+        h2 {
+          font-size: clamp(32px, 4vw, 44px);
+          line-height: 1.08;
+          margin: 0 0 14px;
+        }
+
+        h3 {
+          font-size: 22px;
+          line-height: 1.2;
+          margin: 0 0 10px;
+        }
+
+        p {
+          margin: 0;
         }
 
         .heroText {
           font-size: 18px;
           line-height: 1.6;
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .heroButtons {
           margin-top: 24px;
           display: flex;
           gap: 12px;
+          flex-wrap: wrap;
         }
 
         .btn {
           padding: 12px 20px;
+          min-height: 52px;
           border-radius: 12px;
-          text-decoration: none;
+          font-weight: 600;
         }
 
         .primaryBtn {
@@ -367,24 +435,38 @@ export default function PetBakeryDemo() {
         .ghostBtn {
           border: 1px solid white;
           color: white;
+          background: transparent;
+        }
+
+        .darkGhost {
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          color: white;
+          background: transparent;
+        }
+
+        .heroChips {
+          margin-top: 20px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
         }
 
         .chip {
-          margin-top: 20px;
           display: inline-block;
-          margin-right: 10px;
           padding: 6px 12px;
           border-radius: 20px;
-          background: rgba(255,255,255,.15);
+          background: rgba(255, 255, 255, 0.15);
         }
 
         .introStrip {
           margin-top: -40px;
+          position: relative;
+          z-index: 3;
         }
 
         .introGrid {
           display: grid;
-          grid-template-columns: repeat(3,1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
 
@@ -394,13 +476,40 @@ export default function PetBakeryDemo() {
           border-radius: 18px;
         }
 
+        .introNumber {
+          display: inline-block;
+          margin-bottom: 12px;
+          font-size: 13px;
+          font-weight: 700;
+          color: #8a6c4a;
+        }
+
+        .introCard p,
+        .sectionHead p,
+        .productBody p,
+        .featureLeft p,
+        .ctaText p {
+          color: #5f5147;
+          line-height: 1.7;
+          font-size: 17px;
+        }
+
         .section {
           padding: 80px 0;
         }
 
+        .light {
+          background: #f7f0e7;
+        }
+
+        .sectionHead {
+          max-width: 760px;
+          margin-bottom: 28px;
+        }
+
         .productGrid {
           display: grid;
-          grid-template-columns: repeat(3,1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
 
@@ -408,11 +517,19 @@ export default function PetBakeryDemo() {
           background: white;
           border-radius: 20px;
           overflow: hidden;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .productCard:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
         }
 
         .productImage {
           height: 220px;
           background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
         }
 
         .productBody {
@@ -423,6 +540,43 @@ export default function PetBakeryDemo() {
           font-size: 12px;
           color: #8a6c4a;
           margin-bottom: 10px;
+          font-weight: 700;
+        }
+
+        .darkPanelSection {
+          background: linear-gradient(135deg, #1d2b27 0%, #15201d 100%);
+          color: white;
+        }
+
+        .featurePanel {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 24px;
+          padding: 32px;
+          display: grid;
+          grid-template-columns: 1fr 0.9fr;
+          gap: 28px;
+        }
+
+        .featureLeft p {
+          color: rgba(255, 255, 255, 0.84);
+        }
+
+        .featureRight {
+          display: flex;
+          align-items: center;
+        }
+
+        .featureRight ul {
+          margin: 0;
+          padding-left: 20px;
+          line-height: 1.9;
+          color: rgba(255, 255, 255, 0.88);
+        }
+
+        .ctaSection {
+          background: #f7f0e7;
+          padding-top: 20px;
         }
 
         .ctaPanel {
@@ -432,6 +586,19 @@ export default function PetBakeryDemo() {
           border-radius: 24px;
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          gap: 28px;
+          flex-wrap: wrap;
+        }
+
+        .ctaText {
+          max-width: 720px;
+        }
+
+        .ctaButtons {
+          display: flex;
+          gap: 14px;
+          flex-wrap: wrap;
           align-items: center;
         }
 
@@ -444,6 +611,76 @@ export default function PetBakeryDemo() {
         .footerInner {
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .footerBrand {
+          font-weight: 700;
+        }
+
+        .footerSub {
+          margin-top: 4px;
+          color: rgba(255, 255, 255, 0.74);
+          font-size: 14px;
+        }
+
+        .footerLinks {
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .footerLinks a {
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          white-space: nowrap;
+          font-size: 14px;
+        }
+
+        @media (max-width: 980px) {
+          .introGrid,
+          .productGrid,
+          .featurePanel {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .container {
+            padding: 0 14px;
+          }
+
+          .topbar,
+          .topActions,
+          .heroButtons,
+          .ctaButtons,
+          .footerInner,
+          .footerLinks {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .pill,
+          .btn {
+            width: 100%;
+          }
+
+          .heroPanel,
+          .ctaPanel,
+          .featurePanel {
+            padding: 28px 18px;
+          }
+
+          .section {
+            padding: 64px 0;
+          }
+
+          .introStrip {
+            margin-top: -24px;
+          }
         }
       `}</style>
     </main>

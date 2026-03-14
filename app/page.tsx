@@ -24,11 +24,11 @@ export default function HomePage() {
           </Link>
 
           <nav className="links">
-  <a href="#services">Services</a>
-  <a href="#demos">Demos</a>
-  <a href="#pricing">Pricing</a>
-  <Link href="/houston-web-design">Houston SEO</Link>
-</nav>
+            <a href="#services">Services</a>
+            <a href="#demos">Demos</a>
+            <a href="#pricing">Pricing</a>
+            <Link href="/houston-web-design">Houston SEO</Link>
+          </nav>
 
           <div className="ctaRow">
             <a className="pill" href={`tel:${MAIN_PHONE}`}>
@@ -156,6 +156,21 @@ export default function HomePage() {
           <div className="demoCard">
             <div className="demoTop">
               <div>
+                <div className="demoTitle">Pet Bakery Demo</div>
+                <div className="demoText">
+                  Boutique pet bakery demo with product highlights and premium storefront layout.
+                </div>
+              </div>
+              <span className="tag">Local retail-style</span>
+            </div>
+            <Link className="demoBtn" href="/demo/pet-bakery">
+              Open Pet Bakery Demo
+            </Link>
+          </div>
+
+          <div className="demoCard">
+            <div className="demoTop">
+              <div>
                 <div className="demoTitle">Luxury Interior Styling Demo</div>
                 <div className="demoText">
                   Premium redesign concept with hero image, portfolio, testimonials, and consultation
@@ -164,7 +179,7 @@ export default function HomePage() {
               </div>
               <span className="tag">Premium redesign concept</span>
             </div>
-            <Link className="demoBtn" href="/demo/dvhomestyling">
+            <Link className="demoBtn" href="/demo/home-styling">
               Open Interior Styling Demo
             </Link>
           </div>

@@ -12,1081 +12,814 @@ export default function HomePage() {
 
   return (
     <main className="page">
-      {/* NAV */}
-      <header className="navWrap">
-        <div className="nav">
-          <Link href="/" className="brand">
-            <span className="logo" aria-hidden />
-            <div className="brandText">
+      {/* HERO */}
+      <section className="hero">
+        <div className="heroOverlay" />
+
+        <header className="topbar container">
+          <Link href="/" className="brandWrap">
+            <div className="brandDot" />
+            <div>
               <div className="brandName">Atlas Digital Lab</div>
               <div className="brandSub">Premium Websites • SEO • Small Business Growth</div>
             </div>
           </Link>
 
-          <nav className="links">
+          <nav className="navLinks">
             <a href="#services">Services</a>
-            <a href="#why-atlas">Why Atlas</a>
             <a href="#demos">Demos</a>
             <a href="#pricing">Pricing</a>
             <Link href="/houston-web-design">Houston SEO</Link>
           </nav>
 
-          <div className="ctaRow">
-            <a className="pill" href={`tel:${MAIN_PHONE}`}>
+          <div className="topActions">
+            <a href={`tel:${MAIN_PHONE}`} className="pill">
               Call {MAIN_PRETTY}
             </a>
-            <a className="pill" href={`tel:${SALES_PHONE}`}>
-              Sales {SALES_PRETTY}
-            </a>
-            <a className="pill primary" href={`mailto:${EMAIL}`}>
+            <a href={`mailto:${EMAIL}`} className="pill primaryPill">
               Get a Quote
             </a>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="heroGlow heroGlowOne" aria-hidden />
-        <div className="heroGlow heroGlowTwo" aria-hidden />
-
-        <div className="heroLeft">
-          <div className="kicker">Premium design • Fast turnaround • Mobile-first • Built to convert</div>
-
-          <h1>
-            We build <span className="accent">premium websites</span> that make small businesses look
-            established, trusted, and worth calling.
-          </h1>
-
-          <p className="sub">
-            Atlas Digital Lab creates high-conversion websites, sharp branding, and local SEO-ready
-            pages for businesses that want to look more professional and win better customers.
-          </p>
-
-          <div className="heroBtns">
-            <a className="btn primary" href={`tel:${MAIN_PHONE}`}>
-              Call {MAIN_PRETTY}
-            </a>
-            <a className="btn" href="#demos">
-              View Demos
-            </a>
-            <a className="btn ghost" href={`mailto:${EMAIL}`}>
-              Email for Quote
-            </a>
-          </div>
-
-          <div className="heroStats">
-            <div className="stat">
-              <div className="statNum">4</div>
-              <div className="statLabel">Live demo concepts</div>
-            </div>
-            <div className="stat">
-              <div className="statNum">Fast</div>
-              <div className="statLabel">Turnaround and launch flow</div>
-            </div>
-            <div className="stat">
-              <div className="statNum">SEO</div>
-              <div className="statLabel">Structured for local visibility</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="heroRight">
+        <div className="container heroContent">
           <div className="heroPanel">
-            <div className="panelTop">
-              <span className="panelEyebrow">Atlas Digital Lab</span>
-              <span className="panelBadge">Premium Agency Build</span>
+            <div className="eyebrow">Atlas Digital Lab</div>
+
+            <h1>Premium websites for small businesses that want to look more established.</h1>
+
+            <p className="heroText">
+              We build polished, high-conversion websites that make your business feel more trusted,
+              more modern, and more worth calling. Clean design, sharp presentation, and better
+              first impressions.
+            </p>
+
+            <div className="heroButtons">
+              <a href="#demos" className="btn primaryBtn">
+                View Demos
+              </a>
+
+              <a href={`tel:${MAIN_PHONE}`} className="btn ghostBtn">
+                Call {MAIN_PRETTY}
+              </a>
+
+              <a href={`mailto:${EMAIL}`} className="btn ghostBtn">
+                Email for Quote
+              </a>
             </div>
 
-            <div className="panelHeadline">A cleaner online presence changes how people value your business.</div>
+            <div className="heroChips">
+              <div className="chip">Premium presentation</div>
+              <div className="chip">Mobile-first builds</div>
+              <div className="chip">Clear conversion flow</div>
+              <div className="chip">Local SEO-ready</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="panelList">
-              <div className="panelItem">
-                <span className="panelDot" />
-                <div>
-                  <strong>Premium presentation</strong>
-                  <p>Look more credible, established, and higher-value from the first click.</p>
-                </div>
-              </div>
+      {/* INTRO */}
+      <section className="introStrip">
+        <div className="container introGrid">
+          <div className="introCard">
+            <h3>Better first impressions</h3>
+            <p>
+              Your website should make people feel like they are dealing with a serious, established
+              business from the first second.
+            </p>
+          </div>
 
-              <div className="panelItem">
-                <span className="panelDot" />
-                <div>
-                  <strong>Clear conversion flow</strong>
-                  <p>Strong headlines, trust sections, and calls-to-action that guide people to contact.</p>
-                </div>
-              </div>
+          <div className="introCard">
+            <h3>Cleaner sales flow</h3>
+            <p>
+              Strong layouts, trust sections, and clearer calls-to-action help move visitors toward
+              contacting you.
+            </p>
+          </div>
 
-              <div className="panelItem">
-                <span className="panelDot" />
-                <div>
-                  <strong>Local growth ready</strong>
-                  <p>Built with speed, mobile usability, and search visibility in mind.</p>
-                </div>
-              </div>
+          <div className="introCard">
+            <h3>More premium positioning</h3>
+            <p>
+              Better spacing, sharper branding, and stronger structure help your business feel more
+              valuable online.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="section light">
+        <div className="container">
+          <div className="sectionHead">
+            <div className="eyebrow dark">What We Do</div>
+            <h2>Websites built to help small businesses look stronger online.</h2>
+            <p>
+              Atlas Digital Lab creates cleaner, more premium websites for businesses that want to
+              stand out from generic local competition.
+            </p>
+          </div>
+
+          <div className="serviceGrid">
+            <article className="serviceCard">
+              <h3>Website Design</h3>
+              <p>Modern, premium layouts designed to feel trustworthy and high-end.</p>
+              <ul>
+                <li>Mobile-first structure</li>
+                <li>Premium visual hierarchy</li>
+                <li>Clear contact flow</li>
+              </ul>
+            </article>
+
+            <article className="serviceCard">
+              <h3>SEO & Google Setup</h3>
+              <p>Built with local visibility in mind so your business is better positioned online.</p>
+              <ul>
+                <li>On-page SEO basics</li>
+                <li>Google Business support</li>
+                <li>Search-ready structure</li>
+              </ul>
+            </article>
+
+            <article className="serviceCard">
+              <h3>Brand Presentation</h3>
+              <p>Cleaner presentation that helps your business feel more polished and established.</p>
+              <ul>
+                <li>Visual polish</li>
+                <li>Stronger brand feel</li>
+                <li>More consistent design</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURE PANEL */}
+      <section className="section darkPanelSection">
+        <div className="container">
+          <div className="featurePanel">
+            <div className="featureLeft">
+              <div className="eyebrow">Why Atlas</div>
+              <h2>We want your site to feel custom, elevated, and easy to trust.</h2>
+              <p>
+                Most small business websites feel outdated or thrown together. Our goal is to create
+                websites that feel cleaner, more premium, and more confidence-building without making
+                the business feel fake or overdone.
+              </p>
             </div>
 
-            <div className="panelFooter">
-              <a className="panelBtn" href={`tel:${MAIN_PHONE}`}>
-                Start a Project
+            <div className="featureRight">
+              <ul>
+                <li>Premium layout and spacing</li>
+                <li>Stronger online credibility</li>
+                <li>Clear calls-to-action</li>
+                <li>Cleaner section flow</li>
+                <li>Designed for real business growth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DEMOS */}
+      <section id="demos" className="section creamSection">
+        <div className="container">
+          <div className="sectionHead">
+            <div className="eyebrow dark">Demo Portfolio</div>
+            <h2>See the type of premium websites we can build.</h2>
+            <p>
+              These demos show different directions Atlas Digital Lab can take depending on the
+              business type and brand feel.
+            </p>
+          </div>
+
+          <div className="demoGrid">
+            <div className="demoCard">
+              <div className="demoTop">
+                <div>
+                  <div className="demoTitle">Pet Bakery Demo</div>
+                  <div className="demoText">
+                    Boutique, warm, premium storefront layout with stronger product presentation.
+                  </div>
+                </div>
+                <span className="tag">Best style</span>
+              </div>
+
+              <Link className="demoBtn" href="/demo/pet-bakery">
+                Open Pet Bakery Demo
+              </Link>
+            </div>
+
+            <div className="demoCard">
+              <div className="demoTop">
+                <div>
+                  <div className="demoTitle">Luxury Interior Styling Demo</div>
+                  <div className="demoText">
+                    Elegant, image-led concept with a cleaner luxury presentation.
+                  </div>
+                </div>
+                <span className="tag">Elegant</span>
+              </div>
+
+              <Link className="demoBtn" href="/demo/home-styling">
+                Open Interior Styling Demo
+              </Link>
+            </div>
+
+            <div className="demoCard">
+              <div className="demoTop">
+                <div>
+                  <div className="demoTitle">Roofing Demo</div>
+                  <div className="demoText">
+                    Local service-style concept focused on trust, structure, and quote flow.
+                  </div>
+                </div>
+                <span className="tag">Upgrading later</span>
+              </div>
+
+              <Link className="demoBtn" href="/demo/roofing">
+                Open Roofing Demo
+              </Link>
+            </div>
+
+            <div className="demoCard">
+              <div className="demoTop">
+                <div>
+                  <div className="demoTitle">Metal Business Cards Demo</div>
+                  <div className="demoText">
+                    Product-focused concept showing premium presentation and offer structure.
+                  </div>
+                </div>
+                <span className="tag">Upgrading later</span>
+              </div>
+
+              <Link className="demoBtn" href="/demo/metal-cards">
+                Open Metal Cards Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="section light">
+        <div className="container">
+          <div className="sectionHead">
+            <div className="eyebrow dark">Pricing</div>
+            <h2>Simple pricing for businesses ready to upgrade how they look online.</h2>
+          </div>
+
+          <div className="pricingGrid">
+            <div className="priceCard">
+              <div className="priceTop">
+                <div className="planName">Starter</div>
+                <div className="price">$299</div>
+                <div className="monthly">$80/mo</div>
+              </div>
+
+              <ul>
+                <li>Single-page website</li>
+                <li>Mobile optimized</li>
+                <li>Contact section</li>
+                <li>Basic SEO setup</li>
+              </ul>
+
+              <a className="priceBtn" href={`tel:${MAIN_PHONE}`}>
+                Call to Start
+              </a>
+            </div>
+
+            <div className="priceCard">
+              <div className="priceTop">
+                <div className="planName">Growth</div>
+                <div className="price">$499</div>
+                <div className="monthly">$130/mo</div>
+              </div>
+
+              <ul>
+                <li>Everything in Starter</li>
+                <li>Multi-section layout</li>
+                <li>Trust + service blocks</li>
+                <li>Conversion structure</li>
+              </ul>
+
+              <a className="priceBtn" href={`tel:${MAIN_PHONE}`}>
+                Call to Start
+              </a>
+            </div>
+
+            <div className="priceCard">
+              <div className="priceTop">
+                <div className="planName">Pro</div>
+                <div className="badge">Most Popular</div>
+                <div className="price">$799</div>
+                <div className="monthly">$150/mo</div>
+              </div>
+
+              <ul>
+                <li>Everything in Growth</li>
+                <li>Advanced SEO setup</li>
+                <li>Google Business optimization</li>
+                <li>Priority design</li>
+              </ul>
+
+              <a className="priceBtn primaryBtnDark" href={`tel:${SALES_PHONE}`}>
+                Talk to Sales
+              </a>
+            </div>
+
+            <div className="priceCard elite">
+              <div className="priceTop">
+                <div className="planName">Elite</div>
+                <div className="badge gold">Premium Option</div>
+                <div className="price">$1,200</div>
+                <div className="monthly">$249/mo</div>
+              </div>
+
+              <ul>
+                <li>Custom premium design</li>
+                <li>Brand strategy layout</li>
+                <li>High-conversion structure</li>
+                <li>Service area + trust sections</li>
+              </ul>
+
+              <a className="priceBtn primaryBtnDark" href={`mailto:${EMAIL}`}>
+                Build My Elite Site
+              </a>
+            </div>
+          </div>
+
+          <div className="footerCtas">
+            <div className="footerNote">
+              Want a different niche demo or custom layout direction? Reach out and we’ll build around
+              your business.
+            </div>
+
+            <div className="footerActionRow">
+              <a className="pill darkPill" href={`tel:${MAIN_PHONE}`}>
+                Text {MAIN_PRETTY}
+              </a>
+              <a className="pill primaryPill" href={`mailto:${EMAIL}`}>
+                Email for Quote
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="trustStrip">
-        <div className="trustInner">
-          <div>Premium layouts</div>
-          <div>High-conversion structure</div>
-          <div>Local SEO-ready builds</div>
-          <div>Modern branding polish</div>
-          <div>Fast communication</div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="section">
-        <div className="sectionHead">
-          <div className="sectionKicker">Services</div>
-          <h2>What we build for growing small businesses</h2>
-          <p>
-            Everything is designed to help your company look stronger online, build trust faster, and
-            make it easier for customers to take action.
-          </p>
-        </div>
-
-        <div className="cards3">
-          <div className="card">
-            <div className="cardIcon">01</div>
-            <div className="cardTitle">Websites</div>
-            <div className="cardSub">
-              Fast, premium websites designed to look high-end and convert real leads.
+      {/* FINAL CTA */}
+      <section className="section ctaSection">
+        <div className="container">
+          <div className="ctaPanel">
+            <div className="ctaText">
+              <div className="eyebrow">Atlas Digital Lab</div>
+              <h2>Want your business to look this polished online?</h2>
+              <p>
+                We build websites that help small businesses look more premium, trustworthy, and ready
+                to win better customers.
+              </p>
             </div>
-            <ul>
-              <li>Mobile-first layout</li>
-              <li>Clear calls-to-action</li>
-              <li>Premium visual hierarchy</li>
-              <li>Fast, clean front-end structure</li>
-            </ul>
-          </div>
 
-          <div className="card">
-            <div className="cardIcon">02</div>
-            <div className="cardTitle">SEO &amp; Google Setup</div>
-            <div className="cardSub">
-              Build visibility locally and strengthen trust when customers search your service.
+            <div className="ctaButtons">
+              <a href={`mailto:${EMAIL}`} className="btn primaryBtn">
+                Email Us
+              </a>
+              <a href={`tel:${MAIN_PHONE}`} className="btn darkGhost">
+                Call {MAIN_PRETTY}
+              </a>
             </div>
-            <ul>
-              <li>Google Business profile help</li>
-              <li>On-page SEO structure</li>
-              <li>Performance and indexing readiness</li>
-              <li>Service-area content support</li>
-            </ul>
-          </div>
-
-          <div className="card">
-            <div className="cardIcon">03</div>
-            <div className="cardTitle">Branding & Positioning</div>
-            <div className="cardSub">
-              Cleaner branding, stronger presentation, and a more polished first impression.
-            </div>
-            <ul>
-              <li>Logo refresh direction</li>
-              <li>Typography and color polish</li>
-              <li>Premium brand feel</li>
-              <li>Stronger visual consistency</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY ATLAS */}
-      <section id="why-atlas" className="section">
-        <div className="sectionHead narrow">
-          <div className="sectionKicker">Why Atlas</div>
-          <h2>Built for businesses that want to look more expensive than they are today</h2>
-          <p>
-            Most small business websites feel outdated, generic, or unclear. We focus on premium
-            design, strong structure, and trust-first messaging so your business feels more established
-            the moment someone lands on the page.
-          </p>
-        </div>
-
-        <div className="whyGrid">
-          <div className="whyCard">
-            <div className="whyTitle">Sharper first impression</div>
-            <p>
-              Better spacing, stronger type, cleaner sections, and a more premium overall look help
-              your business feel more trustworthy right away.
-            </p>
-          </div>
-
-          <div className="whyCard">
-            <div className="whyTitle">Conversion-focused layout</div>
-            <p>
-              We structure pages to guide visitors from interest to action with stronger headlines,
-              trust blocks, offer clarity, and cleaner CTA placement.
-            </p>
-          </div>
-
-          <div className="whyCard">
-            <div className="whyTitle">Not a cookie-cutter feel</div>
-            <p>
-              Even when using proven structure, the goal is to make the brand feel elevated, modern,
-              and custom enough to stand out from the average local competitor.
-            </p>
-          </div>
-
-          <div className="whyCard">
-            <div className="whyTitle">Designed for real-world selling</div>
-            <p>
-              Whether someone finds you on Google, Facebook, Instagram, or a referral, the site should
-              make them feel like they’re dealing with a serious business.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* DEMOS */}
-      <section id="demos" className="section">
-        <div className="sectionHead">
-          <div className="sectionKicker">Demo Portfolio</div>
-          <h2>Premium concepts built to show what Atlas can do</h2>
-          <p>
-            These demos are built to mirror the kind of high-end layout, polish, and conversion
-            structure we can create for real businesses.
-          </p>
-        </div>
-
-        <div className="demoGrid">
-          <div className="demoCard featured">
-            <div className="demoTop">
-              <div>
-                <div className="demoTitle">Metal Business Cards Demo</div>
-                <div className="demoText">
-                  Premium product-style concept focused on finishes, package presentation, and a clean
-                  luxury sales flow.
-                </div>
-              </div>
-              <span className="tag">Premium product-style</span>
-            </div>
-            <Link className="demoBtn" href="/demo/metal-cards">
-              Open Metal Cards Demo
-            </Link>
-          </div>
-
-          <div className="demoCard">
-            <div className="demoTop">
-              <div>
-                <div className="demoTitle">Roofing Demo</div>
-                <div className="demoText">
-                  Local service-style concept with stronger trust positioning, service clarity, and
-                  quote-focused structure.
-                </div>
-              </div>
-              <span className="tag">Local service-style</span>
-            </div>
-            <Link className="demoBtn" href="/demo/roofing">
-              Open Roofing Demo
-            </Link>
-          </div>
-
-          <div className="demoCard">
-            <div className="demoTop">
-              <div>
-                <div className="demoTitle">Pet Bakery Demo</div>
-                <div className="demoText">
-                  Boutique retail-style concept with product highlights, premium storefront energy, and
-                  a polished brand presentation.
-                </div>
-              </div>
-              <span className="tag">Local retail-style</span>
-            </div>
-            <Link className="demoBtn" href="/demo/pet-bakery">
-              Open Pet Bakery Demo
-            </Link>
-          </div>
-
-          <div className="demoCard">
-            <div className="demoTop">
-              <div>
-                <div className="demoTitle">Luxury Interior Styling Demo</div>
-                <div className="demoText">
-                  Premium redesign concept with upscale positioning, portfolio flow, and consultation
-                  focused CTA structure.
-                </div>
-              </div>
-              <span className="tag">Premium redesign concept</span>
-            </div>
-            <Link className="demoBtn" href="/demo/home-styling">
-              Open Interior Styling Demo
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="section">
-        <div className="sectionHead">
-          <div className="sectionKicker">Process</div>
-          <h2>A simple build process that keeps things moving</h2>
-          <p>
-            Clear flow. Fast communication. No confusing handoff. We keep the process tight so projects
-            move forward without dragging.
-          </p>
-        </div>
-
-        <div className="processGrid">
-          <div className="processCard">
-            <div className="processNum">01</div>
-            <div className="processTitle">Discovery</div>
-            <p>We figure out the business, the offer, the audience, and what the site needs to do.</p>
-          </div>
-
-          <div className="processCard">
-            <div className="processNum">02</div>
-            <div className="processTitle">Design Direction</div>
-            <p>We map the layout, positioning, tone, and visual feel so the brand looks more premium.</p>
-          </div>
-
-          <div className="processCard">
-            <div className="processNum">03</div>
-            <div className="processTitle">Build</div>
-            <p>We turn the concept into a clean, responsive, conversion-minded site.</p>
-          </div>
-
-          <div className="processCard">
-            <div className="processNum">04</div>
-            <div className="processTitle">Launch & Improve</div>
-            <p>We launch, refine, and keep improving with SEO, content, and better positioning over time.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING */}
-      <section id="pricing" className="section">
-        <div className="sectionHead">
-          <div className="sectionKicker">Pricing</div>
-          <h2>Clear packages for businesses at different stages</h2>
-          <p>
-            Whether you need a clean starter site or a more premium custom presence, Atlas offers a
-            path that fits where your business is right now.
-          </p>
-        </div>
-
-        <div className="pricingGrid">
-          <div className="priceCard">
-            <div className="priceTop">
-              <div className="planName">Starter</div>
-              <div className="price">$299</div>
-              <div className="monthly">$79/mo</div>
-            </div>
-            <ul>
-              <li>Single-page website</li>
-              <li>Mobile optimized layout</li>
-              <li>Contact section</li>
-              <li>Basic SEO-ready setup</li>
-            </ul>
-            <a className="priceBtn" href={`tel:${MAIN_PHONE}`}>
-              Call to Start
-            </a>
-          </div>
-
-          <div className="priceCard">
-            <div className="priceTop">
-              <div className="planName">Growth</div>
-              <div className="price">$499</div>
-              <div className="monthly">$129/mo</div>
-            </div>
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Multi-section layout</li>
-              <li>Trust and service blocks</li>
-              <li>Stronger conversion structure</li>
-            </ul>
-            <a className="priceBtn" href={`tel:${MAIN_PHONE}`}>
-              Call to Start
-            </a>
-          </div>
-
-          <div className="priceCard popular">
-            <div className="priceTop">
-              <div className="planName">Pro</div>
-              <div className="badge">Most Popular</div>
-              <div className="price">$799</div>
-              <div className="monthly">$179/mo</div>
-            </div>
-            <ul>
-              <li>Everything in Growth</li>
-              <li>Advanced SEO structure</li>
-              <li>Google Business optimization help</li>
-              <li>Priority design direction</li>
-            </ul>
-            <a className="priceBtn primary" href={`tel:${SALES_PHONE}`}>
-              Talk to Sales
-            </a>
-          </div>
-
-          <div className="priceCard elite">
-            <div className="priceTop">
-              <div className="planName">Elite</div>
-              <div className="badge gold">Premium Option</div>
-              <div className="price">$1,200</div>
-              <div className="monthly">$249/mo</div>
-            </div>
-            <ul>
-              <li>Custom premium design</li>
-              <li>Sharper brand presentation</li>
-              <li>High-conversion page structure</li>
-              <li>Higher-end strategic layout</li>
-            </ul>
-            <a className="priceBtn primary" href={`mailto:${EMAIL}`}>
-              Build My Elite Site
-            </a>
-          </div>
-        </div>
-
-        <div className="footerCtas">
-          <div className="footerNote">
-            Need something more custom, higher-end, or niche-specific? Reach out and we’ll map the
-            right build.
-          </div>
-          <div className="footerActionRow">
-            <a className="pill" href={`tel:${MAIN_PHONE}`}>
-              Text {MAIN_PRETTY}
-            </a>
-            <a className="pill primary" href={`mailto:${EMAIL}`}>
-              Email for Quote
-            </a>
           </div>
         </div>
       </section>
 
       <footer className="footer">
-        <div>© {new Date().getFullYear()} Atlas Digital Lab — Premium Websites • SEO • Branding</div>
-        <div className="footerRight">
-          Main: {MAIN_PRETTY} • Sales: {SALES_PRETTY} • {EMAIL}
+        <div className="container footerInner">
+          <div>
+            <div className="footerBrand">Atlas Digital Lab</div>
+            <div className="footerSub">Websites • SEO • Small Business Growth</div>
+          </div>
+
+          <div className="footerLinks">
+            <a href={`mailto:${EMAIL}`}>Email</a>
+            <a href={`tel:${MAIN_PHONE}`}>Call</a>
+            <Link href="/houston-web-design">Houston SEO</Link>
+          </div>
         </div>
       </footer>
 
       <style jsx>{`
         .page {
           min-height: 100vh;
-          color: #eef4ff;
-          font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          background:
-            radial-gradient(circle at top left, rgba(49, 106, 255, 0.2), transparent 30%),
-            radial-gradient(circle at 85% 15%, rgba(47, 211, 255, 0.14), transparent 25%),
-            linear-gradient(180deg, #08111f 0%, #0a1425 30%, #08101d 100%);
+          background: #f6f1ea;
+          color: #1d1713;
+          font-family: Inter, Arial, sans-serif;
         }
 
-        .navWrap {
-          position: sticky;
-          top: 0;
-          z-index: 40;
-          backdrop-filter: blur(16px);
-          background: rgba(7, 12, 21, 0.72);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .nav {
-          max-width: 1180px;
+        .container {
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 16px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 18px;
+          padding: 0 20px;
         }
 
-        .brand {
+        .hero {
+          position: relative;
+          min-height: 92vh;
+          background:
+            linear-gradient(rgba(19, 24, 21, 0.52), rgba(19, 24, 21, 0.52)),
+            url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=80");
+          background-size: cover;
+          background-position: center;
+          color: white;
+          overflow: hidden;
+        }
+
+        .heroOverlay {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at top left, rgba(239, 187, 120, 0.18), transparent 42%);
+          pointer-events: none;
+        }
+
+        .topbar {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
+          padding-top: 20px;
+        }
+
+        .brandWrap {
           display: flex;
           gap: 12px;
           align-items: center;
-          color: inherit;
+          color: white;
           text-decoration: none;
-          min-width: 250px;
         }
 
-        .logo {
-          width: 38px;
-          height: 38px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #34dcff, #3a63ff);
-          box-shadow: 0 14px 34px rgba(52, 140, 255, 0.32);
+        .brandDot {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #efbb78;
           flex-shrink: 0;
         }
 
         .brandName {
-          font-size: 16px;
-          font-weight: 900;
-          letter-spacing: -0.02em;
+          font-weight: 700;
         }
 
         .brandSub {
-          font-size: 12px;
-          color: rgba(238, 244, 255, 0.72);
+          font-size: 14px;
+          opacity: 0.82;
         }
 
-        .links {
+        .navLinks {
           display: flex;
+          gap: 18px;
           align-items: center;
-          gap: 20px;
         }
 
-        .links a {
-          color: rgba(238, 244, 255, 0.84);
+        .navLinks a {
+          color: rgba(255, 255, 255, 0.9);
           text-decoration: none;
           font-size: 14px;
-          font-weight: 700;
+          font-weight: 600;
         }
 
-        .links a:hover {
-          color: #ffffff;
+        .navLinks a:hover {
+          color: #efbb78;
         }
 
-        .ctaRow {
+        .topActions {
           display: flex;
-          align-items: center;
-          gap: 10px;
+          gap: 12px;
           flex-wrap: wrap;
-          justify-content: flex-end;
+          align-items: center;
+        }
+
+        .pill,
+        .btn,
+        .priceBtn,
+        .demoBtn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          box-sizing: border-box;
+          white-space: nowrap;
         }
 
         .pill {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 11px 14px;
-          border-radius: 999px;
-          text-decoration: none;
-          color: #eef4ff;
-          font-weight: 800;
-          font-size: 13px;
-          white-space: nowrap;
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          background: rgba(255, 255, 255, 0.05);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+          padding: 10px 16px;
+          min-height: 46px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.26);
+          color: white;
+          background: rgba(255, 255, 255, 0.08);
+          font-weight: 600;
         }
 
-        .pill.primary {
+        .darkPill {
+          border: 1px solid rgba(29, 23, 19, 0.14);
+          color: #1d1713;
+          background: white;
+        }
+
+        .primaryPill {
+          background: #efbb78;
+          color: black;
           border: none;
-          color: #07111f;
-          background: linear-gradient(135deg, #37dfff, #4772ff);
-          box-shadow: 0 12px 28px rgba(54, 134, 255, 0.28);
-        }
-
-        .hero {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 72px 20px 36px;
-          display: grid;
-          grid-template-columns: 1.15fr 0.85fr;
-          gap: 28px;
-          align-items: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .heroGlow {
-          position: absolute;
-          border-radius: 999px;
-          filter: blur(60px);
-          pointer-events: none;
-          opacity: 0.6;
-        }
-
-        .heroGlowOne {
-          width: 220px;
-          height: 220px;
-          background: rgba(50, 110, 255, 0.22);
-          top: 10px;
-          left: 40%;
-        }
-
-        .heroGlowTwo {
-          width: 260px;
-          height: 260px;
-          background: rgba(47, 211, 255, 0.16);
-          right: 0;
-          top: 90px;
-        }
-
-        .heroLeft {
-          position: relative;
-          z-index: 2;
-        }
-
-        .kicker {
-          display: inline-flex;
-          align-items: center;
-          padding: 8px 12px;
-          border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.05);
-          color: rgba(238, 244, 255, 0.82);
-          font-size: 12px;
           font-weight: 700;
-          letter-spacing: 0.02em;
         }
 
-        h1 {
-          margin: 18px 0 14px;
-          font-size: 60px;
-          line-height: 1;
-          letter-spacing: -0.045em;
-          max-width: 12ch;
-        }
-
-        .accent {
-          color: #5be1ff;
-        }
-
-        .sub {
-          max-width: 60ch;
-          margin: 0 0 24px;
-          color: rgba(238, 244, 255, 0.82);
-          font-size: 18px;
-          line-height: 1.65;
-        }
-
-        .heroBtns {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
-          margin-bottom: 26px;
-        }
-
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 52px;
-          padding: 0 18px;
-          border-radius: 14px;
-          text-decoration: none;
-          color: #eef4ff;
-          font-weight: 900;
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          background: rgba(255, 255, 255, 0.05);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .btn.primary {
-          border: none;
-          color: #08111d;
-          background: linear-gradient(135deg, #3fe5ff, #4976ff);
-          box-shadow: 0 14px 36px rgba(61, 129, 255, 0.3);
-        }
-
-        .btn.ghost {
-          background: transparent;
-        }
-
-        .heroStats {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 14px;
-          max-width: 720px;
-        }
-
-        .stat {
-          padding: 16px;
-          border-radius: 18px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
-        }
-
-        .statNum {
-          font-size: 22px;
-          font-weight: 900;
-          margin-bottom: 4px;
-        }
-
-        .statLabel {
-          font-size: 13px;
-          color: rgba(238, 244, 255, 0.74);
-          line-height: 1.5;
-        }
-
-        .heroRight {
+        .heroContent {
           position: relative;
           z-index: 2;
+          display: flex;
+          align-items: center;
+          min-height: 74vh;
+          padding: 40px 0 90px;
         }
 
         .heroPanel {
-          padding: 28px;
-          border-radius: 28px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)),
-            rgba(10, 18, 31, 0.7);
-          box-shadow:
-            0 30px 80px rgba(0, 0, 0, 0.28),
-            inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .panelTop {
-          display: flex;
-          justify-content: space-between;
-          gap: 12px;
-          align-items: center;
-          margin-bottom: 20px;
-          flex-wrap: wrap;
-        }
-
-        .panelEyebrow {
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: rgba(238, 244, 255, 0.7);
-        }
-
-        .panelBadge {
-          font-size: 12px;
-          font-weight: 800;
-          border-radius: 999px;
-          padding: 7px 10px;
-          background: rgba(91, 225, 255, 0.12);
-          border: 1px solid rgba(91, 225, 255, 0.22);
-          color: #baf3ff;
-        }
-
-        .panelHeadline {
-          font-size: 28px;
-          line-height: 1.15;
-          font-weight: 900;
-          letter-spacing: -0.03em;
-          margin-bottom: 24px;
-        }
-
-        .panelList {
-          display: grid;
-          gap: 16px;
-        }
-
-        .panelItem {
-          display: flex;
-          gap: 12px;
-          align-items: flex-start;
-        }
-
-        .panelDot {
-          width: 10px;
-          height: 10px;
-          border-radius: 999px;
-          margin-top: 8px;
-          background: linear-gradient(135deg, #40e5ff, #4b73ff);
-          flex-shrink: 0;
-        }
-
-        .panelItem strong {
-          display: block;
-          font-size: 15px;
-          margin-bottom: 4px;
-        }
-
-        .panelItem p {
-          margin: 0;
-          color: rgba(238, 244, 255, 0.74);
-          font-size: 14px;
-          line-height: 1.6;
-        }
-
-        .panelFooter {
-          margin-top: 24px;
-        }
-
-        .panelBtn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 48px;
-          padding: 0 16px;
-          border-radius: 14px;
-          background: linear-gradient(135deg, #3fe5ff, #4976ff);
-          color: #07111e;
-          text-decoration: none;
-          font-weight: 900;
-        }
-
-        .trustStrip {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 6px 20px 10px;
-        }
-
-        .trustInner {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 12px;
-          padding: 14px 16px;
-          border-radius: 18px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.04);
-          text-align: center;
-          color: rgba(238, 244, 255, 0.76);
-          font-weight: 700;
-          font-size: 13px;
-        }
-
-        .section {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 86px 20px 0;
-        }
-
-        .sectionHead {
           max-width: 760px;
-          margin-bottom: 28px;
+          background: rgba(0, 0, 0, 0.38);
+          padding: 42px;
+          border-radius: 24px;
+          backdrop-filter: blur(4px);
         }
 
-        .sectionHead.narrow {
-          max-width: 820px;
+        .eyebrow {
+          display: inline-block;
+          padding: 8px 14px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          font-size: 13px;
+          margin-bottom: 18px;
+          color: white;
         }
 
-        .sectionKicker {
-          font-size: 12px;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: #79e9ff;
-          margin-bottom: 10px;
+        .eyebrow.dark {
+          background: #ead9c6;
+          border: none;
+          color: #6c4e36;
+        }
+
+        h1 {
+          font-size: clamp(40px, 6vw, 66px);
+          margin: 10px 0 20px;
+          line-height: 1.02;
+          letter-spacing: -0.03em;
+          max-width: 12ch;
         }
 
         h2 {
-          margin: 0 0 12px;
-          font-size: 42px;
-          line-height: 1.05;
-          letter-spacing: -0.04em;
+          font-size: clamp(32px, 4vw, 48px);
+          line-height: 1.06;
+          margin: 0 0 14px;
+          letter-spacing: -0.02em;
         }
 
-        .sectionHead p {
-          margin: 0;
-          color: rgba(238, 244, 255, 0.76);
-          line-height: 1.7;
-          font-size: 16px;
-        }
-
-        .cards3 {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .card {
-          border-radius: 22px;
-          padding: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
-            rgba(255, 255, 255, 0.02);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .cardIcon {
-          width: 42px;
-          height: 42px;
-          border-radius: 12px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 13px;
-          font-weight: 900;
-          color: #08111d;
-          background: linear-gradient(135deg, #46e1ff, #5177ff);
-          margin-bottom: 18px;
-        }
-
-        .cardTitle {
+        h3 {
           font-size: 22px;
-          font-weight: 900;
-          margin-bottom: 8px;
-          letter-spacing: -0.02em;
+          line-height: 1.2;
+          margin: 0 0 10px;
         }
 
-        .cardSub {
-          color: rgba(238, 244, 255, 0.76);
-          margin-bottom: 14px;
-          line-height: 1.65;
-        }
-
-        ul {
+        p {
           margin: 0;
-          padding-left: 18px;
-          color: rgba(238, 244, 255, 0.86);
         }
 
-        li {
-          margin: 8px 0;
-          line-height: 1.5;
-        }
-
-        .whyGrid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .whyCard {
-          border-radius: 22px;
-          padding: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          background: rgba(255, 255, 255, 0.04);
-        }
-
-        .whyTitle {
-          font-size: 20px;
-          font-weight: 900;
-          margin-bottom: 10px;
-          letter-spacing: -0.02em;
-        }
-
-        .whyCard p {
-          margin: 0;
-          color: rgba(238, 244, 255, 0.76);
+        .heroText {
+          font-size: 18px;
           line-height: 1.7;
+          color: rgba(255, 255, 255, 0.92);
+          max-width: 60ch;
+        }
+
+        .heroButtons {
+          margin-top: 24px;
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
+        .btn {
+          padding: 12px 20px;
+          min-height: 52px;
+          border-radius: 12px;
+          font-weight: 700;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover,
+        .priceBtn:hover,
+        .demoBtn:hover {
+          transform: translateY(-2px);
+        }
+
+        .primaryBtn {
+          background: #efbb78;
+          color: black;
+          border: none;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .ghostBtn {
+          border: 1px solid white;
+          color: white;
+          background: transparent;
+        }
+
+        .darkGhost {
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          color: white;
+          background: transparent;
+        }
+
+        .heroChips {
+          margin-top: 22px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        .chip {
+          display: inline-block;
+          padding: 7px 12px;
+          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.15);
+          font-size: 14px;
+        }
+
+        .introStrip {
+          margin-top: -42px;
+          position: relative;
+          z-index: 3;
+        }
+
+        .introGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .introCard {
+          background: white;
+          padding: 26px;
+          border-radius: 20px;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+        }
+
+        .introCard p,
+        .sectionHead p,
+        .serviceCard p,
+        .featureLeft p,
+        .demoText,
+        .ctaText p {
+          color: #5f5147;
+          line-height: 1.7;
+          font-size: 17px;
+        }
+
+        .section {
+          padding: 84px 0;
+        }
+
+        .light {
+          background: #f6f1ea;
+        }
+
+        .creamSection {
+          background: #efe7dd;
+        }
+
+        .sectionHead {
+          max-width: 780px;
+          margin-bottom: 30px;
+        }
+
+        .serviceGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .serviceCard {
+          background: white;
+          border-radius: 20px;
+          padding: 24px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .serviceCard ul,
+        .featureRight ul,
+        .priceCard ul {
+          margin: 14px 0 0;
+          padding-left: 20px;
+          line-height: 1.9;
+        }
+
+        .darkPanelSection {
+          background: linear-gradient(135deg, #1e2c28 0%, #151f1c 100%);
+          color: white;
+        }
+
+        .featurePanel {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 24px;
+          padding: 34px;
+          display: grid;
+          grid-template-columns: 1fr 0.95fr;
+          gap: 28px;
+        }
+
+        .featureLeft p {
+          color: rgba(255, 255, 255, 0.86);
+        }
+
+        .featureRight {
+          display: flex;
+          align-items: center;
+        }
+
+        .featureRight ul {
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .demoGrid {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
         }
 
         .demoCard {
-          border-radius: 24px;
-          padding: 22px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
-            rgba(255, 255, 255, 0.02);
-          min-height: 220px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .demoCard.featured {
-          border-color: rgba(91, 225, 255, 0.22);
-          box-shadow:
-            0 18px 48px rgba(0, 0, 0, 0.18),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          background: white;
+          border-radius: 20px;
+          padding: 24px;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
         }
 
         .demoTop {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          gap: 12px;
-          margin-bottom: 18px;
+          gap: 14px;
+          margin-bottom: 16px;
         }
 
         .demoTitle {
-          font-size: 24px;
-          font-weight: 900;
-          line-height: 1.08;
+          font-weight: 700;
+          font-size: 22px;
+          color: #1d1713;
           margin-bottom: 8px;
-          letter-spacing: -0.03em;
-        }
-
-        .demoText {
-          color: rgba(238, 244, 255, 0.76);
-          line-height: 1.65;
-          font-size: 15px;
-          max-width: 44ch;
         }
 
         .tag {
           font-size: 12px;
-          font-weight: 900;
-          padding: 7px 11px;
+          font-weight: 700;
+          padding: 7px 10px;
           border-radius: 999px;
+          background: #f1e5d6;
+          color: #7b5d43;
           white-space: nowrap;
-          background: rgba(255, 255, 255, 0.07);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          color: rgba(238, 244, 255, 0.86);
+        }
+
+        .demoBtn,
+        .priceBtn {
+          width: 100%;
+          min-height: 52px;
+          padding: 12px 18px;
+          border-radius: 12px;
+          font-weight: 700;
         }
 
         .demoBtn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 50px;
-          padding: 0 16px;
-          border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          background: rgba(255, 255, 255, 0.05);
-          color: #eef4ff;
-          text-decoration: none;
-          font-weight: 900;
-        }
-
-        .processGrid {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .processCard {
-          border-radius: 22px;
-          padding: 22px;
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          background: rgba(255, 255, 255, 0.04);
-        }
-
-        .processNum {
-          font-size: 13px;
-          font-weight: 900;
-          color: #80ebff;
-          margin-bottom: 14px;
-          letter-spacing: 0.08em;
-        }
-
-        .processTitle {
-          font-size: 20px;
-          font-weight: 900;
-          margin-bottom: 10px;
-          letter-spacing: -0.02em;
-        }
-
-        .processCard p {
-          margin: 0;
-          color: rgba(238, 244, 255, 0.76);
-          line-height: 1.7;
+          background: #1d1713;
+          color: white;
         }
 
         .pricingGrid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          margin-top: 12px;
         }
 
         .priceCard {
           position: relative;
-          border-radius: 22px;
+          background: white;
+          border-radius: 20px;
           padding: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
-            rgba(255, 255, 255, 0.02);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .priceCard.popular {
-          border-color: rgba(91, 225, 255, 0.24);
-          box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
         }
 
         .priceCard.elite {
-          border: 1px solid rgba(255, 208, 102, 0.42);
-          box-shadow:
-            0 20px 60px rgba(0, 0, 0, 0.2),
-            0 0 0 1px rgba(255, 208, 102, 0.06) inset;
+          border: 1px solid rgba(239, 187, 120, 0.7);
         }
 
         .priceTop {
@@ -1094,171 +827,214 @@ export default function HomePage() {
         }
 
         .planName {
-          font-size: 18px;
-          font-weight: 900;
-          opacity: 0.96;
+          font-weight: 700;
+          color: #6c4e36;
         }
 
         .price {
-          margin-top: 8px;
           font-size: 40px;
-          font-weight: 1000;
+          font-weight: 800;
           line-height: 1;
-          letter-spacing: -0.04em;
+          margin-top: 6px;
+          color: #1d1713;
         }
 
         .monthly {
           margin-top: 8px;
-          color: rgba(238, 244, 255, 0.74);
-          font-weight: 800;
+          font-weight: 700;
+          color: #5f5147;
         }
 
         .badge {
           position: absolute;
           top: 18px;
           right: 18px;
+          font-size: 12px;
+          font-weight: 700;
           padding: 7px 10px;
           border-radius: 999px;
-          font-size: 12px;
-          font-weight: 900;
-          background: rgba(71, 219, 255, 0.12);
-          border: 1px solid rgba(71, 219, 255, 0.26);
-          color: #b9f5ff;
+          background: #efe7dd;
+          color: #6c4e36;
         }
 
         .badge.gold {
-          background: rgba(255, 208, 102, 0.12);
-          border: 1px solid rgba(255, 208, 102, 0.3);
-          color: #ffe3a3;
+          background: #efbb78;
+          color: black;
         }
 
         .priceBtn {
-          margin-top: 18px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          min-height: 50px;
-          border-radius: 14px;
-          text-decoration: none;
-          color: #eef4ff;
-          font-weight: 900;
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          background: rgba(255, 255, 255, 0.05);
+          background: #1d1713;
+          color: white;
+          margin-top: 16px;
         }
 
-        .priceBtn.primary {
-          border: none;
-          color: #07111e;
-          background: linear-gradient(135deg, #40e5ff, #4b74ff);
-          box-shadow: 0 14px 34px rgba(63, 129, 255, 0.26);
+        .primaryBtnDark {
+          background: #1d1713;
+          color: white;
         }
 
         .footerCtas {
           margin-top: 24px;
-          padding: 18px;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          background: rgba(255, 255, 255, 0.04);
+          background: white;
+          border-radius: 22px;
+          padding: 20px;
           display: flex;
-          align-items: center;
           justify-content: space-between;
-          gap: 16px;
+          align-items: center;
+          gap: 18px;
           flex-wrap: wrap;
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
         }
 
         .footerNote {
-          color: rgba(238, 244, 255, 0.82);
-          font-weight: 700;
-          line-height: 1.6;
-          max-width: 58ch;
+          color: #5f5147;
+          font-weight: 600;
+          max-width: 700px;
         }
 
         .footerActionRow {
           display: flex;
-          gap: 10px;
+          gap: 12px;
           flex-wrap: wrap;
         }
 
-        .footer {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 42px 20px 40px;
-          display: flex;
-          justify-content: space-between;
-          gap: 16px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          margin-top: 60px;
-          color: rgba(238, 244, 255, 0.68);
-          font-size: 13px;
+        .ctaSection {
+          background: #f6f1ea;
+          padding-top: 24px;
         }
 
-        .footerRight {
-          text-align: right;
+        .ctaPanel {
+          background: #1b2623;
+          color: white;
+          padding: 42px;
+          border-radius: 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 28px;
+          flex-wrap: wrap;
+        }
+
+        .ctaText {
+          max-width: 720px;
+        }
+
+        .ctaButtons {
+          display: flex;
+          gap: 14px;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .footer {
+          background: #1b1714;
+          color: white;
+          padding: 40px 0;
+        }
+
+        .footerInner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .footerBrand {
+          font-weight: 700;
+        }
+
+        .footerSub {
+          margin-top: 4px;
+          color: rgba(255, 255, 255, 0.74);
+          font-size: 14px;
+        }
+
+        .footerLinks {
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .footerLinks a {
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          white-space: nowrap;
+          font-size: 14px;
         }
 
         @media (max-width: 1100px) {
-          .hero {
-            grid-template-columns: 1fr;
-          }
-
-          h1 {
-            max-width: 13ch;
-          }
-
-          .cards3,
-          .pricingGrid,
-          .processGrid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .trustInner {
+          .pricingGrid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
 
-        @media (max-width: 860px) {
-          .links {
-            display: none;
-          }
-
-          h1 {
-            font-size: 46px;
-          }
-
-          h2 {
-            font-size: 34px;
-          }
-
-          .heroStats,
-          .cards3,
-          .whyGrid,
-          .demoGrid,
-          .pricingGrid,
-          .processGrid,
-          .trustInner {
+        @media (max-width: 980px) {
+          .navLinks,
+          .introGrid,
+          .serviceGrid,
+          .featurePanel,
+          .demoGrid {
             grid-template-columns: 1fr;
           }
 
-          .footer {
+          .navLinks {
+            display: none;
+          }
+
+          .pricingGrid {
+            grid-template-columns: 1fr;
+          }
+
+          .introGrid,
+          .serviceGrid,
+          .demoGrid {
+            display: grid;
+          }
+
+          .footerInner {
             flex-direction: column;
-            text-align: center;
+            align-items: flex-start;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .container {
+            padding: 0 14px;
           }
 
-          .footerRight {
-            text-align: center;
+          .topbar,
+          .topActions,
+          .heroButtons,
+          .ctaButtons,
+          .footerLinks,
+          .footerActionRow {
+            flex-direction: column;
+            align-items: stretch;
           }
 
-          .nav {
-            padding: 14px 16px;
+          .pill,
+          .btn {
+            width: 100%;
           }
 
-          .hero {
-            padding: 54px 16px 24px;
+          .heroPanel,
+          .ctaPanel,
+          .featurePanel {
+            padding: 28px 18px;
           }
 
           .section {
-            padding: 64px 16px 0;
+            padding: 68px 0;
+          }
+
+          .introStrip {
+            margin-top: -26px;
+          }
+
+          .footerCtas {
+            padding: 18px;
           }
         }
       `}</style>

@@ -332,7 +332,7 @@ export default function HomePage() {
                 <div className="planName">Elite</div>
                 <div className="badge gold">Premium Option</div>
                 <div className="price">$1,200</div>
-                <div className="monthly">$249/mo</div>
+                <div className="monthly">$200/mo</div>
               </div>
 
               <ul>

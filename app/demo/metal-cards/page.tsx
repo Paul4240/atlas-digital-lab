@@ -14,42 +14,42 @@ export default function MetalCardsDemo() {
       {
         key: "black",
         name: "Black",
-        note: "Bold, sharp, luxury look.",
-        accent: "#38c3ff",
-        glow: "rgba(56,195,255,.24)",
+        note: "Bold, luxury, high-contrast look.",
+        accent: "#ffffff",
+        glow: "rgba(255,255,255,.14)",
         card:
-          "linear-gradient(145deg, #0c1016 0%, #171d27 35%, #0b0f15 100%)",
-        edge: "rgba(255,255,255,.10)",
+          "linear-gradient(145deg, #0b0e13 0%, #151a22 34%, #0a0d12 100%)",
+        edge: "rgba(255,255,255,.12)",
       },
       {
         key: "gold",
         name: "Gold",
-        note: "Premium look for high-ticket brands.",
+        note: "High-ticket premium presentation.",
         accent: "#f3c44a",
-        glow: "rgba(243,196,74,.20)",
+        glow: "rgba(243,196,74,.22)",
         card:
           "linear-gradient(145deg, #2f2610 0%, #705822 34%, #251d0c 100%)",
         edge: "rgba(243,196,74,.28)",
       },
       {
-        key: "rose",
-        name: "Rose Gold",
-        note: "Modern and classy creative feel.",
-        accent: "#ef92b6",
-        glow: "rgba(239,146,182,.20)",
-        card:
-          "linear-gradient(145deg, #2d1921 0%, #603644 35%, #211218 100%)",
-        edge: "rgba(239,146,182,.24)",
-      },
-      {
         key: "silver",
         name: "Silver",
-        note: "Clean, professional, brushed look.",
+        note: "Clean, polished, professional feel.",
         accent: "#dce8ff",
         glow: "rgba(220,232,255,.18)",
         card:
           "linear-gradient(145deg, #8d96a5 0%, #dce2eb 28%, #7d8796 60%, #b8c1cd 100%)",
-        edge: "rgba(255,255,255,.24)",
+        edge: "rgba(255,255,255,.22)",
+      },
+      {
+        key: "rose",
+        name: "Rose Gold",
+        note: "Modern creative luxury look.",
+        accent: "#ef92b6",
+        glow: "rgba(239,146,182,.22)",
+        card:
+          "linear-gradient(145deg, #2d1921 0%, #603644 35%, #211218 100%)",
+        edge: "rgba(239,146,182,.24)",
       },
     ],
     []
@@ -60,7 +60,7 @@ export default function MetalCardsDemo() {
   const [brandName, setBrandName] = useState("JORDAN MILLER");
   const [title, setTitle] = useState("Owner • Custom Metal Cards");
   const [phone, setPhone] = useState(SALES_PRETTY);
-  const [site, setSite] = useState("brand.com");
+  const [site, setSite] = useState("atlasdigitallab.com");
   const [city, setCity] = useState("Houston, TX");
 
   const fileRef = useRef<HTMLInputElement | null>(null);
@@ -72,13 +72,11 @@ export default function MetalCardsDemo() {
   function onLogoChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
-    const url = URL.createObjectURL(file);
-    setLogoUrl(url);
+    setLogoUrl(URL.createObjectURL(file));
   }
 
   const telMain = `tel:${MAIN_PHONE}`;
   const telSales = `tel:${SALES_PHONE}`;
-
   const mailtoQuote = `mailto:${EMAIL}?subject=${encodeURIComponent(
     "Metal Cards Quote"
   )}&body=${encodeURIComponent(`Hi Atlas Digital Lab,
@@ -90,7 +88,7 @@ Name: ${brandName}
 Title: ${title}
 Phone: ${phone}
 Website: ${site}
-City: ${city}
+Location: ${city}
 
 Notes:
 `)}`;
@@ -100,16 +98,14 @@ Notes:
       <div className="pageGlow glowOne" />
       <div className="pageGlow glowTwo" />
 
-      <section className="hero">
-        <div className="heroOverlay" />
-
-        <div className="container topbar">
+      <header className="topbar">
+        <div className="container topbarInner">
           <div className="brandWrap">
             <div
               className="brandDot"
               style={{
                 background: finish.accent,
-                boxShadow: `0 0 24px ${finish.glow}`,
+                boxShadow: `0 0 22px ${finish.glow}`,
               }}
             />
             <div>
@@ -118,7 +114,7 @@ Notes:
             </div>
           </div>
 
-          <div className="topActions">
+          <div className="navActions">
             <a href={telMain} className="pill">
               Main {MAIN_PRETTY}
             </a>
@@ -130,152 +126,136 @@ Notes:
             </a>
           </div>
         </div>
+      </header>
 
-        <div className="container heroGrid">
-          <div className="heroCopy">
-            <div className="eyebrow">Premium presentation • engraved look • product-style flow</div>
+      <section className="hero container">
+        <div className="heroCopy">
+          <div className="eyebrow">PREMIUM METAL CARD DEMO</div>
 
-            <h1>
-              Metal cards that make your brand feel{" "}
-              <span style={{ color: finish.accent }}>more expensive</span>.
-            </h1>
+          <h1>Make your brand feel like it belongs at the top.</h1>
 
-            <p className="heroText">
-              This demo is built to feel like a luxury storefront, not a plain
-              order form. Strong finishes, better mockups, cleaner typography,
-              and a premium-first layout that makes the product feel high-value.
-            </p>
+          <p className="heroText">
+            These aren’t just business cards — they’re a status signal. Built
+            to make people stop, look twice, and remember you. Stronger
+            presentation makes the whole brand feel more expensive.
+          </p>
 
-            <div className="heroCtas">
-              <a href={telSales} className="btn btnPrimary">
-                Call / Text to Order
-              </a>
-              <a href={mailtoQuote} className="btn">
-                Email for a Quote
-              </a>
+          <div className="heroBtns">
+            <a href={telSales} className="btn btnPrimary">
+              Call / Text {SALES_PRETTY}
+            </a>
+            <a href={mailtoQuote} className="btn">
+              Email for Quote
+            </a>
+          </div>
+
+          <div className="heroMiniRow">
+            <div className="miniItem">
+              <div className="miniTitle">Luxury feel</div>
+              <div className="miniText">Presentation designed to feel premium first.</div>
+            </div>
+            <div className="miniItem">
+              <div className="miniTitle">Live customization</div>
+              <div className="miniText">Switch finishes and preview a logo instantly.</div>
+            </div>
+            <div className="miniItem">
+              <div className="miniTitle">High-ticket look</div>
+              <div className="miniText">Cleaner layout makes the offer feel stronger.</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="heroPreview">
+          <div className="previewTop">
+            <div>
+              <div className="sectionMiniKicker">LIVE PREVIEW</div>
+              <div className="previewTitle">Luxury-style mock card</div>
             </div>
 
-            <div className="heroPoints">
-              <div className="pointCard">
-                <div className="pointTitle">Luxury feel</div>
-                <div className="pointText">Built to make a first impression feel premium.</div>
-              </div>
-              <div className="pointCard">
-                <div className="pointTitle">Interactive demo</div>
-                <div className="pointText">Switch finishes and upload a logo live.</div>
-              </div>
-              <div className="pointCard">
-                <div className="pointTitle">Clear sales flow</div>
-                <div className="pointText">Stronger visuals and cleaner CTA sections.</div>
-              </div>
+            <div
+              className="finishChip"
+              style={{
+                color: finish.accent,
+                borderColor: finish.edge,
+                boxShadow: `0 0 0 3px ${finish.glow}`,
+              }}
+            >
+              {finish.name}
             </div>
           </div>
 
-          <div className="previewPanel">
-            <div className="previewTop">
-              <div>
-                <div className="previewKicker">LIVE PRODUCT PREVIEW</div>
-                <div className="previewTitle">Luxury-style card mockup</div>
-              </div>
+          <div className="cardStage">
+            <div
+              className="metalCard metalRear"
+              style={{
+                background: finish.card,
+                borderColor: finish.edge,
+                boxShadow: `0 18px 60px rgba(0,0,0,.35), 0 0 26px ${finish.glow}`,
+              }}
+            />
+            <div
+              className="metalCard metalFront"
+              style={{
+                background: finish.card,
+                borderColor: finish.edge,
+                boxShadow: `0 18px 60px rgba(0,0,0,.38), 0 0 26px ${finish.glow}`,
+              }}
+            >
+              <div className="cardGlow" />
+              <div className="cardShine" />
 
-              <div
-                className="finishChip"
-                style={{
-                  color: finish.accent,
-                  borderColor: finish.edge,
-                  boxShadow: `0 0 0 3px ${finish.glow}`,
-                }}
-              >
-                {finish.name}
-              </div>
-            </div>
-
-            <div className="cardStage">
-              <div
-                className="metalCard metalRear"
-                style={{
-                  background: finish.card,
-                  borderColor: finish.edge,
-                  boxShadow: `0 18px 60px rgba(0,0,0,.35), 0 0 26px ${finish.glow}`,
-                }}
-              />
-              <div
-                className="metalCard metalFront"
-                style={{
-                  background: finish.card,
-                  borderColor: finish.edge,
-                  boxShadow: `0 18px 60px rgba(0,0,0,.35), 0 0 26px ${finish.glow}`,
-                }}
-              >
-                <div className="cardShine" />
-
-                <div className="cardTop">
-                  <div>
-                    <div className="cardName">{brandName.toUpperCase()}</div>
-                    <div className="cardRole">{title}</div>
-                  </div>
-
-                  <div
-                    className="cardBadge"
-                    style={{ color: finish.accent, borderColor: finish.edge }}
-                  >
-                    {finish.name}
-                  </div>
+              <div className="cardTop">
+                <div>
+                  <div className="cardName">{brandName.toUpperCase()}</div>
+                  <div className="cardRole">{title}</div>
                 </div>
 
-                <div className="cardLogoBox">
-                  {logoUrl ? (
-                    <img src={logoUrl} alt="Logo preview" className="cardLogo" />
-                  ) : (
-                    <div className="cardLogoPlaceholder">Your logo here</div>
-                  )}
-                </div>
-
-                <div className="cardMetaRow">
-                  <div className="cardMeta">
-                    {phone}
-                    <br />
-                    {EMAIL}
-                  </div>
-                  <div className="cardMeta cardMetaRight">
-                    {site}
-                    <br />
-                    {city}
-                  </div>
+                <div
+                  className="cardBadge"
+                  style={{ color: finish.accent, borderColor: finish.edge }}
+                >
+                  {finish.name}
                 </div>
               </div>
-            </div>
 
-            <div className="previewBottom">
-              <div className="previewNote">Upload your logo and preview it instantly.</div>
-              <div className="previewNote">Switch finishes to change the look and feel.</div>
+              <div className="cardLogoBox">
+                {logoUrl ? (
+                  <img src={logoUrl} alt="Logo preview" className="cardLogo" />
+                ) : (
+                  <div className="cardLogoPlaceholder">Your logo here</div>
+                )}
+              </div>
+
+              <div className="cardMetaRow">
+                <div className="cardMeta">
+                  {phone}
+                  <br />
+                  {EMAIL}
+                </div>
+                <div className="cardMeta cardMetaRight">
+                  {site}
+                  <br />
+                  {city}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="introStrip">
-            <div className="introItem">Premium layout</div>
-            <div className="introItem">Luxury product feel</div>
-            <div className="introItem">Live logo preview</div>
-            <div className="introItem">Finish switching</div>
-            <div className="introItem">High-conversion flow</div>
-          </div>
+      <section className="section container">
+        <div className="sectionIntro">
+          <div className="sectionMiniKicker">CUSTOMIZE THE MOCKUP</div>
+          <h2 className="sectionTitle">Build your card preview</h2>
+          <p className="sectionSub">
+            Pick a finish, upload a logo, and change the details live. This
+            section is lighter on purpose so the page feels more like a real
+            landing page and less like a boxed dashboard.
+          </p>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container twoColSection">
-          <div className="builderPanel">
-            <div className="sectionMiniKicker">CUSTOMIZE THE MOCKUP</div>
-            <h2 className="sectionTitle">Build your card preview</h2>
-            <p className="sectionSub">
-              This demo is meant to feel like a premium storefront experience.
-              Choose a finish, upload a logo, and edit the card details live.
-            </p>
-
+        <div className="editorLayout">
+          <div className="leftEditor">
             <div className="finishGrid">
               {finishes.map((f) => (
                 <button
@@ -297,7 +277,7 @@ Notes:
                       className="finishDot"
                       style={{
                         background: f.accent,
-                        boxShadow: `0 0 16px ${f.glow}`,
+                        boxShadow: `0 0 14px ${f.glow}`,
                       }}
                     />
                     <span className="finishLabel">{f.name}</span>
@@ -321,12 +301,12 @@ Notes:
               <div className="uploadHint">PNG / JPG / SVG / WEBP</div>
             </div>
 
-            <div className="fieldGrid twoCol">
+            <div className="fieldGrid twoColFields">
               <Field label="Name" value={brandName} onChange={setBrandName} />
               <Field label="Title" value={title} onChange={setTitle} />
             </div>
 
-            <div className="fieldGrid twoCol">
+            <div className="fieldGrid twoColFields">
               <Field label="Phone" value={phone} onChange={setPhone} />
               <Field label="Website" value={site} onChange={setSite} />
             </div>
@@ -336,39 +316,22 @@ Notes:
             </div>
           </div>
 
-          <div className="sideInfoPanel">
-            <div className="sectionMiniKicker">WHY THIS PAGE FEELS BETTER</div>
-            <h2 className="sectionTitle smallTitle">Built like a showcase, not just a quote form</h2>
-            <p className="sectionSub">
-              Your Pet Bakery and Home Styling pages feel stronger because they
-              sell a premium feeling first. This version does the same thing for
-              metal cards.
-            </p>
+          <div className="rightEditor">
+            <div className="softInfo">
+              <div className="infoTitle">Why this page feels better</div>
+              <p className="infoText">
+                Better spacing, stronger surfaces, cleaner mockups, and a more
+                open layout make the product feel more valuable before people
+                ask about price.
+              </p>
+            </div>
 
-            <div className="infoStack">
-              <div className="infoCard">
-                <div className="infoTitle">Luxury-first presentation</div>
-                <div className="infoText">
-                  Bigger hero, stronger mockup section, cleaner card surfaces,
-                  better spacing.
-                </div>
-              </div>
-
-              <div className="infoCard">
-                <div className="infoTitle">More like a real premium brand</div>
-                <div className="infoText">
-                  The layout makes the product feel more expensive before people
-                  even ask about pricing.
-                </div>
-              </div>
-
-              <div className="infoCard">
-                <div className="infoTitle">Better conversion flow</div>
-                <div className="infoText">
-                  It explains value, shows the product, builds trust, then gives
-                  a clear path to contact.
-                </div>
-              </div>
+            <div className="softInfo">
+              <div className="infoTitle">More premium positioning</div>
+              <p className="infoText">
+                The goal is not just to show a card — it’s to make the entire
+                brand feel more established and high-end.
+              </p>
             </div>
 
             <div className="sideButtons">
@@ -383,133 +346,163 @@ Notes:
         </div>
       </section>
 
-      <section className="section">
-        <div className="container sectionCard">
-          <div className="sectionMiniKicker">PACKAGES</div>
-          <h2 className="sectionTitle">Choose the level of polish</h2>
-          <p className="sectionSub">
-            These package blocks are intentionally styled like a premium product
-            page so the whole offer feels more valuable.
-          </p>
+      <section className="section container">
+        <div className="sectionIntro">
+          <div className="sectionMiniKicker">FEATURES</div>
+          <h2 className="sectionTitle">Built to feel premium at every step</h2>
+        </div>
 
-          <div className="pricingGrid">
-            <div className="priceCard">
-              <div className="priceTop">
-                <div className="priceName">Starter</div>
-                <div className="badge">Best for first run</div>
-              </div>
-              <div className="priceValue">$299</div>
-              <div className="priceSmall">Design + proof • single finish</div>
-              <ul className="priceList">
-                <li>1 card layout + revisions</li>
-                <li>Finish selection</li>
-                <li>Print-ready files</li>
-                <li>Email support</li>
-              </ul>
-              <a href={mailtoQuote} className="priceBtn">
-                Get Starter Quote
-              </a>
+        <div className="featuresGrid">
+          <div className="featureCard">
+            <div className="featureTitle">Finish switching</div>
+            <div className="featureText">
+              Lets people imagine the card in different premium looks.
             </div>
+          </div>
 
-            <div className="priceCard featuredPrice">
-              <div className="featuredGlow" style={{ background: finish.glow }} />
-              <div className="priceTop">
-                <div className="priceName">Pro</div>
-                <div
-                  className="badge"
-                  style={{ borderColor: finish.edge, color: finish.accent }}
-                >
-                  Most Popular
-                </div>
-              </div>
-              <div className="priceValue">$799</div>
-              <div className="priceSmall">Design + mockups • 2 finishes</div>
-              <ul className="priceList">
-                <li>2 mockups + finish variants</li>
-                <li>Logo placement + sizing</li>
-                <li>QR / vCard option</li>
-                <li>Priority turnaround</li>
-              </ul>
-              <a href={telSales} className="priceBtn btnPrimary">
-                Talk to Sales
-              </a>
+          <div className="featureCard">
+            <div className="featureTitle">Logo upload preview</div>
+            <div className="featureText">
+              Makes the demo feel personalized and more real.
             </div>
+          </div>
 
-            <div className="priceCard elitePrice">
-              <div className="priceTop">
-                <div className="priceName">Elite</div>
-                <div className="badge gold">Premium Option</div>
-              </div>
-              <div className="priceValue">$1,200</div>
-              <div className="priceSmall">Full set • 4 finishes • best polish</div>
-              <ul className="priceList">
-                <li>4 finish variants</li>
-                <li>Premium product page layout</li>
-                <li>Conversion-focused CTA sections</li>
-                <li>High-end typography + spacing</li>
-              </ul>
-              <a href={mailtoQuote} className="priceBtn btnPrimary">
-                Build My Elite Set
-              </a>
+          <div className="featureCard">
+            <div className="featureTitle">Luxury mockup presentation</div>
+            <div className="featureText">
+              Stronger card styling helps sell the value before contact.
+            </div>
+          </div>
+
+          <div className="featureCard">
+            <div className="featureTitle">Cleaner conversion flow</div>
+            <div className="featureText">
+              Better hierarchy means less confusion and stronger action.
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container sectionCard">
+      <section className="section container">
+        <div className="sectionIntro">
+          <div className="sectionMiniKicker">PACKAGES</div>
+          <h2 className="sectionTitle">Choose the level of polish</h2>
+          <p className="sectionSub">
+            Styled to feel like a premium product offer without turning the page
+            into a stack of heavy boxes.
+          </p>
+        </div>
+
+        <div className="pricingGrid">
+          <div className="priceCard">
+            <div className="priceTop">
+              <div className="priceName">Starter</div>
+              <div className="badge">Best for first run</div>
+            </div>
+            <div className="priceValue">$299</div>
+            <div className="priceSmall">Design + proof • single finish</div>
+            <ul className="priceList">
+              <li>1 card layout + revisions</li>
+              <li>Finish selection</li>
+              <li>Print-ready files</li>
+              <li>Email support</li>
+            </ul>
+            <a href={mailtoQuote} className="priceBtn">
+              Get Starter Quote
+            </a>
+          </div>
+
+          <div className="priceCard featuredPrice">
+            <div className="featuredGlow" style={{ background: finish.glow }} />
+            <div className="priceTop">
+              <div className="priceName">Pro</div>
+              <div
+                className="badge"
+                style={{ borderColor: finish.edge, color: finish.accent }}
+              >
+                Most Popular
+              </div>
+            </div>
+            <div className="priceValue">$799</div>
+            <div className="priceSmall">Design + mockups • 2 finishes</div>
+            <ul className="priceList">
+              <li>2 mockups + finish variants</li>
+              <li>Logo placement + sizing</li>
+              <li>QR / vCard option</li>
+              <li>Priority turnaround</li>
+            </ul>
+            <a href={telSales} className="priceBtn btnPrimary">
+              Talk to Sales
+            </a>
+          </div>
+
+          <div className="priceCard elitePrice">
+            <div className="priceTop">
+              <div className="priceName">Elite</div>
+              <div className="badge gold">Premium Option</div>
+            </div>
+            <div className="priceValue">$1,200</div>
+            <div className="priceSmall">Full set • 4 finishes • best polish</div>
+            <ul className="priceList">
+              <li>4 finish variants</li>
+              <li>Premium product page layout</li>
+              <li>Conversion-focused CTA sections</li>
+              <li>High-end typography + spacing</li>
+            </ul>
+            <a href={mailtoQuote} className="priceBtn btnPrimary">
+              Build My Elite Set
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section container">
+        <div className="sectionIntro">
           <div className="sectionMiniKicker">FAQ</div>
           <h2 className="sectionTitle">Questions people ask before ordering</h2>
-          <p className="sectionSub">
-            These trust blocks make the page feel more complete and reduce
-            hesitation before someone reaches out.
-          </p>
+        </div>
 
-          <div className="faqGrid">
-            <div className="faqCard">
-              <div className="faqQ">Does my logo upload really work?</div>
-              <div className="faqA">
-                Yes. This demo previews the logo instantly on the sample card.
-                A production version can store the file and generate final mockups.
-              </div>
-            </div>
-
-            <div className="faqCard">
-              <div className="faqQ">Can I change finishes?</div>
-              <div className="faqA">
-                Yes. Click a finish and the accents, surface tone, and mockup
-                update right away.
-              </div>
-            </div>
-
-            <div className="faqCard">
-              <div className="faqQ">Can you add QR or NFC?</div>
-              <div className="faqA">
-                Absolutely. QR to a website, booking page, or contact card is
-                easy. NFC depends on the vendor and package.
-              </div>
-            </div>
-
-            <div className="faqCard">
-              <div className="faqQ">What is the fastest way to order?</div>
-              <div className="faqA">
-                Text Sales for the fastest response. Email quote also works and
-                pre-fills the selected details.
-              </div>
+        <div className="faqGrid">
+          <div className="faqCard">
+            <div className="faqQ">Does the logo upload really work?</div>
+            <div className="faqA">
+              Yes. This demo previews the logo instantly on the sample card.
+              A production version can store the file and generate final mockups.
             </div>
           </div>
 
-          <div className="footerButtons">
-            <a href={telSales} className="btn btnPrimary fullBtn">
-              Text Sales {SALES_PRETTY}
-            </a>
-            <a href={mailtoQuote} className="btn fullBtn">
-              Email Quote
-            </a>
-            <a href={telMain} className="btn fullBtn">
-              Call Main {MAIN_PRETTY}
-            </a>
+          <div className="faqCard">
+            <div className="faqQ">Can I change finishes?</div>
+            <div className="faqA">
+              Yes. Click a finish and the accents, card tone, and preview update right away.
+            </div>
           </div>
+
+          <div className="faqCard">
+            <div className="faqQ">Can you add QR or NFC?</div>
+            <div className="faqA">
+              Absolutely. QR to a website, booking page, or contact card is easy.
+            </div>
+          </div>
+
+          <div className="faqCard">
+            <div className="faqQ">What is the fastest way to order?</div>
+            <div className="faqA">
+              Text Sales for the fastest response. Email quote also works and pre-fills the details.
+            </div>
+          </div>
+        </div>
+
+        <div className="footerButtons">
+          <a href={telSales} className="btn btnPrimary fullBtn">
+            Text Sales {SALES_PRETTY}
+          </a>
+          <a href={mailtoQuote} className="btn fullBtn">
+            Email Quote
+          </a>
+          <a href={telMain} className="btn fullBtn">
+            Call Main {MAIN_PRETTY}
+          </a>
         </div>
       </section>
 
@@ -540,7 +533,7 @@ Notes:
           border-radius: 999px;
           filter: blur(90px);
           pointer-events: none;
-          opacity: 0.7;
+          opacity: 0.65;
         }
 
         .glowOne {
@@ -548,7 +541,7 @@ Notes:
           height: 300px;
           top: 90px;
           left: -80px;
-          background: rgba(56, 195, 255, 0.14);
+          background: rgba(56, 195, 255, 0.12);
         }
 
         .glowTwo {
@@ -556,7 +549,7 @@ Notes:
           height: 340px;
           top: 320px;
           right: -110px;
-          background: rgba(0, 210, 170, 0.1);
+          background: rgba(0, 210, 170, 0.08);
         }
 
         .container {
@@ -569,28 +562,19 @@ Notes:
           z-index: 1;
         }
 
-        .hero {
-          position: relative;
-          padding-bottom: 18px;
-        }
-
-        .heroOverlay {
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04), transparent 24%),
-            linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%);
-          pointer-events: none;
-        }
-
         .topbar {
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(255,255,255,.08);
+          backdrop-filter: blur(12px);
+          background: rgba(7, 14, 26, 0.3);
+        }
+
+        .topbarInner {
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 14px;
           flex-wrap: wrap;
-          padding-top: 14px;
-          padding-bottom: 14px;
         }
 
         .brandWrap {
@@ -617,7 +601,7 @@ Notes:
           opacity: 0.78;
         }
 
-        .topActions {
+        .navActions {
           display: grid;
           grid-template-columns: repeat(3, auto);
           gap: 10px;
@@ -638,6 +622,7 @@ Notes:
           border: 1px solid rgba(255, 255, 255, 0.12);
           background: rgba(255, 255, 255, 0.06);
           transition: 0.2s ease;
+          cursor: pointer;
         }
 
         .pill:hover,
@@ -663,42 +648,17 @@ Notes:
           box-shadow: 0 14px 30px rgba(0, 210, 170, 0.14);
         }
 
-        .heroGrid {
+        .hero {
           display: grid;
-          grid-template-columns: 1.03fr 0.97fr;
-          gap: 18px;
-          align-items: stretch;
-          padding-top: 18px;
-        }
-
-        .heroCopy,
-        .previewPanel,
-        .builderPanel,
-        .sideInfoPanel,
-        .sectionCard {
-          border-radius: 28px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.035)
-          );
-          box-shadow:
-            0 26px 80px rgba(0, 0, 0, 0.34),
-            inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-
-        .heroCopy,
-        .previewPanel,
-        .builderPanel,
-        .sideInfoPanel,
-        .sectionCard {
-          padding: 28px;
+          grid-template-columns: 1.02fr 0.98fr;
+          gap: 30px;
+          align-items: center;
+          padding-top: 34px;
+          padding-bottom: 24px;
         }
 
         .eyebrow,
-        .sectionMiniKicker,
-        .previewKicker {
+        .sectionMiniKicker {
           font-size: 12px;
           font-weight: 900;
           letter-spacing: 0.12em;
@@ -707,7 +667,7 @@ Notes:
 
         h1 {
           margin: 14px 0 0;
-          font-size: 64px;
+          font-size: 66px;
           line-height: 0.98;
           letter-spacing: -1.8px;
           font-weight: 950;
@@ -723,52 +683,55 @@ Notes:
           max-width: 58ch;
         }
 
-        .heroCtas {
+        .heroBtns,
+        .footerButtons {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
+          margin-top: 20px;
         }
 
-        .btn {
+        .btn,
+        .priceBtn,
+        .uploadBtn {
           min-height: 54px;
           padding: 14px 18px;
           border-radius: 16px;
         }
 
-        .heroPoints {
+        .heroMiniRow {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 12px;
-          margin-top: 20px;
+          gap: 14px;
+          margin-top: 28px;
         }
 
-        .pointCard,
-        .infoCard,
-        .faqCard,
-        .priceCard {
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(0, 0, 0, 0.18);
-          padding: 16px;
-          position: relative;
-          overflow: hidden;
+        .miniItem {
+          padding-top: 12px;
+          border-top: 1px solid rgba(255,255,255,.12);
         }
 
-        .pointTitle,
+        .miniTitle,
         .infoTitle,
+        .featureTitle,
         .faqQ,
         .priceName {
           font-size: 14px;
           font-weight: 900;
         }
 
-        .pointText,
+        .miniText,
         .infoText,
+        .featureText,
         .faqA {
           margin-top: 8px;
           font-size: 13px;
           line-height: 1.55;
           opacity: 0.78;
+        }
+
+        .heroPreview {
+          position: relative;
         }
 
         .previewTop {
@@ -798,7 +761,7 @@ Notes:
 
         .cardStage {
           position: relative;
-          min-height: 360px;
+          min-height: 380px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -806,7 +769,7 @@ Notes:
 
         .metalCard {
           position: absolute;
-          width: min(100%, 460px);
+          width: min(100%, 480px);
           aspect-ratio: 1.65 / 1;
           border-radius: 26px;
           border: 1px solid;
@@ -815,12 +778,25 @@ Notes:
 
         .metalRear {
           transform: translateY(-16px) rotate(-7deg);
-          opacity: 0.72;
+          opacity: 0.7;
         }
 
         .metalFront {
           transform: translateY(18px) rotate(5deg);
           padding: 22px;
+          transition: 0.35s ease;
+        }
+
+        .metalFront:hover {
+          transform: translateY(10px) rotate(2deg) scale(1.02);
+        }
+
+        .cardGlow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.18), transparent 60%);
+          opacity: 0.28;
+          pointer-events: none;
         }
 
         .cardShine {
@@ -830,6 +806,12 @@ Notes:
             linear-gradient(115deg, rgba(255,255,255,.18), transparent 20%, transparent 58%, rgba(255,255,255,.12) 80%, transparent 100%);
           opacity: 0.5;
           pointer-events: none;
+          animation: shineMove 4s infinite linear;
+        }
+
+        @keyframes shineMove {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
 
         .cardTop {
@@ -911,48 +893,13 @@ Notes:
           text-align: right;
         }
 
-        .previewBottom {
-          margin-top: 18px;
-          display: grid;
-          gap: 10px;
-        }
-
-        .previewNote {
-          font-size: 13px;
-          opacity: 0.82;
-        }
-
         .section {
-          padding: 18px 0 0;
+          padding-top: 34px;
         }
 
-        .introStrip {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 0;
-          border-radius: 999px;
-          overflow: hidden;
-          border: 1px solid rgba(255,255,255,.1);
-          background: rgba(255,255,255,.04);
-        }
-
-        .introItem {
-          padding: 14px 10px;
-          text-align: center;
-          font-size: 12px;
-          font-weight: 800;
-          color: rgba(237,245,255,.86);
-          border-right: 1px solid rgba(255,255,255,.08);
-        }
-
-        .introItem:last-child {
-          border-right: none;
-        }
-
-        .twoColSection {
-          display: grid;
-          grid-template-columns: 1fr 0.42fr;
-          gap: 18px;
+        .sectionIntro {
+          max-width: 760px;
+          margin-bottom: 18px;
         }
 
         .sectionTitle {
@@ -963,10 +910,6 @@ Notes:
           letter-spacing: -0.03em;
         }
 
-        .smallTitle {
-          font-size: 26px;
-        }
-
         .sectionSub {
           margin-top: 10px;
           font-size: 14px;
@@ -975,18 +918,24 @@ Notes:
           max-width: 64ch;
         }
 
+        .editorLayout {
+          display: grid;
+          grid-template-columns: 1fr 0.42fr;
+          gap: 24px;
+          align-items: start;
+        }
+
         .finishGrid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 12px;
-          margin-top: 18px;
         }
 
         .finishBtn {
           text-align: left;
           border-radius: 18px;
           border: 1px solid rgba(255,255,255,.12);
-          background: rgba(255,255,255,.06);
+          background: rgba(255,255,255,.05);
           color: rgba(237,245,255,.94);
           padding: 14px;
           cursor: pointer;
@@ -1030,18 +979,6 @@ Notes:
           margin-top: 16px;
         }
 
-        .uploadBtn {
-          min-height: 50px;
-          padding: 12px 16px;
-          border-radius: 16px;
-          background: linear-gradient(
-            135deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.05)
-          );
-          cursor: pointer;
-        }
-
         .uploadHint {
           font-size: 12px;
           opacity: 0.65;
@@ -1053,31 +990,51 @@ Notes:
           margin-top: 14px;
         }
 
-        .twoCol {
+        .twoColFields {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .infoStack {
-          display: grid;
-          gap: 12px;
-          margin-top: 18px;
+        .softInfo {
+          padding: 0 0 18px;
+          margin-bottom: 18px;
+          border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .softInfo:last-of-type {
+          margin-bottom: 0;
         }
 
         .sideButtons {
           display: grid;
-          gap: 10px;
-          margin-top: 18px;
+          gap: 12px;
+          margin-top: 22px;
         }
 
-        .sectionCard {
-          padding: 28px;
+        .featuresGrid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .featureCard {
+          padding-top: 12px;
+          border-top: 1px solid rgba(255,255,255,.12);
         }
 
         .pricingGrid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 14px;
-          margin-top: 18px;
+          gap: 18px;
+        }
+
+        .priceCard,
+        .faqCard {
+          border-radius: 22px;
+          border: 1px solid rgba(255,255,255,.1);
+          background: rgba(255,255,255,.04);
+          padding: 18px;
+          position: relative;
+          overflow: hidden;
         }
 
         .featuredPrice {
@@ -1144,26 +1101,10 @@ Notes:
           opacity: 0.9;
         }
 
-        .priceBtn {
-          width: 100%;
-          min-height: 52px;
-          padding: 12px 14px;
-          border-radius: 14px;
-          margin-top: 14px;
-        }
-
         .faqGrid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 14px;
-          margin-top: 18px;
-        }
-
-        .footerButtons {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-top: 18px;
+          gap: 18px;
         }
 
         .fullBtn {
@@ -1171,7 +1112,7 @@ Notes:
         }
 
         .siteFooter {
-          margin-top: 24px;
+          margin-top: 34px;
           padding-top: 18px;
           padding-bottom: 42px;
           border-top: 1px solid rgba(255,255,255,.08);
@@ -1185,34 +1126,21 @@ Notes:
         }
 
         @media (max-width: 1080px) {
-          .heroGrid,
-          .twoColSection,
+          .hero,
+          .editorLayout,
           .pricingGrid,
-          .faqGrid {
+          .faqGrid,
+          .featuresGrid {
             grid-template-columns: 1fr;
           }
 
           h1 {
             max-width: none;
           }
-
-          .introStrip {
-            grid-template-columns: 1fr;
-            border-radius: 20px;
-          }
-
-          .introItem {
-            border-right: none;
-            border-bottom: 1px solid rgba(255,255,255,.08);
-          }
-
-          .introItem:last-child {
-            border-bottom: none;
-          }
         }
 
         @media (max-width: 860px) {
-          .topActions {
+          .navActions {
             width: 100%;
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
@@ -1221,18 +1149,10 @@ Notes:
             grid-column: 1 / -1;
           }
 
-          .heroPoints,
-          .twoCol,
+          .heroMiniRow,
+          .twoColFields,
           .finishGrid {
             grid-template-columns: 1fr;
-          }
-
-          .heroCopy,
-          .previewPanel,
-          .builderPanel,
-          .sideInfoPanel,
-          .sectionCard {
-            padding: 20px;
           }
 
           h1 {
@@ -1251,15 +1171,11 @@ Notes:
             padding-right: 12px;
           }
 
-          .topbar {
-            align-items: flex-start;
-          }
-
           .brandWrap {
             width: 100%;
           }
 
-          .topActions {
+          .navActions {
             grid-template-columns: 1fr;
           }
 
@@ -1279,7 +1195,7 @@ Notes:
             letter-spacing: -1px;
           }
 
-          .heroCtas,
+          .heroBtns,
           .footerButtons {
             flex-direction: column;
           }
@@ -1308,6 +1224,11 @@ Notes:
 
           .finishChip {
             white-space: normal;
+          }
+
+          .siteFooter {
+            flex-direction: column;
+            text-align: center;
           }
         }
       `}</style>
@@ -1338,7 +1259,7 @@ function Field({
           display: block;
           border-radius: 16px;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.04);
           padding: 10px;
           min-width: 0;
         }
@@ -1357,7 +1278,7 @@ function Field({
           min-width: 0;
           border-radius: 12px;
           border: 1px solid rgba(255, 255, 255, 0.12);
-          background: rgba(0, 0, 0, 0.25);
+          background: rgba(0, 0, 0, 0.22);
           color: rgba(237, 245, 255, 0.94);
           padding: 12px;
           outline: none;

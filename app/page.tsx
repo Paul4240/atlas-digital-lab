@@ -15,10 +15,10 @@ export default function HomePage() {
       <div className="pageGlow glowOne" />
       <div className="pageGlow glowTwo" />
       <div className="steelNoise" />
+      <div className="fixedEmblem" />
 
       <section className="hero">
         <div className="heroOverlay" />
-        <div className="heroEmblem" />
 
         <header className="topbar container">
           <Link href="/" className="brandWrap">
@@ -87,17 +87,17 @@ export default function HomePage() {
             </div>
 
             <div className="heroStats">
-              <div className="statCard">
+              <div className="statItem">
                 <div className="statValue">Corporate</div>
                 <div className="statLabel">Sharper, stronger presentation</div>
               </div>
 
-              <div className="statCard">
+              <div className="statItem">
                 <div className="statValue">Premium</div>
                 <div className="statLabel">Built to feel more valuable</div>
               </div>
 
-              <div className="statCard">
+              <div className="statItem">
                 <div className="statValue">Mobile</div>
                 <div className="statLabel">Polished across phones and desktops</div>
               </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
           </div>
 
           <div className="heroRight">
-            <div className="heroShowcase">
+            <div className="heroPanel">
               <div className="showcaseTop">
                 <div className="showcaseEyebrow">ATLAS DIGITAL LAB</div>
                 <div className="showcaseBadge">Texas Corporate Web Design</div>
@@ -114,28 +114,28 @@ export default function HomePage() {
               <h3>Presentation that makes the company feel stronger before the first call.</h3>
 
               <div className="showcaseGrid">
-                <div className="showcaseCard">
+                <div className="showcaseLine">
                   <div className="showcaseTitle">Executive-level polish</div>
                   <div className="showcaseText">
                     Stronger spacing, cleaner hierarchy, and more disciplined layout direction.
                   </div>
                 </div>
 
-                <div className="showcaseCard">
+                <div className="showcaseLine">
                   <div className="showcaseTitle">Higher perceived value</div>
                   <div className="showcaseText">
                     Better presentation helps justify better pricing and stronger trust.
                   </div>
                 </div>
 
-                <div className="showcaseCard">
+                <div className="showcaseLine">
                   <div className="showcaseTitle">Corporate-style structure</div>
                   <div className="showcaseText">
                     More serious visual language for businesses that want to feel established.
                   </div>
                 </div>
 
-                <div className="showcaseCard">
+                <div className="showcaseLine">
                   <div className="showcaseTitle">Built for real sales flow</div>
                   <div className="showcaseText">
                     Cleaner sections and stronger CTA placement move more visitors toward contact.
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="section lightSection">
+      <section id="services" className="section darkSection">
         <div className="container">
           <div className="sectionHead">
             <div className="eyebrow dark">Services</div>
@@ -238,7 +238,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="demos" className="section demoSection">
+      <section id="demos" className="section darkSection">
         <div className="container">
           <div className="sectionHead">
             <div className="eyebrow dark">Demo Portfolio</div>
@@ -251,7 +251,6 @@ export default function HomePage() {
 
           <div className="demoGrid">
             <div className="demoCard">
-              <div className="demoGlow" />
               <div className="demoTop">
                 <div>
                   <div className="demoTitle">Pet Bakery Demo</div>
@@ -268,7 +267,6 @@ export default function HomePage() {
             </div>
 
             <div className="demoCard">
-              <div className="demoGlow" />
               <div className="demoTop">
                 <div>
                   <div className="demoTitle">Luxury Interior Styling Demo</div>
@@ -285,7 +283,6 @@ export default function HomePage() {
             </div>
 
             <div className="demoCard">
-              <div className="demoGlow" />
               <div className="demoTop">
                 <div>
                   <div className="demoTitle">Roofing Demo</div>
@@ -302,7 +299,6 @@ export default function HomePage() {
             </div>
 
             <div className="demoCard">
-              <div className="demoGlow" />
               <div className="demoTop">
                 <div>
                   <div className="demoTitle">Metal Business Cards Demo</div>
@@ -321,7 +317,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="pricing" className="section lightSection">
+      <section id="pricing" className="section darkSection">
         <div className="container">
           <div className="sectionHead">
             <div className="eyebrow dark">Pricing</div>
@@ -472,8 +468,9 @@ export default function HomePage() {
       <style jsx>{`
         .page {
           min-height: 100vh;
-          background: #e9e1d7;
-          color: #151310;
+          background:
+            linear-gradient(180deg, #0b1218 0%, #111a22 38%, #0d141b 100%);
+          color: #f3f5f7;
           font-family: Inter, Arial, sans-serif;
           position: relative;
           overflow-x: hidden;
@@ -484,7 +481,7 @@ export default function HomePage() {
           border-radius: 999px;
           filter: blur(90px);
           pointer-events: none;
-          opacity: 0.55;
+          opacity: 0.4;
         }
 
         .glowOne {
@@ -500,20 +497,36 @@ export default function HomePage() {
           height: 360px;
           right: -140px;
           top: 540px;
-          background: rgba(96, 53, 31, 0.12);
+          background: rgba(86, 111, 130, 0.12);
         }
 
         .steelNoise {
           position: absolute;
           inset: 0;
           pointer-events: none;
-          opacity: 0.035;
+          opacity: 0.03;
           background-image:
             radial-gradient(circle at 20% 20%, #ffffff 0.7px, transparent 0.8px),
             radial-gradient(circle at 80% 30%, #000000 0.7px, transparent 0.8px),
             radial-gradient(circle at 40% 70%, #ffffff 0.7px, transparent 0.8px),
             radial-gradient(circle at 65% 85%, #000000 0.7px, transparent 0.8px);
           background-size: 22px 22px, 28px 28px, 24px 24px, 30px 30px;
+        }
+
+        .fixedEmblem {
+          position: fixed;
+          right: -40px;
+          top: 90px;
+          width: 760px;
+          height: 760px;
+          z-index: 0;
+          opacity: 0.13;
+          pointer-events: none;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          filter: drop-shadow(0 0 28px rgba(0,0,0,0.35));
+          background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0%25' stop-color='%23f0c48a'/%3E%3Cstop offset='100%25' stop-color='%239b6327'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none'%3E%3Ccircle cx='350' cy='350' r='255' stroke='url(%23g)' stroke-width='12'/%3E%3Ccircle cx='350' cy='350' r='218' stroke='url(%23g)' stroke-opacity='.55' stroke-width='8'/%3E%3Ccircle cx='350' cy='350' r='180' stroke='%23ffffff' stroke-opacity='.1' stroke-width='3'/%3E%3Cpath d='M350 150l30 92h97l-78 56 30 92-79-57-79 57 30-92-78-56h97z' fill='url(%23g)'/%3E%3Cpath d='M350 86l20 28 34-5-18 30 15 31-32-8-25 23-2-35-31-15 32-13z' fill='%23f0c48a' opacity='.92'/%3E%3Cpath d='M145 350h410' stroke='%23ffffff' stroke-opacity='.08' stroke-width='3'/%3E%3Cpath d='M350 145v410' stroke='%23ffffff' stroke-opacity='.08' stroke-width='3'/%3E%3Cpath d='M208 208l284 284' stroke='%23ffffff' stroke-opacity='.05' stroke-width='2'/%3E%3Cpath d='M492 208L208 492' stroke='%23ffffff' stroke-opacity='.05' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
         }
 
         .container {
@@ -528,9 +541,8 @@ export default function HomePage() {
           position: relative;
           min-height: 94vh;
           background:
-            linear-gradient(180deg, rgba(10, 15, 21, 0.82), rgba(10, 15, 21, 0.88)),
-            radial-gradient(circle at 18% 10%, rgba(191, 122, 46, 0.2), transparent 30%),
-            linear-gradient(135deg, #111920 0%, #1a242d 36%, #0e141a 100%);
+            linear-gradient(180deg, rgba(8, 12, 17, 0.72), rgba(8, 12, 17, 0.82)),
+            radial-gradient(circle at 18% 10%, rgba(191, 122, 46, 0.16), transparent 28%);
           color: white;
           overflow: hidden;
         }
@@ -540,23 +552,8 @@ export default function HomePage() {
           inset: 0;
           background:
             linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%),
-            radial-gradient(circle at 75% 18%, rgba(255,255,255,0.045), transparent 22%);
+            radial-gradient(circle at 75% 18%, rgba(255,255,255,0.04), transparent 22%);
           pointer-events: none;
-        }
-
-        .heroEmblem {
-          position: absolute;
-          right: -60px;
-          top: 40px;
-          width: 720px;
-          height: 720px;
-          opacity: 0.18;
-          pointer-events: none;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          filter: drop-shadow(0 0 28px rgba(0,0,0,0.3));
-          background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0%25' stop-color='%23f0c48a'/%3E%3Cstop offset='100%25' stop-color='%23bf7a2e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none'%3E%3Ccircle cx='350' cy='350' r='255' stroke='url(%23g)' stroke-width='12'/%3E%3Ccircle cx='350' cy='350' r='218' stroke='url(%23g)' stroke-opacity='.55' stroke-width='8'/%3E%3Ccircle cx='350' cy='350' r='180' stroke='%23ffffff' stroke-opacity='.14' stroke-width='3'/%3E%3Cpath d='M350 150l30 92h97l-78 56 30 92-79-57-79 57 30-92-78-56h97z' fill='url(%23g)'/%3E%3Cpath d='M350 86l20 28 34-5-18 30 15 31-32-8-25 23-2-35-31-15 32-13z' fill='%23f0c48a' opacity='.92'/%3E%3Cpath d='M145 350h410' stroke='%23ffffff' stroke-opacity='.12' stroke-width='3'/%3E%3Cpath d='M350 145v410' stroke='%23ffffff' stroke-opacity='.12' stroke-width='3'/%3E%3Cpath d='M208 208l284 284' stroke='%23ffffff' stroke-opacity='.08' stroke-width='2'/%3E%3Cpath d='M492 208L208 492' stroke='%23ffffff' stroke-opacity='.08' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
         }
 
         .topbar {
@@ -580,8 +577,8 @@ export default function HomePage() {
           width: 46px;
           height: 46px;
           border-radius: 12px;
-          background: linear-gradient(135deg, rgba(240,196,138,0.16), rgba(255,255,255,0.03));
-          border: 1px solid rgba(240,196,138,0.22);
+          background: linear-gradient(135deg, rgba(240,196,138,0.14), rgba(255,255,255,0.02));
+          border: 1px solid rgba(240,196,138,0.18);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -601,7 +598,7 @@ export default function HomePage() {
           background: linear-gradient(
             130deg,
             transparent 18%,
-            rgba(255,255,255,0.18) 45%,
+            rgba(255,255,255,0.14) 45%,
             transparent 70%
           );
           opacity: 0.55;
@@ -681,25 +678,25 @@ export default function HomePage() {
           padding: 10px 16px;
           min-height: 46px;
           border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.16);
+          border: 1px solid rgba(255, 255, 255, 0.14);
           color: white;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.04);
           font-weight: 700;
           backdrop-filter: blur(8px);
         }
 
         .darkPill {
-          border: 1px solid rgba(21, 19, 16, 0.1);
-          color: #151310;
-          background: white;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #f3f5f7;
+          background: rgba(255,255,255,0.05);
         }
 
         .primaryPill {
-          background: linear-gradient(135deg, #f0c48a, #bf7a2e);
+          background: linear-gradient(135deg, #f0c48a, #9b6327);
           color: #17110b;
           border: none;
           font-weight: 800;
-          box-shadow: 0 12px 24px rgba(191, 122, 46, 0.26);
+          box-shadow: 0 12px 24px rgba(155, 99, 39, 0.26);
         }
 
         .heroContent {
@@ -715,8 +712,8 @@ export default function HomePage() {
           display: inline-block;
           padding: 8px 14px;
           border-radius: 999px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           font-size: 12px;
           font-weight: 800;
           margin-bottom: 18px;
@@ -726,9 +723,9 @@ export default function HomePage() {
         }
 
         .eyebrow.dark {
-          background: #ded0bf;
-          border: none;
-          color: #6a4c34;
+          background: rgba(240,196,138,0.08);
+          border: 1px solid rgba(240,196,138,0.14);
+          color: #f0c48a;
         }
 
         h1 {
@@ -779,20 +776,20 @@ export default function HomePage() {
         }
 
         .primaryBtn {
-          background: linear-gradient(135deg, #f0c48a, #bf7a2e);
+          background: linear-gradient(135deg, #f0c48a, #9b6327);
           color: #17110b;
           border: none;
-          box-shadow: 0 14px 28px rgba(191, 122, 46, 0.26);
+          box-shadow: 0 14px 28px rgba(155, 99, 39, 0.26);
         }
 
         .ghostBtn {
-          border: 1px solid rgba(255, 255, 255, 0.18);
+          border: 1px solid rgba(255, 255, 255, 0.14);
           color: white;
-          background: rgba(255,255,255,0.03);
+          background: rgba(255,255,255,0.02);
         }
 
         .darkGhost {
-          border: 1px solid rgba(255, 255, 255, 0.18);
+          border: 1px solid rgba(255, 255, 255, 0.14);
           color: white;
           background: transparent;
         }
@@ -801,15 +798,12 @@ export default function HomePage() {
           margin-top: 28px;
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 14px;
+          gap: 22px;
         }
 
-        .statCard {
-          padding: 18px;
-          border-radius: 18px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          backdrop-filter: blur(8px);
+        .statItem {
+          padding-top: 14px;
+          border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .statValue {
@@ -825,13 +819,8 @@ export default function HomePage() {
           color: rgba(255,255,255,0.8);
         }
 
-        .heroShowcase {
-          border-radius: 28px;
-          padding: 28px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-          border: 1px solid rgba(255,255,255,0.08);
-          box-shadow: 0 30px 80px rgba(0,0,0,0.28);
-          backdrop-filter: blur(10px);
+        .heroPanel {
+          padding: 12px 0;
         }
 
         .showcaseTop {
@@ -852,31 +841,32 @@ export default function HomePage() {
         .showcaseBadge {
           padding: 7px 10px;
           border-radius: 999px;
-          background: rgba(255,255,255,0.05);
+          background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,255,255,0.08);
           font-size: 12px;
           font-weight: 700;
           color: rgba(255,255,255,0.88);
         }
 
-        .heroShowcase h3 {
+        .heroPanel h3 {
           font-size: 30px;
           line-height: 1.08;
-          margin: 0 0 20px;
-          max-width: 14ch;
+          margin: 0 0 24px;
+          max-width: 15ch;
         }
 
         .showcaseGrid {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 14px;
+          gap: 18px;
         }
 
-        .showcaseCard {
-          padding: 16px;
-          border-radius: 18px;
-          background: rgba(0,0,0,0.18);
-          border: 1px solid rgba(255,255,255,0.06);
+        .showcaseLine {
+          padding-bottom: 16px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .showcaseLine:last-child {
+          border-bottom: none;
         }
 
         .showcaseTitle {
@@ -886,13 +876,13 @@ export default function HomePage() {
         }
 
         .showcaseText {
-          color: rgba(255,255,255,0.8);
-          line-height: 1.55;
-          font-size: 13px;
+          color: rgba(255,255,255,0.78);
+          line-height: 1.65;
+          font-size: 14px;
         }
 
         .trustStrip {
-          background: #e9e1d7;
+          background: transparent;
           padding-top: 0;
           margin-top: -34px;
           position: relative;
@@ -902,11 +892,12 @@ export default function HomePage() {
         .trustGrid {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          background: linear-gradient(180deg, #ffffff, #f4eee7);
+          background: rgba(255,255,255,0.04);
           border-radius: 22px;
           overflow: hidden;
-          box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
-          border: 1px solid rgba(21, 19, 16, 0.06);
+          box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+          border: 1px solid rgba(255,255,255,0.06);
+          backdrop-filter: blur(10px);
         }
 
         .trustGrid div {
@@ -914,8 +905,8 @@ export default function HomePage() {
           text-align: center;
           font-size: 13px;
           font-weight: 700;
-          color: #5f5147;
-          border-right: 1px solid rgba(21, 19, 16, 0.06);
+          color: #c7cfd6;
+          border-right: 1px solid rgba(255,255,255,0.06);
         }
 
         .trustGrid div:last-child {
@@ -926,12 +917,8 @@ export default function HomePage() {
           padding: 86px 0;
         }
 
-        .lightSection {
-          background: #e9e1d7;
-        }
-
-        .demoSection {
-          background: linear-gradient(180deg, #dfd2c4 0%, #e9e1d7 100%);
+        .darkSection {
+          background: transparent;
         }
 
         .sectionHead {
@@ -943,7 +930,7 @@ export default function HomePage() {
         .serviceCard p,
         .demoText,
         .ctaText p {
-          color: #5f5147;
+          color: #b6c0c7;
           line-height: 1.72;
           font-size: 17px;
         }
@@ -951,22 +938,21 @@ export default function HomePage() {
         .serviceGrid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 22px;
+          gap: 30px;
         }
 
         .serviceCard {
-          background: linear-gradient(180deg, #ffffff, #f6f0e9);
-          border-radius: 24px;
-          padding: 26px;
-          box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
-          border: 1px solid rgba(21, 19, 16, 0.05);
+          padding: 0 0 0 0;
+          background: transparent;
+          border: none;
+          box-shadow: none;
         }
 
         .serviceLine {
           width: 54px;
           height: 4px;
           border-radius: 999px;
-          background: linear-gradient(90deg, #bf7a2e, #f0c48a);
+          background: linear-gradient(90deg, #9b6327, #f0c48a);
           margin-bottom: 18px;
         }
 
@@ -975,11 +961,11 @@ export default function HomePage() {
           margin: 14px 0 0;
           padding-left: 20px;
           line-height: 1.95;
-          color: #5f5147;
+          color: #b6c0c7;
         }
 
         .featureBand {
-          background: linear-gradient(135deg, #121920 0%, #0d1318 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
           color: white;
           padding: 90px 0;
           position: relative;
@@ -993,21 +979,23 @@ export default function HomePage() {
         }
 
         .featureLeft p {
-          color: rgba(255, 255, 255, 0.82);
+          color: rgba(255, 255, 255, 0.78);
           line-height: 1.76;
           font-size: 17px;
         }
 
         .featureStack {
           display: grid;
-          gap: 14px;
+          gap: 18px;
         }
 
         .featureItem {
-          padding: 18px;
-          border-radius: 18px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.06);
+          padding-bottom: 18px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .featureItem:last-child {
+          border-bottom: none;
         }
 
         .featureItemTitle {
@@ -1017,7 +1005,7 @@ export default function HomePage() {
         }
 
         .featureItemText {
-          color: rgba(255,255,255,0.76);
+          color: rgba(255,255,255,0.74);
           line-height: 1.6;
           font-size: 14px;
         }
@@ -1025,28 +1013,12 @@ export default function HomePage() {
         .demoGrid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 22px;
+          gap: 24px;
         }
 
         .demoCard {
-          position: relative;
-          background: linear-gradient(180deg, #ffffff, #f6f0e9);
-          border-radius: 24px;
-          padding: 24px;
-          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
-          border: 1px solid rgba(21, 19, 16, 0.05);
-          overflow: hidden;
-        }
-
-        .demoGlow {
-          position: absolute;
-          width: 120px;
-          height: 120px;
-          right: -20px;
-          top: -20px;
-          border-radius: 999px;
-          background: radial-gradient(circle, rgba(191,122,46,0.16), transparent 70%);
-          pointer-events: none;
+          padding: 26px 0 0;
+          border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         .demoTop {
@@ -1055,14 +1027,12 @@ export default function HomePage() {
           justify-content: space-between;
           gap: 14px;
           margin-bottom: 16px;
-          position: relative;
-          z-index: 1;
         }
 
         .demoTitle {
           font-weight: 800;
           font-size: 22px;
-          color: #151310;
+          color: #f3f5f7;
           margin-bottom: 8px;
         }
 
@@ -1071,8 +1041,9 @@ export default function HomePage() {
           font-weight: 800;
           padding: 7px 10px;
           border-radius: 999px;
-          background: #ead9c6;
-          color: #6a4c34;
+          background: rgba(240,196,138,0.08);
+          color: #f0c48a;
+          border: 1px solid rgba(240,196,138,0.14);
           white-space: nowrap;
         }
 
@@ -1083,13 +1054,12 @@ export default function HomePage() {
           padding: 12px 18px;
           border-radius: 14px;
           font-weight: 800;
-          position: relative;
-          z-index: 1;
         }
 
         .demoBtn {
-          background: #151310;
+          background: rgba(255,255,255,0.04);
           color: white;
+          border: 1px solid rgba(255,255,255,0.08);
         }
 
         .pricingGrid {
@@ -1101,17 +1071,18 @@ export default function HomePage() {
 
         .priceCard {
           position: relative;
-          background: linear-gradient(180deg, #ffffff, #f6f0e9);
+          background: rgba(255,255,255,0.03);
           border-radius: 24px;
           padding: 24px;
-          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
-          border: 1px solid rgba(21, 19, 16, 0.05);
+          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+          border: 1px solid rgba(255,255,255,0.06);
           overflow: hidden;
+          backdrop-filter: blur(8px);
         }
 
         .priceCard.elite {
-          border: 1px solid rgba(191, 122, 46, 0.38);
-          box-shadow: 0 18px 42px rgba(191, 122, 46, 0.08);
+          border: 1px solid rgba(155, 99, 39, 0.34);
+          box-shadow: 0 18px 42px rgba(155, 99, 39, 0.08);
         }
 
         .eliteGlow {
@@ -1121,7 +1092,7 @@ export default function HomePage() {
           right: -40px;
           top: -30px;
           border-radius: 999px;
-          background: radial-gradient(circle, rgba(191,122,46,0.2), transparent 70%);
+          background: radial-gradient(circle, rgba(155,99,39,0.2), transparent 70%);
           pointer-events: none;
         }
 
@@ -1133,7 +1104,7 @@ export default function HomePage() {
 
         .planName {
           font-weight: 800;
-          color: #6a4c34;
+          color: #f0c48a;
         }
 
         .price {
@@ -1141,13 +1112,13 @@ export default function HomePage() {
           font-weight: 900;
           line-height: 1;
           margin-top: 8px;
-          color: #151310;
+          color: #f3f5f7;
         }
 
         .monthly {
           margin-top: 8px;
           font-weight: 800;
-          color: #5f5147;
+          color: #b6c0c7;
         }
 
         .badge {
@@ -1158,43 +1129,44 @@ export default function HomePage() {
           font-weight: 800;
           padding: 7px 10px;
           border-radius: 999px;
-          background: #e7d8c8;
-          color: #6a4c34;
+          background: rgba(255,255,255,0.05);
+          color: #d4dbe0;
+          border: 1px solid rgba(255,255,255,0.08);
           z-index: 1;
         }
 
         .badge.gold {
-          background: linear-gradient(135deg, #f0c48a, #bf7a2e);
+          background: linear-gradient(135deg, #f0c48a, #9b6327);
           color: #17110b;
+          border: none;
         }
 
         .priceBtn {
-          background: #151310;
+          background: rgba(255,255,255,0.05);
           color: white;
           margin-top: 16px;
+          border: 1px solid rgba(255,255,255,0.08);
         }
 
         .primaryBtnDark {
-          background: #151310;
-          color: white;
+          background: linear-gradient(135deg, #f0c48a, #9b6327);
+          color: #17110b;
+          border: none;
         }
 
         .footerCtas {
           margin-top: 26px;
-          background: linear-gradient(180deg, #ffffff, #f6f0e9);
-          border-radius: 24px;
-          padding: 22px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          padding-top: 22px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 18px;
           flex-wrap: wrap;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-          border: 1px solid rgba(21, 19, 16, 0.05);
         }
 
         .footerNote {
-          color: #5f5147;
+          color: #b6c0c7;
           font-weight: 600;
           max-width: 720px;
           line-height: 1.65;
@@ -1207,21 +1179,18 @@ export default function HomePage() {
         }
 
         .finalCtaSection {
-          background: #e9e1d7;
+          background: transparent;
           padding-top: 28px;
         }
 
         .ctaPanel {
-          background: linear-gradient(135deg, #121920 0%, #0d1318 100%);
-          color: white;
-          padding: 44px;
-          border-radius: 26px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          padding: 34px 0 0;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 30px;
           flex-wrap: wrap;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
         }
 
         .ctaText {
@@ -1236,7 +1205,7 @@ export default function HomePage() {
         }
 
         .footer {
-          background: #12100d;
+          background: transparent;
           color: white;
           padding: 40px 0;
         }
@@ -1247,6 +1216,8 @@ export default function HomePage() {
           align-items: center;
           gap: 20px;
           flex-wrap: wrap;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          padding-top: 24px;
         }
 
         .footerBrand {
@@ -1283,7 +1254,7 @@ export default function HomePage() {
             grid-template-columns: 1fr;
           }
 
-          .heroShowcase h3 {
+          .heroPanel h3 {
             max-width: none;
           }
         }
@@ -1301,15 +1272,11 @@ export default function HomePage() {
 
           .trustGrid div {
             border-right: none;
-            border-bottom: 1px solid rgba(21, 19, 16, 0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
           }
 
           .trustGrid div:last-child {
             border-bottom: none;
-          }
-
-          .showcaseGrid {
-            grid-template-columns: 1fr;
           }
 
           .footerInner {
@@ -1325,12 +1292,12 @@ export default function HomePage() {
             margin-top: -18px;
           }
 
-          .heroEmblem {
-            width: 540px;
-            height: 540px;
-            right: -120px;
-            top: 140px;
-            opacity: 0.14;
+          .fixedEmblem {
+            width: 520px;
+            height: 520px;
+            right: -140px;
+            top: 180px;
+            opacity: 0.11;
           }
         }
 
@@ -1354,17 +1321,12 @@ export default function HomePage() {
             width: 100%;
           }
 
-          .heroShowcase,
-          .ctaPanel {
-            padding: 28px 18px;
-          }
-
           .section {
             padding: 70px 0;
           }
 
           .footerCtas {
-            padding: 18px;
+            padding-top: 18px;
           }
 
           h1 {
@@ -1375,12 +1337,12 @@ export default function HomePage() {
             align-items: stretch;
           }
 
-          .heroEmblem {
-            width: 420px;
-            height: 420px;
+          .fixedEmblem {
+            width: 360px;
+            height: 360px;
             right: -120px;
-            top: 160px;
-            opacity: 0.12;
+            top: 220px;
+            opacity: 0.1;
           }
         }
       `}</style>

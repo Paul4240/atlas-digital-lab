@@ -100,7 +100,7 @@ export default function IezekielHaleyMetalCardsPage() {
       {
         key: "0.5mm",
         thickness: "0.5mm",
-        price: "$2.25/card",
+        price: "$1.50/card",
         min: "Minimum order: 50 cards",
         description:
           "A thicker premium card for stronger presence and a more substantial feel in hand.",

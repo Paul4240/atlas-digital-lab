@@ -6,8 +6,14 @@ export default function HomePage() {
   const MAIN_PHONE = "8327050313";
   const MAIN_PRETTY = "(832) 705-0313";
 
-  const SALES_PHONE = "3463657906";
-  const SALES_PRETTY = "(346) 365-7906";
+  const SALES_1 = "3463657906";
+  const SALES_1_PRETTY = "(346) 365-7906";
+
+  const SALES_2 = "8326773150";
+  const SALES_2_PRETTY = "(832) 677-3150";
+
+  const SALES_3 = "3465328803";
+  const SALES_3_PRETTY = "(346) 532-8803";
 
   const EMAIL = "hello@atlasdigitallab.com";
 
@@ -48,8 +54,8 @@ export default function HomePage() {
           </nav>
 
           <div className="topActions">
-            <a href={`tel:${MAIN_PHONE}`} className="pill">
-              Call {MAIN_PRETTY}
+            <a href={`tel:${MAIN_PHONE}`} className="pill mainPill">
+              Main {MAIN_PRETTY}
             </a>
             <a href={`mailto:${EMAIL}`} className="pill primaryPill">
               Get a Quote
@@ -61,42 +67,63 @@ export default function HomePage() {
       <section className="hero">
         <div className="container heroGrid">
           <div className="heroLeft">
-            <div className="eyebrow">Texas-built presentation • Corporate polish • Premium positioning</div>
+            <div className="eyebrow">Texas-built presentation • Stronger positioning • Custom-built websites</div>
 
             <h1>
-              Websites that make your business look like the serious choice.
+              Websites that make your business look established, trusted, and worth calling.
             </h1>
 
             <p className="heroText">
-              Atlas Digital Lab builds premium business websites with stronger structure,
-              sharper presentation, and cleaner messaging — so your company looks more
-              established, more trustworthy, and harder to ignore.
+              Atlas Digital Lab creates high-conversion websites, sharp branding, and
+              local SEO-ready pages for businesses that want to look more professional
+              and win better customers.
             </p>
 
             <div className="heroActions">
-              <a href="#demos" className="btn primaryBtn">
+              <a href={`tel:${MAIN_PHONE}`} className="btn primaryBtn">
+                Call {MAIN_PRETTY}
+              </a>
+              <a href="#demos" className="btn darkBtn">
                 View Demos
               </a>
-              <a href={`tel:${SALES_PHONE}`} className="btn darkBtn">
-                Talk to Sales
-              </a>
               <a href={`mailto:${EMAIL}`} className="btn ghostBtn">
-                Email Quote
+                Email for Quote
               </a>
             </div>
 
-            <div className="heroMeta">
-              <div className="metaItem">
-                <div className="metaLabel">Positioning</div>
-                <div className="metaText">Websites that feel stronger, sharper, and more established.</div>
+            <div className="heroStats">
+              <div className="statItem">
+                <div className="statValue">4</div>
+                <div className="statLabel">Live demo concepts</div>
               </div>
-              <div className="metaItem">
-                <div className="metaLabel">Built For</div>
-                <div className="metaText">Small businesses that want to look more professional online.</div>
+
+              <div className="statItem">
+                <div className="statValue">Fast</div>
+                <div className="statLabel">Turnaround and launch flow</div>
               </div>
-              <div className="metaItem">
-                <div className="metaLabel">Focus</div>
-                <div className="metaText">Design, trust, conversions, and local growth.</div>
+
+              <div className="statItem">
+                <div className="statValue">SEO</div>
+                <div className="statLabel">Structured for local visibility</div>
+              </div>
+            </div>
+
+            <div className="heroContactStrip">
+              <div className="contactMini">
+                <span className="contactMiniLabel">Main</span>
+                <a href={`tel:${MAIN_PHONE}`}>{MAIN_PRETTY}</a>
+              </div>
+              <div className="contactMini">
+                <span className="contactMiniLabel">Sales</span>
+                <a href={`tel:${SALES_1}`}>{SALES_1_PRETTY}</a>
+              </div>
+              <div className="contactMini">
+                <span className="contactMiniLabel">Sales</span>
+                <a href={`tel:${SALES_2}`}>{SALES_2_PRETTY}</a>
+              </div>
+              <div className="contactMini">
+                <span className="contactMiniLabel">Sales</span>
+                <a href={`tel:${SALES_3}`}>{SALES_3_PRETTY}</a>
               </div>
             </div>
           </div>
@@ -106,31 +133,42 @@ export default function HomePage() {
               <div className="panelTop">
                 <div>
                   <div className="panelEyebrow">ATLAS DIGITAL LAB</div>
-                  <div className="panelTitle">A cleaner, more custom presentation for serious businesses.</div>
+                  <div className="panelTitle">
+                    A cleaner online presence changes how people value your business.
+                  </div>
                 </div>
 
-                <div className="panelBadge">Texas Web Design</div>
+                <div className="panelBadge">Premium Agency</div>
               </div>
 
               <div className="panelLines">
                 <div className="panelLine">
-                  <div className="lineTitle">Corporate-style clarity</div>
-                  <div className="lineText">
-                    Cleaner hierarchy and more disciplined spacing make the business look more established.
+                  <div className="lineDot" />
+                  <div>
+                    <div className="lineTitle">Premium presentation</div>
+                    <div className="lineText">
+                      Look more credible, established, and higher-value from the first click.
+                    </div>
                   </div>
                 </div>
 
                 <div className="panelLine">
-                  <div className="lineTitle">Stronger trust from the first click</div>
-                  <div className="lineText">
-                    Better presentation helps people take the business more seriously before they even call.
+                  <div className="lineDot" />
+                  <div>
+                    <div className="lineTitle">Clear conversion flow</div>
+                    <div className="lineText">
+                      Strong headlines, trust sections, and calls-to-action that guide people to contact.
+                    </div>
                   </div>
                 </div>
 
                 <div className="panelLine">
-                  <div className="lineTitle">Built to convert better</div>
-                  <div className="lineText">
-                    Clear structure and stronger calls-to-action help turn more visitors into real leads.
+                  <div className="lineDot" />
+                  <div>
+                    <div className="lineTitle">Local growth ready</div>
+                    <div className="lineText">
+                      Built with speed, mobile usability, and search visibility in mind.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -148,10 +186,10 @@ export default function HomePage() {
       <section className="trustSection">
         <div className="container trustRow">
           <span>Premium layouts</span>
-          <span>Mobile-first builds</span>
-          <span>Local SEO-ready</span>
-          <span>Stronger brand presentation</span>
-          <span>Clear conversion flow</span>
+          <span>High-conversion structure</span>
+          <span>Local SEO-ready builds</span>
+          <span>Modern branding polish</span>
+          <span>Fast communication</span>
         </div>
       </section>
 
@@ -160,13 +198,13 @@ export default function HomePage() {
           <div className="splitIntro">
             <div className="introLeft">
               <div className="sectionEyebrow">Services</div>
-              <h2>Built to help businesses look stronger online.</h2>
+              <h2>What we build for growing small businesses</h2>
             </div>
 
             <div className="introRight">
               <p>
-                We design websites that feel more premium and more custom than the average
-                small business site — without making the company feel overdesigned or fake.
+                Everything is designed to help your company look stronger online,
+                build trust faster, and make it easier for customers to take action.
               </p>
             </div>
           </div>
@@ -175,15 +213,16 @@ export default function HomePage() {
             <div className="serviceRow">
               <div className="serviceNumber">01</div>
               <div className="serviceContent">
-                <h3>Website Design</h3>
+                <h3>Websites</h3>
                 <p>
-                  Modern layouts with stronger spacing, cleaner hierarchy, and a sharper first impression.
+                  Fast, premium websites designed to look high-end and convert real leads.
                 </p>
               </div>
               <div className="serviceList">
-                <span>Mobile-first design</span>
-                <span>Premium layout direction</span>
-                <span>Clear lead flow</span>
+                <span>Mobile-first layout</span>
+                <span>Clear calls-to-action</span>
+                <span>Premium visual hierarchy</span>
+                <span>Fast, clean front-end structure</span>
               </div>
             </div>
 
@@ -192,28 +231,30 @@ export default function HomePage() {
               <div className="serviceContent">
                 <h3>SEO & Google Setup</h3>
                 <p>
-                  Structured foundations that help local businesses show up stronger in search and maps.
+                  Build visibility locally and strengthen trust when customers search your service.
                 </p>
               </div>
               <div className="serviceList">
-                <span>On-page SEO support</span>
-                <span>Google Business help</span>
-                <span>Search-ready structure</span>
+                <span>Google Business profile help</span>
+                <span>On-page SEO structure</span>
+                <span>Performance and indexing readiness</span>
+                <span>Service-area content support</span>
               </div>
             </div>
 
             <div className="serviceRow">
               <div className="serviceNumber">03</div>
               <div className="serviceContent">
-                <h3>Brand Presentation</h3>
+                <h3>Branding & Positioning</h3>
                 <p>
-                  Sharper online presentation that helps a company feel more legitimate and more valuable.
+                  Cleaner branding, stronger presentation, and a more polished first impression.
                 </p>
               </div>
               <div className="serviceList">
-                <span>Visual polish</span>
-                <span>Stronger brand tone</span>
-                <span>More consistency</span>
+                <span>Logo refresh direction</span>
+                <span>Typography and color polish</span>
+                <span>Premium brand feel</span>
+                <span>Stronger visual consistency</span>
               </div>
             </div>
           </div>
@@ -224,29 +265,30 @@ export default function HomePage() {
         <div className="container featureGrid">
           <div className="featureLeft">
             <div className="sectionEyebrow">Why Atlas</div>
-            <h2>We want your business to look like the company people trust first.</h2>
+            <h2>Built for businesses that want to look more expensive than they are today</h2>
           </div>
 
           <div className="featureRight">
             <div className="featureList">
               <div className="featureItem">
-                <div className="featureItemTitle">Stronger first impression</div>
+                <div className="featureItemTitle">Sharper first impression</div>
                 <div className="featureItemText">
-                  Better visual discipline helps the business look more serious immediately.
+                  Better spacing, stronger type, cleaner sections, and a more premium overall look.
                 </div>
               </div>
 
               <div className="featureItem">
-                <div className="featureItemTitle">More premium positioning</div>
+                <div className="featureItemTitle">Not a cookie-cutter feel</div>
                 <div className="featureItemText">
-                  A sharper site makes the business feel more valuable before pricing is even discussed.
+                  Even when using proven structure, the goal is to make the brand feel elevated and custom.
                 </div>
               </div>
 
               <div className="featureItem">
-                <div className="featureItemTitle">Better contact flow</div>
+                <div className="featureItemTitle">Designed for real-world selling</div>
                 <div className="featureItemText">
-                  Clearer sections and cleaner calls-to-action help move visitors toward reaching out.
+                  Whether someone finds you on Google, Facebook, Instagram, or a referral,
+                  the site should make them feel like they’re dealing with a serious business.
                 </div>
               </div>
             </div>
@@ -264,8 +306,8 @@ export default function HomePage() {
 
             <div className="introRight">
               <p>
-                Different niches need different presentation styles. These demos show the kind
-                of layout and sales direction we can build for your business.
+                Different niches need different presentation styles. These demos show the
+                kind of layout and sales direction we can build for your business.
               </p>
             </div>
           </div>
@@ -317,7 +359,8 @@ export default function HomePage() {
 
             <div className="introRight">
               <p>
-                Better websites help your company feel more trusted, more valuable, and more worth contacting.
+                Better websites help your company feel more trusted, more valuable,
+                and more worth contacting.
               </p>
             </div>
           </div>
@@ -364,7 +407,7 @@ export default function HomePage() {
                 <li>Google Business optimization</li>
                 <li>Priority design</li>
               </ul>
-              <a className="priceBtn primaryPriceBtn" href={`tel:${SALES_PHONE}`}>
+              <a className="priceBtn primaryPriceBtn" href={`tel:${SALES_1}`}>
                 Talk to Sales
               </a>
             </div>
@@ -380,9 +423,18 @@ export default function HomePage() {
                 <li>High-conversion structure</li>
                 <li>Service area + trust sections</li>
               </ul>
-              <a className="priceBtn primaryPriceBtn" href={`mailto:${EMAIL}`}>
+              <a className="priceBtn primaryPriceBtn" href={`tel:${SALES_2}`}>
                 Build My Elite Site
               </a>
+            </div>
+          </div>
+
+          <div className="salesBand">
+            <div className="salesBandTitle">Sales Team</div>
+            <div className="salesBandRow">
+              <a href={`tel:${SALES_1}`}>Sales {SALES_1_PRETTY}</a>
+              <a href={`tel:${SALES_2}`}>Sales {SALES_2_PRETTY}</a>
+              <a href={`tel:${SALES_3}`}>Sales {SALES_3_PRETTY}</a>
             </div>
           </div>
 
@@ -394,7 +446,10 @@ export default function HomePage() {
 
             <div className="pricingActions">
               <a className="pill" href={`tel:${MAIN_PHONE}`}>
-                Text {MAIN_PRETTY}
+                Main {MAIN_PRETTY}
+              </a>
+              <a className="pill" href={`tel:${SALES_1}`}>
+                Sales {SALES_1_PRETTY}
               </a>
               <a className="pill primaryPill" href={`mailto:${EMAIL}`}>
                 Email for Quote
@@ -428,9 +483,24 @@ export default function HomePage() {
 
       <footer className="footer">
         <div className="container footerInner">
-          <div>
+          <div className="footerLeft">
             <div className="footerBrand">Atlas Digital Lab</div>
             <div className="footerSub">Websites • SEO • Small Business Growth</div>
+          </div>
+
+          <div className="footerCenter">
+            <div className="footerContactLine">
+              <span>Main:</span> <a href={`tel:${MAIN_PHONE}`}>{MAIN_PRETTY}</a>
+            </div>
+            <div className="footerContactLine">
+              <span>Sales:</span> <a href={`tel:${SALES_1}`}>{SALES_1_PRETTY}</a>
+            </div>
+            <div className="footerContactLine">
+              <span>Sales:</span> <a href={`tel:${SALES_2}`}>{SALES_2_PRETTY}</a>
+            </div>
+            <div className="footerContactLine">
+              <span>Sales:</span> <a href={`tel:${SALES_3}`}>{SALES_3_PRETTY}</a>
+            </div>
           </div>
 
           <div className="footerLinks">
@@ -444,9 +514,9 @@ export default function HomePage() {
       <style jsx>{`
         .page {
           min-height: 100vh;
-          background: linear-gradient(180deg, #0b1218 0%, #101923 38%, #0c141c 100%);
-          color: #f3f5f7;
-          font-family: Inter, Arial, sans-serif;
+          background: linear-gradient(180deg, #081018 0%, #0c1520 40%, #09111a 100%);
+          color: #eef4f8;
+          font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
           position: relative;
           overflow-x: hidden;
         }
@@ -456,7 +526,7 @@ export default function HomePage() {
           border-radius: 999px;
           filter: blur(90px);
           pointer-events: none;
-          opacity: 0.35;
+          opacity: 0.18;
         }
 
         .glowOne {
@@ -464,22 +534,22 @@ export default function HomePage() {
           height: 320px;
           top: 90px;
           left: -120px;
-          background: rgba(191, 122, 46, 0.16);
+          background: rgba(46, 180, 255, 0.22);
         }
 
         .glowTwo {
           width: 340px;
           height: 340px;
-          right: -140px;
           bottom: 60px;
-          background: rgba(86, 111, 130, 0.12);
+          right: -140px;
+          background: rgba(240, 196, 138, 0.16);
         }
 
         .steelNoise {
           position: fixed;
           inset: 0;
           pointer-events: none;
-          opacity: 0.03;
+          opacity: 0.025;
           background-image:
             radial-gradient(circle at 20% 20%, #ffffff 0.7px, transparent 0.8px),
             radial-gradient(circle at 80% 30%, #000000 0.7px, transparent 0.8px),
@@ -495,7 +565,7 @@ export default function HomePage() {
           width: 760px;
           height: 760px;
           z-index: 0;
-          opacity: 0.11;
+          opacity: 0.09;
           pointer-events: none;
           background-repeat: no-repeat;
           background-size: contain;
@@ -507,7 +577,8 @@ export default function HomePage() {
         .container {
           max-width: 1220px;
           margin: 0 auto;
-          padding: 0 20px;
+          padding-left: 18px;
+          padding-right: 18px;
           position: relative;
           z-index: 2;
         }
@@ -517,7 +588,7 @@ export default function HomePage() {
           top: 0;
           z-index: 50;
           backdrop-filter: blur(12px);
-          background: rgba(8, 12, 17, 0.7);
+          background: rgba(7, 12, 18, 0.68);
           border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
@@ -526,7 +597,7 @@ export default function HomePage() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 18px;
+          gap: 16px;
           flex-wrap: wrap;
         }
 
@@ -539,15 +610,15 @@ export default function HomePage() {
         }
 
         .brandMark {
-          width: 46px;
-          height: 46px;
+          width: 40px;
+          height: 40px;
           border-radius: 12px;
-          background: linear-gradient(135deg, rgba(240,196,138,0.14), rgba(255,255,255,0.02));
-          border: 1px solid rgba(240,196,138,0.18);
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+          background: linear-gradient(135deg, rgba(240,196,138,.22), rgba(255,255,255,.04));
+          border: 1px solid rgba(240,196,138,.18);
+          box-shadow: 0 10px 24px rgba(0,0,0,.2);
           flex-shrink: 0;
         }
 
@@ -560,19 +631,14 @@ export default function HomePage() {
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            130deg,
-            transparent 18%,
-            rgba(255,255,255,0.14) 45%,
-            transparent 70%
-          );
+          background: linear-gradient(130deg, transparent 18%, rgba(255,255,255,.14) 45%, transparent 70%);
           opacity: 0.55;
           pointer-events: none;
         }
 
         .texasSvg {
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
           display: block;
           filter: drop-shadow(0 2px 10px rgba(0,0,0,0.25));
         }
@@ -586,41 +652,41 @@ export default function HomePage() {
         }
 
         .brandName {
+          font-size: 16px;
           font-weight: 800;
-          font-size: 15px;
         }
 
         .brandSub {
-          font-size: 13px;
-          opacity: 0.82;
+          font-size: 12px;
+          color: rgba(238,244,248,.72);
         }
 
-        .navLinks {
-          display: flex;
-          gap: 18px;
-          align-items: center;
-        }
-
-        .navLinks a {
-          color: rgba(255, 255, 255, 0.92);
-          text-decoration: none;
-          font-size: 14px;
-          font-weight: 600;
-        }
-
-        .navLinks a:hover {
-          color: #f0c48a;
-        }
-
+        .navLinks,
         .topActions,
         .heroActions,
         .pricingActions,
         .finalRight,
-        .footerLinks {
+        .footerLinks,
+        .salesBandRow {
           display: flex;
           gap: 12px;
           flex-wrap: wrap;
           align-items: center;
+        }
+
+        .navLinks a,
+        .footerLinks a,
+        .footerContactLine a {
+          color: rgba(238,244,248,.86);
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        .navLinks a:hover,
+        .footerLinks a:hover,
+        .footerContactLine a:hover {
+          color: #f0c48a;
         }
 
         .pill,
@@ -628,7 +694,7 @@ export default function HomePage() {
         .priceBtn,
         .demoLarge,
         .demoSmall {
-          transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+          transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
         }
 
         .pill:hover,
@@ -636,70 +702,76 @@ export default function HomePage() {
         .priceBtn:hover,
         .demoLarge:hover,
         .demoSmall:hover {
-          transform: translateY(-2px);
+          transform: translateY(-3px);
         }
 
         .pill {
-          padding: 10px 16px;
-          min-height: 46px;
-          border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          color: white;
-          background: rgba(255, 255, 255, 0.04);
-          font-weight: 700;
+          min-height: 44px;
+          padding: 10px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,.12);
           text-decoration: none;
-          backdrop-filter: blur(8px);
+          color: #eef4f8;
+          font-weight: 800;
+          font-size: 14px;
+          background: rgba(255,255,255,.05);
         }
 
-        .primaryPill,
-        .primaryBtn,
-        .primaryPriceBtn {
-          background: linear-gradient(135deg, #f0c48a, #9b6327);
-          color: #17110b;
-          border: none;
-          box-shadow: 0 12px 24px rgba(155, 99, 39, 0.24);
+        .mainPill {
+          background: rgba(255,255,255,.05);
         }
 
         .btn,
         .priceBtn {
-          min-height: 54px;
-          padding: 13px 20px;
+          min-height: 52px;
+          padding: 13px 18px;
           border-radius: 14px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.04);
-          color: #f3f5f7;
+          border: 1px solid rgba(255,255,255,.12);
           text-decoration: none;
+          color: #eef4f8;
           font-weight: 800;
+          background: rgba(255,255,255,.05);
           display: inline-flex;
           align-items: center;
           justify-content: center;
         }
 
+        .primaryPill,
+        .primaryBtn,
+        .primaryPriceBtn {
+          background: linear-gradient(135deg, #f0c48a, #c48b43);
+          border-color: transparent;
+          color: #111;
+          box-shadow: 0 14px 30px rgba(196,139,67,.24);
+        }
+
         .darkBtn {
-          background: rgba(255,255,255,0.08);
+          background: rgba(255,255,255,.08);
         }
 
         .ghostBtn {
-          background: transparent;
+          background: rgba(255,255,255,.03);
         }
 
         .hero {
-          padding: 54px 0 76px;
+          padding-top: 78px;
+          padding-bottom: 70px;
         }
 
         .heroGrid {
           display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 36px;
-          align-items: start;
+          grid-template-columns: 1.02fr .98fr;
+          gap: 34px;
+          align-items: center;
         }
 
         .eyebrow,
         .sectionEyebrow,
-        .panelEyebrow {
+        .panelEyebrow,
+        .demoKicker {
           display: inline-block;
           font-size: 12px;
-          letter-spacing: 0.12em;
+          letter-spacing: .12em;
           text-transform: uppercase;
           font-weight: 900;
           color: #f0c48a;
@@ -707,25 +779,25 @@ export default function HomePage() {
         }
 
         h1 {
-          font-size: clamp(42px, 6vw, 76px);
-          margin: 0 0 18px;
-          line-height: 0.96;
-          letter-spacing: -0.05em;
+          margin: 0 0 16px;
+          font-size: clamp(42px, 6vw, 74px);
+          line-height: .96;
+          letter-spacing: -.05em;
           max-width: 11ch;
         }
 
         h2 {
-          font-size: clamp(30px, 4vw, 52px);
           margin: 0;
+          font-size: clamp(30px, 4vw, 52px);
           line-height: 1.02;
-          letter-spacing: -0.04em;
+          letter-spacing: -.04em;
         }
 
         h3 {
-          font-size: 26px;
           margin: 0 0 10px;
+          font-size: 28px;
           line-height: 1.08;
-          letter-spacing: -0.03em;
+          letter-spacing: -.03em;
         }
 
         .heroText,
@@ -735,101 +807,135 @@ export default function HomePage() {
         .demoLargeText,
         .demoSmallText,
         .pricingNote,
-        .finalLeft p {
-          color: #b6c0c7;
+        .finalLeft p,
+        .lineText {
+          color: rgba(238,244,248,.76);
           font-size: 17px;
           line-height: 1.72;
         }
 
-        .heroMeta {
-          margin-top: 30px;
+        .heroStats {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 14px;
+          margin-top: 26px;
         }
 
-        .metaItem {
-          padding-top: 14px;
-          border-top: 1px solid rgba(255,255,255,0.08);
+        .statItem {
+          padding: 16px 0 0;
+          border-top: 1px solid rgba(255,255,255,.08);
         }
 
-        .metaLabel {
-          font-size: 13px;
-          font-weight: 800;
+        .statValue {
+          font-size: 24px;
+          font-weight: 900;
           color: #f0c48a;
+          margin-bottom: 4px;
+        }
+
+        .statLabel {
+          font-size: 13px;
+          color: rgba(238,244,248,.68);
+          line-height: 1.5;
+        }
+
+        .heroContactStrip {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 12px;
+          margin-top: 28px;
+        }
+
+        .contactMini {
+          padding-top: 12px;
+          border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        .contactMiniLabel {
+          display: block;
+          font-size: 11px;
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          color: #8fe4ff;
           margin-bottom: 6px;
         }
 
-        .metaText {
-          color: #c7cfd6;
+        .contactMini a {
+          color: #eef4f8;
+          text-decoration: none;
           font-size: 14px;
-          line-height: 1.55;
+          font-weight: 800;
         }
 
         .heroPanel {
           padding: 28px;
           border-radius: 28px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-          border: 1px solid rgba(255,255,255,0.08);
-          box-shadow: 0 30px 70px rgba(0,0,0,0.22);
+          background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+          border: 1px solid rgba(255,255,255,.08);
+          box-shadow: 0 30px 70px rgba(0,0,0,.26);
+          position: relative;
+          overflow: hidden;
         }
 
         .panelTop {
           display: flex;
           justify-content: space-between;
-          gap: 16px;
           align-items: flex-start;
-          margin-bottom: 20px;
+          gap: 16px;
+          margin-bottom: 18px;
         }
 
         .panelTitle {
           font-size: 28px;
           line-height: 1.08;
-          letter-spacing: -0.03em;
+          letter-spacing: -.03em;
           font-weight: 800;
           max-width: 13ch;
         }
 
         .panelBadge {
-          font-size: 12px;
-          font-weight: 800;
           padding: 7px 10px;
           border-radius: 999px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.88);
+          background: rgba(255,255,255,.05);
+          border: 1px solid rgba(255,255,255,.08);
+          font-size: 12px;
+          font-weight: 700;
+          color: rgba(255,255,255,.88);
           white-space: nowrap;
         }
 
         .panelLines {
           display: grid;
           gap: 18px;
+          margin-top: 18px;
+          margin-bottom: 20px;
         }
 
         .panelLine {
-          padding-bottom: 18px;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          display: grid;
+          grid-template-columns: 12px 1fr;
+          gap: 12px;
+          align-items: start;
         }
 
-        .panelLine:last-child {
-          border-bottom: none;
-          padding-bottom: 0;
+        .lineDot {
+          width: 10px;
+          height: 10px;
+          border-radius: 999px;
+          background: #8fe4ff;
+          margin-top: 8px;
+          box-shadow: 0 0 18px rgba(143,228,255,.4);
         }
 
         .lineTitle {
           font-weight: 800;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
           font-size: 15px;
         }
 
-        .lineText {
-          color: #b6c0c7;
-          line-height: 1.65;
-          font-size: 14px;
-        }
-
         .panelActionRow {
-          margin-top: 22px;
+          margin-top: 16px;
         }
 
         .fullBtn {
@@ -843,20 +949,20 @@ export default function HomePage() {
         .trustRow {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,.08);
           border-radius: 999px;
           overflow: hidden;
-          background: rgba(255,255,255,0.03);
-          backdrop-filter: blur(10px);
+          background: rgba(255,255,255,.03);
+          backdrop-filter: blur(8px);
         }
 
         .trustRow span {
-          padding: 16px 12px;
+          padding: 15px 12px;
           text-align: center;
           font-size: 13px;
           font-weight: 700;
-          color: #c7cfd6;
-          border-right: 1px solid rgba(255,255,255,0.06);
+          color: rgba(238,244,248,.78);
+          border-right: 1px solid rgba(255,255,255,.06);
         }
 
         .trustRow span:last-child {
@@ -864,12 +970,13 @@ export default function HomePage() {
         }
 
         .section {
-          padding: 86px 0;
+          padding-top: 86px;
+          padding-bottom: 86px;
         }
 
         .splitIntro {
           display: grid;
-          grid-template-columns: 1fr 0.9fr;
+          grid-template-columns: 1fr .9fr;
           gap: 28px;
           align-items: end;
           margin-bottom: 34px;
@@ -883,22 +990,18 @@ export default function HomePage() {
 
         .serviceRow {
           display: grid;
-          grid-template-columns: 80px 1fr 0.9fr;
+          grid-template-columns: 80px 1fr .9fr;
           gap: 26px;
           padding-top: 24px;
-          border-top: 1px solid rgba(255,255,255,0.08);
+          border-top: 1px solid rgba(255,255,255,.08);
           align-items: start;
         }
 
         .serviceNumber {
           font-size: 34px;
           font-weight: 900;
-          color: rgba(240,196,138,0.92);
+          color: rgba(240,196,138,.92);
           line-height: 1;
-        }
-
-        .serviceContent h3 {
-          margin-bottom: 8px;
         }
 
         .serviceList {
@@ -908,50 +1011,48 @@ export default function HomePage() {
         }
 
         .serviceList span {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
           min-height: 40px;
           padding: 8px 12px;
           border-radius: 999px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,.04);
+          border: 1px solid rgba(255,255,255,.08);
           color: #d3dae0;
           font-size: 13px;
           font-weight: 700;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .featureSection {
-          background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+          background: linear-gradient(135deg, rgba(255,255,255,.02) 0%, rgba(255,255,255,.01) 100%);
         }
 
         .featureGrid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 34px;
-          align-items: start;
+          align-items: center;
         }
 
         .featureItem {
           padding-bottom: 18px;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
         .featureItem:last-child {
           border-bottom: none;
-          padding-bottom: 0;
         }
 
         .featureItemTitle {
           font-size: 15px;
           font-weight: 800;
           margin-bottom: 8px;
-          color: #f3f5f7;
         }
 
         .demoLayout {
           display: grid;
-          grid-template-columns: 1.08fr 0.92fr;
+          grid-template-columns: 1.08fr .92fr;
           gap: 24px;
         }
 
@@ -959,10 +1060,10 @@ export default function HomePage() {
         .demoSmall {
           text-decoration: none;
           color: inherit;
-          background: rgba(255,255,255,0.035);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,.035);
+          border: 1px solid rgba(255,255,255,.08);
+          box-shadow: 0 18px 44px rgba(0,0,0,.12);
           backdrop-filter: blur(10px);
-          box-shadow: 0 18px 44px rgba(0,0,0,0.12);
         }
 
         .demoLarge {
@@ -980,28 +1081,20 @@ export default function HomePage() {
           content: "";
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle at top right, rgba(240,196,138,0.14), transparent 36%);
+          background: radial-gradient(circle at top right, rgba(240,196,138,.12), transparent 40%);
           pointer-events: none;
-        }
-
-        .demoKicker {
-          font-size: 12px;
-          font-weight: 900;
-          letter-spacing: 0.12em;
-          color: #8fe4ff;
-          margin-bottom: 12px;
-          text-transform: uppercase;
         }
 
         .demoLargeTitle {
           font-size: 32px;
           line-height: 1.04;
-          letter-spacing: -0.03em;
+          letter-spacing: -.03em;
           font-weight: 800;
           margin-bottom: 12px;
         }
 
         .demoArrow {
+          display: inline-block;
           margin-top: 18px;
           color: #f0c48a;
           font-weight: 800;
@@ -1031,13 +1124,13 @@ export default function HomePage() {
         }
 
         .priceCard {
-          display: flex;
-          flex-direction: column;
-          background: rgba(255,255,255,0.035);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,.035);
+          border: 1px solid rgba(255,255,255,.08);
           border-radius: 24px;
           padding: 24px;
-          box-shadow: 0 18px 44px rgba(0,0,0,0.12);
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 18px 44px rgba(0,0,0,.12);
           backdrop-filter: blur(10px);
         }
 
@@ -1046,8 +1139,8 @@ export default function HomePage() {
         }
 
         .eliteCard {
-          border-color: rgba(240,196,138,0.2);
-          box-shadow: 0 18px 44px rgba(155,99,39,0.12);
+          border-color: rgba(240,196,138,.26);
+          box-shadow: 0 18px 44px rgba(196,139,67,.1);
         }
 
         .plan {
@@ -1058,54 +1151,76 @@ export default function HomePage() {
         }
 
         .tag {
-          display: inline-flex;
-          width: fit-content;
           margin-bottom: 12px;
           padding: 7px 10px;
           border-radius: 999px;
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,.08);
           font-size: 12px;
           font-weight: 800;
-          color: #eef4f8;
+          width: fit-content;
         }
 
         .goldTag {
-          background: linear-gradient(135deg, #f0c48a, #9b6327);
-          color: #17110b;
-          border: none;
+          background: linear-gradient(135deg, #f0c48a, #c48b43);
+          color: #111;
         }
 
         .price {
-          font-size: 48px;
+          font-size: 42px;
           font-weight: 900;
           line-height: 1;
           margin-bottom: 8px;
         }
 
         .monthly {
+          opacity: .72;
+          margin-bottom: 4px;
           font-weight: 800;
-          color: #b6c0c7;
-          margin-bottom: 6px;
         }
 
         .priceCard ul {
           margin: 14px 0 0;
           padding-left: 18px;
-          color: #c7cfd6;
           line-height: 1.8;
+          color: rgba(238,244,248,.76);
           flex: 1;
         }
 
         .priceBtn {
-          width: 100%;
           margin-top: 18px;
+          width: 100%;
+        }
+
+        .salesBand {
+          margin-top: 24px;
+          padding-top: 20px;
+          border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        .salesBandTitle {
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          color: #8fe4ff;
+          margin-bottom: 12px;
+        }
+
+        .salesBandRow a {
+          padding: 10px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,.08);
+          background: rgba(255,255,255,.04);
+          color: #eef4f8;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 800;
         }
 
         .pricingFooter {
           margin-top: 34px;
           padding-top: 28px;
-          border-top: 1px solid rgba(255,255,255,0.08);
+          border-top: 1px solid rgba(255,255,255,.08);
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -1121,23 +1236,23 @@ export default function HomePage() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 28px;
+          gap: 22px;
           flex-wrap: wrap;
-          padding-top: 28px;
-          border-top: 1px solid rgba(255,255,255,0.08);
+          border-top: 1px solid rgba(255,255,255,.08);
+          padding-top: 34px;
         }
 
         .footer {
-          padding: 40px 0;
+          padding-top: 26px;
+          padding-bottom: 40px;
         }
 
         .footerInner {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 18px;
-          flex-wrap: wrap;
-          border-top: 1px solid rgba(255,255,255,0.08);
+          display: grid;
+          grid-template-columns: 1fr 1fr auto;
+          gap: 20px;
+          align-items: start;
+          border-top: 1px solid rgba(255,255,255,.08);
           padding-top: 24px;
         }
 
@@ -1148,14 +1263,19 @@ export default function HomePage() {
 
         .footerSub {
           font-size: 13px;
-          color: rgba(255,255,255,0.68);
+          color: rgba(238,244,248,.66);
         }
 
-        .footerLinks a {
-          color: rgba(255,255,255,0.88);
-          text-decoration: none;
+        .footerContactLine {
+          color: rgba(238,244,248,.76);
           font-size: 14px;
-          font-weight: 700;
+          line-height: 1.8;
+        }
+
+        .footerContactLine span {
+          color: #8fe4ff;
+          font-weight: 800;
+          margin-right: 6px;
         }
 
         @media (max-width: 1160px) {
@@ -1175,12 +1295,12 @@ export default function HomePage() {
             transform: none;
           }
 
-          h1 {
-            max-width: none;
+          .footerInner {
+            grid-template-columns: 1fr;
           }
 
-          .heroPanel {
-            margin-top: 8px;
+          h1 {
+            max-width: none;
           }
         }
 
@@ -1190,7 +1310,8 @@ export default function HomePage() {
           }
 
           .trustRow,
-          .heroMeta,
+          .heroStats,
+          .heroContactStrip,
           .pricingGrid {
             grid-template-columns: 1fr;
           }
@@ -1201,7 +1322,7 @@ export default function HomePage() {
 
           .trustRow span {
             border-right: none;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,.06);
           }
 
           .trustRow span:last-child {
@@ -1211,15 +1332,16 @@ export default function HomePage() {
           .fixedEmblem {
             width: 520px;
             height: 520px;
-            right: -140px;
+            right: -120px;
             top: 180px;
-            opacity: 0.1;
+            opacity: 0.08;
           }
         }
 
         @media (max-width: 640px) {
           .container {
-            padding: 0 14px;
+            padding-left: 14px;
+            padding-right: 14px;
           }
 
           .topbarInner,
@@ -1227,19 +1349,24 @@ export default function HomePage() {
           .heroActions,
           .pricingActions,
           .finalRight,
-          .footerInner,
-          .footerLinks {
+          .footerLinks,
+          .salesBandRow {
             flex-direction: column;
             align-items: stretch;
           }
 
           .pill,
           .btn,
-          .priceBtn {
+          .priceBtn,
+          .salesBandRow a {
             width: 100%;
           }
 
-          .hero,
+          .hero {
+            padding-top: 54px;
+            padding-bottom: 52px;
+          }
+
           .section {
             padding-top: 70px;
             padding-bottom: 70px;
@@ -1272,7 +1399,7 @@ export default function HomePage() {
             height: 360px;
             right: -120px;
             top: 220px;
-            opacity: 0.09;
+            opacity: 0.07;
           }
         }
       `}</style>

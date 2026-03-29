@@ -317,7 +317,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="pricing" className="section darkSection">
+      <section id="pricing" className="section darkSection pricingSection">
         <div className="container">
           <div className="sectionHead">
             <div className="eyebrow dark">Pricing</div>
@@ -689,6 +689,8 @@ export default function HomePage() {
           border: 1px solid rgba(255, 255, 255, 0.08);
           color: #f3f5f7;
           background: rgba(255,255,255,0.05);
+          min-width: 190px;
+          justify-content: center;
         }
 
         .primaryPill {
@@ -697,6 +699,8 @@ export default function HomePage() {
           border: none;
           font-weight: 800;
           box-shadow: 0 12px 24px rgba(155, 99, 39, 0.26);
+          min-width: 190px;
+          justify-content: center;
         }
 
         .heroContent {
@@ -914,11 +918,15 @@ export default function HomePage() {
         }
 
         .section {
-          padding: 86px 0;
+          padding: 96px 0;
         }
 
         .darkSection {
           background: transparent;
+        }
+
+        .pricingSection {
+          padding-bottom: 110px;
         }
 
         .sectionHead {
@@ -942,7 +950,7 @@ export default function HomePage() {
         }
 
         .serviceCard {
-          padding: 0 0 0 0;
+          padding: 0;
           background: transparent;
           border: none;
           box-shadow: none;
@@ -1066,7 +1074,9 @@ export default function HomePage() {
           display: grid;
           grid-template-columns: repeat(4, minmax(0, 1fr));
           gap: 22px;
-          margin-top: 12px;
+          margin-top: 18px;
+          margin-bottom: 18px;
+          align-items: stretch;
         }
 
         .priceCard {
@@ -1078,6 +1088,8 @@ export default function HomePage() {
           border: 1px solid rgba(255,255,255,0.06);
           overflow: hidden;
           backdrop-filter: blur(8px);
+          display: flex;
+          flex-direction: column;
         }
 
         .priceCard.elite {
@@ -1144,7 +1156,7 @@ export default function HomePage() {
         .priceBtn {
           background: rgba(255,255,255,0.05);
           color: white;
-          margin-top: 16px;
+          margin-top: auto;
           border: 1px solid rgba(255,255,255,0.08);
         }
 
@@ -1155,9 +1167,10 @@ export default function HomePage() {
         }
 
         .footerCtas {
-          margin-top: 26px;
+          margin-top: 34px;
+          padding-top: 28px;
+          padding-bottom: 8px;
           border-top: 1px solid rgba(255,255,255,0.08);
-          padding-top: 22px;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -1169,23 +1182,25 @@ export default function HomePage() {
           color: #b6c0c7;
           font-weight: 600;
           max-width: 720px;
-          line-height: 1.65;
+          line-height: 1.75;
+          font-size: 15px;
         }
 
         .footerActionRow {
           display: flex;
-          gap: 12px;
+          gap: 14px;
           flex-wrap: wrap;
+          align-items: center;
         }
 
         .finalCtaSection {
           background: transparent;
-          padding-top: 28px;
+          padding-top: 32px;
         }
 
         .ctaPanel {
           border-top: 1px solid rgba(255,255,255,0.08);
-          padding: 34px 0 0;
+          padding: 38px 0 0;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -1207,7 +1222,7 @@ export default function HomePage() {
         .footer {
           background: transparent;
           color: white;
-          padding: 40px 0;
+          padding: 46px 0 40px;
         }
 
         .footerInner {
@@ -1317,16 +1332,25 @@ export default function HomePage() {
           }
 
           .pill,
-          .btn {
+          .btn,
+          .darkPill,
+          .primaryPill {
             width: 100%;
+            min-width: 0;
           }
 
           .section {
             padding: 70px 0;
           }
 
+          .pricingSection {
+            padding-bottom: 88px;
+          }
+
           .footerCtas {
-            padding-top: 18px;
+            padding-top: 22px;
+            padding-bottom: 0;
+            align-items: stretch;
           }
 
           h1 {

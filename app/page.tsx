@@ -1,228 +1,275 @@
 "use client";
 
 export default function HomePage() {
+  const MAIN_PHONE = "8327050313";
+  const SALES_NUMBERS = [
+    "(346) 365-7906",
+    "(832) 677-3150",
+    "(346) 532-8803"
+  ];
+
   return (
-    <main className="page">
-
+    <main style={styles.page}>
       {/* HERO */}
-      <section className="hero">
-        <h1>
-          Websites that make small businesses look expensive — and get more calls.
-        </h1>
+      <section style={styles.hero}>
+        <div style={styles.left}>
+          <p style={styles.kicker}>
+            HOUSTON-BASED • BUILT FOR SMALL BUSINESSES • FAST TURNAROUND
+          </p>
 
-        <p>
-          Clean structure, stronger trust, and built to actually get people to reach out.
-        </p>
+          <h1 style={styles.title}>
+            Websites that make small businesses look expensive — and get more calls.
+          </h1>
 
-        <div className="actions">
-          <a href="tel:3463657906" className="btn primary">Call / Text Sales</a>
-          <a href="#demos" className="btn">View Demos</a>
-          <a href="mailto:hello@atlasdigitallab.com" className="btn">Email Quote</a>
+          <p style={styles.sub}>
+            We design high-conversion websites that make your business look more trusted,
+            more established, and worth contacting.
+          </p>
+
+          <div style={styles.buttons}>
+            <a href={`tel:${MAIN_PHONE}`} style={styles.primaryBtn}>
+              Call / Text Sales
+            </a>
+            <a href="#demos" style={styles.secondaryBtn}>
+              See Real Examples
+            </a>
+            <a href="mailto:hello@atlasdigitallab.com" style={styles.secondaryBtn}>
+              Get a Quote
+            </a>
+          </div>
+
+          {/* SALES NUMBERS (THIS FIXES YOUR ISSUE) */}
+          <div style={styles.salesWrap}>
+            {SALES_NUMBERS.map((num, i) => (
+              <a
+                key={i}
+                href={`tel:${num.replace(/\D/g, "")}`}
+                style={styles.salesBtn}
+              >
+                Sales {num}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div style={styles.right}>
+          <div style={styles.card}>
+            <h3 style={{ marginBottom: 10 }}>
+              A cleaner, more custom presentation for serious businesses.
+            </h3>
+            <p style={styles.cardText}>
+              Cleaner hierarchy, stronger trust, and better conversion structure.
+            </p>
+            <button style={styles.cardBtn}>Start a Project</button>
+          </div>
         </div>
       </section>
 
-      {/* SALES */}
-      <section className="sales">
-        <span>Sales Team</span>
+      {/* SERVICES */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          Built to help businesses look stronger online.
+        </h2>
 
-        <div className="salesRow">
-          <a href="tel:3463657906">Sales (346) 365-7906</a>
-          <a href="tel:8326773150">Sales (832) 677-3150</a>
-          <a href="tel:3465328803">Sales (346) 532-8803</a>
+        <div style={styles.flexGrid}>
+          <div style={styles.box}>
+            <h3>Website Design</h3>
+            <p>Clean layout, strong spacing, better first impression.</p>
+          </div>
+
+          <div style={styles.box}>
+            <h3>SEO & Google Setup</h3>
+            <p>Show up stronger in search and maps.</p>
+          </div>
+
+          <div style={styles.box}>
+            <h3>Brand Presentation</h3>
+            <p>Look more legit and more valuable online.</p>
+          </div>
         </div>
       </section>
 
       {/* DEMOS */}
-      <section id="demos" className="demos">
+      <section id="demos" style={styles.section}>
+        <h2 style={styles.sectionTitle}>Real directions we can build from.</h2>
 
-        <div className="demoHero">
-          <h2>Real directions we can build from.</h2>
-          <p>Each layout is designed to fit a different type of business.</p>
+        <div style={styles.flexGrid}>
+          <div style={styles.demoCard}>Pet Bakery Demo</div>
+          <div style={styles.demoCard}>Interior Styling</div>
+          <div style={styles.demoCard}>Roofing Demo</div>
+          <div style={styles.demoCard}>Metal Cards Demo</div>
         </div>
-
-        <div className="demoWrap">
-
-          {/* BIG FEATURE */}
-          <a href="/demo/pet-bakery" className="feature">
-            <div>
-              <span>Featured</span>
-              <h3>Pet Bakery Demo</h3>
-              <p>Boutique storefront layout with stronger flow and presentation.</p>
-            </div>
-          </a>
-
-          {/* SIDE LIST */}
-          <div className="side">
-
-            <a href="/demo/home-styling">
-              <strong>Interior Styling</strong>
-              <span>Clean visual layout</span>
-            </a>
-
-            <a href="/demo/roofing">
-              <strong>Roofing</strong>
-              <span>Trust + call focused</span>
-            </a>
-
-            <a href="/demo/metal-cards">
-              <strong>Metal Cards</strong>
-              <span>Product-style build</span>
-            </a>
-
-          </div>
-
-        </div>
-
       </section>
 
-      <style jsx>{`
-        .page {
-          background: #0b1218;
-          color: white;
-          min-height: 100vh;
-          padding: 60px 20px;
-          font-family: system-ui;
-        }
+      {/* PRICING */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          Simple pricing for businesses ready to look more established.
+        </h2>
 
-        .hero {
-          max-width: 900px;
-          margin-bottom: 70px;
-        }
+        <div style={styles.scrollRow}>
+          <div style={styles.priceCard}>
+            <h3>Starter</h3>
+            <h2>$299</h2>
+            <p>Single page • Mobile • Contact</p>
+          </div>
 
-        .hero h1 {
-          font-size: 52px;
-          line-height: 1.1;
-          margin-bottom: 15px;
-        }
+          <div style={styles.priceCard}>
+            <h3>Growth</h3>
+            <h2>$499</h2>
+            <p>Multi-section • Trust blocks</p>
+          </div>
 
-        .hero p {
-          opacity: 0.7;
-          margin-bottom: 25px;
-          max-width: 600px;
-        }
+          <div style={styles.priceCard}>
+            <h3>Pro</h3>
+            <h2>$799</h2>
+            <p>Advanced SEO • Priority design</p>
+          </div>
 
-        .actions {
-          display: flex;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
+          <div style={styles.priceCardHighlight}>
+            <h3>Elite</h3>
+            <h2>$1,200</h2>
+            <p>Custom premium build</p>
+          </div>
+        </div>
+      </section>
 
-        .btn {
-          padding: 12px 18px;
-          border-radius: 10px;
-          border: 1px solid rgba(255,255,255,0.2);
-          text-decoration: none;
-          color: white;
-        }
+      {/* CTA */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          Want your company to look this sharp online?
+        </h2>
 
-        .primary {
-          background: #f0c48a;
-          color: black;
-          border: none;
-        }
-
-        .sales {
-          margin-bottom: 60px;
-        }
-
-        .sales span {
-          font-size: 13px;
-          opacity: 0.7;
-        }
-
-        .salesRow {
-          margin-top: 10px;
-          display: flex;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .salesRow a {
-          padding: 10px 14px;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,0.2);
-          text-decoration: none;
-          color: white;
-        }
-
-        .demos {
-          margin-top: 60px;
-        }
-
-        .demoHero h2 {
-          font-size: 36px;
-          margin-bottom: 10px;
-        }
-
-        .demoHero p {
-          opacity: 0.7;
-          margin-bottom: 30px;
-        }
-
-        .demoWrap {
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 40px;
-        }
-
-        .feature {
-          padding: 30px;
-          border-radius: 20px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          text-decoration: none;
-          color: white;
-          display: flex;
-          align-items: flex-end;
-          min-height: 280px;
-        }
-
-        .feature span {
-          font-size: 12px;
-          opacity: 0.6;
-        }
-
-        .feature h3 {
-          font-size: 28px;
-          margin: 5px 0;
-        }
-
-        .feature p {
-          opacity: 0.7;
-        }
-
-        .side {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .side a {
-          padding: 18px;
-          border-radius: 14px;
-          border: 1px solid rgba(255,255,255,0.1);
-          text-decoration: none;
-          color: white;
-        }
-
-        .side strong {
-          display: block;
-          font-size: 18px;
-        }
-
-        .side span {
-          font-size: 14px;
-          opacity: 0.7;
-        }
-
-        @media (max-width: 900px) {
-          .demoWrap {
-            grid-template-columns: 1fr;
-          }
-        }
-
-      `}</style>
-
+        <div style={styles.buttons}>
+          <a href="mailto:hello@atlasdigitallab.com" style={styles.primaryBtn}>
+            Email Us
+          </a>
+          <a href={`tel:${MAIN_PHONE}`} style={styles.secondaryBtn}>
+            Call ({MAIN_PHONE})
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
+
+/* ================= STYLES ================= */
+
+const styles: any = {
+  page: {
+    background: "#0b0f1a",
+    color: "white",
+    fontFamily: "sans-serif",
+    padding: "40px 20px",
+    maxWidth: "1200px",
+    margin: "0 auto"
+  },
+
+  hero: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 40,
+    marginBottom: 60
+  },
+
+  left: { flex: 1, minWidth: 300 },
+  right: { flex: 1, minWidth: 300 },
+
+  kicker: { color: "#c7a96b", fontSize: 12 },
+  title: { fontSize: 42, fontWeight: 800 },
+  sub: { color: "#aaa", marginTop: 10 },
+
+  buttons: { display: "flex", gap: 10, marginTop: 20 },
+
+  primaryBtn: {
+    background: "#c7a96b",
+    color: "black",
+    padding: "10px 18px",
+    borderRadius: 8,
+    textDecoration: "none"
+  },
+
+  secondaryBtn: {
+    border: "1px solid #444",
+    padding: "10px 18px",
+    borderRadius: 8,
+    textDecoration: "none",
+    color: "white"
+  },
+
+  salesWrap: {
+    display: "flex",
+    gap: 10,
+    flexWrap: "wrap",
+    marginTop: 20
+  },
+
+  salesBtn: {
+    border: "1px solid #444",
+    padding: "8px 14px",
+    borderRadius: 999,
+    fontSize: 13,
+    textDecoration: "none",
+    color: "white"
+  },
+
+  card: {
+    background: "rgba(255,255,255,0.05)",
+    padding: 20,
+    borderRadius: 16
+  },
+
+  cardText: { color: "#bbb" },
+  cardBtn: {
+    marginTop: 10,
+    padding: "10px 14px",
+    background: "#222",
+    color: "white",
+    borderRadius: 8
+  },
+
+  section: { marginTop: 60 },
+
+  sectionTitle: { fontSize: 28, marginBottom: 20 },
+
+  flexGrid: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 20
+  },
+
+  box: {
+    flex: "1 1 250px",
+    background: "rgba(255,255,255,0.05)",
+    padding: 20,
+    borderRadius: 14
+  },
+
+  demoCard: {
+    flex: "1 1 250px",
+    padding: 20,
+    borderRadius: 14,
+    border: "1px solid #444"
+  },
+
+  scrollRow: {
+    display: "flex",
+    gap: 20,
+    overflowX: "auto"
+  },
+
+  priceCard: {
+    minWidth: 240,
+    background: "rgba(255,255,255,0.05)",
+    padding: 20,
+    borderRadius: 14
+  },
+
+  priceCardHighlight: {
+    minWidth: 240,
+    background: "#c7a96b",
+    color: "black",
+    padding: 20,
+    borderRadius: 14
+  }
+};

@@ -2,7 +2,8 @@
 
 export default function HomePage() {
   const MAIN_PHONE = "8327050313";
-  const SALES_NUMBERS = [
+
+  const SALES = [
     "(346) 365-7906",
     "(832) 677-3150",
     "(346) 532-8803"
@@ -10,11 +11,15 @@ export default function HomePage() {
 
   return (
     <main style={styles.page}>
+      {/* BACKGROUND GLOW */}
+      <div style={styles.bgGlow} />
+      <div style={styles.bgCircle} />
+
       {/* HERO */}
       <section style={styles.hero}>
         <div style={styles.left}>
           <p style={styles.kicker}>
-            HOUSTON-BASED • BUILT FOR SMALL BUSINESSES • FAST TURNAROUND
+            HOUSTON • SMALL BUSINESS WEBSITES • FAST TURNAROUND
           </p>
 
           <h1 style={styles.title}>
@@ -22,25 +27,27 @@ export default function HomePage() {
           </h1>
 
           <p style={styles.sub}>
-            We design high-conversion websites that make your business look more trusted,
-            more established, and worth contacting.
+            Clean layouts, stronger trust, and better conversion structure so your business
+            actually looks worth hiring.
           </p>
 
           <div style={styles.buttons}>
             <a href={`tel:${MAIN_PHONE}`} style={styles.primaryBtn}>
               Call / Text Sales
             </a>
+
             <a href="#demos" style={styles.secondaryBtn}>
-              See Real Examples
+              View Demos
             </a>
+
             <a href="mailto:hello@atlasdigitallab.com" style={styles.secondaryBtn}>
               Get a Quote
             </a>
           </div>
 
-          {/* SALES NUMBERS (THIS FIXES YOUR ISSUE) */}
+          {/* SALES NUMBERS */}
           <div style={styles.salesWrap}>
-            {SALES_NUMBERS.map((num, i) => (
+            {SALES.map((num, i) => (
               <a
                 key={i}
                 href={`tel:${num.replace(/\D/g, "")}`}
@@ -53,13 +60,12 @@ export default function HomePage() {
         </div>
 
         <div style={styles.right}>
-          <div style={styles.card}>
-            <h3 style={{ marginBottom: 10 }}>
-              A cleaner, more custom presentation for serious businesses.
-            </h3>
-            <p style={styles.cardText}>
-              Cleaner hierarchy, stronger trust, and better conversion structure.
+          <div style={styles.heroCard}>
+            <h3>A cleaner, more custom presentation for serious businesses.</h3>
+            <p>
+              Stronger first impression, better structure, and more calls from real customers.
             </p>
+
             <button style={styles.cardBtn}>Start a Project</button>
           </div>
         </div>
@@ -71,18 +77,18 @@ export default function HomePage() {
           Built to help businesses look stronger online.
         </h2>
 
-        <div style={styles.flexGrid}>
-          <div style={styles.box}>
+        <div style={styles.flex}>
+          <div style={styles.glass}>
             <h3>Website Design</h3>
-            <p>Clean layout, strong spacing, better first impression.</p>
+            <p>Modern layout, better spacing, stronger first impression.</p>
           </div>
 
-          <div style={styles.box}>
+          <div style={styles.glass}>
             <h3>SEO & Google Setup</h3>
             <p>Show up stronger in search and maps.</p>
           </div>
 
-          <div style={styles.box}>
+          <div style={styles.glass}>
             <h3>Brand Presentation</h3>
             <p>Look more legit and more valuable online.</p>
           </div>
@@ -93,11 +99,11 @@ export default function HomePage() {
       <section id="demos" style={styles.section}>
         <h2 style={styles.sectionTitle}>Real directions we can build from.</h2>
 
-        <div style={styles.flexGrid}>
-          <div style={styles.demoCard}>Pet Bakery Demo</div>
-          <div style={styles.demoCard}>Interior Styling</div>
-          <div style={styles.demoCard}>Roofing Demo</div>
-          <div style={styles.demoCard}>Metal Cards Demo</div>
+        <div style={styles.flex}>
+          <div style={styles.demo}>Pet Bakery Demo</div>
+          <div style={styles.demo}>Interior Styling</div>
+          <div style={styles.demo}>Roofing Demo</div>
+          <div style={styles.demo}>Metal Cards Demo</div>
         </div>
       </section>
 
@@ -107,7 +113,7 @@ export default function HomePage() {
           Simple pricing for businesses ready to look more established.
         </h2>
 
-        <div style={styles.scrollRow}>
+        <div style={styles.pricingRow}>
           <div style={styles.priceCard}>
             <h3>Starter</h3>
             <h2>$299</h2>
@@ -126,10 +132,10 @@ export default function HomePage() {
             <p>Advanced SEO • Priority design</p>
           </div>
 
-          <div style={styles.priceCardHighlight}>
+          <div style={styles.priceHighlight}>
             <h3>Elite</h3>
             <h2>$1,200</h2>
-            <p>Custom premium build</p>
+            <p>Premium custom build</p>
           </div>
         </div>
       </section>
@@ -144,6 +150,7 @@ export default function HomePage() {
           <a href="mailto:hello@atlasdigitallab.com" style={styles.primaryBtn}>
             Email Us
           </a>
+
           <a href={`tel:${MAIN_PHONE}`} style={styles.secondaryBtn}>
             Call ({MAIN_PHONE})
           </a>
@@ -157,44 +164,71 @@ export default function HomePage() {
 
 const styles: any = {
   page: {
-    background: "#0b0f1a",
+    background: "radial-gradient(circle at top left, #1a2238, #0b0f1a 60%)",
     color: "white",
-    fontFamily: "sans-serif",
-    padding: "40px 20px",
+    padding: "60px 20px",
     maxWidth: "1200px",
-    margin: "0 auto"
+    margin: "0 auto",
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "100vh"
+  },
+
+  bgGlow: {
+    position: "absolute",
+    top: "-200px",
+    left: "-200px",
+    width: "500px",
+    height: "500px",
+    background: "rgba(212,175,55,0.15)",
+    filter: "blur(120px)"
+  },
+
+  bgCircle: {
+    position: "absolute",
+    right: "-250px",
+    top: "200px",
+    width: "600px",
+    height: "600px",
+    borderRadius: "50%",
+    border: "1px solid rgba(255,255,255,0.05)"
   },
 
   hero: {
     display: "flex",
     flexWrap: "wrap",
-    gap: 40,
-    marginBottom: 60
+    gap: 40
   },
 
   left: { flex: 1, minWidth: 300 },
   right: { flex: 1, minWidth: 300 },
 
-  kicker: { color: "#c7a96b", fontSize: 12 },
-  title: { fontSize: 42, fontWeight: 800 },
+  kicker: { color: "#d4af37", fontSize: 12 },
+
+  title: {
+    fontSize: 52,
+    fontWeight: 800,
+    lineHeight: 1.1
+  },
+
   sub: { color: "#aaa", marginTop: 10 },
 
-  buttons: { display: "flex", gap: 10, marginTop: 20 },
+  buttons: { display: "flex", gap: 12, marginTop: 20 },
 
   primaryBtn: {
-    background: "#c7a96b",
+    background: "linear-gradient(135deg, #d4af37, #f5d76e)",
     color: "black",
-    padding: "10px 18px",
-    borderRadius: 8,
+    padding: "12px 20px",
+    borderRadius: 10,
     textDecoration: "none"
   },
 
   secondaryBtn: {
-    border: "1px solid #444",
-    padding: "10px 18px",
-    borderRadius: 8,
-    textDecoration: "none",
-    color: "white"
+    border: "1px solid rgba(255,255,255,0.2)",
+    padding: "12px 20px",
+    borderRadius: 10,
+    color: "white",
+    textDecoration: "none"
   },
 
   salesWrap: {
@@ -205,7 +239,7 @@ const styles: any = {
   },
 
   salesBtn: {
-    border: "1px solid #444",
+    border: "1px solid rgba(255,255,255,0.2)",
     padding: "8px 14px",
     borderRadius: 999,
     fontSize: 13,
@@ -213,63 +247,67 @@ const styles: any = {
     color: "white"
   },
 
-  card: {
-    background: "rgba(255,255,255,0.05)",
-    padding: 20,
-    borderRadius: 16
+  heroCard: {
+    background: "rgba(255,255,255,0.04)",
+    padding: 24,
+    borderRadius: 20,
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.08)"
   },
 
-  cardText: { color: "#bbb" },
   cardBtn: {
     marginTop: 10,
-    padding: "10px 14px",
+    padding: "10px 16px",
     background: "#222",
-    color: "white",
-    borderRadius: 8
+    borderRadius: 8,
+    color: "white"
   },
 
-  section: { marginTop: 60 },
+  section: { marginTop: 80 },
 
-  sectionTitle: { fontSize: 28, marginBottom: 20 },
+  sectionTitle: { fontSize: 30, marginBottom: 20 },
 
-  flexGrid: {
+  flex: {
     display: "flex",
     flexWrap: "wrap",
     gap: 20
   },
 
-  box: {
-    flex: "1 1 250px",
-    background: "rgba(255,255,255,0.05)",
-    padding: 20,
-    borderRadius: 14
+  glass: {
+    flex: "1 1 260px",
+    padding: 24,
+    borderRadius: 18,
+    background: "rgba(255,255,255,0.04)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.08)"
   },
 
-  demoCard: {
-    flex: "1 1 250px",
-    padding: 20,
-    borderRadius: 14,
-    border: "1px solid #444"
+  demo: {
+    flex: "1 1 260px",
+    padding: 24,
+    borderRadius: 18,
+    border: "1px solid rgba(255,255,255,0.1)"
   },
 
-  scrollRow: {
+  pricingRow: {
     display: "flex",
     gap: 20,
     overflowX: "auto"
   },
 
   priceCard: {
-    minWidth: 240,
-    background: "rgba(255,255,255,0.05)",
-    padding: 20,
-    borderRadius: 14
+    minWidth: 260,
+    padding: 24,
+    borderRadius: 18,
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(255,255,255,0.08)"
   },
 
-  priceCardHighlight: {
-    minWidth: 240,
-    background: "#c7a96b",
-    color: "black",
-    padding: 20,
-    borderRadius: 14
+  priceHighlight: {
+    minWidth: 260,
+    padding: 24,
+    borderRadius: 18,
+    background: "#d4af37",
+    color: "black"
   }
 };

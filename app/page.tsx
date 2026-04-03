@@ -2,93 +2,70 @@
 
 export default function HomePage() {
   const MAIN_PHONE = "8327050313";
-
-  const SALES = [
-    "(346) 365-7906",
-    "(832) 677-3150",
-    "(346) 532-8803"
-  ];
+  const SALES_1 = "(346) 365-7906";
+  const SALES_2 = "(832) 677-3150";
+  const SALES_3 = "(346) 532-8803";
 
   return (
     <main style={styles.page}>
-      {/* BACKGROUND GLOW */}
-      <div style={styles.bgGlow} />
-      <div style={styles.bgCircle} />
-
       {/* HERO */}
       <section style={styles.hero}>
-        <div style={styles.left}>
+        <div style={styles.heroLeft}>
           <p style={styles.kicker}>
-            HOUSTON • SMALL BUSINESS WEBSITES • FAST TURNAROUND
+            HOUSTON-BASED • BUILT FOR SMALL BUSINESSES • FAST TURNAROUND
           </p>
 
-          <h1 style={styles.title}>
-            Websites that make small businesses look expensive — and get more calls.
+          <h1 style={styles.heading}>
+            Websites that make small businesses look expensive — and get more
+            calls.
           </h1>
 
           <p style={styles.sub}>
-            Clean layouts, stronger trust, and better conversion structure so your business
-            actually looks worth hiring.
+            We design high-conversion websites that make your business look more
+            trusted, more established, and worth contacting.
           </p>
 
-          <div style={styles.buttons}>
-            <a href={`tel:${MAIN_PHONE}`} style={styles.primaryBtn}>
-              Call / Text Sales
-            </a>
-
-            <a href="#demos" style={styles.secondaryBtn}>
-              View Demos
-            </a>
-
-            <a href="mailto:hello@atlasdigitallab.com" style={styles.secondaryBtn}>
-              Get a Quote
-            </a>
+          <div style={styles.ctaRow}>
+            <button style={styles.primaryBtn}>Call / Text Sales</button>
+            <button style={styles.secondaryBtn}>See Real Examples</button>
+            <button style={styles.secondaryBtn}>Get a Quote</button>
           </div>
 
           {/* SALES NUMBERS */}
-          <div style={styles.salesWrap}>
-            {SALES.map((num, i) => (
-              <a
-                key={i}
-                href={`tel:${num.replace(/\D/g, "")}`}
-                style={styles.salesBtn}
-              >
-                Sales {num}
-              </a>
-            ))}
+          <div style={styles.salesRow}>
+            <div style={styles.pill}>Sales {SALES_1}</div>
+            <div style={styles.pill}>Sales {SALES_2}</div>
+            <div style={styles.pill}>Sales {SALES_3}</div>
           </div>
         </div>
 
-        <div style={styles.right}>
-          <div style={styles.heroCard}>
-            <h3>A cleaner, more custom presentation for serious businesses.</h3>
-            <p>
-              Stronger first impression, better structure, and more calls from real customers.
-            </p>
-
-            <button style={styles.cardBtn}>Start a Project</button>
-          </div>
+        <div style={styles.heroCard}>
+          <h3>A cleaner, more custom presentation for serious businesses.</h3>
+          <p>
+            Cleaner hierarchy, stronger trust, and better conversion structure.
+          </p>
+          <button style={styles.secondaryBtn}>Start a Project</button>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section style={styles.section}>
+      <section>
         <h2 style={styles.sectionTitle}>
           Built to help businesses look stronger online.
         </h2>
 
-        <div style={styles.flex}>
-          <div style={styles.glass}>
+        <div style={styles.grid}>
+          <div style={styles.card}>
             <h3>Website Design</h3>
-            <p>Modern layout, better spacing, stronger first impression.</p>
+            <p>Clean layout, strong spacing, better first impression.</p>
           </div>
 
-          <div style={styles.glass}>
+          <div style={styles.card}>
             <h3>SEO & Google Setup</h3>
             <p>Show up stronger in search and maps.</p>
           </div>
 
-          <div style={styles.glass}>
+          <div style={styles.card}>
             <h3>Brand Presentation</h3>
             <p>Look more legit and more valuable online.</p>
           </div>
@@ -96,218 +73,177 @@ export default function HomePage() {
       </section>
 
       {/* DEMOS */}
-      <section id="demos" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Real directions we can build from.</h2>
+      <section>
+        <h2 style={styles.sectionTitle}>
+          Real directions we can build from.
+        </h2>
 
-        <div style={styles.flex}>
-          <div style={styles.demo}>Pet Bakery Demo</div>
-          <div style={styles.demo}>Interior Styling</div>
-          <div style={styles.demo}>Roofing Demo</div>
-          <div style={styles.demo}>Metal Cards Demo</div>
+        <div style={styles.grid}>
+          <div style={styles.demoCard}>Pet Bakery Demo</div>
+          <div style={styles.demoCard}>Interior Styling</div>
+          <div style={styles.demoCard}>Roofing Demo</div>
+          <div style={styles.demoCard}>Metal Cards Demo</div>
         </div>
       </section>
 
       {/* PRICING */}
-      <section style={styles.section}>
+      <section>
         <h2 style={styles.sectionTitle}>
           Simple pricing for businesses ready to look more established.
         </h2>
 
-        <div style={styles.pricingRow}>
-          <div style={styles.priceCard}>
+        <div style={styles.grid}>
+          <div style={styles.card}>
             <h3>Starter</h3>
             <h2>$299</h2>
             <p>Single page • Mobile • Contact</p>
           </div>
 
-          <div style={styles.priceCard}>
+          <div style={styles.card}>
             <h3>Growth</h3>
             <h2>$499</h2>
             <p>Multi-section • Trust blocks</p>
           </div>
 
-          <div style={styles.priceCard}>
+          <div style={styles.card}>
             <h3>Pro</h3>
             <h2>$799</h2>
             <p>Advanced SEO • Priority design</p>
           </div>
 
-          <div style={styles.priceHighlight}>
+          <div style={styles.elite}>
             <h3>Elite</h3>
             <h2>$1,200</h2>
-            <p>Premium custom build</p>
+            <p>Custom premium build</p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section style={styles.section}>
-        <h2 style={styles.sectionTitle}>
-          Want your company to look this sharp online?
-        </h2>
-
-        <div style={styles.buttons}>
-          <a href="mailto:hello@atlasdigitallab.com" style={styles.primaryBtn}>
-            Email Us
-          </a>
-
-          <a href={`tel:${MAIN_PHONE}`} style={styles.secondaryBtn}>
+      <section style={styles.ctaSection}>
+        <h2>Want your company to look this sharp online?</h2>
+        <div style={styles.ctaRow}>
+          <button style={styles.primaryBtn}>Email Us</button>
+          <button style={styles.secondaryBtn}>
             Call ({MAIN_PHONE})
-          </a>
+          </button>
         </div>
       </section>
     </main>
   );
 }
 
-/* ================= STYLES ================= */
-
 const styles: any = {
   page: {
-    background: "radial-gradient(circle at top left, #1a2238, #0b0f1a 60%)",
-    color: "white",
-    padding: "60px 20px",
-    maxWidth: "1200px",
-    margin: "0 auto",
-    position: "relative",
-    overflow: "hidden",
-    minHeight: "100vh"
-  },
-
-  bgGlow: {
-    position: "absolute",
-    top: "-200px",
-    left: "-200px",
-    width: "500px",
-    height: "500px",
-    background: "rgba(212,175,55,0.15)",
-    filter: "blur(120px)"
-  },
-
-  bgCircle: {
-    position: "absolute",
-    right: "-250px",
-    top: "200px",
-    width: "600px",
-    height: "600px",
-    borderRadius: "50%",
-    border: "1px solid rgba(255,255,255,0.05)"
+    background: "#0b0f1a",
+    color: "#fff",
+    padding: 24,
+    fontFamily: "sans-serif",
   },
 
   hero: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 40
+    display: "grid",
+    gridTemplateColumns: "1.2fr 1fr",
+    gap: 30,
+    marginBottom: 60,
   },
 
-  left: { flex: 1, minWidth: 300 },
-  right: { flex: 1, minWidth: 300 },
+  heroLeft: {},
 
-  kicker: { color: "#d4af37", fontSize: 12 },
+  kicker: {
+    color: "#c8a96a",
+    marginBottom: 10,
+    fontSize: 12,
+  },
 
-  title: {
-    fontSize: 52,
+  heading: {
+    fontSize: 42,
     fontWeight: 800,
-    lineHeight: 1.1
+    lineHeight: 1.2,
+    marginBottom: 15,
   },
 
-  sub: { color: "#aaa", marginTop: 10 },
-
-  buttons: { display: "flex", gap: 12, marginTop: 20 },
-
-  primaryBtn: {
-    background: "linear-gradient(135deg, #d4af37, #f5d76e)",
-    color: "black",
-    padding: "12px 20px",
-    borderRadius: 10,
-    textDecoration: "none"
+  sub: {
+    color: "#9aa4b2",
+    marginBottom: 20,
   },
 
-  secondaryBtn: {
-    border: "1px solid rgba(255,255,255,0.2)",
-    padding: "12px 20px",
-    borderRadius: 10,
-    color: "white",
-    textDecoration: "none"
-  },
-
-  salesWrap: {
+  ctaRow: {
     display: "flex",
     gap: 10,
     flexWrap: "wrap",
-    marginTop: 20
+    marginBottom: 15,
   },
 
-  salesBtn: {
+  primaryBtn: {
+    background: "#c8a96a",
+    color: "#000",
+    padding: "10px 16px",
+    borderRadius: 8,
+    border: "none",
+  },
+
+  secondaryBtn: {
+    background: "transparent",
     border: "1px solid rgba(255,255,255,0.2)",
-    padding: "8px 14px",
-    borderRadius: 999,
-    fontSize: 13,
-    textDecoration: "none",
-    color: "white"
+    color: "#fff",
+    padding: "10px 16px",
+    borderRadius: 8,
+  },
+
+  salesRow: {
+    display: "flex",
+    gap: 10,
+    flexWrap: "wrap",
+  },
+
+  pill: {
+    padding: "8px 12px",
+    borderRadius: 20,
+    border: "1px solid rgba(255,255,255,0.2)",
+    fontSize: 12,
   },
 
   heroCard: {
-    background: "rgba(255,255,255,0.04)",
-    padding: 24,
-    borderRadius: 20,
-    backdropFilter: "blur(10px)",
-    border: "1px solid rgba(255,255,255,0.08)"
+    background: "rgba(255,255,255,0.05)",
+    padding: 20,
+    borderRadius: 16,
   },
 
-  cardBtn: {
-    marginTop: 10,
-    padding: "10px 16px",
-    background: "#222",
-    borderRadius: 8,
-    color: "white"
+  sectionTitle: {
+    fontSize: 28,
+    fontWeight: 700,
+    marginBottom: 20,
   },
 
-  section: { marginTop: 80 },
-
-  sectionTitle: { fontSize: 30, marginBottom: 20 },
-
-  flex: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 20
-  },
-
-  glass: {
-    flex: "1 1 260px",
-    padding: 24,
-    borderRadius: 18,
-    background: "rgba(255,255,255,0.04)",
-    backdropFilter: "blur(10px)",
-    border: "1px solid rgba(255,255,255,0.08)"
-  },
-
-  demo: {
-    flex: "1 1 260px",
-    padding: 24,
-    borderRadius: 18,
-    border: "1px solid rgba(255,255,255,0.1)"
-  },
-
-  pricingRow: {
-    display: "flex",
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: 20,
-    overflowX: "auto"
+    marginBottom: 50,
   },
 
-  priceCard: {
-    minWidth: 260,
-    padding: 24,
-    borderRadius: 18,
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(255,255,255,0.08)"
+  card: {
+    background: "rgba(255,255,255,0.05)",
+    padding: 20,
+    borderRadius: 14,
   },
 
-  priceHighlight: {
-    minWidth: 260,
-    padding: 24,
-    borderRadius: 18,
-    background: "#d4af37",
-    color: "black"
-  }
+  demoCard: {
+    border: "1px solid rgba(255,255,255,0.2)",
+    padding: 20,
+    borderRadius: 12,
+  },
+
+  elite: {
+    background: "#c8a96a",
+    color: "#000",
+    padding: 20,
+    borderRadius: 14,
+  },
+
+  ctaSection: {
+    marginTop: 60,
+    textAlign: "center",
+  },
 };

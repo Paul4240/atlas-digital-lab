@@ -61,40 +61,49 @@ export default function HomePage() {
       <section className="hero">
         <div className="container heroGrid">
           <div className="heroLeft">
-            <div className="eyebrow">Texas-built presentation • Corporate polish • Premium positioning</div>
+            <div className="eyebrow">
+              Houston-based • Built for small businesses • Fast turnaround
+            </div>
 
-            <h1>Websites that make your business look like the serious choice.</h1>
+            <h1>Websites that make small businesses look expensive — and get more calls.</h1>
 
             <p className="heroText">
-              Atlas Digital Lab builds premium business websites with stronger structure,
-              sharper presentation, and cleaner messaging — so your company looks more
-              established, more trustworthy, and harder to ignore.
+              We design high-conversion websites that make your business look more trusted,
+              more established, and worth contacting.
             </p>
 
             <div className="heroActions">
-              <a href="#demos" className="btn primaryBtn">
-                View Demos
+              <a href={`tel:${SALES_PHONE}`} className="btn primaryBtn">
+                Call / Text Sales
               </a>
-              <a href={`tel:${SALES_PHONE}`} className="btn darkBtn">
-                Talk to Sales
-              </a>
+              <Link href="/demos" className="btn darkBtn">
+                See Real Examples
+              </Link>
               <a href={`mailto:${EMAIL}`} className="btn ghostBtn">
-                Email Quote
+                Get a Quote
               </a>
             </div>
 
             <div className="heroMeta">
               <div className="metaItem">
                 <div className="metaLabel">Positioning</div>
-                <div className="metaText">Websites that feel stronger, sharper, and more established.</div>
+                <div className="metaText">
+                  Built to make your business feel sharper, more trusted, and more established.
+                </div>
               </div>
+
               <div className="metaItem">
                 <div className="metaLabel">Built For</div>
-                <div className="metaText">Small businesses that want to look more professional online.</div>
+                <div className="metaText">
+                  Small businesses that want to look more serious online and win better customers.
+                </div>
               </div>
+
               <div className="metaItem">
                 <div className="metaLabel">Focus</div>
-                <div className="metaText">Design, trust, conversions, and local growth.</div>
+                <div className="metaText">
+                  Design, trust, local SEO structure, and better conversion flow.
+                </div>
               </div>
             </div>
           </div>
@@ -104,7 +113,9 @@ export default function HomePage() {
               <div className="panelTop">
                 <div>
                   <div className="panelEyebrow">ATLAS DIGITAL LAB</div>
-                  <div className="panelTitle">A cleaner, more custom presentation for serious businesses.</div>
+                  <div className="panelTitle">
+                    A cleaner, more custom presentation for serious businesses.
+                  </div>
                 </div>
 
                 <div className="panelBadge">Texas Web Design</div>
@@ -175,7 +186,7 @@ export default function HomePage() {
               <div className="serviceContent">
                 <h3>Website Design</h3>
                 <p>
-                  Modern layouts with stronger spacing, cleaner hierarchy, and a sharper first impression.
+                  Modern layouts with better spacing, stronger hierarchy, and a sharper first impression.
                 </p>
               </div>
               <div className="serviceList">
@@ -252,6 +263,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section problemSection">
+        <div className="container problemWrap">
+          <div className="sectionEyebrow">Why this matters</div>
+          <h2>Most small business websites look outdated, cluttered, or cheap.</h2>
+          <p className="problemText">
+            We fix that. Our goal is simple — make your business look like the obvious choice
+            the moment someone lands on your site.
+          </p>
+        </div>
+      </section>
+
       <section id="demos" className="section">
         <div className="container">
           <div className="splitIntro demosIntro">
@@ -302,7 +324,7 @@ export default function HomePage() {
               <Link className="demoRailItem" href="/demo/roofing">
                 <div className="demoRailTitle">Roofing Demo</div>
                 <div className="demoRailText">
-                  Trust-based local service structure focused on quote intent and lead flow.
+                  Trust-based local service structure focused on stronger quote intent.
                 </div>
                 <div className="demoRailArrow">Open Demo</div>
               </Link>
@@ -332,6 +354,10 @@ export default function HomePage() {
                 Better websites help your company feel more trusted, more valuable, and more worth contacting.
               </p>
             </div>
+          </div>
+
+          <div className="pricingBanner">
+            Most businesses choose Pro ($799) or Elite ($1,200)
           </div>
 
           <div className="pricingLayout">
@@ -396,11 +422,11 @@ export default function HomePage() {
 
                 <div className="priceCard eliteCard">
                   <div className="plan">Elite</div>
-                  <div className="tag goldTag">Premium Option</div>
+                  <div className="tag goldTag">Best Results</div>
                   <div className="price">$1,200</div>
                   <div className="monthly">$200/mo</div>
                   <ul>
-                    <li>Custom premium design</li>
+                    <li>Full premium build designed to make your business look top-tier</li>
                     <li>Brand strategy layout</li>
                     <li>High-conversion structure</li>
                     <li>Service area + trust sections</li>
@@ -763,7 +789,8 @@ export default function HomePage() {
         .finalLeft p,
         .pricingSideNote p,
         .demoFeatureText,
-        .demoRailText {
+        .demoRailText,
+        .problemText {
           color: #b6c0c7;
           font-size: 17px;
           line-height: 1.72;
@@ -977,6 +1004,15 @@ export default function HomePage() {
           color: #f3f5f7;
         }
 
+        .problemSection {
+          padding-top: 26px;
+        }
+
+        .problemWrap {
+          border-top: 1px solid rgba(255,255,255,0.08);
+          padding-top: 34px;
+        }
+
         .showcaseWrap {
           display: grid;
           grid-template-columns: 1.08fr 0.92fr;
@@ -1098,6 +1134,20 @@ export default function HomePage() {
 
         .pricingSection {
           padding-top: 90px;
+        }
+
+        .pricingBanner {
+          margin-bottom: 22px;
+          display: inline-flex;
+          min-height: 42px;
+          align-items: center;
+          padding: 10px 14px;
+          border-radius: 999px;
+          background: rgba(240,196,138,0.1);
+          border: 1px solid rgba(240,196,138,0.22);
+          color: #f0c48a;
+          font-weight: 800;
+          font-size: 14px;
         }
 
         .pricingLayout {

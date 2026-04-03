@@ -1,87 +1,154 @@
 "use client";
 
-export default function HomePage() {
-  const MAIN_PHONE = "(832) 705-0313";
-
+export default function DemosPage() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", color: "white", background: "#0b1218", minHeight: "100vh" }}>
+    <main className="page">
 
-      {/* NAV */}
-      <div style={{ padding: "20px", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
-        <strong>Atlas Digital Lab</strong>
-      </div>
+      {/* TEXAS BACKGROUND */}
+      <div className="bgStar" />
 
       {/* HERO */}
-      <section style={{ padding: "40px 20px" }}>
-        <h1 style={{ fontSize: "36px", marginBottom: "10px" }}>
-          Websites that make your business look legit.
+      <section className="hero">
+        <h1>
+          Real directions we can build from.
         </h1>
-
-        <p style={{ opacity: 0.8 }}>
-          Clean, simple websites built to help small businesses get more calls.
+        <p>
+          These demos show the structure and layout we build for different businesses.
         </p>
 
-        <div style={{ marginTop: "20px" }}>
-          <a href="tel:3463657906" style={btnPrimary}>Call / Text Sales</a>
-        </div>
+        <a href="tel:3463657906" className="cta">
+          Call / Text Sales
+        </a>
       </section>
 
       {/* SALES TEAM */}
-      <section style={{ padding: "20px" }}>
+      <section className="sales">
         <h2>Sales Team</h2>
 
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "10px" }}>
-          <a href="tel:3463657906" style={pill}>Sales (346) 365-7906</a>
-          <a href="tel:8326773150" style={pill}>Sales (832) 677-3150</a>
-          <a href="tel:3465328803" style={pill}>Sales (346) 532-8803</a>
+        <div className="salesRow">
+          <a href="tel:3463657906">Sales (346) 365-7906</a>
+          <a href="tel:8326773150">Sales (832) 677-3150</a>
+          <a href="tel:3465328803">Sales (346) 532-8803</a>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section style={{ padding: "20px" }}>
-        <h2>What We Do</h2>
+      {/* DEMOS */}
+      <section className="demos">
+        <div className="left">
+          <h2>Flagship Demo</h2>
 
-        <div style={{ marginTop: "10px" }}>
-          <p>• Website Design</p>
-          <p>• SEO Setup</p>
-          <p>• Business Branding</p>
+          <a href="/demo/pet-bakery">Pet Bakery Demo</a>
+          <p>
+            Boutique storefront direction with stronger product presentation.
+          </p>
+        </div>
+
+        <div className="right">
+          <a href="/demo/home-styling">Luxury Interior Styling</a>
+          <p>Clean, image-first layout.</p>
+
+          <a href="/demo/roofing">Roofing Demo</a>
+          <p>Trust-based local service structure.</p>
+
+          <a href="/demo/metal-cards">Metal Cards Demo</a>
+          <p>Product-style layout for stronger offers.</p>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section style={{ padding: "20px" }}>
-        <h2>Pricing</h2>
+      <style jsx>{`
+        .page {
+          background: #0b1218;
+          color: white;
+          min-height: 100vh;
+          padding: 40px 20px;
+          position: relative;
+        }
 
-        <div style={{ marginTop: "10px" }}>
-          <p>Starter — $299</p>
-          <p>Growth — $499</p>
-          <p>Pro — $799</p>
-          <p>Elite — $1,200</p>
-        </div>
-      </section>
+        .bgStar {
+          position: fixed;
+          right: -150px;
+          top: 200px;
+          width: 500px;
+          height: 500px;
+          background: url("/star.png") no-repeat center;
+          background-size: contain;
+          opacity: 0.07;
+          pointer-events: none;
+        }
 
-      {/* FOOTER */}
-      <footer style={{ padding: "20px", opacity: 0.6 }}>
-        Atlas Digital Lab
-      </footer>
+        .hero {
+          max-width: 900px;
+          margin-bottom: 60px;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+          margin-bottom: 10px;
+        }
+
+        .hero p {
+          opacity: 0.7;
+          margin-bottom: 20px;
+        }
+
+        .cta {
+          background: #f0c48a;
+          color: black;
+          padding: 12px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        .sales {
+          margin-bottom: 60px;
+        }
+
+        .salesRow {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-top: 10px;
+        }
+
+        .salesRow a {
+          border: 1px solid rgba(255,255,255,.2);
+          padding: 8px 14px;
+          border-radius: 999px;
+          text-decoration: none;
+          color: white;
+        }
+
+        .demos {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+
+        .demos a {
+          display: block;
+          margin-top: 10px;
+          font-weight: bold;
+          color: #9ecbff;
+          text-decoration: none;
+        }
+
+        .demos p {
+          opacity: 0.6;
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .demos {
+            grid-template-columns: 1fr;
+          }
+
+          .hero h1 {
+            font-size: 32px;
+          }
+        }
+      `}</style>
 
     </main>
   );
 }
-
-const btnPrimary = {
-  padding: "12px 18px",
-  borderRadius: "8px",
-  background: "#f0c48a",
-  color: "black",
-  textDecoration: "none",
-  fontWeight: "bold",
-};
-
-const pill = {
-  padding: "10px 14px",
-  borderRadius: "999px",
-  border: "1px solid rgba(255,255,255,.2)",
-  textDecoration: "none",
-  color: "white",
-};

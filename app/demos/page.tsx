@@ -6,9 +6,6 @@ export default function DemosPage() {
   return (
     <main className="page">
 
-      {/* BACKGROUND STAR */}
-      <div className="star" />
-
       {/* HERO */}
       <section className="hero">
         <h1>Real directions we can build from.</h1>
@@ -33,24 +30,34 @@ export default function DemosPage() {
       </section>
 
       {/* DEMOS */}
-      <section className="grid">
+      <section className="demoWrap">
 
-        <Link href="/demo/pet-bakery" className="big">
-          <h3>Pet Bakery Demo</h3>
-          <p>Boutique storefront layout with stronger product flow.</p>
+        {/* BIG FEATURE */}
+        <Link href="/demo/pet-bakery" className="feature">
+          <div>
+            <div className="tag">Featured Demo</div>
+            <h3>Pet Bakery Demo</h3>
+            <p>
+              Boutique storefront layout with stronger product flow and cleaner presentation.
+            </p>
+          </div>
         </Link>
 
-        <div className="side">
-          <Link href="/demo/home-styling">
-            Luxury Interior Styling
+        {/* SIDE CARDS */}
+        <div className="cards">
+          <Link href="/demo/home-styling" className="card">
+            <h4>Luxury Interior Styling</h4>
+            <p>Clean, image-first layout.</p>
           </Link>
 
-          <Link href="/demo/roofing">
-            Roofing Demo
+          <Link href="/demo/roofing" className="card">
+            <h4>Roofing Demo</h4>
+            <p>Trust-based service layout.</p>
           </Link>
 
-          <Link href="/demo/metal-cards">
-            Metal Cards Demo
+          <Link href="/demo/metal-cards" className="card">
+            <h4>Metal Cards Demo</h4>
+            <p>Product-style layout.</p>
           </Link>
         </div>
 
@@ -62,19 +69,7 @@ export default function DemosPage() {
           color: white;
           min-height: 100vh;
           padding: 60px 20px;
-          position: relative;
           font-family: Arial, sans-serif;
-        }
-
-        .star {
-          position: fixed;
-          right: -120px;
-          top: 150px;
-          width: 500px;
-          height: 500px;
-          opacity: 0.08;
-          pointer-events: none;
-          background: radial-gradient(circle, #f0c48a 0%, transparent 70%);
         }
 
         .hero {
@@ -84,7 +79,6 @@ export default function DemosPage() {
 
         h1 {
           font-size: 48px;
-          margin-bottom: 10px;
         }
 
         .cta {
@@ -116,31 +110,45 @@ export default function DemosPage() {
           color: white;
         }
 
-        .grid {
+        .demoWrap {
           display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 40px;
+          grid-template-columns: 1.3fr 1fr;
+          gap: 30px;
         }
 
-        .big {
-          font-size: 24px;
+        .feature {
+          background: rgba(255,255,255,0.05);
+          padding: 30px;
+          border-radius: 20px;
           text-decoration: none;
           color: white;
+          min-height: 260px;
+          display: flex;
+          align-items: flex-end;
         }
 
-        .side {
+        .tag {
+          font-size: 12px;
+          color: #f0c48a;
+          margin-bottom: 10px;
+        }
+
+        .cards {
           display: flex;
           flex-direction: column;
           gap: 20px;
         }
 
-        .side a {
+        .card {
+          background: rgba(255,255,255,0.05);
+          padding: 20px;
+          border-radius: 16px;
           text-decoration: none;
-          color: #9ecbff;
+          color: white;
         }
 
         @media (max-width: 768px) {
-          .grid {
+          .demoWrap {
             grid-template-columns: 1fr;
           }
 

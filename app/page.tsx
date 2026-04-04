@@ -6,983 +6,970 @@ export default function HomePage() {
   const MAIN_PHONE = "8327050313";
   const MAIN_PRETTY = "(832) 705-0313";
 
-  const SALES_1 = "3463657906";
-  const SALES_1_PRETTY = "(346) 365-7906";
-
-  const SALES_2 = "8326773150";
-  const SALES_2_PRETTY = "(832) 677-3150";
-
-  const SALES_3 = "3465328803";
-  const SALES_3_PRETTY = "(346) 532-8803";
+  const SALES = [
+    { phone: "3463657906", pretty: "(346) 365-7906" },
+    { phone: "8326773150", pretty: "(832) 677-3150" },
+    { phone: "3465328803", pretty: "(346) 532-8803" },
+  ];
 
   const EMAIL = "hello@atlasdigitallab.com";
 
   return (
-    <main className="page">
-      <div className="bgGlow glowA" />
-      <div className="bgGlow glowB" />
-      <div className="starWrap" aria-hidden>
-        <div className="starRing ringOne" />
-        <div className="starRing ringTwo" />
-        <div className="starShape">★</div>
+    <main style={styles.page}>
+      <div style={styles.glowA} />
+      <div style={styles.glowB} />
+      <div style={styles.starWrap} aria-hidden>
+        <div style={styles.star}>★</div>
       </div>
 
-      <header className="topbar">
-        <div className="container topbarInner">
-          <Link href="/" className="brand">
-            <div className="brandMark">★</div>
+      <div style={styles.container}>
+        {/* TOP BAR */}
+        <header style={styles.topbar}>
+          <Link href="/" style={styles.brand}>
+            <div style={styles.brandMark}>★</div>
             <div>
-              <div className="brandName">Atlas Digital Lab</div>
-              <div className="brandSub">Websites • SEO • Small Business Growth</div>
+              <div style={styles.brandName}>Atlas Digital Lab</div>
+              <div style={styles.brandSub}>Websites • SEO • Small Business Growth</div>
             </div>
           </Link>
 
-          <nav className="nav">
-            <a href="#services">Services</a>
-            <a href="#demos">Demos</a>
-            <a href="#pricing">Pricing</a>
-            <Link href="/houston-web-design">Houston SEO</Link>
+          <nav style={styles.nav} className="hideOnMobile">
+            <a href="#services" style={styles.navLink}>Services</a>
+            <a href="#demos" style={styles.navLink}>Demos</a>
+            <a href="#pricing" style={styles.navLink}>Pricing</a>
+            <Link href="/houston-web-design" style={styles.navLink}>Houston SEO</Link>
           </nav>
 
-          <div className="topActions">
-            <a href={`tel:${MAIN_PHONE}`} className="topBtn">
+          <div style={styles.topActions} className="hideOnMobile">
+            <a href={`tel:${MAIN_PHONE}`} style={styles.topBtn}>
               Call {MAIN_PRETTY}
             </a>
-            <a href={`mailto:${EMAIL}`} className="topBtn topBtnGold">
+            <a href={`mailto:${EMAIL}`} style={styles.topBtnGold}>
               Get a Quote
             </a>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <section className="hero">
-        <div className="container heroGrid">
-          <div className="heroLeft">
-            <div className="eyebrow">
+        {/* HERO */}
+        <section style={styles.heroGrid} className="heroGrid">
+          <div>
+            <div style={styles.kicker}>
               HOUSTON • SMALL BUSINESS WEBSITES • FAST TURNAROUND
             </div>
 
-            <h1>
+            <h1 style={styles.heroTitle}>
               Websites that make small businesses look expensive — and get more calls.
             </h1>
 
-            <p className="heroCopy">
+            <p style={styles.heroCopy}>
               Clean presentation, stronger trust, and sharper structure so your business
               feels more serious the second somebody lands on your site.
             </p>
 
-            <div className="heroActions">
-              <a href={`tel:${SALES_1}`} className="btn btnGold">
+            <div style={styles.ctaRow}>
+              <a href={`tel:${SALES[0].phone}`} style={styles.goldBtn}>
                 Call / Text Sales
               </a>
-              <a href="#demos" className="btn btnDark">
+              <a href="#demos" style={styles.darkBtn}>
                 See Real Examples
               </a>
-              <a href={`mailto:${EMAIL}`} className="btn btnDark">
+              <a href={`mailto:${EMAIL}`} style={styles.darkBtn}>
                 Get a Quote
               </a>
             </div>
 
-            <div className="salesBlock">
-              <div className="salesLabel">Sales Team</div>
-              <div className="salesRow">
-                <a href={`tel:${SALES_1}`} className="salesChip">
-                  Sales {SALES_1_PRETTY}
-                </a>
-                <a href={`tel:${SALES_2}`} className="salesChip">
-                  Sales {SALES_2_PRETTY}
-                </a>
-                <a href={`tel:${SALES_3}`} className="salesChip">
-                  Sales {SALES_3_PRETTY}
-                </a>
+            <div style={styles.salesBlock}>
+              <div style={styles.smallKicker}>Sales Team</div>
+              <div style={styles.salesRow}>
+                {SALES.map((s) => (
+                  <a key={s.phone} href={`tel:${s.phone}`} style={styles.salesChip}>
+                    Sales {s.pretty}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="heroRight">
-            <div className="heroPanel">
-              <div className="panelKicker">ATLAS DIGITAL LAB</div>
-              <h2>A cleaner, more custom presentation for serious businesses.</h2>
+          <div style={styles.heroPanel}>
+            <div style={styles.smallKicker}>ATLAS DIGITAL LAB</div>
+            <h2 style={styles.panelTitle}>
+              A cleaner, more custom presentation for serious businesses.
+            </h2>
 
-              <div className="panelList">
-                <div className="panelItem">
-                  <strong>Stronger first impression</strong>
-                  <p>
-                    Better spacing and cleaner hierarchy make your business look more established.
-                  </p>
-                </div>
-
-                <div className="panelItem">
-                  <strong>More trust from the first click</strong>
-                  <p>
-                    People take a company more seriously when the site feels sharper and more complete.
-                  </p>
-                </div>
-
-                <div className="panelItem">
-                  <strong>Built to convert better</strong>
-                  <p>
-                    Clearer sections and stronger call-to-action flow help turn more visitors into leads.
-                  </p>
-                </div>
+            <div style={styles.panelList}>
+              <div>
+                <div style={styles.panelHead}>Stronger first impression</div>
+                <p style={styles.panelText}>
+                  Better spacing and cleaner hierarchy make your business look more established.
+                </p>
               </div>
 
-              <a href={`mailto:${EMAIL}`} className="btn btnGold fullBtn">
-                Start a Project
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div>
+                <div style={styles.panelHead}>More trust from the first click</div>
+                <p style={styles.panelText}>
+                  People take a company more seriously when the site feels sharper and more complete.
+                </p>
+              </div>
 
-      <section id="services" className="section">
-        <div className="container">
-          <div className="sectionHead">
+              <div>
+                <div style={styles.panelHead}>Built to convert better</div>
+                <p style={styles.panelText}>
+                  Clearer sections and stronger call-to-action flow help turn more visitors into leads.
+                </p>
+              </div>
+            </div>
+
+            <a href={`mailto:${EMAIL}`} style={styles.fullGoldBtn}>
+              Start a Project
+            </a>
+          </div>
+        </section>
+
+        {/* SERVICES */}
+        <section id="services" style={styles.section}>
+          <div style={styles.sectionHead} className="sectionHead">
             <div>
-              <div className="sectionKicker">SERVICES</div>
-              <h2 className="sectionTitle">Built to help businesses look stronger online.</h2>
+              <div style={styles.smallKicker}>SERVICES</div>
+              <h2 style={styles.sectionTitle}>Built to help businesses look stronger online.</h2>
             </div>
 
-            <p className="sectionCopy">
+            <p style={styles.sectionCopy}>
               We build websites that feel more premium and more custom than the average
               small business site.
             </p>
           </div>
 
-          <div className="serviceFlow">
-            <div className="serviceRow">
-              <div className="serviceNumber">01</div>
-              <div className="serviceMain">
-                <h3>Website Design</h3>
-                <p>
+          <div style={styles.serviceList}>
+            <div style={styles.serviceRow} className="serviceRow">
+              <div style={styles.serviceNumber}>01</div>
+              <div>
+                <h3 style={styles.serviceTitle}>Website Design</h3>
+                <p style={styles.serviceText}>
                   Modern layout, better spacing, cleaner hierarchy, and a sharper first impression.
                 </p>
               </div>
-              <div className="serviceTags">
-                <span>Mobile-first</span>
-                <span>Premium feel</span>
-                <span>Clear lead flow</span>
+              <div style={styles.tagRow}>
+                <span style={styles.tag}>Mobile-first</span>
+                <span style={styles.tag}>Premium feel</span>
+                <span style={styles.tag}>Clear lead flow</span>
               </div>
             </div>
 
-            <div className="serviceRow">
-              <div className="serviceNumber">02</div>
-              <div className="serviceMain">
-                <h3>SEO & Google Setup</h3>
-                <p>
+            <div style={styles.serviceRow} className="serviceRow">
+              <div style={styles.serviceNumber}>02</div>
+              <div>
+                <h3 style={styles.serviceTitle}>SEO & Google Setup</h3>
+                <p style={styles.serviceText}>
                   Search-ready structure that helps local businesses show up stronger in maps and Google.
                 </p>
               </div>
-              <div className="serviceTags">
-                <span>On-page SEO</span>
-                <span>Google help</span>
-                <span>Local focus</span>
+              <div style={styles.tagRow}>
+                <span style={styles.tag}>On-page SEO</span>
+                <span style={styles.tag}>Google help</span>
+                <span style={styles.tag}>Local focus</span>
               </div>
             </div>
 
-            <div className="serviceRow">
-              <div className="serviceNumber">03</div>
-              <div className="serviceMain">
-                <h3>Brand Presentation</h3>
-                <p>
+            <div style={styles.serviceRow} className="serviceRow">
+              <div style={styles.serviceNumber}>03</div>
+              <div>
+                <h3 style={styles.serviceTitle}>Brand Presentation</h3>
+                <p style={styles.serviceText}>
                   Sharper online presentation that helps your company feel more legit and more valuable.
                 </p>
               </div>
-              <div className="serviceTags">
-                <span>Visual polish</span>
-                <span>More trust</span>
-                <span>Better positioning</span>
+              <div style={styles.tagRow}>
+                <span style={styles.tag}>Visual polish</span>
+                <span style={styles.tag}>More trust</span>
+                <span style={styles.tag}>Better positioning</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section statementSection">
-        <div className="container statementWrap">
-          <div className="sectionKicker">WHY THIS MATTERS</div>
-          <h2 className="sectionTitle">
+        {/* WHY */}
+        <section style={styles.section}>
+          <div style={styles.smallKicker}>WHY THIS MATTERS</div>
+          <h2 style={styles.sectionTitle}>
             Most small business websites look outdated, cluttered, or cheap.
           </h2>
-          <p className="sectionCopy wide">
+          <p style={{ ...styles.sectionCopy, maxWidth: 760 }}>
             We fix that. The goal is simple — make your business look like the obvious
             choice the moment somebody lands on your page.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section id="demos" className="section">
-        <div className="container">
-          <div className="sectionHead">
+        {/* DEMOS */}
+        <section id="demos" style={styles.section}>
+          <div style={styles.sectionHead} className="sectionHead">
             <div>
-              <div className="sectionKicker">DEMOS</div>
-              <h2 className="sectionTitle">Real directions we can build from.</h2>
+              <div style={styles.smallKicker}>DEMOS</div>
+              <h2 style={styles.sectionTitle}>Real directions we can build from.</h2>
             </div>
 
-            <p className="sectionCopy">
-              Different niches need different presentation styles. These demos
-              show the direction we can build around your business.
+            <p style={styles.sectionCopy}>
+              Different niches need different presentation styles. These demos show the
+              direction we can build around your business.
             </p>
           </div>
 
-          <div className="demoLayout">
-            <Link href="/demo/pet-bakery" className="demoFeature">
-              <div className="demoBadge">Flagship Demo</div>
-              <h3>Pet Bakery Demo</h3>
-              <p>
+          <div style={styles.demoGrid} className="demoGrid">
+            <Link href="/demo/pet-bakery" style={styles.demoFeature}>
+              <div style={styles.demoBadge}>Flagship Demo</div>
+              <h3 style={styles.demoFeatureTitle}>Pet Bakery Demo</h3>
+              <p style={styles.demoText}>
                 Boutique storefront direction with stronger warmth, better product presentation,
                 and a more polished visual flow.
               </p>
-              <span>Open Demo</span>
+              <span style={styles.demoOpen}>Open Demo</span>
             </Link>
 
-            <Link href="/demo/home-styling" className="demoTile">
-              <div className="demoTileBody">
-                <strong>Luxury Interior Styling</strong>
-                <small>Elegant, image-led residential presentation.</small>
-                <span>Open Demo</span>
-              </div>
+            <Link href="/demo/home-styling" style={styles.demoTile}>
+              <strong style={styles.demoTileTitle}>Luxury Interior Styling</strong>
+              <small style={styles.demoTileText}>Elegant, image-led residential presentation.</small>
+              <span style={styles.demoOpen}>Open Demo</span>
             </Link>
 
-            <Link href="/demo/roofing" className="demoTile">
-              <div className="demoTileBody">
-                <strong>Roofing Demo</strong>
-                <small>Trust-based local service structure.</small>
-                <span>Open Demo</span>
-              </div>
+            <Link href="/demo/roofing" style={styles.demoTile}>
+              <strong style={styles.demoTileTitle}>Roofing Demo</strong>
+              <small style={styles.demoTileText}>Trust-based local service structure.</small>
+              <span style={styles.demoOpen}>Open Demo</span>
             </Link>
 
-            <Link href="/demo/metal-cards" className="demoTile">
-              <div className="demoTileBody">
-                <strong>Metal Cards Demo</strong>
-                <small>Product-style layout with stronger offer flow.</small>
-                <span>Open Demo</span>
-              </div>
+            <Link href="/demo/metal-cards" style={styles.demoTile}>
+              <strong style={styles.demoTileTitle}>Metal Cards Demo</strong>
+              <small style={styles.demoTileText}>Product-style layout with stronger offer flow.</small>
+              <span style={styles.demoOpen}>Open Demo</span>
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="pricing" className="section pricingSection">
-        <div className="container">
-          <div className="sectionHead">
+        {/* PRICING */}
+        <section id="pricing" style={styles.section}>
+          <div style={styles.sectionHead} className="sectionHead">
             <div>
-              <div className="sectionKicker">PRICING</div>
-              <h2 className="sectionTitle">
+              <div style={styles.smallKicker}>PRICING</div>
+              <h2 style={styles.sectionTitle}>
                 Simple pricing for businesses ready to look more established.
               </h2>
             </div>
 
-            <p className="sectionCopy">
+            <p style={styles.sectionCopy}>
               Better websites help your company feel more trusted, more valuable, and
               more worth contacting.
             </p>
           </div>
 
-          <div className="pricingBanner">
+          <div style={styles.pricingBanner}>
             Most businesses choose Pro ($799) or Elite ($1,200)
           </div>
 
-          <div className="pricingGrid">
-            <div className="priceCard">
-              <div className="plan">Starter</div>
-              <div className="price">$299</div>
-              <div className="monthly">$80/mo</div>
-              <p>Single page • Mobile • Contact</p>
+          <div style={styles.pricingGrid} className="pricingGrid">
+            <div style={styles.priceCard}>
+              <div style={styles.plan}>Starter</div>
+              <div style={styles.price}>$299</div>
+              <div style={styles.monthly}>$80/mo</div>
+              <p style={styles.priceText}>Single page • Mobile • Contact</p>
             </div>
 
-            <div className="priceCard">
-              <div className="plan">Growth</div>
-              <div className="price">$499</div>
-              <div className="monthly">$130/mo</div>
-              <p>Multi-section • Trust blocks</p>
+            <div style={styles.priceCard}>
+              <div style={styles.plan}>Growth</div>
+              <div style={styles.price}>$499</div>
+              <div style={styles.monthly}>$130/mo</div>
+              <p style={styles.priceText}>Multi-section • Trust blocks</p>
             </div>
 
-            <div className="priceCard featuredCard">
-              <div className="smallTag">Most Popular</div>
-              <div className="plan">Pro</div>
-              <div className="price">$799</div>
-              <div className="monthly">$150/mo</div>
-              <p>Advanced SEO • Priority design</p>
+            <div style={styles.priceCardFeatured}>
+              <div style={styles.smallTag}>Most Popular</div>
+              <div style={styles.plan}>Pro</div>
+              <div style={styles.price}>$799</div>
+              <div style={styles.monthly}>$150/mo</div>
+              <p style={styles.priceText}>Advanced SEO • Priority design</p>
             </div>
 
-            <div className="priceCard eliteCard">
-              <div className="smallTag goldTag">Best Results</div>
-              <div className="plan">Elite</div>
-              <div className="price">$1,200</div>
-              <div className="monthly">$200/mo</div>
-              <p>Premium custom build</p>
+            <div style={styles.priceCardElite}>
+              <div style={styles.smallTagGold}>Best Results</div>
+              <div style={styles.planDark}>Elite</div>
+              <div style={styles.priceDark}>$1,200</div>
+              <div style={styles.monthlyDark}>$200/mo</div>
+              <p style={styles.priceTextDark}>Premium custom build</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section finalSection">
-        <div className="container">
-          <h2 className="sectionTitle">Want your company to look this sharp online?</h2>
+        {/* FINAL CTA */}
+        <section style={styles.section}>
+          <h2 style={{ ...styles.sectionTitle, textAlign: "center" }}>
+            Want your company to look this sharp online?
+          </h2>
 
-          <div className="finalActions">
-            <a href={`mailto:${EMAIL}`} className="btn btnGold">
+          <div style={styles.finalActions}>
+            <a href={`mailto:${EMAIL}`} style={styles.goldBtn}>
               Email Us
             </a>
-            <a href={`tel:${MAIN_PHONE}`} className="btn btnDark">
+            <a href={`tel:${MAIN_PHONE}`} style={styles.darkBtn}>
               Call {MAIN_PRETTY}
             </a>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <style jsx>{`
-        .page {
-          min-height: 100vh;
-          background:
-            radial-gradient(circle at top left, rgba(216,180,79,0.08), transparent 22%),
-            linear-gradient(180deg, #060b14 0%, #08101b 50%, #050a12 100%);
-          color: #f4efe4;
-          font-family: Georgia, "Times New Roman", serif;
-          position: relative;
-          overflow-x: hidden;
-        }
-
-        .bgGlow {
-          position: fixed;
-          border-radius: 999px;
-          filter: blur(90px);
-          pointer-events: none;
-          opacity: 0.14;
-        }
-
-        .glowA {
-          width: 260px;
-          height: 260px;
-          top: 70px;
-          left: -120px;
-          background: rgba(216,180,79,0.5);
-        }
-
-        .glowB {
-          width: 280px;
-          height: 280px;
-          right: -100px;
-          bottom: 120px;
-          background: rgba(44,74,124,0.5);
-        }
-
-        .starWrap {
-          position: fixed;
-          right: -10px;
-          top: 130px;
-          width: 640px;
-          height: 640px;
-          opacity: 0.44;
-          pointer-events: none;
-          z-index: 0;
-        }
-
-        .starRing {
-          position: absolute;
-          border-radius: 999px;
-          border: 2px solid rgba(216, 180, 79, 0.18);
-        }
-
-        .ringOne {
-          inset: 40px;
-        }
-
-        .ringTwo {
-          inset: 90px;
-        }
-
-        .starShape {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: rgba(216, 180, 79, 0.28);
-          font-size: 260px;
-          line-height: 1;
-        }
-
-        .container {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 0 24px;
-          position: relative;
-          z-index: 2;
-        }
-
-        .topbar {
-          position: sticky;
-          top: 0;
-          z-index: 50;
-          background: rgba(6, 11, 20, 0.72);
-          backdrop-filter: blur(14px);
-        }
-
-        .topbarInner {
-          min-height: 76px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 18px;
-        }
-
-        .brand {
-          display: flex;
-          gap: 12px;
-          align-items: center;
-          text-decoration: none;
-          color: #f4efe4;
-        }
-
-        .brandMark {
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 12px;
-          background: rgba(216,180,79,0.12);
-          color: #d8b44f;
-          font-size: 18px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-        }
-
-        .brandName {
-          font-family: Arial, sans-serif;
-          font-size: 15px;
-          font-weight: 800;
-        }
-
-        .brandSub {
-          font-family: Arial, sans-serif;
-          font-size: 12px;
-          color: #b8c2cf;
-        }
-
-        .nav,
-        .topActions,
-        .heroActions,
-        .salesRow,
-        .finalActions {
-          display: flex;
-          gap: 12px;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-
-        .nav a {
-          font-family: Arial, sans-serif;
-          text-decoration: none;
-          color: #e3e8ef;
-          font-size: 14px;
-          font-weight: 700;
-        }
-
-        .topBtn,
-        .btn,
-        .salesChip {
-          font-family: Arial, sans-serif;
-          text-decoration: none;
-          font-weight: 700;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .topBtn:hover,
-        .btn:hover,
-        .salesChip:hover,
-        .demoFeature:hover,
-        .demoTile:hover,
-        .priceCard:hover {
-          transform: translateY(-3px);
-        }
-
-        .topBtn,
-        .btn {
-          padding: 13px 18px;
-          border-radius: 12px;
-        }
-
-        .topBtn {
-          color: #f4efe4;
-          background: rgba(255,255,255,0.05);
-        }
-
-        .topBtnGold,
-        .btnGold {
-          background: linear-gradient(135deg, #e1c15f, #c89e2c);
-          color: #111;
-          box-shadow: 0 12px 34px rgba(216,180,79,0.16);
-        }
-
-        .btnDark {
-          color: #f4efe4;
-          background: rgba(255,255,255,0.055);
-        }
-
-        .hero {
-          padding: 42px 0 0;
-        }
-
-        .heroGrid {
-          display: grid;
-          grid-template-columns: 1.08fr 0.92fr;
-          gap: 44px;
-          align-items: start;
-        }
-
-        .eyebrow,
-        .sectionKicker,
-        .panelKicker,
-        .salesLabel {
-          font-family: Arial, sans-serif;
-          font-size: 12px;
-          letter-spacing: 0.12em;
-          font-weight: 800;
-          color: #d8b44f;
-          margin-bottom: 16px;
-        }
-
-        h1 {
-          margin: 0 0 22px;
-          font-size: clamp(52px, 7vw, 84px);
-          line-height: 0.97;
-          letter-spacing: -0.04em;
-          max-width: 9ch;
-        }
-
-        .heroCopy,
-        .sectionCopy,
-        .demoFeature p,
-        .demoTile small,
-        .priceCard p,
-        .serviceMain p,
-        .panelItem p,
-        .monthly {
-          font-family: Arial, sans-serif;
-          color: #bcc6d4;
-          line-height: 1.65;
-          font-size: 17px;
-        }
-
-        .heroCopy {
-          max-width: 620px;
-          margin: 0 0 22px;
-        }
-
-        .salesBlock {
-          margin-top: 18px;
-        }
-
-        .salesChip {
-          color: #eef3fb;
-          background: rgba(255,255,255,0.05);
-          padding: 10px 14px;
-          border-radius: 999px;
-          font-size: 13px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-        }
-
-        .heroPanel,
-        .demoFeature,
-        .demoTile,
-        .priceCard {
-          background: linear-gradient(
-            135deg,
-            rgba(255,255,255,0.05),
-            rgba(255,255,255,0.025)
-          );
-          box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-        }
-
-        .heroPanel {
-          padding: 34px 32px;
-          border-radius: 32px;
-        }
-
-        .heroPanel h2 {
-          margin: 0 0 14px;
-          font-size: 38px;
-          line-height: 1.02;
-          letter-spacing: -0.03em;
-        }
-
-        .panelList {
-          display: grid;
-          gap: 18px;
-          margin: 22px 0 24px;
-        }
-
-        .panelItem strong {
-          display: block;
-          font-family: Arial, sans-serif;
-          font-size: 15px;
-          margin-bottom: 6px;
-        }
-
-        .panelItem p {
-          margin: 0;
-          font-size: 14px;
-        }
-
-        .fullBtn {
-          width: 100%;
-          text-align: center;
-        }
-
-        .section {
-          margin-top: 92px;
-        }
-
-        .sectionHead {
-          display: grid;
-          grid-template-columns: 1fr 0.9fr;
-          gap: 28px;
-          align-items: end;
-          margin-bottom: 28px;
-        }
-
-        .sectionTitle {
-          margin: 0;
-          font-size: clamp(38px, 4vw, 56px);
-          line-height: 1.04;
-          letter-spacing: -0.03em;
-        }
-
-        .wide {
-          max-width: 760px;
-        }
-
-        .serviceFlow {
-          display: grid;
-          gap: 18px;
-        }
-
-        .serviceRow {
-          display: grid;
-          grid-template-columns: 80px 1fr 0.95fr;
-          gap: 22px;
-          align-items: start;
-          background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-          border-radius: 22px;
-          padding: 22px;
-        }
-
-        .serviceNumber {
-          font-size: 38px;
-          line-height: 1;
-          color: #d8b44f;
-          font-weight: 700;
-        }
-
-        .serviceMain h3 {
-          margin: 0 0 10px;
-          font-size: 30px;
-          line-height: 1.05;
-        }
-
-        .serviceMain p {
-          margin: 0;
-        }
-
-        .serviceTags {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-          align-self: center;
-        }
-
-        .serviceTags span {
-          font-family: Arial, sans-serif;
-          font-size: 13px;
-          font-weight: 700;
-          color: #dbe2ec;
-          padding: 9px 12px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.05);
-        }
-
-        .statementWrap {
-          padding-top: 8px;
-        }
-
-        .demoLayout {
-          display: grid;
-          grid-template-columns: 1.08fr 1fr;
-          grid-template-areas:
-            "feature one"
-            "feature two"
-            "feature three";
-          gap: 18px;
-          align-items: stretch;
-        }
-
-        .demoFeature {
-          grid-area: feature;
-          text-decoration: none;
-          color: #f4efe4;
-          border-radius: 32px;
-          padding: 34px;
-          min-height: 420px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-        }
-
-        .demoBadge,
-        .smallTag {
-          width: fit-content;
-          font-family: Arial, sans-serif;
-          font-size: 12px;
-          font-weight: 800;
-          border-radius: 999px;
-          padding: 7px 10px;
-        }
-
-        .demoBadge {
-          background: rgba(111,182,255,0.14);
-          color: #abd5ff;
-          margin-bottom: 18px;
-        }
-
-        .demoFeature h3 {
-          margin: 0 0 12px;
-          font-size: 42px;
-          line-height: 1.02;
-          letter-spacing: -0.03em;
-        }
-
-        .demoFeature p {
-          margin: 0 0 18px;
-          max-width: 540px;
-        }
-
-        .demoFeature span:last-child,
-        .demoTile span {
-          font-family: Arial, sans-serif;
-          color: #d8b44f;
-          font-size: 14px;
-          font-weight: 700;
-        }
-
-        .demoTile {
-          text-decoration: none;
-          color: #f4efe4;
-          border-radius: 24px;
-          min-height: 128px;
-          display: flex;
-          align-items: stretch;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .demoTile:nth-child(2) {
-          grid-area: one;
-        }
-
-        .demoTile:nth-child(3) {
-          grid-area: two;
-        }
-
-        .demoTile:nth-child(4) {
-          grid-area: three;
-        }
-
-        .demoTileBody {
-          padding: 24px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 100%;
-        }
-
-        .demoTile strong {
-          font-size: 30px;
-          line-height: 1.05;
-          margin-bottom: 8px;
-        }
-
-        .demoTile small {
-          margin-bottom: 10px;
-        }
-
-        .pricingBanner {
-          display: inline-block;
-          margin-bottom: 22px;
-          font-family: Arial, sans-serif;
-          color: #d8b44f;
-          background: rgba(216,180,79,0.08);
-          padding: 10px 14px;
-          border-radius: 999px;
-          font-size: 14px;
-        }
-
-        .pricingGrid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 18px;
-        }
-
-        .priceCard {
-          border-radius: 24px;
-          padding: 24px;
-          min-height: 250px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .plan {
-          font-size: 30px;
-          line-height: 1.04;
-          margin-bottom: 10px;
-        }
-
-        .price {
-          font-size: 56px;
-          line-height: 1;
-          margin-bottom: 10px;
-          letter-spacing: -0.03em;
-        }
-
-        .monthly {
-          font-size: 15px;
-          margin-bottom: 12px;
-        }
-
-        .featuredCard {
-          background: linear-gradient(
-            135deg,
-            rgba(255,255,255,0.06),
-            rgba(111,182,255,0.07)
-          );
-        }
-
-        .eliteCard {
-          background: linear-gradient(135deg, #e1c15f, #c89e2c);
-          color: #17120a;
-        }
-
-        .eliteCard p,
-        .eliteCard .monthly {
-          color: #2d2414;
-        }
-
-        .smallTag {
-          background: rgba(255,255,255,0.08);
-          color: #eef3fb;
-          margin-bottom: 10px;
-        }
-
-        .goldTag {
-          background: rgba(23,18,10,0.14);
-          color: #17120a;
-        }
-
-        .finalActions {
-          margin-top: 18px;
-        }
-
         @media (max-width: 1080px) {
           .heroGrid,
-          .sectionHead {
-            grid-template-columns: 1fr;
-          }
-
+          .sectionHead,
+          .demoGrid,
           .pricingGrid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr !important;
           }
 
           .serviceRow {
-            grid-template-columns: 80px 1fr;
+            grid-template-columns: 80px 1fr !important;
           }
 
-          .serviceTags {
-            grid-column: 2 / 3;
-          }
-
-          .demoLayout {
-            grid-template-columns: 1fr;
-            grid-template-areas:
-              "feature"
-              "one"
-              "two"
-              "three";
-          }
-
-          .demoFeature {
-            min-height: 300px;
+          .hideOnMobile {
+            display: none !important;
           }
         }
 
         @media (max-width: 760px) {
-          .container {
-            padding: 0 16px;
-          }
-
-          .nav,
-          .topActions {
-            display: none;
-          }
-
-          .heroActions,
-          .salesRow,
-          .finalActions {
-            flex-direction: column;
-            align-items: stretch;
-          }
-
-          .btn,
-          .salesChip {
-            text-align: center;
-          }
-
-          h1 {
-            max-width: none;
-          }
-
-          .sectionTitle,
-          .heroPanel h2,
-          .demoFeature h3 {
-            font-size: 34px;
-          }
-
-          .serviceMain h3,
-          .demoTile strong,
-          .plan {
-            font-size: 25px;
-          }
-
-          .price {
-            font-size: 44px;
-          }
-
+          .heroGrid,
+          .sectionHead,
+          .demoGrid,
           .pricingGrid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
 
           .serviceRow {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
 
-          .serviceTags {
-            grid-column: auto;
-          }
-
-          .starWrap {
-            width: 390px;
-            height: 390px;
-            right: -110px;
-            top: 240px;
-            opacity: 0.34;
-          }
-
-          .starShape {
-            font-size: 180px;
+          .hideOnMobile {
+            display: none !important;
           }
         }
       `}</style>
     </main>
   );
 }
+
+const styles: Record<string, React.CSSProperties> = {
+  page: {
+    minHeight: "100vh",
+    background:
+      "radial-gradient(circle at top left, rgba(216,180,79,0.08), transparent 22%), linear-gradient(180deg, #060b14 0%, #08101b 50%, #050a12 100%)",
+    color: "#f4efe4",
+    fontFamily: 'Georgia, "Times New Roman", serif',
+    position: "relative",
+    overflowX: "hidden",
+  },
+
+  glowA: {
+    position: "fixed",
+    width: 260,
+    height: 260,
+    top: 70,
+    left: -120,
+    borderRadius: 999,
+    filter: "blur(90px)",
+    background: "rgba(216,180,79,0.5)",
+    opacity: 0.14,
+    pointerEvents: "none",
+  },
+
+  glowB: {
+    position: "fixed",
+    width: 280,
+    height: 280,
+    right: -100,
+    bottom: 120,
+    borderRadius: 999,
+    filter: "blur(90px)",
+    background: "rgba(44,74,124,0.5)",
+    opacity: 0.14,
+    pointerEvents: "none",
+  },
+
+  starWrap: {
+    position: "fixed",
+    right: -10,
+    top: 130,
+    width: 640,
+    height: 640,
+    opacity: 0.44,
+    pointerEvents: "none",
+    zIndex: 0,
+  },
+
+  star: {
+    position: "absolute",
+    inset: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "rgba(216, 180, 79, 0.28)",
+    fontSize: 260,
+    lineHeight: 1,
+  },
+
+  container: {
+    maxWidth: 1180,
+    margin: "0 auto",
+    padding: "0 24px",
+    position: "relative",
+    zIndex: 2,
+  },
+
+  topbar: {
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    background: "rgba(6, 11, 20, 0.72)",
+    backdropFilter: "blur(14px)",
+  },
+
+  topbarInner: {
+    minHeight: 76,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 18,
+  },
+
+  brand: {
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    textDecoration: "none",
+    color: "#f4efe4",
+  },
+
+  brandMark: {
+    width: 40,
+    height: 40,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 12,
+    background: "rgba(216,180,79,0.12)",
+    color: "#d8b44f",
+    fontSize: 18,
+    boxShadow: "0 12px 30px rgba(0,0,0,0.18)",
+  },
+
+  brandName: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 15,
+    fontWeight: 800,
+  },
+
+  brandSub: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    color: "#b8c2cf",
+  },
+
+  nav: {
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+
+  navLink: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    color: "#e3e8ef",
+    fontSize: 14,
+    fontWeight: 700,
+  },
+
+  topActions: {
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+
+  topBtn: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    padding: "13px 18px",
+    borderRadius: 12,
+    color: "#f4efe4",
+    background: "rgba(255,255,255,0.05)",
+  },
+
+  topBtnGold: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    padding: "13px 18px",
+    borderRadius: 12,
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    color: "#111",
+    boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+  },
+
+  heroGrid: {
+    display: "grid",
+    gridTemplateColumns: "1.08fr 0.92fr",
+    gap: 44,
+    alignItems: "start",
+    paddingTop: 42,
+  },
+
+  kicker: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    letterSpacing: "0.12em",
+    fontWeight: 800,
+    color: "#d8b44f",
+    marginBottom: 16,
+  },
+
+  heroTitle: {
+    margin: "0 0 22px",
+    fontSize: "clamp(52px, 7vw, 84px)",
+    lineHeight: 0.97,
+    letterSpacing: "-0.04em",
+    maxWidth: "9ch",
+  },
+
+  heroCopy: {
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+    maxWidth: 620,
+    margin: "0 0 22px",
+  },
+
+  ctaRow: {
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+
+  goldBtn: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    padding: "13px 18px",
+    borderRadius: 12,
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    color: "#111",
+    boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+  },
+
+  darkBtn: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    padding: "13px 18px",
+    borderRadius: 12,
+    color: "#f4efe4",
+    background: "rgba(255,255,255,0.055)",
+  },
+
+  salesBlock: {
+    marginTop: 18,
+  },
+
+  smallKicker: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    letterSpacing: "0.12em",
+    fontWeight: 800,
+    color: "#d8b44f",
+    marginBottom: 16,
+  },
+
+  salesRow: {
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+
+  salesChip: {
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    color: "#eef3fb",
+    background: "rgba(255,255,255,0.05)",
+    padding: "10px 14px",
+    borderRadius: 999,
+    fontSize: 13,
+    boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+  },
+
+  heroPanel: {
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    padding: "34px 32px",
+    borderRadius: 32,
+  },
+
+  panelTitle: {
+    margin: "0 0 14px",
+    fontSize: 38,
+    lineHeight: 1.02,
+    letterSpacing: "-0.03em",
+  },
+
+  panelList: {
+    display: "grid",
+    gap: 18,
+    margin: "22px 0 24px",
+  },
+
+  panelHead: {
+    display: "block",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 15,
+    marginBottom: 6,
+    fontWeight: 700,
+  },
+
+  panelText: {
+    margin: 0,
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    fontSize: 14,
+    lineHeight: 1.6,
+  },
+
+  fullGoldBtn: {
+    width: "100%",
+    textAlign: "center",
+    display: "block",
+    fontFamily: "Arial, sans-serif",
+    textDecoration: "none",
+    fontWeight: 700,
+    padding: "13px 18px",
+    borderRadius: 12,
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    color: "#111",
+    boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+  },
+
+  section: {
+    marginTop: 92,
+  },
+
+  sectionHead: {
+    display: "grid",
+    gridTemplateColumns: "1fr 0.9fr",
+    gap: 28,
+    alignItems: "end",
+    marginBottom: 28,
+  },
+
+  sectionKicker: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    letterSpacing: "0.12em",
+    fontWeight: 800,
+    color: "#d8b44f",
+    marginBottom: 16,
+  },
+
+  sectionTitle: {
+    margin: 0,
+    fontSize: "clamp(38px, 4vw, 56px)",
+    lineHeight: 1.04,
+    letterSpacing: "-0.03em",
+  },
+
+  sectionCopy: {
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  serviceList: {
+    display: "grid",
+    gap: 18,
+  },
+
+  serviceRow: {
+    display: "grid",
+    gridTemplateColumns: "80px 1fr 0.95fr",
+    gap: 22,
+    alignItems: "start",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))",
+    borderRadius: 22,
+    padding: 22,
+  },
+
+  serviceNumber: {
+    fontSize: 38,
+    lineHeight: 1,
+    color: "#d8b44f",
+    fontWeight: 700,
+  },
+
+  serviceTitle: {
+    margin: "0 0 10px",
+    fontSize: 30,
+    lineHeight: 1.05,
+  },
+
+  serviceText: {
+    margin: 0,
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  tagRow: {
+    display: "flex",
+    gap: 10,
+    flexWrap: "wrap",
+    alignSelf: "center",
+  },
+
+  tag: {
+    fontFamily: "Arial, sans-serif",
+    fontSize: 13,
+    fontWeight: 700,
+    color: "#dbe2ec",
+    padding: "9px 12px",
+    borderRadius: 999,
+    background: "rgba(255,255,255,0.05)",
+  },
+
+  demoGrid: {
+    display: "grid",
+    gridTemplateColumns: "1.08fr 1fr",
+    gap: 18,
+    alignItems: "stretch",
+  },
+
+  demoFeature: {
+    textDecoration: "none",
+    color: "#f4efe4",
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 32,
+    padding: 34,
+    minHeight: 420,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+  },
+
+  demoBadge: {
+    width: "fit-content",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    fontWeight: 800,
+    borderRadius: 999,
+    padding: "7px 10px",
+    background: "rgba(111,182,255,0.14)",
+    color: "#abd5ff",
+    marginBottom: 18,
+  },
+
+  demoFeatureTitle: {
+    margin: "0 0 12px",
+    fontSize: 42,
+    lineHeight: 1.02,
+    letterSpacing: "-0.03em",
+  },
+
+  demoText: {
+    margin: "0 0 18px",
+    maxWidth: 540,
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  demoTile: {
+    textDecoration: "none",
+    color: "#f4efe4",
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 24,
+    minHeight: 128,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: 24,
+  },
+
+  demoTileTitle: {
+    fontSize: 30,
+    lineHeight: 1.05,
+    marginBottom: 8,
+  },
+
+  demoTileText: {
+    marginBottom: 10,
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  demoOpen: {
+    fontFamily: "Arial, sans-serif",
+    color: "#d8b44f",
+    fontSize: 14,
+    fontWeight: 700,
+  },
+
+  pricingBanner: {
+    display: "inline-block",
+    marginBottom: 22,
+    fontFamily: "Arial, sans-serif",
+    color: "#d8b44f",
+    background: "rgba(216,180,79,0.08)",
+    padding: "10px 14px",
+    borderRadius: 999,
+    fontSize: 14,
+  },
+
+  pricingGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: 18,
+  },
+
+  priceCard: {
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 24,
+    padding: 24,
+    minHeight: 250,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+  },
+
+  priceCardFeatured: {
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(111,182,255,0.07))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 24,
+    padding: 24,
+    minHeight: 250,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+  },
+
+  priceCardElite: {
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 24,
+    padding: 24,
+    minHeight: 250,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    color: "#17120a",
+  },
+
+  smallTag: {
+    width: "fit-content",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    fontWeight: 800,
+    borderRadius: 999,
+    padding: "7px 10px",
+    background: "rgba(255,255,255,0.08)",
+    color: "#eef3fb",
+    marginBottom: 10,
+  },
+
+  smallTagGold: {
+    width: "fit-content",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 12,
+    fontWeight: 800,
+    borderRadius: 999,
+    padding: "7px 10px",
+    background: "rgba(23,18,10,0.14)",
+    color: "#17120a",
+    marginBottom: 10,
+  },
+
+  plan: {
+    fontSize: 30,
+    lineHeight: 1.04,
+    marginBottom: 10,
+  },
+
+  planDark: {
+    fontSize: 30,
+    lineHeight: 1.04,
+    marginBottom: 10,
+    color: "#17120a",
+  },
+
+  price: {
+    fontSize: 56,
+    lineHeight: 1,
+    marginBottom: 10,
+    letterSpacing: "-0.03em",
+  },
+
+  priceDark: {
+    fontSize: 56,
+    lineHeight: 1,
+    marginBottom: 10,
+    letterSpacing: "-0.03em",
+    color: "#17120a",
+  },
+
+  monthly: {
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 15,
+    marginBottom: 12,
+  },
+
+  monthlyDark: {
+    fontFamily: "Arial, sans-serif",
+    color: "#2d2414",
+    lineHeight: 1.65,
+    fontSize: 15,
+    marginBottom: 12,
+  },
+
+  priceText: {
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  priceTextDark: {
+    fontFamily: "Arial, sans-serif",
+    color: "#2d2414",
+    lineHeight: 1.65,
+    fontSize: 17,
+  },
+
+  finalActions: {
+    marginTop: 18,
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
+};

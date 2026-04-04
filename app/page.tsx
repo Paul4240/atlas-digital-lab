@@ -19,14 +19,18 @@ export default function HomePage() {
 
   return (
     <main className="page">
-      <div className="bgGlow glowLeft" />
-      <div className="bgGlow glowRight" />
-      <div className="fixedStar" />
+      <div className="glow glowA" />
+      <div className="glow glowB" />
+      <div className="starWrap" aria-hidden>
+        <div className="starRing ringOne" />
+        <div className="starRing ringTwo" />
+        <div className="starShape">★</div>
+      </div>
 
       <header className="topbar">
         <div className="container topbarInner">
           <Link href="/" className="brand">
-            <div className="brandIcon">★</div>
+            <div className="brandMark">★</div>
             <div>
               <div className="brandName">Atlas Digital Lab</div>
               <div className="brandSub">Websites • SEO • Small Business Growth</div>
@@ -59,13 +63,12 @@ export default function HomePage() {
             </div>
 
             <h1>
-              Websites that make small businesses look expensive — and get more
-              calls.
+              Websites that make small businesses look expensive — and get more calls.
             </h1>
 
             <p className="heroCopy">
-              Clean layouts, stronger trust, and better conversion structure so
-              your business looks worth hiring from the first click.
+              Clean presentation, stronger trust, and sharper structure so your business
+              feels more serious the second somebody lands on your site.
             </p>
 
             <div className="heroActions">
@@ -73,16 +76,15 @@ export default function HomePage() {
                 Call / Text Sales
               </a>
               <a href="#demos" className="btn btnDark">
-                View Demos
+                See Real Examples
               </a>
               <a href={`mailto:${EMAIL}`} className="btn btnDark">
                 Get a Quote
               </a>
             </div>
 
-            <div className="salesWrap">
+            <div className="salesBlock">
               <div className="salesLabel">Sales Team</div>
-
               <div className="salesRow">
                 <a href={`tel:${SALES_1}`} className="salesChip">
                   Sales {SALES_1_PRETTY}
@@ -103,23 +105,29 @@ export default function HomePage() {
               <h2>A cleaner, more custom presentation for serious businesses.</h2>
 
               <div className="panelList">
-                <div>
+                <div className="panelItem">
                   <strong>Stronger first impression</strong>
-                  <p>Cleaner hierarchy and better spacing make the business feel more established.</p>
+                  <p>
+                    Better spacing and cleaner hierarchy make your business look more established.
+                  </p>
                 </div>
 
-                <div>
+                <div className="panelItem">
                   <strong>More trust from the first click</strong>
-                  <p>Better presentation helps people take your company more seriously before they even call.</p>
+                  <p>
+                    People take a company more seriously when the site feels sharper and more complete.
+                  </p>
                 </div>
 
-                <div>
+                <div className="panelItem">
                   <strong>Built to convert better</strong>
-                  <p>Clear structure and stronger calls-to-action help turn more visitors into real leads.</p>
+                  <p>
+                    Clearer sections and stronger call-to-action flow help turn more visitors into leads.
+                  </p>
                 </div>
               </div>
 
-              <a href={`mailto:${EMAIL}`} className="btn btnGold wideBtn">
+              <a href={`mailto:${EMAIL}`} className="btn btnGold fullBtn">
                 Start a Project
               </a>
             </div>
@@ -129,28 +137,30 @@ export default function HomePage() {
 
       <section id="services" className="section">
         <div className="container">
-          <div className="sectionTop">
+          <div className="sectionHead">
             <div>
               <div className="sectionKicker">SERVICES</div>
               <h2 className="sectionTitle">Built to help businesses look stronger online.</h2>
             </div>
 
             <p className="sectionCopy">
-              We design websites that feel more premium and more custom than the
-              average small business site.
+              We build websites that feel more premium and more custom than the average
+              small business site.
             </p>
           </div>
 
-          <div className="serviceList">
+          <div className="serviceFlow">
             <div className="serviceRow">
               <div className="serviceNumber">01</div>
               <div className="serviceMain">
                 <h3>Website Design</h3>
-                <p>Modern layout, better spacing, and a stronger first impression.</p>
+                <p>
+                  Modern layout, better spacing, cleaner hierarchy, and a sharper first impression.
+                </p>
               </div>
               <div className="serviceTags">
                 <span>Mobile-first</span>
-                <span>Premium layout</span>
+                <span>Premium feel</span>
                 <span>Clear lead flow</span>
               </div>
             </div>
@@ -159,12 +169,14 @@ export default function HomePage() {
               <div className="serviceNumber">02</div>
               <div className="serviceMain">
                 <h3>SEO & Google Setup</h3>
-                <p>Show up stronger in search and maps with cleaner structure.</p>
+                <p>
+                  Search-ready structure that helps local businesses show up stronger in maps and Google.
+                </p>
               </div>
               <div className="serviceTags">
                 <span>On-page SEO</span>
                 <span>Google help</span>
-                <span>Search-ready</span>
+                <span>Local focus</span>
               </div>
             </div>
 
@@ -172,41 +184,44 @@ export default function HomePage() {
               <div className="serviceNumber">03</div>
               <div className="serviceMain">
                 <h3>Brand Presentation</h3>
-                <p>Look more legit, more polished, and more valuable online.</p>
+                <p>
+                  Sharper online presentation that helps your company feel more legit and more valuable.
+                </p>
               </div>
               <div className="serviceTags">
                 <span>Visual polish</span>
-                <span>Better trust</span>
-                <span>Consistency</span>
+                <span>More trust</span>
+                <span>Better positioning</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section problemSection">
-        <div className="container problemWrap">
+      <section className="section statementSection">
+        <div className="container statementWrap">
           <div className="sectionKicker">WHY THIS MATTERS</div>
-          <h2 className="sectionTitle">Most small business websites look outdated, cluttered, or cheap.</h2>
-          <p className="sectionCopy wideCopy">
-            We fix that. Our goal is simple — make your business look like the
-            obvious choice the moment someone lands on your site.
+          <h2 className="sectionTitle">
+            Most small business websites look outdated, cluttered, or cheap.
+          </h2>
+          <p className="sectionCopy wide">
+            We fix that. The goal is simple — make your business look like the obvious
+            choice the moment somebody lands on your page.
           </p>
         </div>
       </section>
 
       <section id="demos" className="section">
         <div className="container">
-          <div className="sectionTop">
+          <div className="sectionHead">
             <div>
               <div className="sectionKicker">DEMOS</div>
               <h2 className="sectionTitle">Real directions we can build from.</h2>
             </div>
 
             <p className="sectionCopy">
-              Different niches need different presentation styles. These demos
-              show the kind of layout and sales direction we can build for your
-              business.
+              Different niches need different presentation styles. These demos show the
+              direction we can build around your business.
             </p>
           </div>
 
@@ -215,8 +230,8 @@ export default function HomePage() {
               <div className="demoBadge">Flagship Demo</div>
               <h3>Pet Bakery Demo</h3>
               <p>
-                Boutique storefront direction with stronger warmth, better product
-                presentation, and a more polished visual flow.
+                Boutique storefront direction with stronger warmth, better product presentation,
+                and a more polished visual flow.
               </p>
               <span>Open Demo</span>
             </Link>
@@ -246,15 +261,17 @@ export default function HomePage() {
 
       <section id="pricing" className="section pricingSection">
         <div className="container">
-          <div className="sectionTop">
+          <div className="sectionHead">
             <div>
               <div className="sectionKicker">PRICING</div>
-              <h2 className="sectionTitle">Simple pricing for businesses ready to look more established.</h2>
+              <h2 className="sectionTitle">
+                Simple pricing for businesses ready to look more established.
+              </h2>
             </div>
 
             <p className="sectionCopy">
-              Better websites help your company feel more trusted, more valuable,
-              and more worth contacting.
+              Better websites help your company feel more trusted, more valuable, and
+              more worth contacting.
             </p>
           </div>
 
@@ -311,9 +328,9 @@ export default function HomePage() {
         .page {
           min-height: 100vh;
           background:
-            radial-gradient(circle at 0% 0%, rgba(216,180,79,0.1), transparent 18%),
-            linear-gradient(180deg, #060b14 0%, #08101b 48%, #050a12 100%);
-          color: #f5f1e8;
+            radial-gradient(circle at top left, rgba(216,180,79,0.08), transparent 22%),
+            linear-gradient(180deg, #060b14 0%, #08101b 50%, #050a12 100%);
+          color: #f4efe4;
           font-family: Georgia, "Times New Roman", serif;
           position: relative;
           overflow-x: hidden;
@@ -324,39 +341,59 @@ export default function HomePage() {
           border-radius: 999px;
           filter: blur(90px);
           pointer-events: none;
-          opacity: 0.18;
+          opacity: 0.14;
         }
 
-        .glowLeft {
+        .glowA {
           width: 260px;
           height: 260px;
-          top: 60px;
+          top: 70px;
           left: -120px;
-          background: rgba(216,180,79,0.45);
+          background: rgba(216,180,79,0.5);
         }
 
-        .glowRight {
-          width: 300px;
-          height: 300px;
-          right: -120px;
-          bottom: 90px;
-          background: rgba(43,74,120,0.45);
+        .glowB {
+          width: 280px;
+          height: 280px;
+          right: -100px;
+          bottom: 120px;
+          background: rgba(44,74,124,0.5);
         }
 
-        .fixedStar {
+        .starWrap {
           position: fixed;
-          right: -20px;
-          top: 120px;
-          width: 620px;
-          height: 620px;
+          right: -10px;
+          top: 130px;
+          width: 640px;
+          height: 640px;
+          opacity: 0.44;
           pointer-events: none;
-          opacity: 0.42;
           z-index: 0;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cg fill='none'%3E%3Ccircle cx='350' cy='350' r='255' stroke='%23d8b44f' stroke-opacity='.35' stroke-width='12'/%3E%3Ccircle cx='350' cy='350' r='214' stroke='%23d8b44f' stroke-opacity='.25' stroke-width='8'/%3E%3Cpath d='M350 155l38 118h124l-100 72 38 117-100-72-100 72 38-117-100-72h124z' fill='%23d8b44f' fill-opacity='.34'/%3E%3C/g%3E%3C/svg%3E");
-          filter: drop-shadow(0 0 30px rgba(216,180,79,0.08));
+        }
+
+        .starRing {
+          position: absolute;
+          border-radius: 999px;
+          border: 2px solid rgba(216, 180, 79, 0.18);
+        }
+
+        .ringOne {
+          inset: 40px;
+        }
+
+        .ringTwo {
+          inset: 90px;
+        }
+
+        .starShape {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(216, 180, 79, 0.28);
+          font-size: 260px;
+          line-height: 1;
         }
 
         .container {
@@ -388,17 +425,17 @@ export default function HomePage() {
           gap: 12px;
           align-items: center;
           text-decoration: none;
-          color: #f5f1e8;
+          color: #f4efe4;
         }
 
-        .brandIcon {
-          width: 38px;
-          height: 38px;
-          border-radius: 12px;
+        .brandMark {
+          width: 40px;
+          height: 40px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(216,180,79,0.14);
+          border-radius: 12px;
+          background: rgba(216,180,79,0.12);
           color: #d8b44f;
           font-size: 18px;
           box-shadow: 0 12px 30px rgba(0,0,0,0.18);
@@ -406,14 +443,14 @@ export default function HomePage() {
 
         .brandName {
           font-family: Arial, sans-serif;
-          font-weight: 800;
           font-size: 15px;
+          font-weight: 800;
         }
 
         .brandSub {
           font-family: Arial, sans-serif;
           font-size: 12px;
-          color: #aeb8c7;
+          color: #b8c2cf;
         }
 
         .nav,
@@ -430,18 +467,17 @@ export default function HomePage() {
         .nav a {
           font-family: Arial, sans-serif;
           text-decoration: none;
-          color: #dfe5ef;
+          color: #e3e8ef;
           font-size: 14px;
           font-weight: 700;
         }
 
         .topBtn,
         .btn,
-        .salesChip,
-        .demoFeature,
-        .demoItem,
-        .priceCard,
-        .softCard {
+        .salesChip {
+          font-family: Arial, sans-serif;
+          text-decoration: none;
+          font-weight: 700;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -450,22 +486,18 @@ export default function HomePage() {
         .salesChip:hover,
         .demoFeature:hover,
         .demoItem:hover,
-        .priceCard:hover,
-        .softCard:hover {
+        .priceCard:hover {
           transform: translateY(-3px);
         }
 
         .topBtn,
         .btn {
-          text-decoration: none;
-          font-family: Arial, sans-serif;
-          font-weight: 700;
           padding: 13px 18px;
           border-radius: 12px;
         }
 
         .topBtn {
-          color: #f5f1e8;
+          color: #f4efe4;
           background: rgba(255,255,255,0.05);
         }
 
@@ -473,22 +505,22 @@ export default function HomePage() {
         .btnGold {
           background: linear-gradient(135deg, #e1c15f, #c89e2c);
           color: #111;
-          box-shadow: 0 12px 34px rgba(216,180,79,0.18);
+          box-shadow: 0 12px 34px rgba(216,180,79,0.16);
         }
 
         .btnDark {
-          color: #f5f1e8;
-          background: rgba(255,255,255,0.05);
+          color: #f4efe4;
+          background: rgba(255,255,255,0.055);
         }
 
         .hero {
-          padding: 38px 0 0;
+          padding: 42px 0 0;
         }
 
         .heroGrid {
           display: grid;
           grid-template-columns: 1.08fr 0.92fr;
-          gap: 42px;
+          gap: 44px;
           align-items: start;
         }
 
@@ -506,19 +538,19 @@ export default function HomePage() {
 
         h1 {
           margin: 0 0 22px;
-          font-size: clamp(52px, 7vw, 82px);
+          font-size: clamp(52px, 7vw, 84px);
           line-height: 0.97;
           letter-spacing: -0.04em;
           max-width: 9ch;
         }
 
         .heroCopy,
-        .panelText,
         .sectionCopy,
-        .softCard p,
         .demoFeature p,
         .demoItem small,
-        .priceCard p {
+        .priceCard p,
+        .serviceMain p,
+        .panelItem p {
           font-family: Arial, sans-serif;
           color: #bcc6d4;
           line-height: 1.65;
@@ -530,30 +562,26 @@ export default function HomePage() {
           margin: 0 0 22px;
         }
 
-        .salesWrap {
+        .salesBlock {
           margin-top: 18px;
         }
 
         .salesChip {
-          text-decoration: none;
-          font-family: Arial, sans-serif;
           color: #eef3fb;
-          background: rgba(255,255,255,0.045);
+          background: rgba(255,255,255,0.05);
           padding: 10px 14px;
           border-radius: 999px;
           font-size: 13px;
-          font-weight: 700;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
         .heroPanel,
-        .softCard,
         .demoFeature,
         .demoItem,
         .priceCard {
           background: linear-gradient(
             135deg,
-            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.05),
             rgba(255,255,255,0.025)
           );
           box-shadow: 0 24px 60px rgba(0,0,0,0.18);
@@ -561,13 +589,13 @@ export default function HomePage() {
 
         .heroPanel {
           padding: 34px 32px;
-          border-radius: 30px;
+          border-radius: 32px;
         }
 
-        .panelTitle {
+        .heroPanel h2 {
+          margin: 0 0 14px;
           font-size: 38px;
           line-height: 1.02;
-          margin: 0 0 14px;
           letter-spacing: -0.03em;
         }
 
@@ -577,35 +605,33 @@ export default function HomePage() {
           margin: 22px 0 24px;
         }
 
-        .panelList strong {
+        .panelItem strong {
           display: block;
           font-family: Arial, sans-serif;
           font-size: 15px;
           margin-bottom: 6px;
         }
 
-        .panelList p {
+        .panelItem p {
           margin: 0;
-          font-family: Arial, sans-serif;
-          color: #bcc6d4;
           font-size: 14px;
-          line-height: 1.6;
         }
 
-        .wideBtn {
+        .fullBtn {
           width: 100%;
+          text-align: center;
         }
 
         .section {
           margin-top: 92px;
         }
 
-        .sectionTop {
+        .sectionHead {
           display: grid;
           grid-template-columns: 1fr 0.9fr;
           gap: 28px;
           align-items: end;
-          margin-bottom: 26px;
+          margin-bottom: 28px;
         }
 
         .sectionTitle {
@@ -615,43 +641,82 @@ export default function HomePage() {
           letter-spacing: -0.03em;
         }
 
-        .wideCopy {
+        .wide {
           max-width: 760px;
         }
 
-        .serviceGrid {
+        .serviceFlow {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
           gap: 18px;
         }
 
-        .softCard {
-          padding: 28px 26px;
-          border-radius: 24px;
-          min-height: 132px;
+        .serviceRow {
+          display: grid;
+          grid-template-columns: 80px 1fr 0.95fr;
+          gap: 22px;
+          align-items: start;
+          padding: 20px 0;
+          background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+          border-radius: 22px;
+          padding-left: 22px;
+          padding-right: 22px;
         }
 
-        .softCard h3 {
-          margin: 0 0 14px;
+        .serviceNumber {
+          font-size: 38px;
+          line-height: 1;
+          color: #d8b44f;
+          font-weight: 700;
+        }
+
+        .serviceMain h3 {
+          margin: 0 0 10px;
           font-size: 30px;
           line-height: 1.05;
         }
 
-        .demosWrap {
+        .serviceMain p {
+          margin: 0;
+        }
+
+        .serviceTags {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          align-self: center;
+          justify-content: flex-start;
+        }
+
+        .serviceTags span {
+          font-family: Arial, sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          color: #dbe2ec;
+          padding: 9px 12px;
+          border-radius: 999px;
+          background: rgba(255,255,255,0.05);
+        }
+
+        .statementWrap {
+          padding-top: 8px;
+        }
+
+        .demoLayout {
           display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
+          grid-template-columns: 1.04fr 0.96fr;
           gap: 20px;
         }
 
         .demoFeature {
           text-decoration: none;
-          color: #f5f1e8;
-          border-radius: 30px;
-          padding: 32px;
-          min-height: 290px;
+          color: #f4efe4;
+          border-radius: 32px;
+          padding: 34px;
+          min-height: 300px;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .demoBadge,
@@ -666,7 +731,7 @@ export default function HomePage() {
 
         .demoBadge {
           background: rgba(111,182,255,0.14);
-          color: #a8d3ff;
+          color: #abd5ff;
           margin-bottom: 18px;
         }
 
@@ -675,6 +740,11 @@ export default function HomePage() {
           font-size: 42px;
           line-height: 1.02;
           letter-spacing: -0.03em;
+        }
+
+        .demoFeature p {
+          margin: 0 0 18px;
+          max-width: 540px;
         }
 
         .demoFeature span:last-child,
@@ -692,13 +762,14 @@ export default function HomePage() {
 
         .demoItem {
           text-decoration: none;
-          color: #f5f1e8;
+          color: #f4efe4;
           border-radius: 24px;
           padding: 24px;
+          min-height: 100px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          min-height: 90px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .demoItem strong {
@@ -735,12 +806,13 @@ export default function HomePage() {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .plan {
-          margin-bottom: 10px;
           font-size: 30px;
           line-height: 1.04;
+          margin-bottom: 10px;
         }
 
         .price {
@@ -784,32 +856,27 @@ export default function HomePage() {
 
         @media (max-width: 1080px) {
           .heroGrid,
-          .sectionTop,
-          .serviceGrid,
-          .demosWrap,
+          .sectionHead,
+          .demoLayout {
+            grid-template-columns: 1fr;
+          }
+
           .pricingGrid {
             grid-template-columns: 1fr 1fr;
           }
 
-          .heroGrid,
-          .sectionTop {
-            grid-template-columns: 1fr;
+          .serviceRow {
+            grid-template-columns: 80px 1fr;
+          }
+
+          .serviceTags {
+            grid-column: 2 / 3;
           }
         }
 
         @media (max-width: 760px) {
-          .page {
-            padding-bottom: 60px;
-          }
-
           .container {
             padding: 0 16px;
-          }
-
-          .serviceGrid,
-          .demosWrap,
-          .pricingGrid {
-            grid-template-columns: 1fr;
           }
 
           .nav,
@@ -833,27 +900,44 @@ export default function HomePage() {
             max-width: none;
           }
 
-          .panelTitle,
+          .sectionTitle,
+          .heroPanel h2,
           .demoFeature h3 {
             font-size: 34px;
           }
 
-          .softCard h3,
+          .serviceMain h3,
           .demoItem strong,
           .plan {
-            font-size: 26px;
+            font-size: 25px;
           }
 
           .price {
             font-size: 44px;
           }
 
-          .fixedStar {
+          .pricingGrid {
+            grid-template-columns: 1fr;
+          }
+
+          .serviceRow {
+            grid-template-columns: 1fr;
+          }
+
+          .serviceTags {
+            grid-column: auto;
+          }
+
+          .starWrap {
             width: 390px;
             height: 390px;
             right: -110px;
-            top: 220px;
+            top: 240px;
             opacity: 0.34;
+          }
+
+          .starShape {
+            font-size: 180px;
           }
         }
       `}</style>

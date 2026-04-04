@@ -19,8 +19,8 @@ export default function HomePage() {
 
   return (
     <main className="page">
-      <div className="glow glowA" />
-      <div className="glow glowB" />
+      <div className="bgGlow glowA" />
+      <div className="bgGlow glowB" />
       <div className="starWrap" aria-hidden>
         <div className="starRing ringOne" />
         <div className="starRing ringTwo" />
@@ -220,8 +220,8 @@ export default function HomePage() {
             </div>
 
             <p className="sectionCopy">
-              Different niches need different presentation styles. These demos show the
-              direction we can build around your business.
+              Different niches need different presentation styles. These demos
+              show the direction we can build around your business.
             </p>
           </div>
 
@@ -236,25 +236,29 @@ export default function HomePage() {
               <span>Open Demo</span>
             </Link>
 
-            <div className="demoSide">
-              <Link href="/demo/home-styling" className="demoItem">
+            <Link href="/demo/home-styling" className="demoTile">
+              <div className="demoTileBody">
                 <strong>Luxury Interior Styling</strong>
                 <small>Elegant, image-led residential presentation.</small>
                 <span>Open Demo</span>
-              </Link>
+              </div>
+            </Link>
 
-              <Link href="/demo/roofing" className="demoItem">
+            <Link href="/demo/roofing" className="demoTile">
+              <div className="demoTileBody">
                 <strong>Roofing Demo</strong>
                 <small>Trust-based local service structure.</small>
                 <span>Open Demo</span>
-              </Link>
+              </div>
+            </Link>
 
-              <Link href="/demo/metal-cards" className="demoItem">
+            <Link href="/demo/metal-cards" className="demoTile">
+              <div className="demoTileBody">
                 <strong>Metal Cards Demo</strong>
                 <small>Product-style layout with stronger offer flow.</small>
                 <span>Open Demo</span>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -283,12 +287,14 @@ export default function HomePage() {
             <div className="priceCard">
               <div className="plan">Starter</div>
               <div className="price">$299</div>
+              <div className="monthly">$80/mo</div>
               <p>Single page • Mobile • Contact</p>
             </div>
 
             <div className="priceCard">
               <div className="plan">Growth</div>
               <div className="price">$499</div>
+              <div className="monthly">$130/mo</div>
               <p>Multi-section • Trust blocks</p>
             </div>
 
@@ -296,6 +302,7 @@ export default function HomePage() {
               <div className="smallTag">Most Popular</div>
               <div className="plan">Pro</div>
               <div className="price">$799</div>
+              <div className="monthly">$150/mo</div>
               <p>Advanced SEO • Priority design</p>
             </div>
 
@@ -303,6 +310,7 @@ export default function HomePage() {
               <div className="smallTag goldTag">Best Results</div>
               <div className="plan">Elite</div>
               <div className="price">$1,200</div>
+              <div className="monthly">$200/mo</div>
               <p>Premium custom build</p>
             </div>
           </div>
@@ -485,7 +493,7 @@ export default function HomePage() {
         .btn:hover,
         .salesChip:hover,
         .demoFeature:hover,
-        .demoItem:hover,
+        .demoTile:hover,
         .priceCard:hover {
           transform: translateY(-3px);
         }
@@ -547,10 +555,11 @@ export default function HomePage() {
         .heroCopy,
         .sectionCopy,
         .demoFeature p,
-        .demoItem small,
+        .demoTile small,
         .priceCard p,
         .serviceMain p,
-        .panelItem p {
+        .panelItem p,
+        .monthly {
           font-family: Arial, sans-serif;
           color: #bcc6d4;
           line-height: 1.65;
@@ -577,7 +586,7 @@ export default function HomePage() {
 
         .heroPanel,
         .demoFeature,
-        .demoItem,
+        .demoTile,
         .priceCard {
           background: linear-gradient(
             135deg,
@@ -655,11 +664,9 @@ export default function HomePage() {
           grid-template-columns: 80px 1fr 0.95fr;
           gap: 22px;
           align-items: start;
-          padding: 20px 0;
           background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
           border-radius: 22px;
-          padding-left: 22px;
-          padding-right: 22px;
+          padding: 22px;
         }
 
         .serviceNumber {
@@ -684,7 +691,6 @@ export default function HomePage() {
           gap: 10px;
           flex-wrap: wrap;
           align-self: center;
-          justify-content: flex-start;
         }
 
         .serviceTags span {
@@ -703,20 +709,25 @@ export default function HomePage() {
 
         .demoLayout {
           display: grid;
-          grid-template-columns: 1.04fr 0.96fr;
-          gap: 20px;
+          grid-template-columns: 1.08fr 1fr;
+          grid-template-areas:
+            "feature one"
+            "feature two"
+            "feature three";
+          gap: 18px;
+          align-items: stretch;
         }
 
         .demoFeature {
+          grid-area: feature;
           text-decoration: none;
           color: #f4efe4;
           border-radius: 32px;
           padding: 34px;
-          min-height: 300px;
+          min-height: 420px;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .demoBadge,
@@ -748,37 +759,50 @@ export default function HomePage() {
         }
 
         .demoFeature span:last-child,
-        .demoItem span {
+        .demoTile span {
           font-family: Arial, sans-serif;
           color: #d8b44f;
           font-size: 14px;
           font-weight: 700;
         }
 
-        .demoSide {
-          display: grid;
-          gap: 18px;
-        }
-
-        .demoItem {
+        .demoTile {
           text-decoration: none;
           color: #f4efe4;
           border-radius: 24px;
-          padding: 24px;
-          min-height: 100px;
+          min-height: 128px;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
+          align-items: stretch;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .demoItem strong {
+        .demoTile:nth-child(2) {
+          grid-area: one;
+        }
+
+        .demoTile:nth-child(3) {
+          grid-area: two;
+        }
+
+        .demoTile:nth-child(4) {
+          grid-area: three;
+        }
+
+        .demoTileBody {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .demoTile strong {
           font-size: 30px;
           line-height: 1.05;
           margin-bottom: 8px;
         }
 
-        .demoItem small {
+        .demoTile small {
           margin-bottom: 10px;
         }
 
@@ -802,7 +826,7 @@ export default function HomePage() {
         .priceCard {
           border-radius: 24px;
           padding: 24px;
-          min-height: 220px;
+          min-height: 250px;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -818,8 +842,13 @@ export default function HomePage() {
         .price {
           font-size: 56px;
           line-height: 1;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
           letter-spacing: -0.03em;
+        }
+
+        .monthly {
+          font-size: 15px;
+          margin-bottom: 12px;
         }
 
         .featuredCard {
@@ -835,7 +864,8 @@ export default function HomePage() {
           color: #17120a;
         }
 
-        .eliteCard p {
+        .eliteCard p,
+        .eliteCard .monthly {
           color: #2d2414;
         }
 
@@ -856,8 +886,7 @@ export default function HomePage() {
 
         @media (max-width: 1080px) {
           .heroGrid,
-          .sectionHead,
-          .demoLayout {
+          .sectionHead {
             grid-template-columns: 1fr;
           }
 
@@ -871,6 +900,19 @@ export default function HomePage() {
 
           .serviceTags {
             grid-column: 2 / 3;
+          }
+
+          .demoLayout {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "feature"
+              "one"
+              "two"
+              "three";
+          }
+
+          .demoFeature {
+            min-height: 300px;
           }
         }
 
@@ -907,7 +949,7 @@ export default function HomePage() {
           }
 
           .serviceMain h3,
-          .demoItem strong,
+          .demoTile strong,
           .plan {
             font-size: 25px;
           }

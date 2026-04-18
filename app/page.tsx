@@ -269,14 +269,18 @@ export default function HomePage() {
               <div style={styles.plan}>Starter</div>
               <div style={styles.price}>$299</div>
               <div style={styles.monthly}>$80/mo</div>
-              <p style={styles.priceText}>Single page • Mobile • Contact</p>
+              <p style={styles.priceText}>
+                Clean single-page website designed to make your business look legit and ready for customers.
+              </p>
             </div>
 
             <div style={styles.priceCard}>
               <div style={styles.plan}>Growth</div>
               <div style={styles.price}>$499</div>
               <div style={styles.monthly}>$130/mo</div>
-              <p style={styles.priceText}>Multi-section • Trust blocks</p>
+              <p style={styles.priceText}>
+                Multi-section layout with stronger structure, trust sections, and better flow for conversions.
+              </p>
             </div>
 
             <div style={styles.priceCardFeatured}>
@@ -284,7 +288,9 @@ export default function HomePage() {
               <div style={styles.plan}>Pro</div>
               <div style={styles.price}>$799</div>
               <div style={styles.monthly}>$150/mo</div>
-              <p style={styles.priceText}>Advanced SEO • Priority design</p>
+              <p style={styles.priceText}>
+                Stronger positioning with advanced SEO setup and a more refined, high-converting design.
+              </p>
             </div>
 
             <div style={styles.priceCardElite}>
@@ -292,7 +298,9 @@ export default function HomePage() {
               <div style={styles.planDark}>Elite</div>
               <div style={styles.priceDark}>$1,200</div>
               <div style={styles.monthlyDark}>$200/mo</div>
-              <p style={styles.priceTextDark}>Premium custom build</p>
+              <p style={styles.priceTextDark}>
+                Full custom build designed to make your business look high-end and stand out instantly.
+              </p>
             </div>
           </div>
         </section>

@@ -3,11 +3,11 @@
 import Link from "next/link";
 
 export default function HomePage() {
-  const MAIN_PHONE = "8327050313";
-  const MAIN_PRETTY = "(832) 705-0313";
+  const MAIN_PHONE = "3463657906";
+  const MAIN_PRETTY = "(346) 365-7906";
 
   const SALES = [
-    { phone: "3463657906", pretty: "(346) 365-7906" },
+    { phone: "8326845270", pretty: "(832) 684-5270" },
     { phone: "8326773150", pretty: "(832) 677-3150" },
     { phone: "3465328803", pretty: "(346) 532-8803" },
   ];

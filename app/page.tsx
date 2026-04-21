@@ -56,7 +56,7 @@ export default function HomePage() {
         return;
       }
 
-      alert("Request sent successfully. Check your Google Sheet.");
+      alert("Request sent. We’ll take a look and reach out.");
 
       setForm({
         businessName: "",
@@ -290,27 +290,27 @@ export default function HomePage() {
             <div>
               <div style={styles.smallKicker}>FREE PREVIEW REQUEST</div>
               <h2 style={styles.builderTitle}>
-                Send us your business info and we’ll look at a preview direction
-                for your website.
+                Get a preview direction for your business.
               </h2>
               <p style={styles.builderCopy}>
-                Fill this out and it sends straight into your request system so
-                we can review it and build from what they entered.
+                Tell us about your business and what you&apos;re looking for.
+                We&apos;ll review it and map out a cleaner, more premium
+                direction for your website.
               </p>
 
               <div style={styles.builderList}>
                 <div style={styles.builderItem}>
-                  Easy for customers to fill out
+                  Quick and simple to fill out
                 </div>
                 <div style={styles.builderItem}>
-                  Saves every request for you to review
+                  Helps us understand your business fast
                 </div>
                 <div style={styles.builderItem}>
-                  
+                  Gives you a clear direction before you commit
                 </div>
               </div>
             </div>
-               Simple for businesses to request a preview
+
             <div style={styles.formPanel}>
               <div style={styles.builderPreviewKicker}>REQUEST DETAILS</div>
 
@@ -474,8 +474,8 @@ export default function HomePage() {
               <div style={styles.price}>$499</div>
               <div style={styles.monthly}>$130/mo</div>
               <p style={styles.priceText}>
-                Multi-section layout with stronger structure, trust sections,
-                and better flow for conversions.
+                Multi-section layout with stronger structure, trust sections, and
+                better flow for conversions.
               </p>
             </div>
 
@@ -496,8 +496,8 @@ export default function HomePage() {
               <div style={styles.priceDark}>$1,200</div>
               <div style={styles.monthlyDark}>$200/mo</div>
               <p style={styles.priceTextDark}>
-                Full custom build designed to make your business look high-end
-                and stand out instantly.
+                Full custom build designed to make your business look high-end and
+                stand out instantly.
               </p>
             </div>
           </div>
@@ -554,6 +554,12 @@ export default function HomePage() {
 
           .hideOnMobile {
             display: none !important;
+          }
+
+          input,
+          textarea,
+          button {
+            font-size: 16px;
           }
         }
       `}</style>
@@ -901,8 +907,7 @@ const styles: Record<string, React.CSSProperties> = {
     gridTemplateColumns: "80px 1fr 0.95fr",
     gap: 22,
     alignItems: "start",
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))",
     borderRadius: 22,
     padding: 22,
   },
@@ -1049,6 +1054,7 @@ const styles: Record<string, React.CSSProperties> = {
     background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
     color: "#111",
     boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+    opacity: submitting ? 0.8 : 1,
   },
 
   demoGrid: {

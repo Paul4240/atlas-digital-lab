@@ -306,11 +306,11 @@ export default function HomePage() {
                   Saves every request for you to review
                 </div>
                 <div style={styles.builderItem}>
-                  Great for sales reps and new leads
+                  
                 </div>
               </div>
             </div>
-
+               Simple for businesses to request a preview
             <div style={styles.formPanel}>
               <div style={styles.builderPreviewKicker}>REQUEST DETAILS</div>
 

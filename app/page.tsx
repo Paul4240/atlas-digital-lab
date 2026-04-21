@@ -56,18 +56,16 @@ export default function HomePage() {
         return;
       }
 
-      alert("Request sent. We’ll take a look and reach out.");
-
-      setForm({
-        businessName: "",
-        contactName: "",
-        phone: "",
-        email: "",
-        city: "",
-        niche: "",
-        website: "",
-        notes: "",
+      const params = new URLSearchParams({
+        businessName: form.businessName || "",
+        city: form.city || "",
+        niche: form.niche || "",
+        notes: form.notes || "",
+        phone: form.phone || "",
+        email: form.email || "",
       });
+
+      window.location.href = `/preview?${params.toString()}`;
     } catch (error) {
       alert("Something went wrong. Please try again.");
     } finally {
@@ -377,7 +375,14 @@ export default function HomePage() {
                   rows={6}
                 />
 
-                <button type="submit" style={styles.submitBtn} disabled={submitting}>
+                <button
+                  type="submit"
+                  style={{
+                    ...styles.submitBtn,
+                    opacity: submitting ? 0.8 : 1,
+                  }}
+                  disabled={submitting}
+                >
                   {submitting ? "Sending..." : "Send Request"}
                 </button>
               </form>
@@ -1042,19 +1047,20 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   submitBtn: {
-  gridColumn: "1 / -1",
-  fontFamily: "Arial, sans-serif",
-  fontWeight: 700,
-  fontSize: 15,
-  padding: "15px 18px",
-  borderRadius: 16,
-  border: "none",
-  outline: "none",
-  cursor: "pointer",
-  background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
-  color: "#111",
-  boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
-},
+    gridColumn: "1 / -1",
+    fontFamily: "Arial, sans-serif",
+    fontWeight: 700,
+    fontSize: 15,
+    padding: "15px 18px",
+    borderRadius: 16,
+    border: "none",
+    outline: "none",
+    cursor: "pointer",
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    color: "#111",
+    boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+  },
+
   demoGrid: {
     display: "grid",
     gridTemplateColumns: "1.08fr 1fr",

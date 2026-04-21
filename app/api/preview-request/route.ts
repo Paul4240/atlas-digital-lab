@@ -2,14 +2,17 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const scriptUrl = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+    const scriptUrl =
+  "https://script.google.com/macros/s/AKfycbw.../exec";
+    
 
     const response = await fetch(scriptUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charset=utf-8",
       },
       body: JSON.stringify(body),
+      redirect: "follow",
       cache: "no-store",
     });
 
@@ -17,24 +20,31 @@ export async function POST(request: Request) {
 
     return new Response(
       JSON.stringify({
-        ok: response.ok,
-        message: "Request submitted",
-        sheetResponse: text,
+        ok: true,
+        status: response.status,
+        responseText: text,
       }),
       {
-        status: response.ok ? 200 : 500,
-        headers: { "Content-Type": "application/json" },
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
   } catch (error) {
     return new Response(
       JSON.stringify({
         ok: false,
-        error: "Something went wrong submitting the request.",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong submitting the request.",
       }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
   }

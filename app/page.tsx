@@ -470,7 +470,7 @@ export default function HomePage() {
           </div>
 
           <div style={styles.pricingBanner}>
-            Most businesses choose Pro ($599) or Elite ($899)
+            Most businesses choose Pro ($600)
           </div>
 
           <div style={styles.pricingGrid} className="pricingGrid">

@@ -56,7 +56,7 @@ export default function HomePage() {
         return;
       }
 
-      alert("Request sent successfully. Check your Google Sheet.");
+      alert("Request sent successfully. Check your email.");
 
       setForm({
         businessName: "",
@@ -159,7 +159,11 @@ export default function HomePage() {
               <div style={styles.smallKicker}>Sales Team</div>
               <div style={styles.salesRow}>
                 {SALES.map((s) => (
-                  <a key={s.phone} href={`tel:${s.phone}`} style={styles.salesChip}>
+                  <a
+                    key={s.phone}
+                    href={`tel:${s.phone}`}
+                    style={styles.salesChip}
+                  >
                     Sales {s.pretty}
                   </a>
                 ))}
@@ -306,7 +310,7 @@ export default function HomePage() {
                   Saves every request for you to review
                 </div>
                 <div style={styles.builderItem}>
-                  Great for sales reps and new leads
+                  Simple for businesses to request a preview
                 </div>
               </div>
             </div>
@@ -377,7 +381,14 @@ export default function HomePage() {
                   rows={6}
                 />
 
-                <button type="submit" style={styles.submitBtn} disabled={submitting}>
+                <button
+                  type="submit"
+                  style={{
+                    ...styles.submitBtn,
+                    opacity: submitting ? 0.8 : 1,
+                  }}
+                  disabled={submitting}
+                >
                   {submitting ? "Sending..." : "Send Request"}
                 </button>
               </form>
@@ -390,7 +401,9 @@ export default function HomePage() {
           <div style={styles.sectionHead} className="sectionHead">
             <div>
               <div style={styles.smallKicker}>DEMOS</div>
-              <h2 style={styles.sectionTitle}>Real directions we can build from.</h2>
+              <h2 style={styles.sectionTitle}>
+                Real directions we can build from.
+              </h2>
             </div>
 
             <p style={styles.sectionCopy}>
@@ -412,7 +425,9 @@ export default function HomePage() {
 
             <div style={styles.demoSideList}>
               <Link href="/demo/home-styling" style={styles.demoTile}>
-                <strong style={styles.demoTileTitle}>Luxury Interior Styling</strong>
+                <strong style={styles.demoTileTitle}>
+                  Luxury Interior Styling
+                </strong>
                 <small style={styles.demoTileText}>
                   Elegant, image-led residential presentation.
                 </small>
@@ -455,14 +470,14 @@ export default function HomePage() {
           </div>
 
           <div style={styles.pricingBanner}>
-            Most businesses choose Pro ($799) or Elite ($1,200)
+            Most businesses choose Pro ($599) or Elite ($899)
           </div>
 
           <div style={styles.pricingGrid} className="pricingGrid">
             <div style={styles.priceCard}>
               <div style={styles.plan}>Starter</div>
-              <div style={styles.price}>$299</div>
-              <div style={styles.monthly}>$80/mo</div>
+              <div style={styles.price}>$199</div>
+              <div style={styles.monthly}>$50/mo</div>
               <p style={styles.priceText}>
                 Clean single-page website designed to make your business look
                 legit and ready for customers.
@@ -471,8 +486,8 @@ export default function HomePage() {
 
             <div style={styles.priceCard}>
               <div style={styles.plan}>Growth</div>
-              <div style={styles.price}>$499</div>
-              <div style={styles.monthly}>$130/mo</div>
+              <div style={styles.price}>$400</div>
+              <div style={styles.monthly}>$70/mo</div>
               <p style={styles.priceText}>
                 Multi-section layout with stronger structure, trust sections,
                 and better flow for conversions.
@@ -482,8 +497,8 @@ export default function HomePage() {
             <div style={styles.priceCardFeatured}>
               <div style={styles.smallTag}>Most Popular</div>
               <div style={styles.plan}>Pro</div>
-              <div style={styles.price}>$799</div>
-              <div style={styles.monthly}>$150/mo</div>
+              <div style={styles.price}>$600</div>
+              <div style={styles.monthly}>$90/mo</div>
               <p style={styles.priceText}>
                 Stronger positioning with advanced SEO setup and a more refined,
                 high-converting design.
@@ -493,8 +508,8 @@ export default function HomePage() {
             <div style={styles.priceCardElite}>
               <div style={styles.smallTagGold}>Best Results</div>
               <div style={styles.planDark}>Elite</div>
-              <div style={styles.priceDark}>$1,200</div>
-              <div style={styles.monthlyDark}>$200/mo</div>
+              <div style={styles.priceDark}>$800</div>
+              <div style={styles.monthlyDark}>$120/mo</div>
               <p style={styles.priceTextDark}>
                 Full custom build designed to make your business look high-end
                 and stand out instantly.
@@ -506,7 +521,7 @@ export default function HomePage() {
         {/* FINAL CTA */}
         <section style={styles.section}>
           <h2 style={{ ...styles.sectionTitle, textAlign: "center" }}>
-            Want your company to look this sharp online?
+            Want your company to look this sharp?
           </h2>
 
           <div style={styles.finalActions}>

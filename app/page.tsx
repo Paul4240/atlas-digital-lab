@@ -493,10 +493,10 @@ export default function HomePage() {
               </div>
 
               <div style={{ marginTop: 22 }}>
-                <a href="#preview-request" style={styles.goldBtn}>
-                  Request an App Demo
-                </a>
-              </div>
+                <Link href="/demo/mobile-app" style={styles.goldBtn}>
+                 View Live App Demo
+                 </Link>
+             </div>
             </div>
 
             <div style={styles.demoSideList}>

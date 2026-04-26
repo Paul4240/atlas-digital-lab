@@ -107,6 +107,9 @@ export default function HomePage() {
               <a href="#demos" style={styles.navLink}>
                 Demos
               </a>
+              <a href="#apps" style={styles.navLink}>
+                Apps
+              </a>
               <a href="#pricing" style={styles.navLink}>
                 Pricing
               </a>
@@ -449,6 +452,74 @@ export default function HomePage() {
                 </small>
                 <span style={styles.demoOpen}>Open Demo</span>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* APPS */}
+        <section id="apps" style={styles.section}>
+          <div style={styles.sectionHead} className="sectionHead">
+            <div>
+              <div style={styles.smallKicker}>MOBILE APPS</div>
+              <h2 style={styles.sectionTitle}>
+                Need more than a website? We build branded apps too.
+              </h2>
+            </div>
+
+            <p style={styles.sectionCopy}>
+              Give customers an easier way to book, order, contact you, get
+              offers, and stay connected with your business.
+            </p>
+          </div>
+
+          <div style={styles.appsWrap} className="demoGrid">
+            <div style={styles.appsCardMain}>
+              <div style={styles.demoBadge}>Apps from $999</div>
+
+              <h3 style={styles.demoFeatureTitle}>
+                Premium business apps that make brands look bigger.
+              </h3>
+
+              <p style={styles.demoText}>
+                Perfect for barbers, salons, roofers, restaurants, gyms, med
+                spas, product brands, and service companies ready to level up.
+              </p>
+
+              <div style={styles.tagRow}>
+                <span style={styles.tag}>Booking</span>
+                <span style={styles.tag}>Orders</span>
+                <span style={styles.tag}>Loyalty</span>
+                <span style={styles.tag}>Push Offers</span>
+              </div>
+
+              <div style={{ marginTop: 22 }}>
+                <a href="#preview-request" style={styles.goldBtn}>
+                  Request an App Demo
+                </a>
+              </div>
+            </div>
+
+            <div style={styles.demoSideList}>
+              <div style={styles.demoTile}>
+                <strong style={styles.demoTileTitle}>Customer Retention</strong>
+                <small style={styles.demoTileText}>
+                  Stay in customers’ pockets with repeat business tools.
+                </small>
+              </div>
+
+              <div style={styles.demoTile}>
+                <strong style={styles.demoTileTitle}>Premium Branding</strong>
+                <small style={styles.demoTileText}>
+                  A real app instantly makes your business feel bigger.
+                </small>
+              </div>
+
+              <div style={styles.demoTile}>
+                <strong style={styles.demoTileTitle}>Higher Ticket Sales</strong>
+                <small style={styles.demoTileText}>
+                  Great for companies wanting more than a basic website.
+                </small>
+              </div>
             </div>
           </div>
         </section>
@@ -1079,6 +1150,27 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   demoFeature: {
+    textDecoration: "none",
+    color: "#f4efe4",
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.18)",
+    borderRadius: 32,
+    padding: 34,
+    minHeight: 420,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+  },
+
+  appsWrap: {
+    display: "grid",
+    gridTemplateColumns: "1.08fr 1fr",
+    gap: 18,
+    alignItems: "stretch",
+  },
+
+  appsCardMain: {
     textDecoration: "none",
     color: "#f4efe4",
     background:

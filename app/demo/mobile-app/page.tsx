@@ -1,12 +1,105 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function MobileAppDemoPage() {
   const PHONE = "3463657906";
   const PHONE_PRETTY = "(346) 365-7906";
   const EMAIL = "hello@atlasdigitallab.com";
 
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    business: "",
+    phone: "",
+    email: "",
+    notes: "",
+  });
+
+  function updateForm(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function sendRequest(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const subject = encodeURIComponent("Mobile App Demo Request");
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nBusiness: ${form.business}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nNotes:\n${form.notes}`
+    );
+
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  }
+
   return (
     <main style={styles.page}>
+      {showForm && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modal}>
+            <button style={styles.closeBtn} onClick={() => setShowForm(false)}>
+              ×
+            </button>
+
+            <div style={styles.kicker}>REQUEST YOUR APP DEMO</div>
+            <h2 style={styles.modalTitle}>Want this for your business?</h2>
+            <p style={styles.modalCopy}>
+              Send us your info and we’ll look at what a branded app could look
+              like for your company.
+            </p>
+
+            <form onSubmit={sendRequest} style={styles.form}>
+              <input
+                name="name"
+                placeholder="Your name"
+                value={form.name}
+                onChange={updateForm}
+                style={styles.input}
+                required
+              />
+              <input
+                name="business"
+                placeholder="Business name"
+                value={form.business}
+                onChange={updateForm}
+                style={styles.input}
+                required
+              />
+              <input
+                name="phone"
+                placeholder="Phone number"
+                value={form.phone}
+                onChange={updateForm}
+                style={styles.input}
+              />
+              <input
+                name="email"
+                placeholder="Email address"
+                type="email"
+                value={form.email}
+                onChange={updateForm}
+                style={styles.input}
+                required
+              />
+              <textarea
+                name="notes"
+                placeholder="What kind of app do you want? Booking, orders, loyalty, offers, customer accounts, etc."
+                value={form.notes}
+                onChange={updateForm}
+                style={styles.textarea}
+                rows={5}
+              />
+              <button type="submit" style={styles.submitBtn}>
+                Request My App Demo
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <section style={styles.hero}>
         <div>
           <Link href="/" style={styles.backLink}>
@@ -25,11 +118,11 @@ export default function MobileAppDemoPage() {
           </p>
 
           <div style={styles.actions}>
-            <a href={`tel:${PHONE}`} style={styles.goldBtn}>
-              Call / Text {PHONE_PRETTY}
-            </a>
-            <a href={`mailto:${EMAIL}`} style={styles.darkBtn}>
+            <button onClick={() => setShowForm(true)} style={styles.goldBtn}>
               Request an App Demo
+            </button>
+            <a href={`tel:${PHONE}`} style={styles.darkBtn}>
+              Call / Text {PHONE_PRETTY}
             </a>
           </div>
         </div>
@@ -55,7 +148,9 @@ export default function MobileAppDemoPage() {
               experience.
             </p>
 
-            <div style={styles.phoneCta}>Launch This App</div>
+            <button onClick={() => setShowForm(true)} style={styles.phoneCta}>
+              Launch This App
+            </button>
 
             <div style={styles.quickGrid}>
               <div style={styles.quickCard}>
@@ -146,9 +241,9 @@ export default function MobileAppDemoPage() {
           </p>
         </div>
 
-        <a href={`mailto:${EMAIL}`} style={styles.goldBtn}>
+        <button onClick={() => setShowForm(true)} style={styles.goldBtn}>
           Request Pricing
-        </a>
+        </button>
       </section>
     </main>
   );
@@ -223,6 +318,9 @@ const styles: Record<string, React.CSSProperties> = {
     background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
     color: "#111",
     boxShadow: "0 12px 34px rgba(216,180,79,0.16)",
+    border: "none",
+    cursor: "pointer",
+    fontSize: 15,
   },
 
   darkBtn: {
@@ -276,7 +374,6 @@ const styles: Record<string, React.CSSProperties> = {
 
   phoneBody: {
     padding: 28,
-    position: "relative",
   },
 
   appKicker: {
@@ -312,6 +409,9 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "16px 18px",
     fontWeight: 900,
     marginBottom: 22,
+    width: "100%",
+    border: "none",
+    cursor: "pointer",
   },
 
   quickGrid: {
@@ -422,5 +522,94 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "space-between",
     gap: 24,
     alignItems: "center",
+  },
+
+  modalOverlay: {
+    position: "fixed",
+    inset: 0,
+    background: "rgba(0,0,0,0.76)",
+    zIndex: 999,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+
+  modal: {
+    width: "100%",
+    maxWidth: 560,
+    background:
+      "linear-gradient(135deg, rgba(15,23,42,0.98), rgba(8,13,23,0.98))",
+    borderRadius: 30,
+    padding: 28,
+    boxShadow: "0 30px 90px rgba(0,0,0,0.45)",
+    position: "relative",
+  },
+
+  closeBtn: {
+    position: "absolute",
+    right: 18,
+    top: 14,
+    background: "transparent",
+    color: "#f4efe4",
+    border: "none",
+    fontSize: 34,
+    cursor: "pointer",
+  },
+
+  modalTitle: {
+    margin: "0 0 10px",
+    fontSize: 42,
+    lineHeight: 1,
+  },
+
+  modalCopy: {
+    fontFamily: "Arial, sans-serif",
+    color: "#bcc6d4",
+    lineHeight: 1.65,
+    fontSize: 16,
+    marginBottom: 18,
+  },
+
+  form: {
+    display: "grid",
+    gap: 12,
+  },
+
+  input: {
+    width: "100%",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 15,
+    color: "#f4efe4",
+    background: "rgba(255,255,255,0.07)",
+    border: "none",
+    outline: "none",
+    borderRadius: 16,
+    padding: "15px 16px",
+  },
+
+  textarea: {
+    width: "100%",
+    resize: "vertical",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 15,
+    color: "#f4efe4",
+    background: "rgba(255,255,255,0.07)",
+    border: "none",
+    outline: "none",
+    borderRadius: 16,
+    padding: "15px 16px",
+  },
+
+  submitBtn: {
+    fontFamily: "Arial, sans-serif",
+    fontWeight: 800,
+    fontSize: 15,
+    padding: "15px 18px",
+    borderRadius: 16,
+    border: "none",
+    cursor: "pointer",
+    background: "linear-gradient(135deg, #e1c15f, #c89e2c)",
+    color: "#111",
   },
 };
